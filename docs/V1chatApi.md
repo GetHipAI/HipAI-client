@@ -4,10 +4,10 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completions_v1_chat_completions_post**](V1chatApi.md#completions_v1_chat_completions_post) | **POST** /v1/chat/completions | Completions
+[**completions_api_v1_chat_completions_post**](V1chatApi.md#completions_api_v1_chat_completions_post) | **POST** /api/v1/chat/completions | Completions
 
-# **completions_v1_chat_completions_post**
-> ChatCompletion completions_v1_chat_completions_post(body)
+# **completions_api_v1_chat_completions_post**
+> ChatCompletion completions_api_v1_chat_completions_post(body)
 
 Completions
 
@@ -29,10 +29,10 @@ body = hipai_client.ChatCompletionRequest() # ChatCompletionRequest |
 
 try:
     # Completions
-    api_response = api_instance.completions_v1_chat_completions_post(body)
+    api_response = api_instance.completions_api_v1_chat_completions_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling V1chatApi->completions_v1_chat_completions_post: %s\n" % e)
+    print("Exception when calling V1chatApi->completions_api_v1_chat_completions_post: %s\n" % e)
 ```
 
 ### Parameters

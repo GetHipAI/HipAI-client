@@ -32,43 +32,43 @@ class DataContextsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def data_context_upsert_data_contexts_post(self, body, **kwargs):  # noqa: E501
-        """Data Context Upsert  # noqa: E501
+    def build_logs_api_data_contexts_logs_id_get(self, id, **kwargs):  # noqa: E501
+        """Build Logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.data_context_upsert_data_contexts_post(body, async_req=True)
+        >>> thread = api.build_logs_api_data_contexts_logs_id_get(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ConnectionConfigRequest body: (required)
-        :return: DataContextResponse
+        :param object id: (required)
+        :return: ApiDataContextsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.data_context_upsert_data_contexts_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.build_logs_api_data_contexts_logs_id_get_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.data_context_upsert_data_contexts_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.build_logs_api_data_contexts_logs_id_get_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def data_context_upsert_data_contexts_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Data Context Upsert  # noqa: E501
+    def build_logs_api_data_contexts_logs_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Build Logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.data_context_upsert_data_contexts_post_with_http_info(body, async_req=True)
+        >>> thread = api.build_logs_api_data_contexts_logs_id_get_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ConnectionConfigRequest body: (required)
-        :return: DataContextResponse
+        :param object id: (required)
+        :return: ApiDataContextsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -79,109 +79,20 @@ class DataContextsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method data_context_upsert_data_contexts_post" % key
+                    " to method build_logs_api_data_contexts_logs_id_get" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `data_context_upsert_data_contexts_post`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `build_logs_api_data_contexts_logs_id_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/data-contexts/', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DataContextResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_list_data_contexts_list_get(self, **kwargs):  # noqa: E501
-        """Get List  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_list_data_contexts_list_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: ApiDataContextsModelsListResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_list_data_contexts_list_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_list_data_contexts_list_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_list_data_contexts_list_get_with_http_info(self, **kwargs):  # noqa: E501
-        """Get List  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_list_data_contexts_list_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: ApiDataContextsModelsListResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_list_data_contexts_list_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -199,7 +110,7 @@ class DataContextsApi(object):
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/data-contexts/list', 'GET',
+            '/api/data-contexts/logs/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -214,38 +125,131 @@ class DataContextsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def load_data_contexts_get(self, body, **kwargs):  # noqa: E501
-        """Load  # noqa: E501
+    def delete_data_context_api_data_contexts_id_delete(self, id, **kwargs):  # noqa: E501
+        """Delete Data Context  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.load_data_contexts_get(body, async_req=True)
+        >>> thread = api.delete_data_context_api_data_contexts_id_delete(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param LoadRequest body: (required)
-        :return: DataContextResponse
+        :param object id: (required)
+        :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.load_data_contexts_get_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_data_context_api_data_contexts_id_delete_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.load_data_contexts_get_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_data_context_api_data_contexts_id_delete_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def load_data_contexts_get_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Load  # noqa: E501
+    def delete_data_context_api_data_contexts_id_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete Data Context  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.load_data_contexts_get_with_http_info(body, async_req=True)
+        >>> thread = api.delete_data_context_api_data_contexts_id_delete_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param LoadRequest body: (required)
-        :return: DataContextResponse
+        :param object id: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_data_context_api_data_contexts_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `delete_data_context_api_data_contexts_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/data-contexts/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def list_data_contexts_api_data_contexts_list_post(self, body, **kwargs):  # noqa: E501
+        """List Data Contexts  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_data_contexts_api_data_contexts_list_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ApiDataContextsModelsListRequest body: (required)
+        :return: ApiDataContextsModelsListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_data_contexts_api_data_contexts_list_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.list_data_contexts_api_data_contexts_list_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def list_data_contexts_api_data_contexts_list_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """List Data Contexts  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_data_contexts_api_data_contexts_list_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ApiDataContextsModelsListRequest body: (required)
+        :return: ApiDataContextsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -261,14 +265,14 @@ class DataContextsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method load_data_contexts_get" % key
+                    " to method list_data_contexts_api_data_contexts_list_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `load_data_contexts_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `list_data_contexts_api_data_contexts_list_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -296,14 +300,297 @@ class DataContextsApi(object):
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/data-contexts/', 'GET',
+            '/api/data-contexts/list', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DataContextResponse',  # noqa: E501
+            response_type='ApiDataContextsModelsListResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def load_data_context_api_data_contexts_id_get(self, id, **kwargs):  # noqa: E501
+        """Load Data Context  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.load_data_context_api_data_contexts_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object id: (required)
+        :return: DataContextObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.load_data_context_api_data_contexts_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.load_data_context_api_data_contexts_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def load_data_context_api_data_contexts_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Load Data Context  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.load_data_context_api_data_contexts_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object id: (required)
+        :return: DataContextObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method load_data_context_api_data_contexts_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `load_data_context_api_data_contexts_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/data-contexts/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DataContextObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def load_graph_api_data_contexts_graph_id_get(self, id, **kwargs):  # noqa: E501
+        """Load Graph  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.load_graph_api_data_contexts_graph_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object id: (required)
+        :return: GraphObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.load_graph_api_data_contexts_graph_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.load_graph_api_data_contexts_graph_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def load_graph_api_data_contexts_graph_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Load Graph  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.load_graph_api_data_contexts_graph_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object id: (required)
+        :return: GraphObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method load_graph_api_data_contexts_graph_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `load_graph_api_data_contexts_graph_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/data-contexts/graph/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GraphObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def upsert_data_context_api_data_contexts_post(self, body, **kwargs):  # noqa: E501
+        """Upsert Data Context  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upsert_data_context_api_data_contexts_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DataContextObject body: (required)
+        :return: DataContextObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.upsert_data_context_api_data_contexts_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.upsert_data_context_api_data_contexts_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def upsert_data_context_api_data_contexts_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Upsert Data Context  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upsert_data_context_api_data_contexts_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DataContextObject body: (required)
+        :return: DataContextObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method upsert_data_context_api_data_contexts_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `upsert_data_context_api_data_contexts_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/data-contexts/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DataContextObject',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

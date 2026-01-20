@@ -57,43 +57,58 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
+id = NULL # object | 
+
+try:
+    # Delete Agent
+    api_response = api_instance.delete_agent_api_agents_id_delete(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentsApi->delete_agent_api_agents_id_delete: %s\n" % e)
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
+
+try:
+    # List Agents
+    api_response = api_instance.list_agents_api_agents_list_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentsApi->list_agents_api_agents_list_get: %s\n" % e)
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
+id = NULL # object | 
+
+try:
+    # Load Agent
+    api_response = api_instance.load_agent_api_agents_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentsApi->load_agent_api_agents_id_get: %s\n" % e)
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 body = hipai_client.AgentConfigObject() # AgentConfigObject | 
 
 try:
-    # Agent Config Upsert
-    api_response = api_instance.agent_config_upsert_agents_post(body)
+    # Upsert Agent
+    api_response = api_instance.upsert_agent_api_agents_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AgentsApi->agent_config_upsert_agents_post: %s\n" % e)
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-
-try:
-    # Get List
-    api_response = api_instance.get_list_agents_list_get()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->get_list_agents_list_get: %s\n" % e)
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.LoadRequest() # LoadRequest | 
-
-try:
-    # Load
-    api_response = api_instance.load_agents_get(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->load_agents_get: %s\n" % e)
+    print("Exception when calling AgentsApi->upsert_agent_api_agents_post: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -102,31 +117,67 @@ All URIs are relative to */*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgentsApi* | [**agent_config_upsert_agents_post**](docs/AgentsApi.md#agent_config_upsert_agents_post) | **POST** /agents/ | Agent Config Upsert
-*AgentsApi* | [**get_list_agents_list_get**](docs/AgentsApi.md#get_list_agents_list_get) | **GET** /agents/list | Get List
-*AgentsApi* | [**load_agents_get**](docs/AgentsApi.md#load_agents_get) | **GET** /agents/ | Load
-*ChatApi* | [**chat_chat_post**](docs/ChatApi.md#chat_chat_post) | **POST** /chat/ | Chat
-*ChatApi* | [**get_list_chat_list_get**](docs/ChatApi.md#get_list_chat_list_get) | **GET** /chat/list | Get List
-*ChatApi* | [**load_chat_load_get**](docs/ChatApi.md#load_chat_load_get) | **GET** /chat/load | Load
-*DataContextsApi* | [**data_context_upsert_data_contexts_post**](docs/DataContextsApi.md#data_context_upsert_data_contexts_post) | **POST** /data-contexts/ | Data Context Upsert
-*DataContextsApi* | [**get_list_data_contexts_list_get**](docs/DataContextsApi.md#get_list_data_contexts_list_get) | **GET** /data-contexts/list | Get List
-*DataContextsApi* | [**load_data_contexts_get**](docs/DataContextsApi.md#load_data_contexts_get) | **GET** /data-contexts/ | Load
+*AgentsApi* | [**delete_agent_api_agents_id_delete**](docs/AgentsApi.md#delete_agent_api_agents_id_delete) | **DELETE** /api/agents/{id} | Delete Agent
+*AgentsApi* | [**list_agents_api_agents_list_get**](docs/AgentsApi.md#list_agents_api_agents_list_get) | **GET** /api/agents/list | List Agents
+*AgentsApi* | [**load_agent_api_agents_id_get**](docs/AgentsApi.md#load_agent_api_agents_id_get) | **GET** /api/agents/{id} | Load Agent
+*AgentsApi* | [**upsert_agent_api_agents_post**](docs/AgentsApi.md#upsert_agent_api_agents_post) | **POST** /api/agents/ | Upsert Agent
+*ChatApi* | [**chat_api_chat_post**](docs/ChatApi.md#chat_api_chat_post) | **POST** /api/chat/ | Chat
+*ChatApi* | [**get_list_api_chat_list_get**](docs/ChatApi.md#get_list_api_chat_list_get) | **GET** /api/chat/list | Get List
+*ChatApi* | [**load_api_chat_load_post**](docs/ChatApi.md#load_api_chat_load_post) | **POST** /api/chat/load | Load
+*ChatApi* | [**streaming_completions_api_chat_completions_stream_post**](docs/ChatApi.md#streaming_completions_api_chat_completions_stream_post) | **POST** /api/chat/completions/stream | Streaming Completions
+*CompanyApi* | [**get_company_api_company_get**](docs/CompanyApi.md#get_company_api_company_get) | **GET** /api/company/ | Get Company
+*ConnectionConfigsApi* | [**delete_connection_config_api_connection_configs_id_delete**](docs/ConnectionConfigsApi.md#delete_connection_config_api_connection_configs_id_delete) | **DELETE** /api/connection-configs/{id} | Delete Connection Config
+*ConnectionConfigsApi* | [**delete_document_api_connection_configs_documents_id_delete**](docs/ConnectionConfigsApi.md#delete_document_api_connection_configs_documents_id_delete) | **DELETE** /api/connection-configs/documents/{id} | Delete Document
+*ConnectionConfigsApi* | [**delete_many_connection_configs_api_connection_configs_delete_many_post**](docs/ConnectionConfigsApi.md#delete_many_connection_configs_api_connection_configs_delete_many_post) | **POST** /api/connection-configs/delete_many | Delete Many Connection Configs
+*ConnectionConfigsApi* | [**document_upload_api_connection_configs_document_upload_post**](docs/ConnectionConfigsApi.md#document_upload_api_connection_configs_document_upload_post) | **POST** /api/connection-configs/document-upload | Document Upload
+*ConnectionConfigsApi* | [**list_connection_configs_api_connection_configs_list_post**](docs/ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
+*ConnectionConfigsApi* | [**list_documents_api_connection_configs_documents_id_get**](docs/ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
+*ConnectionConfigsApi* | [**load_connection_config_api_connection_configs_id_get**](docs/ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
+*ConnectionConfigsApi* | [**upsert_connection_config_api_connection_configs_post**](docs/ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
+*DataContextsApi* | [**build_logs_api_data_contexts_logs_id_get**](docs/DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
+*DataContextsApi* | [**delete_data_context_api_data_contexts_id_delete**](docs/DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+*DataContextsApi* | [**list_data_contexts_api_data_contexts_list_post**](docs/DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
+*DataContextsApi* | [**load_data_context_api_data_contexts_id_get**](docs/DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
+*DataContextsApi* | [**load_graph_api_data_contexts_graph_id_get**](docs/DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
+*DataContextsApi* | [**upsert_data_context_api_data_contexts_post**](docs/DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 *DefaultApi* | [**ping_ping_get**](docs/DefaultApi.md#ping_ping_get) | **GET** /ping | Ping
+*EvaluationsApi* | [**delete_evaluation_api_evaluations_id_delete**](docs/EvaluationsApi.md#delete_evaluation_api_evaluations_id_delete) | **DELETE** /api/evaluations/{id} | Delete Evaluation
+*EvaluationsApi* | [**delete_question_api_evaluations_questions_id_delete**](docs/EvaluationsApi.md#delete_question_api_evaluations_questions_id_delete) | **DELETE** /api/evaluations/questions/{id} | Delete Question
+*EvaluationsApi* | [**list_evaluations_api_evaluations_list_get**](docs/EvaluationsApi.md#list_evaluations_api_evaluations_list_get) | **GET** /api/evaluations/list | List Evaluations
+*EvaluationsApi* | [**list_questions_api_evaluations_questions_id_get**](docs/EvaluationsApi.md#list_questions_api_evaluations_questions_id_get) | **GET** /api/evaluations/questions/{id} | List Questions
+*EvaluationsApi* | [**list_responses_api_evaluations_responses_id_get**](docs/EvaluationsApi.md#list_responses_api_evaluations_responses_id_get) | **GET** /api/evaluations/responses/{id} | List Responses
+*EvaluationsApi* | [**list_runs_api_evaluations_runs_get**](docs/EvaluationsApi.md#list_runs_api_evaluations_runs_get) | **GET** /api/evaluations/runs | List Runs
+*EvaluationsApi* | [**run_evaluation_api_evaluations_run_post**](docs/EvaluationsApi.md#run_evaluation_api_evaluations_run_post) | **POST** /api/evaluations/run | Run Evaluation
+*EvaluationsApi* | [**upsert_evaluation_api_evaluations_post**](docs/EvaluationsApi.md#upsert_evaluation_api_evaluations_post) | **POST** /api/evaluations/ | Upsert Evaluation
+*EvaluationsApi* | [**upsert_question_api_evaluations_question_post**](docs/EvaluationsApi.md#upsert_question_api_evaluations_question_post) | **POST** /api/evaluations/question | Upsert Question
 *LoginApi* | [**login_access_token_login_access_token_post**](docs/LoginApi.md#login_access_token_login_access_token_post) | **POST** /login/access-token | Login Access Token
-*ModelConfigApi* | [**model_config_list_model_config_list_get**](docs/ModelConfigApi.md#model_config_list_model_config_list_get) | **GET** /model-config/list | Model Config List
-*ModelConfigApi* | [**model_config_upsert_model_config_post**](docs/ModelConfigApi.md#model_config_upsert_model_config_post) | **POST** /model-config/ | Model Config Upsert
-*V1chatApi* | [**completions_v1_chat_completions_post**](docs/V1chatApi.md#completions_v1_chat_completions_post) | **POST** /v1/chat/completions | Completions
+*ModelConfigsApi* | [**delete_model_config_api_model_configs_id_delete**](docs/ModelConfigsApi.md#delete_model_config_api_model_configs_id_delete) | **DELETE** /api/model-configs/{id} | Delete Model Config
+*ModelConfigsApi* | [**list_model_configs_api_model_configs_list_get**](docs/ModelConfigsApi.md#list_model_configs_api_model_configs_list_get) | **GET** /api/model-configs/list | List Model Configs
+*ModelConfigsApi* | [**upsert_model_config_api_model_configs_post**](docs/ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
+*TeamApi* | [**list_team_members_api_team_members_get**](docs/TeamApi.md#list_team_members_api_team_members_get) | **GET** /api/team/members | List Team Members
+*TeamApi* | [**remove_team_member_api_team_members_user_id_delete**](docs/TeamApi.md#remove_team_member_api_team_members_user_id_delete) | **DELETE** /api/team/members/{user_id} | Remove Team Member
+*TeamApi* | [**reset_user_password_api_team_reset_password_user_id_post**](docs/TeamApi.md#reset_user_password_api_team_reset_password_user_id_post) | **POST** /api/team/reset-password/{user_id} | Reset User Password
+*TeamApi* | [**upsert_team_member_api_team_members_upsert_post**](docs/TeamApi.md#upsert_team_member_api_team_members_upsert_post) | **POST** /api/team/members/upsert | Upsert Team Member
+*UsersApi* | [**get_current_user_api_users_get**](docs/UsersApi.md#get_current_user_api_users_get) | **GET** /api/users/ | Get Current User
+*UsersApi* | [**update_current_user_api_users_post**](docs/UsersApi.md#update_current_user_api_users_post) | **POST** /api/users/ | Update Current User
+*V1chatApi* | [**completions_api_v1_chat_completions_post**](docs/V1chatApi.md#completions_api_v1_chat_completions_post) | **POST** /api/v1/chat/completions | Completions
 
 ## Documentation For Models
 
  - [AgentConfigObject](docs/AgentConfigObject.md)
- - [AgentConfigResponse](docs/AgentConfigResponse.md)
  - [Annotation](docs/Annotation.md)
  - [AnnotationURLCitation](docs/AnnotationURLCitation.md)
  - [ApiAgentsModelsListResponse](docs/ApiAgentsModelsListResponse.md)
+ - [ApiAuthModelsListResponse](docs/ApiAuthModelsListResponse.md)
+ - [ApiChatModelsListRequest](docs/ApiChatModelsListRequest.md)
  - [ApiChatModelsListResponse](docs/ApiChatModelsListResponse.md)
+ - [ApiConnectionConfigsModelsListRequest](docs/ApiConnectionConfigsModelsListRequest.md)
+ - [ApiConnectionConfigsModelsListResponse](docs/ApiConnectionConfigsModelsListResponse.md)
+ - [ApiDataContextsModelsListRequest](docs/ApiDataContextsModelsListRequest.md)
  - [ApiDataContextsModelsListResponse](docs/ApiDataContextsModelsListResponse.md)
+ - [ApiEvaluationsModelsListResponse](docs/ApiEvaluationsModelsListResponse.md)
  - [ApiModelConfigModelsListResponse](docs/ApiModelConfigModelsListResponse.md)
+ - [BodyDocumentUploadApiConnectionConfigsDocumentUploadPost](docs/BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.md)
  - [BodyLoginAccessTokenLoginAccessTokenPost](docs/BodyLoginAccessTokenLoginAccessTokenPost.md)
  - [ChatCompletion](docs/ChatCompletion.md)
  - [ChatCompletionAudio](docs/ChatCompletionAudio.md)
@@ -140,23 +191,35 @@ Class | Method | HTTP request | Description
  - [ChatResponse](docs/ChatResponse.md)
  - [Choice](docs/Choice.md)
  - [ChoiceLogprobs](docs/ChoiceLogprobs.md)
+ - [CompanyObject](docs/CompanyObject.md)
  - [CompletionTokensDetails](docs/CompletionTokensDetails.md)
  - [CompletionUsage](docs/CompletionUsage.md)
- - [ConnectionConfigRequest](docs/ConnectionConfigRequest.md)
- - [ConnectionParams](docs/ConnectionParams.md)
+ - [ConnectionConfigObject](docs/ConnectionConfigObject.md)
  - [ConversationSummary](docs/ConversationSummary.md)
- - [DataContextResponse](docs/DataContextResponse.md)
+ - [DataContextObject](docs/DataContextObject.md)
+ - [DocumentListResponse](docs/DocumentListResponse.md)
+ - [DocumentUploadObject](docs/DocumentUploadObject.md)
+ - [EdgeObject](docs/EdgeObject.md)
+ - [EvaluationObject](docs/EvaluationObject.md)
+ - [EvaluationRunObject](docs/EvaluationRunObject.md)
+ - [EvaluationUpsert](docs/EvaluationUpsert.md)
  - [Function](docs/Function.md)
  - [FunctionCall](docs/FunctionCall.md)
+ - [GraphObject](docs/GraphObject.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
- - [ListRequest](docs/ListRequest.md)
  - [LoadRequest](docs/LoadRequest.md)
  - [LoadResponse](docs/LoadResponse.md)
+ - [LogObject](docs/LogObject.md)
+ - [Message](docs/Message.md)
  - [ModelConfigObject](docs/ModelConfigObject.md)
+ - [NodeObject](docs/NodeObject.md)
  - [OpenAIExtras](docs/OpenAIExtras.md)
  - [PromptTokensDetails](docs/PromptTokensDetails.md)
+ - [QuestionObject](docs/QuestionObject.md)
+ - [ResponseObject](docs/ResponseObject.md)
  - [Token](docs/Token.md)
  - [TopLogprob](docs/TopLogprob.md)
+ - [UserPublic](docs/UserPublic.md)
  - [ValidationError](docs/ValidationError.md)
 
 ## Documentation For Authorization

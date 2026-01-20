@@ -29,6 +29,7 @@ class ModelConfigObject(object):
     """
     swagger_types = {
         'id': 'object',
+        'name': 'object',
         'url': 'object',
         'token': 'object',
         'model_name': 'object',
@@ -37,15 +38,17 @@ class ModelConfigObject(object):
 
     attribute_map = {
         'id': 'id',
+        'name': 'name',
         'url': 'url',
         'token': 'token',
         'model_name': 'model_name',
         'on_prem': 'on_prem'
     }
 
-    def __init__(self, id=None, url=None, token=None, model_name=None, on_prem=None):  # noqa: E501
+    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=None):  # noqa: E501
         """ModelConfigObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._name = None
         self._url = None
         self._token = None
         self._model_name = None
@@ -53,6 +56,8 @@ class ModelConfigObject(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if name is not None:
+            self.name = name
         if url is not None:
             self.url = url
         if token is not None:
@@ -82,6 +87,27 @@ class ModelConfigObject(object):
         """
 
         self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The name of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ModelConfigObject.
+
+
+        :param name: The name of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._name = name
 
     @property
     def url(self):

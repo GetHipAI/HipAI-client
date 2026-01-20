@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **object** |  | [optional] 
+**name** | **object** |  | [optional] 
 **url** | **object** |  | [optional] 
 **token** | **object** |  | [optional] 
 **model_name** | **object** |  | [optional] 

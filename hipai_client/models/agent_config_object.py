@@ -29,32 +29,42 @@ class AgentConfigObject(object):
     """
     swagger_types = {
         'name': 'object',
-        'active': 'object',
+        'status': 'object',
         'id': 'object',
+        'updated_at': 'object',
+        'api_key': 'object',
         'llm_config_id': 'object',
         'graph_id': 'object'
     }
 
     attribute_map = {
         'name': 'name',
-        'active': 'active',
+        'status': 'status',
         'id': 'id',
+        'updated_at': 'updated_at',
+        'api_key': 'api_key',
         'llm_config_id': 'llm_config_id',
         'graph_id': 'graph_id'
     }
 
-    def __init__(self, name=None, active=None, id=None, llm_config_id=None, graph_id=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None):  # noqa: E501
         """AgentConfigObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
-        self._active = None
+        self._status = None
         self._id = None
+        self._updated_at = None
+        self._api_key = None
         self._llm_config_id = None
         self._graph_id = None
         self.discriminator = None
         self.name = name
-        self.active = active
+        self.status = status
         if id is not None:
             self.id = id
+        if updated_at is not None:
+            self.updated_at = updated_at
+        if api_key is not None:
+            self.api_key = api_key
         if llm_config_id is not None:
             self.llm_config_id = llm_config_id
         if graph_id is not None:
@@ -84,27 +94,27 @@ class AgentConfigObject(object):
         self._name = name
 
     @property
-    def active(self):
-        """Gets the active of this AgentConfigObject.  # noqa: E501
+    def status(self):
+        """Gets the status of this AgentConfigObject.  # noqa: E501
 
 
-        :return: The active of this AgentConfigObject.  # noqa: E501
+        :return: The status of this AgentConfigObject.  # noqa: E501
         :rtype: object
         """
-        return self._active
+        return self._status
 
-    @active.setter
-    def active(self, active):
-        """Sets the active of this AgentConfigObject.
+    @status.setter
+    def status(self, status):
+        """Sets the status of this AgentConfigObject.
 
 
-        :param active: The active of this AgentConfigObject.  # noqa: E501
+        :param status: The status of this AgentConfigObject.  # noqa: E501
         :type: object
         """
-        if active is None:
-            raise ValueError("Invalid value for `active`, must not be `None`")  # noqa: E501
+        if status is None:
+            raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
 
-        self._active = active
+        self._status = status
 
     @property
     def id(self):
@@ -126,6 +136,48 @@ class AgentConfigObject(object):
         """
 
         self._id = id
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this AgentConfigObject.  # noqa: E501
+
+
+        :return: The updated_at of this AgentConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this AgentConfigObject.
+
+
+        :param updated_at: The updated_at of this AgentConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._updated_at = updated_at
+
+    @property
+    def api_key(self):
+        """Gets the api_key of this AgentConfigObject.  # noqa: E501
+
+
+        :return: The api_key of this AgentConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._api_key
+
+    @api_key.setter
+    def api_key(self, api_key):
+        """Sets the api_key of this AgentConfigObject.
+
+
+        :param api_key: The api_key of this AgentConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._api_key = api_key
 
     @property
     def llm_config_id(self):

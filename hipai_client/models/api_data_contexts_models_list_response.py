@@ -28,41 +28,68 @@ class ApiDataContextsModelsListResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'summaries': 'object'
+        'data': 'object',
+        'count': 'object'
     }
 
     attribute_map = {
-        'summaries': 'summaries'
+        'data': 'data',
+        'count': 'count'
     }
 
-    def __init__(self, summaries=None):  # noqa: E501
+    def __init__(self, data=None, count=None):  # noqa: E501
         """ApiDataContextsModelsListResponse - a model defined in Swagger"""  # noqa: E501
-        self._summaries = None
+        self._data = None
+        self._count = None
         self.discriminator = None
-        self.summaries = summaries
+        self.data = data
+        self.count = count
 
     @property
-    def summaries(self):
-        """Gets the summaries of this ApiDataContextsModelsListResponse.  # noqa: E501
+    def data(self):
+        """Gets the data of this ApiDataContextsModelsListResponse.  # noqa: E501
 
 
-        :return: The summaries of this ApiDataContextsModelsListResponse.  # noqa: E501
+        :return: The data of this ApiDataContextsModelsListResponse.  # noqa: E501
         :rtype: object
         """
-        return self._summaries
+        return self._data
 
-    @summaries.setter
-    def summaries(self, summaries):
-        """Sets the summaries of this ApiDataContextsModelsListResponse.
+    @data.setter
+    def data(self, data):
+        """Sets the data of this ApiDataContextsModelsListResponse.
 
 
-        :param summaries: The summaries of this ApiDataContextsModelsListResponse.  # noqa: E501
+        :param data: The data of this ApiDataContextsModelsListResponse.  # noqa: E501
         :type: object
         """
-        if summaries is None:
-            raise ValueError("Invalid value for `summaries`, must not be `None`")  # noqa: E501
+        if data is None:
+            raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
 
-        self._summaries = summaries
+        self._data = data
+
+    @property
+    def count(self):
+        """Gets the count of this ApiDataContextsModelsListResponse.  # noqa: E501
+
+
+        :return: The count of this ApiDataContextsModelsListResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this ApiDataContextsModelsListResponse.
+
+
+        :param count: The count of this ApiDataContextsModelsListResponse.  # noqa: E501
+        :type: object
+        """
+        if count is None:
+            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
+
+        self._count = count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

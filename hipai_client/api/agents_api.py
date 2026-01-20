@@ -32,43 +32,45 @@ class AgentsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def agent_config_upsert_agents_post(self, body, **kwargs):  # noqa: E501
-        """Agent Config Upsert  # noqa: E501
+    def delete_agent_api_agents_id_delete(self, id, **kwargs):  # noqa: E501
+        """Delete Agent  # noqa: E501
 
+        Deletes an Agent Config. Admin only.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_config_upsert_agents_post(body, async_req=True)
+        >>> thread = api.delete_agent_api_agents_id_delete(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AgentConfigObject body: (required)
-        :return: AgentConfigResponse
+        :param object id: (required)
+        :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.agent_config_upsert_agents_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.delete_agent_api_agents_id_delete_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.agent_config_upsert_agents_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.delete_agent_api_agents_id_delete_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def agent_config_upsert_agents_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Agent Config Upsert  # noqa: E501
+    def delete_agent_api_agents_id_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Delete Agent  # noqa: E501
 
+        Deletes an Agent Config. Admin only.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_config_upsert_agents_post_with_http_info(body, async_req=True)
+        >>> thread = api.delete_agent_api_agents_id_delete_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AgentConfigObject body: (required)
-        :return: AgentConfigResponse
+        :param object id: (required)
+        :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -79,18 +81,20 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agent_config_upsert_agents_post" % key
+                    " to method delete_agent_api_agents_id_delete" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `agent_config_upsert_agents_post`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `delete_agent_api_agents_id_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -100,28 +104,22 @@ class AgentsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/agents/', 'POST',
+            '/api/agents/{id}', 'DELETE',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentConfigResponse',  # noqa: E501
+            response_type='Message',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,12 +127,12 @@ class AgentsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_list_agents_list_get(self, **kwargs):  # noqa: E501
-        """Get List  # noqa: E501
+    def list_agents_api_agents_list_get(self, **kwargs):  # noqa: E501
+        """List Agents  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_list_agents_list_get(async_req=True)
+        >>> thread = api.list_agents_api_agents_list_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -144,17 +142,17 @@ class AgentsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_list_agents_list_get_with_http_info(**kwargs)  # noqa: E501
+            return self.list_agents_api_agents_list_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_list_agents_list_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.list_agents_api_agents_list_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_list_agents_list_get_with_http_info(self, **kwargs):  # noqa: E501
-        """Get List  # noqa: E501
+    def list_agents_api_agents_list_get_with_http_info(self, **kwargs):  # noqa: E501
+        """List Agents  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_list_agents_list_get_with_http_info(async_req=True)
+        >>> thread = api.list_agents_api_agents_list_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -174,7 +172,7 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_list_agents_list_get" % key
+                    " to method list_agents_api_agents_list_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -199,7 +197,7 @@ class AgentsApi(object):
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/agents/list', 'GET',
+            '/api/agents/list', 'GET',
             path_params,
             query_params,
             header_params,
@@ -214,38 +212,131 @@ class AgentsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def load_agents_get(self, body, **kwargs):  # noqa: E501
-        """Load  # noqa: E501
+    def load_agent_api_agents_id_get(self, id, **kwargs):  # noqa: E501
+        """Load Agent  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.load_agents_get(body, async_req=True)
+        >>> thread = api.load_agent_api_agents_id_get(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param LoadRequest body: (required)
-        :return: AgentConfigResponse
+        :param object id: (required)
+        :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.load_agents_get_with_http_info(body, **kwargs)  # noqa: E501
+            return self.load_agent_api_agents_id_get_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.load_agents_get_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.load_agent_api_agents_id_get_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def load_agents_get_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Load  # noqa: E501
+    def load_agent_api_agents_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Load Agent  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.load_agents_get_with_http_info(body, async_req=True)
+        >>> thread = api.load_agent_api_agents_id_get_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param LoadRequest body: (required)
-        :return: AgentConfigResponse
+        :param object id: (required)
+        :return: AgentConfigObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method load_agent_api_agents_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `load_agent_api_agents_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/agents/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AgentConfigObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def upsert_agent_api_agents_post(self, body, **kwargs):  # noqa: E501
+        """Upsert Agent  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upsert_agent_api_agents_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AgentConfigObject body: (required)
+        :return: AgentConfigObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.upsert_agent_api_agents_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.upsert_agent_api_agents_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def upsert_agent_api_agents_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Upsert Agent  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upsert_agent_api_agents_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AgentConfigObject body: (required)
+        :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -261,14 +352,14 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method load_agents_get" % key
+                    " to method upsert_agent_api_agents_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `load_agents_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `upsert_agent_api_agents_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -296,14 +387,14 @@ class AgentsApi(object):
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/agents/', 'GET',
+            '/api/agents/', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentConfigResponse',  # noqa: E501
+            response_type='AgentConfigObject',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

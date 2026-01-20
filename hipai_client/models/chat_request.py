@@ -35,7 +35,8 @@ class ChatRequest(object):
         'graph_id': 'object',
         'llm_config_id': 'object',
         'system': 'object',
-        'model': 'object'
+        'model': 'object',
+        'streaming': 'object'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class ChatRequest(object):
         'graph_id': 'graph_id',
         'llm_config_id': 'llm_config_id',
         'system': 'system',
-        'model': 'model'
+        'model': 'model',
+        'streaming': 'streaming'
     }
 
-    def __init__(self, content=None, id=None, agent_id=None, agent_api_key=None, graph_id=None, llm_config_id=None, system=None, model=None):  # noqa: E501
+    def __init__(self, content=None, id=None, agent_id=None, agent_api_key=None, graph_id=None, llm_config_id=None, system=None, model=None, streaming=None):  # noqa: E501
         """ChatRequest - a model defined in Swagger"""  # noqa: E501
         self._content = None
         self._id = None
@@ -59,6 +61,7 @@ class ChatRequest(object):
         self._llm_config_id = None
         self._system = None
         self._model = None
+        self._streaming = None
         self.discriminator = None
         self.content = content
         if id is not None:
@@ -75,6 +78,8 @@ class ChatRequest(object):
             self.system = system
         if model is not None:
             self.model = model
+        if streaming is not None:
+            self.streaming = streaming
 
     @property
     def content(self):
@@ -245,6 +250,27 @@ class ChatRequest(object):
         """
 
         self._model = model
+
+    @property
+    def streaming(self):
+        """Gets the streaming of this ChatRequest.  # noqa: E501
+
+
+        :return: The streaming of this ChatRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._streaming
+
+    @streaming.setter
+    def streaming(self, streaming):
+        """Sets the streaming of this ChatRequest.
+
+
+        :param streaming: The streaming of this ChatRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._streaming = streaming
 
     def to_dict(self):
         """Returns the model properties as a dict"""

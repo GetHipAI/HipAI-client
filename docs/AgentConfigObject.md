@@ -4,8 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **object** |  | 
-**active** | **object** |  | 
+**status** | **object** |  | 
 **id** | **object** |  | [optional] 
+**updated_at** | **object** |  | [optional] 
+**api_key** | **object** |  | [optional] 
 **llm_config_id** | **object** |  | [optional] 
 **graph_id** | **object** |  | [optional] 
 

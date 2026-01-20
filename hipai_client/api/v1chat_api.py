@@ -32,12 +32,12 @@ class V1chatApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def completions_v1_chat_completions_post(self, body, **kwargs):  # noqa: E501
+    def completions_api_v1_chat_completions_post(self, body, **kwargs):  # noqa: E501
         """Completions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.completions_v1_chat_completions_post(body, async_req=True)
+        >>> thread = api.completions_api_v1_chat_completions_post(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class V1chatApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.completions_v1_chat_completions_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.completions_api_v1_chat_completions_post_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.completions_v1_chat_completions_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.completions_api_v1_chat_completions_post_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def completions_v1_chat_completions_post_with_http_info(self, body, **kwargs):  # noqa: E501
+    def completions_api_v1_chat_completions_post_with_http_info(self, body, **kwargs):  # noqa: E501
         """Completions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.completions_v1_chat_completions_post_with_http_info(body, async_req=True)
+        >>> thread = api.completions_api_v1_chat_completions_post_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class V1chatApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method completions_v1_chat_completions_post" % key
+                    " to method completions_api_v1_chat_completions_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `completions_v1_chat_completions_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `completions_api_v1_chat_completions_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -114,7 +114,7 @@ class V1chatApi(object):
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/v1/chat/completions', 'POST',
+            '/api/v1/chat/completions', 'POST',
             path_params,
             query_params,
             header_params,
