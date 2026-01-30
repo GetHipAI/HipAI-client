@@ -31,36 +31,47 @@ class DataContextObject(object):
         'name': 'object',
         'status': 'object',
         'id': 'object',
+        'group_id': 'object',
         'llm_config_id': 'object',
         'error_message': 'object',
         'config_ids': 'object',
-        'conn_schemas': 'object'
+        'conn_schemas': 'object',
+        'created_at': 'object',
+        'used_by_active_agents': 'object'
     }
 
     attribute_map = {
         'name': 'name',
         'status': 'status',
         'id': 'id',
+        'group_id': 'group_id',
         'llm_config_id': 'llm_config_id',
         'error_message': 'error_message',
         'config_ids': 'config_ids',
-        'conn_schemas': 'conn_schemas'
+        'conn_schemas': 'conn_schemas',
+        'created_at': 'created_at',
+        'used_by_active_agents': 'used_by_active_agents'
     }
 
-    def __init__(self, name=None, status=None, id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None):  # noqa: E501
         """DataContextObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
         self._id = None
+        self._group_id = None
         self._llm_config_id = None
         self._error_message = None
         self._config_ids = None
         self._conn_schemas = None
+        self._created_at = None
+        self._used_by_active_agents = None
         self.discriminator = None
         self.name = name
         self.status = status
         if id is not None:
             self.id = id
+        if group_id is not None:
+            self.group_id = group_id
         if llm_config_id is not None:
             self.llm_config_id = llm_config_id
         if error_message is not None:
@@ -69,6 +80,10 @@ class DataContextObject(object):
             self.config_ids = config_ids
         if conn_schemas is not None:
             self.conn_schemas = conn_schemas
+        if created_at is not None:
+            self.created_at = created_at
+        if used_by_active_agents is not None:
+            self.used_by_active_agents = used_by_active_agents
 
     @property
     def name(self):
@@ -136,6 +151,27 @@ class DataContextObject(object):
         """
 
         self._id = id
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this DataContextObject.  # noqa: E501
+
+
+        :return: The group_id of this DataContextObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this DataContextObject.
+
+
+        :param group_id: The group_id of this DataContextObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     @property
     def llm_config_id(self):
@@ -220,6 +256,48 @@ class DataContextObject(object):
         """
 
         self._conn_schemas = conn_schemas
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this DataContextObject.  # noqa: E501
+
+
+        :return: The created_at of this DataContextObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this DataContextObject.
+
+
+        :param created_at: The created_at of this DataContextObject.  # noqa: E501
+        :type: object
+        """
+
+        self._created_at = created_at
+
+    @property
+    def used_by_active_agents(self):
+        """Gets the used_by_active_agents of this DataContextObject.  # noqa: E501
+
+
+        :return: The used_by_active_agents of this DataContextObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._used_by_active_agents
+
+    @used_by_active_agents.setter
+    def used_by_active_agents(self, used_by_active_agents):
+        """Sets the used_by_active_agents of this DataContextObject.
+
+
+        :param used_by_active_agents: The used_by_active_agents of this DataContextObject.  # noqa: E501
+        :type: object
+        """
+
+        self._used_by_active_agents = used_by_active_agents
 
     def to_dict(self):
         """Returns the model properties as a dict"""

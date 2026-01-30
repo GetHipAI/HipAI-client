@@ -33,7 +33,9 @@ class ModelConfigObject(object):
         'url': 'object',
         'token': 'object',
         'model_name': 'object',
-        'on_prem': 'object'
+        'on_prem': 'object',
+        'used_by_active_agent': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
@@ -42,10 +44,12 @@ class ModelConfigObject(object):
         'url': 'url',
         'token': 'token',
         'model_name': 'model_name',
-        'on_prem': 'on_prem'
+        'on_prem': 'on_prem',
+        'used_by_active_agent': 'used_by_active_agent',
+        'group_id': 'group_id'
     }
 
-    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=None):  # noqa: E501
+    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None):  # noqa: E501
         """ModelConfigObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -53,6 +57,8 @@ class ModelConfigObject(object):
         self._token = None
         self._model_name = None
         self._on_prem = None
+        self._used_by_active_agent = None
+        self._group_id = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -66,6 +72,10 @@ class ModelConfigObject(object):
             self.model_name = model_name
         if on_prem is not None:
             self.on_prem = on_prem
+        if used_by_active_agent is not None:
+            self.used_by_active_agent = used_by_active_agent
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def id(self):
@@ -192,6 +202,48 @@ class ModelConfigObject(object):
         """
 
         self._on_prem = on_prem
+
+    @property
+    def used_by_active_agent(self):
+        """Gets the used_by_active_agent of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The used_by_active_agent of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._used_by_active_agent
+
+    @used_by_active_agent.setter
+    def used_by_active_agent(self, used_by_active_agent):
+        """Sets the used_by_active_agent of this ModelConfigObject.
+
+
+        :param used_by_active_agent: The used_by_active_agent of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._used_by_active_agent = used_by_active_agent
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The group_id of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ModelConfigObject.
+
+
+        :param group_id: The group_id of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

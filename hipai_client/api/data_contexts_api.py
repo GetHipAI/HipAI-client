@@ -42,7 +42,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
-        :return: ApiDataContextsModelsListResponse
+        :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -63,7 +63,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
-        :return: ApiDataContextsModelsListResponse
+        :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -117,7 +117,7 @@ class DataContextsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ApiDataContextsModelsListResponse',  # noqa: E501
+            response_type='ListResponseLogs',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

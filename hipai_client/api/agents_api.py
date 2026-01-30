@@ -127,41 +127,43 @@ class AgentsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_agents_api_agents_list_get(self, **kwargs):  # noqa: E501
+    def list_agents_api_agents_list_post(self, body, **kwargs):  # noqa: E501
         """List Agents  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_agents_api_agents_list_get(async_req=True)
+        >>> thread = api.list_agents_api_agents_list_post(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param GroupRequest body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_agents_api_agents_list_get_with_http_info(**kwargs)  # noqa: E501
+            return self.list_agents_api_agents_list_post_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_agents_api_agents_list_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.list_agents_api_agents_list_post_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def list_agents_api_agents_list_get_with_http_info(self, **kwargs):  # noqa: E501
+    def list_agents_api_agents_list_post_with_http_info(self, body, **kwargs):  # noqa: E501
         """List Agents  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_agents_api_agents_list_get_with_http_info(async_req=True)
+        >>> thread = api.list_agents_api_agents_list_post_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param GroupRequest body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -172,10 +174,14 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_agents_api_agents_list_get" % key
+                    " to method list_agents_api_agents_list_post" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `list_agents_api_agents_list_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -189,15 +195,21 @@ class AgentsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/agents/list', 'GET',
+            '/api/agents/list', 'POST',
             path_params,
             query_params,
             header_params,

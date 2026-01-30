@@ -34,7 +34,8 @@ class AgentConfigObject(object):
         'updated_at': 'object',
         'api_key': 'object',
         'llm_config_id': 'object',
-        'graph_id': 'object'
+        'graph_id': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
@@ -44,10 +45,11 @@ class AgentConfigObject(object):
         'updated_at': 'updated_at',
         'api_key': 'api_key',
         'llm_config_id': 'llm_config_id',
-        'graph_id': 'graph_id'
+        'graph_id': 'graph_id',
+        'group_id': 'group_id'
     }
 
-    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None):  # noqa: E501
         """AgentConfigObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
@@ -56,6 +58,7 @@ class AgentConfigObject(object):
         self._api_key = None
         self._llm_config_id = None
         self._graph_id = None
+        self._group_id = None
         self.discriminator = None
         self.name = name
         self.status = status
@@ -69,6 +72,8 @@ class AgentConfigObject(object):
             self.llm_config_id = llm_config_id
         if graph_id is not None:
             self.graph_id = graph_id
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def name(self):
@@ -220,6 +225,27 @@ class AgentConfigObject(object):
         """
 
         self._graph_id = graph_id
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this AgentConfigObject.  # noqa: E501
+
+
+        :return: The group_id of this AgentConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this AgentConfigObject.
+
+
+        :param group_id: The group_id of this AgentConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

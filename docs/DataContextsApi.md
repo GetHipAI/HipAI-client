@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**upsert_data_context_api_data_contexts_post**](DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 
 # **build_logs_api_data_contexts_logs_id_get**
-> ApiDataContextsModelsListResponse build_logs_api_data_contexts_logs_id_get(id)
+> ListResponseLogs build_logs_api_data_contexts_logs_id_get(id)
 
 Build Logs
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiDataContextsModelsListResponse**](ApiDataContextsModelsListResponse.md)
+[**ListResponseLogs**](ListResponseLogs.md)
 
 ### Authorization
 

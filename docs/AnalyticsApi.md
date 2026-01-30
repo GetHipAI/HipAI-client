@@ -1,15 +1,15 @@
-# hipai_client.V1chatApi
+# hipai_client.AnalyticsApi
 
 All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completions_api_v1_chat_completions_post**](V1chatApi.md#completions_api_v1_chat_completions_post) | **POST** /api/v1/chat/completions | Completions
+[**analytics_query_api_analytics_post**](AnalyticsApi.md#analytics_query_api_analytics_post) | **POST** /api/analytics/ | Analytics Query
 
-# **completions_api_v1_chat_completions_post**
-> ChatCompletion completions_api_v1_chat_completions_post(body)
+# **analytics_query_api_analytics_post**
+> AnalyticsResponse analytics_query_api_analytics_post(body)
 
-Completions
+Analytics Query
 
 ### Example
 ```python
@@ -24,26 +24,26 @@ configuration = hipai_client.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = hipai_client.V1chatApi(hipai_client.ApiClient(configuration))
-body = hipai_client.ChatCompletionRequest() # ChatCompletionRequest | 
+api_instance = hipai_client.AnalyticsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.AnalyticsQuery() # AnalyticsQuery | 
 
 try:
-    # Completions
-    api_response = api_instance.completions_api_v1_chat_completions_post(body)
+    # Analytics Query
+    api_response = api_instance.analytics_query_api_analytics_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling V1chatApi->completions_api_v1_chat_completions_post: %s\n" % e)
+    print("Exception when calling AnalyticsApi->analytics_query_api_analytics_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ChatCompletionRequest**](ChatCompletionRequest.md)|  | 
+ **body** | [**AnalyticsQuery**](AnalyticsQuery.md)|  | 
 
 ### Return type
 
-[**ChatCompletion**](ChatCompletion.md)
+[**AnalyticsResponse**](AnalyticsResponse.md)
 
 ### Authorization
 

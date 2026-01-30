@@ -29,47 +29,67 @@ class ChatCompletionRequest(object):
     """
     swagger_types = {
         'messages': 'object',
-        'llm_config_id': 'object',
         'agent_id': 'object',
         'agent_api_key': 'object',
-        'graph_id': 'object',
-        'extras': 'object',
-        'model': 'object'
+        'group_id': 'object',
+        'model': 'object',
+        'reasoning_effort': 'object',
+        'max_completion_tokens': 'object',
+        'max_tokens': 'object',
+        'top_p': 'object',
+        'temperature': 'object',
+        'frequency_penalty': 'object'
     }
 
     attribute_map = {
         'messages': 'messages',
-        'llm_config_id': 'llm_config_id',
         'agent_id': 'agent_id',
         'agent_api_key': 'agent_api_key',
-        'graph_id': 'graph_id',
-        'extras': 'extras',
-        'model': 'model'
+        'group_id': 'group_id',
+        'model': 'model',
+        'reasoning_effort': 'reasoning_effort',
+        'max_completion_tokens': 'max_completion_tokens',
+        'max_tokens': 'max_tokens',
+        'top_p': 'top_p',
+        'temperature': 'temperature',
+        'frequency_penalty': 'frequency_penalty'
     }
 
-    def __init__(self, messages=None, llm_config_id=None, agent_id=None, agent_api_key=None, graph_id=None, extras=None, model=None):  # noqa: E501
+    def __init__(self, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None):  # noqa: E501
         """ChatCompletionRequest - a model defined in Swagger"""  # noqa: E501
         self._messages = None
-        self._llm_config_id = None
         self._agent_id = None
         self._agent_api_key = None
-        self._graph_id = None
-        self._extras = None
+        self._group_id = None
         self._model = None
+        self._reasoning_effort = None
+        self._max_completion_tokens = None
+        self._max_tokens = None
+        self._top_p = None
+        self._temperature = None
+        self._frequency_penalty = None
         self.discriminator = None
         self.messages = messages
-        if llm_config_id is not None:
-            self.llm_config_id = llm_config_id
         if agent_id is not None:
             self.agent_id = agent_id
         if agent_api_key is not None:
             self.agent_api_key = agent_api_key
-        if graph_id is not None:
-            self.graph_id = graph_id
-        if extras is not None:
-            self.extras = extras
+        if group_id is not None:
+            self.group_id = group_id
         if model is not None:
             self.model = model
+        if reasoning_effort is not None:
+            self.reasoning_effort = reasoning_effort
+        if max_completion_tokens is not None:
+            self.max_completion_tokens = max_completion_tokens
+        if max_tokens is not None:
+            self.max_tokens = max_tokens
+        if top_p is not None:
+            self.top_p = top_p
+        if temperature is not None:
+            self.temperature = temperature
+        if frequency_penalty is not None:
+            self.frequency_penalty = frequency_penalty
 
     @property
     def messages(self):
@@ -93,27 +113,6 @@ class ChatCompletionRequest(object):
             raise ValueError("Invalid value for `messages`, must not be `None`")  # noqa: E501
 
         self._messages = messages
-
-    @property
-    def llm_config_id(self):
-        """Gets the llm_config_id of this ChatCompletionRequest.  # noqa: E501
-
-
-        :return: The llm_config_id of this ChatCompletionRequest.  # noqa: E501
-        :rtype: object
-        """
-        return self._llm_config_id
-
-    @llm_config_id.setter
-    def llm_config_id(self, llm_config_id):
-        """Sets the llm_config_id of this ChatCompletionRequest.
-
-
-        :param llm_config_id: The llm_config_id of this ChatCompletionRequest.  # noqa: E501
-        :type: object
-        """
-
-        self._llm_config_id = llm_config_id
 
     @property
     def agent_id(self):
@@ -158,46 +157,25 @@ class ChatCompletionRequest(object):
         self._agent_api_key = agent_api_key
 
     @property
-    def graph_id(self):
-        """Gets the graph_id of this ChatCompletionRequest.  # noqa: E501
+    def group_id(self):
+        """Gets the group_id of this ChatCompletionRequest.  # noqa: E501
 
 
-        :return: The graph_id of this ChatCompletionRequest.  # noqa: E501
+        :return: The group_id of this ChatCompletionRequest.  # noqa: E501
         :rtype: object
         """
-        return self._graph_id
+        return self._group_id
 
-    @graph_id.setter
-    def graph_id(self, graph_id):
-        """Sets the graph_id of this ChatCompletionRequest.
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ChatCompletionRequest.
 
 
-        :param graph_id: The graph_id of this ChatCompletionRequest.  # noqa: E501
+        :param group_id: The group_id of this ChatCompletionRequest.  # noqa: E501
         :type: object
         """
 
-        self._graph_id = graph_id
-
-    @property
-    def extras(self):
-        """Gets the extras of this ChatCompletionRequest.  # noqa: E501
-
-
-        :return: The extras of this ChatCompletionRequest.  # noqa: E501
-        :rtype: object
-        """
-        return self._extras
-
-    @extras.setter
-    def extras(self, extras):
-        """Sets the extras of this ChatCompletionRequest.
-
-
-        :param extras: The extras of this ChatCompletionRequest.  # noqa: E501
-        :type: object
-        """
-
-        self._extras = extras
+        self._group_id = group_id
 
     @property
     def model(self):
@@ -219,6 +197,132 @@ class ChatCompletionRequest(object):
         """
 
         self._model = model
+
+    @property
+    def reasoning_effort(self):
+        """Gets the reasoning_effort of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The reasoning_effort of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._reasoning_effort
+
+    @reasoning_effort.setter
+    def reasoning_effort(self, reasoning_effort):
+        """Sets the reasoning_effort of this ChatCompletionRequest.
+
+
+        :param reasoning_effort: The reasoning_effort of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._reasoning_effort = reasoning_effort
+
+    @property
+    def max_completion_tokens(self):
+        """Gets the max_completion_tokens of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The max_completion_tokens of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._max_completion_tokens
+
+    @max_completion_tokens.setter
+    def max_completion_tokens(self, max_completion_tokens):
+        """Sets the max_completion_tokens of this ChatCompletionRequest.
+
+
+        :param max_completion_tokens: The max_completion_tokens of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._max_completion_tokens = max_completion_tokens
+
+    @property
+    def max_tokens(self):
+        """Gets the max_tokens of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The max_tokens of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._max_tokens
+
+    @max_tokens.setter
+    def max_tokens(self, max_tokens):
+        """Sets the max_tokens of this ChatCompletionRequest.
+
+
+        :param max_tokens: The max_tokens of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._max_tokens = max_tokens
+
+    @property
+    def top_p(self):
+        """Gets the top_p of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The top_p of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._top_p
+
+    @top_p.setter
+    def top_p(self, top_p):
+        """Sets the top_p of this ChatCompletionRequest.
+
+
+        :param top_p: The top_p of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._top_p = top_p
+
+    @property
+    def temperature(self):
+        """Gets the temperature of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The temperature of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, temperature):
+        """Sets the temperature of this ChatCompletionRequest.
+
+
+        :param temperature: The temperature of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._temperature = temperature
+
+    @property
+    def frequency_penalty(self):
+        """Gets the frequency_penalty of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The frequency_penalty of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._frequency_penalty
+
+    @frequency_penalty.setter
+    def frequency_penalty(self, frequency_penalty):
+        """Sets the frequency_penalty of this ChatCompletionRequest.
+
+
+        :param frequency_penalty: The frequency_penalty of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._frequency_penalty = frequency_penalty
 
     def to_dict(self):
         """Returns the model properties as a dict"""

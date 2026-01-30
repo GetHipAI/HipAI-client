@@ -32,6 +32,7 @@ class ConnectionConfigObject(object):
         'name': 'object',
         'hostname_path': 'object',
         'graph_id': 'object',
+        'group_id': 'object',
         'id': 'object',
         'username': 'object',
         'password': 'object',
@@ -49,6 +50,7 @@ class ConnectionConfigObject(object):
         'name': 'name',
         'hostname_path': 'hostname_path',
         'graph_id': 'graph_id',
+        'group_id': 'group_id',
         'id': 'id',
         'username': 'username',
         'password': 'password',
@@ -61,12 +63,13 @@ class ConnectionConfigObject(object):
         'sf_schema': 'sf_schema'
     }
 
-    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None):  # noqa: E501
+    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None):  # noqa: E501
         """ConnectionConfigObject - a model defined in Swagger"""  # noqa: E501
         self._conn_schema = None
         self._name = None
         self._hostname_path = None
         self._graph_id = None
+        self._group_id = None
         self._id = None
         self._username = None
         self._password = None
@@ -85,6 +88,8 @@ class ConnectionConfigObject(object):
             self.hostname_path = hostname_path
         if graph_id is not None:
             self.graph_id = graph_id
+        if group_id is not None:
+            self.group_id = group_id
         if id is not None:
             self.id = id
         if username is not None:
@@ -191,6 +196,27 @@ class ConnectionConfigObject(object):
         """
 
         self._graph_id = graph_id
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this ConnectionConfigObject.  # noqa: E501
+
+
+        :return: The group_id of this ConnectionConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ConnectionConfigObject.
+
+
+        :param group_id: The group_id of this ConnectionConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     @property
     def id(self):

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **object** |  | [optional] 
 **hostname_path** | **object** |  | [optional] 
 **graph_id** | **object** |  | [optional] 
+**group_id** | **object** |  | [optional] 
 **id** | **object** |  | [optional] 
 **username** | **object** |  | [optional] 
 **password** | **object** |  | [optional] 

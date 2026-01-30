@@ -28,19 +28,24 @@ class ApiConnectionConfigsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ids': 'object'
+        'ids': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
-        'ids': 'ids'
+        'ids': 'ids',
+        'group_id': 'group_id'
     }
 
-    def __init__(self, ids=None):  # noqa: E501
+    def __init__(self, ids=None, group_id=None):  # noqa: E501
         """ApiConnectionConfigsModelsListRequest - a model defined in Swagger"""  # noqa: E501
         self._ids = None
+        self._group_id = None
         self.discriminator = None
         if ids is not None:
             self.ids = ids
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def ids(self):
@@ -62,6 +67,27 @@ class ApiConnectionConfigsModelsListRequest(object):
         """
 
         self._ids = ids
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+
+
+        :return: The group_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ApiConnectionConfigsModelsListRequest.
+
+
+        :param group_id: The group_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

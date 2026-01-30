@@ -28,19 +28,24 @@ class ApiDataContextsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'only_active': 'object'
+        'only_active': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
-        'only_active': 'only_active'
+        'only_active': 'only_active',
+        'group_id': 'group_id'
     }
 
-    def __init__(self, only_active=None):  # noqa: E501
+    def __init__(self, only_active=None, group_id=None):  # noqa: E501
         """ApiDataContextsModelsListRequest - a model defined in Swagger"""  # noqa: E501
         self._only_active = None
+        self._group_id = None
         self.discriminator = None
         if only_active is not None:
             self.only_active = only_active
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def only_active(self):
@@ -62,6 +67,27 @@ class ApiDataContextsModelsListRequest(object):
         """
 
         self._only_active = only_active
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+
+
+        :return: The group_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ApiDataContextsModelsListRequest.
+
+
+        :param group_id: The group_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
