@@ -31,22 +31,25 @@ class EvaluationObject(object):
         'name': 'object',
         'created_at': 'object',
         'updated_at': 'object',
-        'id': 'object'
+        'id': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
         'name': 'name',
         'created_at': 'created_at',
         'updated_at': 'updated_at',
-        'id': 'id'
+        'id': 'id',
+        'group_id': 'group_id'
     }
 
-    def __init__(self, name=None, created_at=None, updated_at=None, id=None):  # noqa: E501
+    def __init__(self, name=None, created_at=None, updated_at=None, id=None, group_id=None):  # noqa: E501
         """EvaluationObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._created_at = None
         self._updated_at = None
         self._id = None
+        self._group_id = None
         self.discriminator = None
         self.name = name
         if created_at is not None:
@@ -55,6 +58,8 @@ class EvaluationObject(object):
             self.updated_at = updated_at
         if id is not None:
             self.id = id
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def name(self):
@@ -141,6 +146,27 @@ class EvaluationObject(object):
         """
 
         self._id = id
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this EvaluationObject.  # noqa: E501
+
+
+        :return: The group_id of this EvaluationObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this EvaluationObject.
+
+
+        :param group_id: The group_id of this EvaluationObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

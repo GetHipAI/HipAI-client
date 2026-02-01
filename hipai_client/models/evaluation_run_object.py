@@ -31,6 +31,7 @@ class EvaluationRunObject(object):
         'agent_config_id': 'object',
         'evaluation_id': 'object',
         'id': 'object',
+        'group_id': 'object',
         'status': 'object',
         'start_time': 'object',
         'created_at': 'object',
@@ -45,6 +46,7 @@ class EvaluationRunObject(object):
         'agent_config_id': 'agent_config_id',
         'evaluation_id': 'evaluation_id',
         'id': 'id',
+        'group_id': 'group_id',
         'status': 'status',
         'start_time': 'start_time',
         'created_at': 'created_at',
@@ -55,11 +57,12 @@ class EvaluationRunObject(object):
         'incorrect': 'incorrect'
     }
 
-    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None):  # noqa: E501
+    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, group_id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None):  # noqa: E501
         """EvaluationRunObject - a model defined in Swagger"""  # noqa: E501
         self._agent_config_id = None
         self._evaluation_id = None
         self._id = None
+        self._group_id = None
         self._status = None
         self._start_time = None
         self._created_at = None
@@ -73,6 +76,8 @@ class EvaluationRunObject(object):
         self.evaluation_id = evaluation_id
         if id is not None:
             self.id = id
+        if group_id is not None:
+            self.group_id = group_id
         if status is not None:
             self.status = status
         if start_time is not None:
@@ -156,6 +161,27 @@ class EvaluationRunObject(object):
         """
 
         self._id = id
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this EvaluationRunObject.  # noqa: E501
+
+
+        :return: The group_id of this EvaluationRunObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this EvaluationRunObject.
+
+
+        :param group_id: The group_id of this EvaluationRunObject.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     @property
     def status(self):

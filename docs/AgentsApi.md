@@ -5,7 +5,7 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_agent_api_agents_id_delete**](AgentsApi.md#delete_agent_api_agents_id_delete) | **DELETE** /api/agents/{id} | Delete Agent
-[**list_agents_api_agents_list_get**](AgentsApi.md#list_agents_api_agents_list_get) | **GET** /api/agents/list | List Agents
+[**list_agents_api_agents_list_post**](AgentsApi.md#list_agents_api_agents_list_post) | **POST** /api/agents/list | List Agents
 [**load_agent_api_agents_id_get**](AgentsApi.md#load_agent_api_agents_id_get) | **GET** /api/agents/{id} | Load Agent
 [**upsert_agent_api_agents_post**](AgentsApi.md#upsert_agent_api_agents_post) | **POST** /api/agents/ | Upsert Agent
 
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_agents_api_agents_list_get**
-> ApiAgentsModelsListResponse list_agents_api_agents_list_get()
+# **list_agents_api_agents_list_post**
+> ApiAgentsModelsListResponse list_agents_api_agents_list_post(body)
 
 List Agents
 
@@ -80,17 +80,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.GroupRequest() # GroupRequest | 
 
 try:
     # List Agents
-    api_response = api_instance.list_agents_api_agents_list_get()
+    api_response = api_instance.list_agents_api_agents_list_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AgentsApi->list_agents_api_agents_list_get: %s\n" % e)
+    print("Exception when calling AgentsApi->list_agents_api_agents_list_post: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
@@ -102,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

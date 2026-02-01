@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_evaluation_api_evaluations_id_delete**](EvaluationsApi.md#delete_evaluation_api_evaluations_id_delete) | **DELETE** /api/evaluations/{id} | Delete Evaluation
 [**delete_question_api_evaluations_questions_id_delete**](EvaluationsApi.md#delete_question_api_evaluations_questions_id_delete) | **DELETE** /api/evaluations/questions/{id} | Delete Question
-[**list_evaluations_api_evaluations_list_get**](EvaluationsApi.md#list_evaluations_api_evaluations_list_get) | **GET** /api/evaluations/list | List Evaluations
+[**list_evaluations_api_evaluations_list_post**](EvaluationsApi.md#list_evaluations_api_evaluations_list_post) | **POST** /api/evaluations/list | List Evaluations
 [**list_questions_api_evaluations_questions_id_get**](EvaluationsApi.md#list_questions_api_evaluations_questions_id_get) | **GET** /api/evaluations/questions/{id} | List Questions
 [**list_responses_api_evaluations_responses_id_get**](EvaluationsApi.md#list_responses_api_evaluations_responses_id_get) | **GET** /api/evaluations/responses/{id} | List Responses
-[**list_runs_api_evaluations_runs_get**](EvaluationsApi.md#list_runs_api_evaluations_runs_get) | **GET** /api/evaluations/runs | List Runs
+[**list_runs_api_evaluations_runs_post**](EvaluationsApi.md#list_runs_api_evaluations_runs_post) | **POST** /api/evaluations/runs | List Runs
 [**run_evaluation_api_evaluations_run_post**](EvaluationsApi.md#run_evaluation_api_evaluations_run_post) | **POST** /api/evaluations/run | Run Evaluation
 [**upsert_evaluation_api_evaluations_post**](EvaluationsApi.md#upsert_evaluation_api_evaluations_post) | **POST** /api/evaluations/ | Upsert Evaluation
 [**upsert_question_api_evaluations_question_post**](EvaluationsApi.md#upsert_question_api_evaluations_question_post) | **POST** /api/evaluations/question | Upsert Question
@@ -114,8 +114,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_evaluations_api_evaluations_list_get**
-> ApiEvaluationsModelsListResponse list_evaluations_api_evaluations_list_get()
+# **list_evaluations_api_evaluations_list_post**
+> ApiEvaluationsModelsListResponse list_evaluations_api_evaluations_list_post(body)
 
 List Evaluations
 
@@ -133,17 +133,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.GroupRequest() # GroupRequest | 
 
 try:
     # List Evaluations
-    api_response = api_instance.list_evaluations_api_evaluations_list_get()
+    api_response = api_instance.list_evaluations_api_evaluations_list_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling EvaluationsApi->list_evaluations_api_evaluations_list_get: %s\n" % e)
+    print("Exception when calling EvaluationsApi->list_evaluations_api_evaluations_list_post: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
@@ -155,7 +159,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -260,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_runs_api_evaluations_runs_get**
-> ApiEvaluationsModelsListResponse list_runs_api_evaluations_runs_get()
+# **list_runs_api_evaluations_runs_post**
+> ApiEvaluationsModelsListResponse list_runs_api_evaluations_runs_post(body)
 
 List Runs
 
@@ -279,17 +283,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.GroupRequest() # GroupRequest | 
 
 try:
     # List Runs
-    api_response = api_instance.list_runs_api_evaluations_runs_get()
+    api_response = api_instance.list_runs_api_evaluations_runs_post(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling EvaluationsApi->list_runs_api_evaluations_runs_get: %s\n" % e)
+    print("Exception when calling EvaluationsApi->list_runs_api_evaluations_runs_post: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GroupRequest**](GroupRequest.md)|  | 
 
 ### Return type
 
@@ -301,7 +309,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

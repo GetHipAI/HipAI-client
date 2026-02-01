@@ -30,23 +30,28 @@ class EvaluationUpsert(object):
     swagger_types = {
         'name': 'object',
         'questions': 'object',
+        'group_id': 'object',
         'id': 'object'
     }
 
     attribute_map = {
         'name': 'name',
         'questions': 'questions',
+        'group_id': 'group_id',
         'id': 'id'
     }
 
-    def __init__(self, name=None, questions=None, id=None):  # noqa: E501
+    def __init__(self, name=None, questions=None, group_id=None, id=None):  # noqa: E501
         """EvaluationUpsert - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._questions = None
+        self._group_id = None
         self._id = None
         self.discriminator = None
         self.name = name
         self.questions = questions
+        if group_id is not None:
+            self.group_id = group_id
         if id is not None:
             self.id = id
 
@@ -95,6 +100,27 @@ class EvaluationUpsert(object):
             raise ValueError("Invalid value for `questions`, must not be `None`")  # noqa: E501
 
         self._questions = questions
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this EvaluationUpsert.  # noqa: E501
+
+
+        :return: The group_id of this EvaluationUpsert.  # noqa: E501
+        :rtype: object
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this EvaluationUpsert.
+
+
+        :param group_id: The group_id of this EvaluationUpsert.  # noqa: E501
+        :type: object
+        """
+
+        self._group_id = group_id
 
     @property
     def id(self):

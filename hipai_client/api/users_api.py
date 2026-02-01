@@ -32,6 +32,176 @@ class UsersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def generate_replacement_api_key_api_users_api_keys_generate_replacement_post(self, **kwargs):  # noqa: E501
+        """Generate Replacement Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.generate_replacement_api_key_api_users_api_keys_generate_replacement_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.generate_replacement_api_key_api_users_api_keys_generate_replacement_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.generate_replacement_api_key_api_users_api_keys_generate_replacement_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def generate_replacement_api_key_api_users_api_keys_generate_replacement_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Generate Replacement Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.generate_replacement_api_key_api_users_api_keys_generate_replacement_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method generate_replacement_api_key_api_users_api_keys_generate_replacement_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/users/api-keys/generate-replacement', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UserAPIKeys',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_api_key_api_users_api_keys_get(self, **kwargs):  # noqa: E501
+        """Get Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_api_key_api_users_api_keys_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_api_key_api_users_api_keys_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_api_key_api_users_api_keys_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_api_key_api_users_api_keys_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_api_key_api_users_api_keys_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_api_key_api_users_api_keys_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/users/api-keys', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UserAPIKeys',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_current_user_api_users_get(self, **kwargs):  # noqa: E501
         """Get Current User  # noqa: E501
 
@@ -112,6 +282,91 @@ class UsersApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='UserPublic',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def replace_api_key_api_users_api_keys_replace_post(self, **kwargs):  # noqa: E501
+        """Replace Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_api_key_api_users_api_keys_replace_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.replace_api_key_api_users_api_keys_replace_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.replace_api_key_api_users_api_keys_replace_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def replace_api_key_api_users_api_keys_replace_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Replace Api Key  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_api_key_api_users_api_keys_replace_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: UserAPIKeys
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_api_key_api_users_api_keys_replace_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/users/api-keys/replace', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UserAPIKeys',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

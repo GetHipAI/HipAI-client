@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **agent_config_id** | **object** |  | 
 **evaluation_id** | **object** |  | 
 **id** | **object** |  | [optional] 
+**group_id** | **object** |  | [optional] 
 **status** | **object** |  | [optional] 
 **start_time** | **object** |  | [optional] 
 **created_at** | **object** |  | [optional] 
