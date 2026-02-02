@@ -18,7 +18,6 @@ from multiprocessing.pool import ApplyResult
 import hipai_client
 import json
 import requests
-import secrets
 
 DEFAULT_PRODUCTION_API_HOST = "https://api.gethip.ai"
 
