@@ -26,6 +26,11 @@ Then import the package:
 import hipai_client 
 ```
 
+To install the latest release you may run:
+```sh
+pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1-beta.1
+```
+
 ### Setuptools
 
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
