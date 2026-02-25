@@ -30,7 +30,6 @@ class ResponseObject(object):
     swagger_types = {
         'id': 'object',
         'response': 'object',
-        'explanation': 'object',
         'evaluation_question_id': 'object',
         'context_token_usage': 'object',
         'generative_token_usage': 'object',
@@ -43,7 +42,6 @@ class ResponseObject(object):
     attribute_map = {
         'id': 'id',
         'response': 'response',
-        'explanation': 'explanation',
         'evaluation_question_id': 'evaluation_question_id',
         'context_token_usage': 'context_token_usage',
         'generative_token_usage': 'generative_token_usage',
@@ -53,11 +51,10 @@ class ResponseObject(object):
         'answer': 'answer'
     }
 
-    def __init__(self, id=None, response=None, explanation=None, evaluation_question_id=None, context_token_usage=None, generative_token_usage=None, response_time=None, correct=None, question=None, answer=None):  # noqa: E501
+    def __init__(self, id=None, response=None, evaluation_question_id=None, context_token_usage=None, generative_token_usage=None, response_time=None, correct=None, question=None, answer=None):  # noqa: E501
         """ResponseObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._response = None
-        self._explanation = None
         self._evaluation_question_id = None
         self._context_token_usage = None
         self._generative_token_usage = None
@@ -68,7 +65,6 @@ class ResponseObject(object):
         self.discriminator = None
         self.id = id
         self.response = response
-        self.explanation = explanation
         self.evaluation_question_id = evaluation_question_id
         self.context_token_usage = context_token_usage
         self.generative_token_usage = generative_token_usage
@@ -124,29 +120,6 @@ class ResponseObject(object):
             raise ValueError("Invalid value for `response`, must not be `None`")  # noqa: E501
 
         self._response = response
-
-    @property
-    def explanation(self):
-        """Gets the explanation of this ResponseObject.  # noqa: E501
-
-
-        :return: The explanation of this ResponseObject.  # noqa: E501
-        :rtype: object
-        """
-        return self._explanation
-
-    @explanation.setter
-    def explanation(self, explanation):
-        """Sets the explanation of this ResponseObject.
-
-
-        :param explanation: The explanation of this ResponseObject.  # noqa: E501
-        :type: object
-        """
-        if explanation is None:
-            raise ValueError("Invalid value for `explanation`, must not be `None`")  # noqa: E501
-
-        self._explanation = explanation
 
     @property
     def evaluation_question_id(self):

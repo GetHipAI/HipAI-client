@@ -55,8 +55,10 @@ class UserPublic(object):
         self._permission_group = None
         self.discriminator = None
         self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
+        if first_name is not None:
+            self.first_name = first_name
+        if last_name is not None:
+            self.last_name = last_name
         if profile_image_url is not None:
             self.profile_image_url = profile_image_url
         if id is not None:
@@ -105,8 +107,6 @@ class UserPublic(object):
         :param first_name: The first_name of this UserPublic.  # noqa: E501
         :type: object
         """
-        if first_name is None:
-            raise ValueError("Invalid value for `first_name`, must not be `None`")  # noqa: E501
 
         self._first_name = first_name
 
@@ -128,8 +128,6 @@ class UserPublic(object):
         :param last_name: The last_name of this UserPublic.  # noqa: E501
         :type: object
         """
-        if last_name is None:
-            raise ValueError("Invalid value for `last_name`, must not be `None`")  # noqa: E501
 
         self._last_name = last_name
 

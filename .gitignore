@@ -63,5 +63,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-# jetbrains IDE meta
 .idea
+.idea/*
+.idea/*/**

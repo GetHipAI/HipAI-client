@@ -29,20 +29,25 @@ class CompanyObject(object):
     """
     swagger_types = {
         'name': 'object',
+        'rules': 'object',
         'id': 'object'
     }
 
     attribute_map = {
         'name': 'name',
+        'rules': 'rules',
         'id': 'id'
     }
 
-    def __init__(self, name=None, id=None):  # noqa: E501
+    def __init__(self, name=None, rules=None, id=None):  # noqa: E501
         """CompanyObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
+        self._rules = None
         self._id = None
         self.discriminator = None
         self.name = name
+        if rules is not None:
+            self.rules = rules
         if id is not None:
             self.id = id
 
@@ -68,6 +73,27 @@ class CompanyObject(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def rules(self):
+        """Gets the rules of this CompanyObject.  # noqa: E501
+
+
+        :return: The rules of this CompanyObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._rules
+
+    @rules.setter
+    def rules(self, rules):
+        """Sets the rules of this CompanyObject.
+
+
+        :param rules: The rules of this CompanyObject.  # noqa: E501
+        :type: object
+        """
+
+        self._rules = rules
 
     @property
     def id(self):

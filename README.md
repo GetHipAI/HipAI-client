@@ -134,14 +134,17 @@ Class | Method | HTTP request | Description
 *ConnectionConfigsApi* | [**list_connection_configs_api_connection_configs_list_post**](docs/ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 *ConnectionConfigsApi* | [**list_documents_api_connection_configs_documents_id_get**](docs/ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
 *ConnectionConfigsApi* | [**load_connection_config_api_connection_configs_id_get**](docs/ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
+*ConnectionConfigsApi* | [**test_connection_api_connection_configs_test_connection_post**](docs/ConnectionConfigsApi.md#test_connection_api_connection_configs_test_connection_post) | **POST** /api/connection-configs/test-connection | Test Connection
 *ConnectionConfigsApi* | [**upsert_connection_config_api_connection_configs_post**](docs/ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 *DataContextsApi* | [**build_logs_api_data_contexts_logs_id_get**](docs/DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
 *DataContextsApi* | [**delete_data_context_api_data_contexts_id_delete**](docs/DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+*DataContextsApi* | [**get_build_options_api_data_contexts_build_options_id_get**](docs/DataContextsApi.md#get_build_options_api_data_contexts_build_options_id_get) | **GET** /api/data-contexts/build-options/{id} | Get Build Options
 *DataContextsApi* | [**list_data_contexts_api_data_contexts_list_post**](docs/DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
 *DataContextsApi* | [**load_data_context_api_data_contexts_id_get**](docs/DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
 *DataContextsApi* | [**load_graph_api_data_contexts_graph_id_get**](docs/DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
 *DataContextsApi* | [**upsert_data_context_api_data_contexts_post**](docs/DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 *DefaultApi* | [**ping_ping_get**](docs/DefaultApi.md#ping_ping_get) | **GET** /ping | Ping
+*EvaluationsApi* | [**archive_evaluation_run_api_evaluations_runs_run_id_archive_patch**](docs/EvaluationsApi.md#archive_evaluation_run_api_evaluations_runs_run_id_archive_patch) | **PATCH** /api/evaluations/runs/{run_id}/archive | Archive Evaluation Run
 *EvaluationsApi* | [**delete_evaluation_api_evaluations_id_delete**](docs/EvaluationsApi.md#delete_evaluation_api_evaluations_id_delete) | **DELETE** /api/evaluations/{id} | Delete Evaluation
 *EvaluationsApi* | [**delete_question_api_evaluations_questions_id_delete**](docs/EvaluationsApi.md#delete_question_api_evaluations_questions_id_delete) | **DELETE** /api/evaluations/questions/{id} | Delete Question
 *EvaluationsApi* | [**list_evaluations_api_evaluations_list_post**](docs/EvaluationsApi.md#list_evaluations_api_evaluations_list_post) | **POST** /api/evaluations/list | List Evaluations
@@ -154,8 +157,12 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**delete_group_api_groups_id_delete**](docs/GroupsApi.md#delete_group_api_groups_id_delete) | **DELETE** /api/groups/{id} | Delete Group
 *GroupsApi* | [**list_groups_api_groups_list_get**](docs/GroupsApi.md#list_groups_api_groups_list_get) | **GET** /api/groups/list | List Groups
 *GroupsApi* | [**upsert_group_api_groups_post**](docs/GroupsApi.md#upsert_group_api_groups_post) | **POST** /api/groups/ | Upsert Group
+*LoginApi* | [**forgot_password_auth_forgot_password_post**](docs/LoginApi.md#forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Forgot Password
 *LoginApi* | [**login_access_token_login_access_token_post**](docs/LoginApi.md#login_access_token_login_access_token_post) | **POST** /login/access-token | Login Access Token
 *LoginApi* | [**login_google_login_google_post**](docs/LoginApi.md#login_google_login_google_post) | **POST** /login/google | Login Google
+*LoginApi* | [**request_access_auth_request_access_post**](docs/LoginApi.md#request_access_auth_request_access_post) | **POST** /auth/request-access | Request Access
+*LoginApi* | [**reset_password_auth_reset_password_post**](docs/LoginApi.md#reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset Password
+*LoginApi* | [**verify_reset_token_auth_verify_reset_token_token_get**](docs/LoginApi.md#verify_reset_token_auth_verify_reset_token_token_get) | **GET** /auth/verify-reset-token/{token} | Verify Reset Token
 *ModelConfigsApi* | [**delete_model_config_api_model_configs_id_delete**](docs/ModelConfigsApi.md#delete_model_config_api_model_configs_id_delete) | **DELETE** /api/model-configs/{id} | Delete Model Config
 *ModelConfigsApi* | [**list_model_configs_api_model_configs_list_post**](docs/ModelConfigsApi.md#list_model_configs_api_model_configs_list_post) | **POST** /api/model-configs/list | List Model Configs
 *ModelConfigsApi* | [**upsert_model_config_api_model_configs_post**](docs/ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
@@ -188,6 +195,7 @@ Class | Method | HTTP request | Description
  - [ApiModelConfigModelsListResponse](docs/ApiModelConfigModelsListResponse.md)
  - [BodyDocumentUploadApiConnectionConfigsDocumentUploadPost](docs/BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.md)
  - [BodyLoginAccessTokenLoginAccessTokenPost](docs/BodyLoginAccessTokenLoginAccessTokenPost.md)
+ - [BuildOptionsObject](docs/BuildOptionsObject.md)
  - [ChatCompletion](docs/ChatCompletion.md)
  - [ChatCompletionAudio](docs/ChatCompletionAudio.md)
  - [ChatCompletionMessage](docs/ChatCompletionMessage.md)
@@ -208,6 +216,7 @@ Class | Method | HTTP request | Description
  - [EvaluationObject](docs/EvaluationObject.md)
  - [EvaluationRunObject](docs/EvaluationRunObject.md)
  - [EvaluationUpsert](docs/EvaluationUpsert.md)
+ - [ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [Function](docs/Function.md)
  - [FunctionCall](docs/FunctionCall.md)
  - [GoogleLoginRequest](docs/GoogleLoginRequest.md)
@@ -223,7 +232,9 @@ Class | Method | HTTP request | Description
  - [NodeObject](docs/NodeObject.md)
  - [PromptTokensDetails](docs/PromptTokensDetails.md)
  - [QuestionObject](docs/QuestionObject.md)
+ - [RequestAccessRequest](docs/RequestAccessRequest.md)
  - [RequestsSample](docs/RequestsSample.md)
+ - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [ResponseObject](docs/ResponseObject.md)
  - [ResponseTimeSample](docs/ResponseTimeSample.md)
  - [Token](docs/Token.md)

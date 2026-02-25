@@ -32,6 +32,101 @@ class EvaluationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def archive_evaluation_run_api_evaluations_runs_run_id_archive_patch(self, run_id, **kwargs):  # noqa: E501
+        """Archive Evaluation Run  # noqa: E501
+
+        Archive a single evaluation run.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.archive_evaluation_run_api_evaluations_runs_run_id_archive_patch(run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object run_id: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.archive_evaluation_run_api_evaluations_runs_run_id_archive_patch_with_http_info(run_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.archive_evaluation_run_api_evaluations_runs_run_id_archive_patch_with_http_info(run_id, **kwargs)  # noqa: E501
+            return data
+
+    def archive_evaluation_run_api_evaluations_runs_run_id_archive_patch_with_http_info(self, run_id, **kwargs):  # noqa: E501
+        """Archive Evaluation Run  # noqa: E501
+
+        Archive a single evaluation run.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.archive_evaluation_run_api_evaluations_runs_run_id_archive_patch_with_http_info(run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param object run_id: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['run_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method archive_evaluation_run_api_evaluations_runs_run_id_archive_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'run_id' is set
+        if ('run_id' not in params or
+                params['run_id'] is None):
+            raise ValueError("Missing the required parameter `run_id` when calling `archive_evaluation_run_api_evaluations_runs_run_id_archive_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'run_id' in params:
+            path_params['run_id'] = params['run_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['OAuth2PasswordBearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/evaluations/runs/{run_id}/archive', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_evaluation_api_evaluations_id_delete(self, id, **kwargs):  # noqa: E501
         """Delete Evaluation  # noqa: E501
 
@@ -511,6 +606,7 @@ class EvaluationsApi(object):
 
         :param async_req bool
         :param GroupRequest body: (required)
+        :param object include_archived:
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -532,12 +628,13 @@ class EvaluationsApi(object):
 
         :param async_req bool
         :param GroupRequest body: (required)
+        :param object include_archived:
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['body', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -562,6 +659,8 @@ class EvaluationsApi(object):
         path_params = {}
 
         query_params = []
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 

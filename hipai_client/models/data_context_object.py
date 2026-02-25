@@ -37,7 +37,8 @@ class DataContextObject(object):
         'config_ids': 'object',
         'conn_schemas': 'object',
         'created_at': 'object',
-        'used_by_active_agents': 'object'
+        'used_by_active_agents': 'object',
+        'build_options': 'object'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class DataContextObject(object):
         'config_ids': 'config_ids',
         'conn_schemas': 'conn_schemas',
         'created_at': 'created_at',
-        'used_by_active_agents': 'used_by_active_agents'
+        'used_by_active_agents': 'used_by_active_agents',
+        'build_options': 'build_options'
     }
 
-    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, build_options=None):  # noqa: E501
         """DataContextObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
@@ -65,6 +67,7 @@ class DataContextObject(object):
         self._conn_schemas = None
         self._created_at = None
         self._used_by_active_agents = None
+        self._build_options = None
         self.discriminator = None
         self.name = name
         self.status = status
@@ -84,6 +87,8 @@ class DataContextObject(object):
             self.created_at = created_at
         if used_by_active_agents is not None:
             self.used_by_active_agents = used_by_active_agents
+        if build_options is not None:
+            self.build_options = build_options
 
     @property
     def name(self):
@@ -298,6 +303,27 @@ class DataContextObject(object):
         """
 
         self._used_by_active_agents = used_by_active_agents
+
+    @property
+    def build_options(self):
+        """Gets the build_options of this DataContextObject.  # noqa: E501
+
+
+        :return: The build_options of this DataContextObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._build_options
+
+    @build_options.setter
+    def build_options(self, build_options):
+        """Sets the build_options of this DataContextObject.
+
+
+        :param build_options: The build_options of this DataContextObject.  # noqa: E501
+        :type: object
+        """
+
+        self._build_options = build_options
 
     def to_dict(self):
         """Returns the model properties as a dict"""
