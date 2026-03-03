@@ -63,7 +63,7 @@ class ConnectionConfigObject(object):
         'sf_schema': 'sf_schema'
     }
 
-    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None):  # noqa: E501
+    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, *args, **kwargs):  # noqa: E501
         """ConnectionConfigObject - a model defined in Swagger"""  # noqa: E501
         self._conn_schema = None
         self._name = None

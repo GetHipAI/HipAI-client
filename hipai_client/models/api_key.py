@@ -37,7 +37,7 @@ class APIKey(object):
         'last_used': 'last_used'
     }
 
-    def __init__(self, key=None, last_used=None):  # noqa: E501
+    def __init__(self, key=None, last_used=None, *args, **kwargs):  # noqa: E501
         """APIKey - a model defined in Swagger"""  # noqa: E501
         self._key = None
         self._last_used = None

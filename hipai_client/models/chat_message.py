@@ -43,7 +43,7 @@ class ChatMessage(object):
         'tool_calls': 'tool_calls'
     }
 
-    def __init__(self, role=None, content=None, reasoning_content=None, tool_call_id=None, tool_calls=None):  # noqa: E501
+    def __init__(self, role=None, content=None, reasoning_content=None, tool_call_id=None, tool_calls=None, *args, **kwargs):  # noqa: E501
         """ChatMessage - a model defined in Swagger"""  # noqa: E501
         self._role = None
         self._content = None

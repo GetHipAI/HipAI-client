@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **on_prem** | **object** |  | [optional] 
 **used_by_active_agent** | **object** |  | [optional] 
 **group_id** | **object** |  | [optional] 
+**client_type** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

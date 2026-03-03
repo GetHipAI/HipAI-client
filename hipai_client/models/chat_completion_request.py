@@ -38,7 +38,8 @@ class ChatCompletionRequest(object):
         'max_tokens': 'object',
         'top_p': 'object',
         'temperature': 'object',
-        'frequency_penalty': 'object'
+        'frequency_penalty': 'object',
+        'direct_citations': 'object'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class ChatCompletionRequest(object):
         'max_tokens': 'max_tokens',
         'top_p': 'top_p',
         'temperature': 'temperature',
-        'frequency_penalty': 'frequency_penalty'
+        'frequency_penalty': 'frequency_penalty',
+        'direct_citations': 'direct_citations'
     }
 
-    def __init__(self, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None):  # noqa: E501
+    def __init__(self, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None, direct_citations=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionRequest - a model defined in Swagger"""  # noqa: E501
         self._messages = None
         self._agent_id = None
@@ -68,6 +70,7 @@ class ChatCompletionRequest(object):
         self._top_p = None
         self._temperature = None
         self._frequency_penalty = None
+        self._direct_citations = None
         self.discriminator = None
         self.messages = messages
         if agent_id is not None:
@@ -90,6 +93,8 @@ class ChatCompletionRequest(object):
             self.temperature = temperature
         if frequency_penalty is not None:
             self.frequency_penalty = frequency_penalty
+        if direct_citations is not None:
+            self.direct_citations = direct_citations
 
     @property
     def messages(self):
@@ -323,6 +328,27 @@ class ChatCompletionRequest(object):
         """
 
         self._frequency_penalty = frequency_penalty
+
+    @property
+    def direct_citations(self):
+        """Gets the direct_citations of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The direct_citations of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._direct_citations
+
+    @direct_citations.setter
+    def direct_citations(self, direct_citations):
+        """Sets the direct_citations of this ChatCompletionRequest.
+
+
+        :param direct_citations: The direct_citations of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._direct_citations = direct_citations
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -37,7 +37,7 @@ class GraphObject(object):
         'edges': 'edges'
     }
 
-    def __init__(self, nodes=None, edges=None):  # noqa: E501
+    def __init__(self, nodes=None, edges=None, *args, **kwargs):  # noqa: E501
         """GraphObject - a model defined in Swagger"""  # noqa: E501
         self._nodes = None
         self._edges = None

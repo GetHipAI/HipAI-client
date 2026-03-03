@@ -37,7 +37,7 @@ class FunctionCall(object):
         'name': 'name'
     }
 
-    def __init__(self, arguments=None, name=None):  # noqa: E501
+    def __init__(self, arguments=None, name=None, *args, **kwargs):  # noqa: E501
         """FunctionCall - a model defined in Swagger"""  # noqa: E501
         self._arguments = None
         self._name = None

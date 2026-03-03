@@ -45,7 +45,7 @@ class TokensSample(object):
         'total': 'total'
     }
 
-    def __init__(self, _date=None, cached=None, input=None, output=None, response=None, total=None):  # noqa: E501
+    def __init__(self, _date=None, cached=None, input=None, output=None, response=None, total=None, *args, **kwargs):  # noqa: E501
         """TokensSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._cached = None

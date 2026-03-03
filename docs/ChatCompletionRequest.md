@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **top_p** | **object** |  | [optional] 
 **temperature** | **object** |  | [optional] 
 **frequency_penalty** | **object** |  | [optional] 
+**direct_citations** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

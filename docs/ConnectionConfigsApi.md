@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**list_connection_configs_api_connection_configs_list_post**](ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 [**list_documents_api_connection_configs_documents_id_get**](ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
 [**load_connection_config_api_connection_configs_id_get**](ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
+[**test_connection_api_connection_configs_test_connection_post**](ConnectionConfigsApi.md#test_connection_api_connection_configs_test_connection_post) | **POST** /api/connection-configs/test-connection | Test Connection
 [**upsert_connection_config_api_connection_configs_post**](ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 
 # **delete_connection_config_api_connection_configs_id_delete**
@@ -361,6 +362,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **test_connection_api_connection_configs_test_connection_post**
+> Message test_connection_api_connection_configs_test_connection_post(body)
+
+Test Connection
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.ConnectionConfigObject() # ConnectionConfigObject | 
+
+try:
+    # Test Connection
+    api_response = api_instance.test_connection_api_connection_configs_test_connection_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConnectionConfigsApi->test_connection_api_connection_configs_test_connection_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ConnectionConfigObject**](ConnectionConfigObject.md)|  | 
+
+### Return type
+
+[**Message**](Message.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

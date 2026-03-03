@@ -37,7 +37,7 @@ class Token(object):
         'token_type': 'token_type'
     }
 
-    def __init__(self, access_token=None, token_type=None):  # noqa: E501
+    def __init__(self, access_token=None, token_type=None, *args, **kwargs):  # noqa: E501
         """Token - a model defined in Swagger"""  # noqa: E501
         self._access_token = None
         self._token_type = None

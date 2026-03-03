@@ -37,7 +37,7 @@ class ApiConnectionConfigsModelsListResponse(object):
         'count': 'count'
     }
 
-    def __init__(self, data=None, count=None):  # noqa: E501
+    def __init__(self, data=None, count=None, *args, **kwargs):  # noqa: E501
         """ApiConnectionConfigsModelsListResponse - a model defined in Swagger"""  # noqa: E501
         self._data = None
         self._count = None

@@ -35,7 +35,7 @@ class Message(object):
         'message': 'message'
     }
 
-    def __init__(self, message=None):  # noqa: E501
+    def __init__(self, message=None, *args, **kwargs):  # noqa: E501
         """Message - a model defined in Swagger"""  # noqa: E501
         self._message = None
         self.discriminator = None

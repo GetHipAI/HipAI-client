@@ -43,7 +43,7 @@ class AnalyticsQuery(object):
         'all': 'all'
     }
 
-    def __init__(self, days=None, tz_offset=None, agent_config_id=None, llm_config_id=None, all=None):  # noqa: E501
+    def __init__(self, days=None, tz_offset=None, agent_config_id=None, llm_config_id=None, all=None, *args, **kwargs):  # noqa: E501
         """AnalyticsQuery - a model defined in Swagger"""  # noqa: E501
         self._days = None
         self._tz_offset = None

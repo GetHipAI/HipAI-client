@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **conn_schemas** | **object** |  | [optional] 
 **created_at** | **object** |  | [optional] 
 **used_by_active_agents** | **object** |  | [optional] 
+**build_options** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -35,7 +35,7 @@ class GoogleLoginRequest(object):
         'credential': 'credential'
     }
 
-    def __init__(self, credential=None):  # noqa: E501
+    def __init__(self, credential=None, *args, **kwargs):  # noqa: E501
         """GoogleLoginRequest - a model defined in Swagger"""  # noqa: E501
         self._credential = None
         self.discriminator = None

@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **object** |  | 
 **response** | **object** |  | 
-**explanation** | **object** |  | 
 **evaluation_question_id** | **object** |  | 
 **context_token_usage** | **object** |  | 
 **generative_token_usage** | **object** |  | 

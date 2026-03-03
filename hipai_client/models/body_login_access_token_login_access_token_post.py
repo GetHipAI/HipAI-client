@@ -45,7 +45,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
         'client_secret': 'client_secret'
     }
 
-    def __init__(self, grant_type=None, username=None, password=None, scope=None, client_id=None, client_secret=None):  # noqa: E501
+    def __init__(self, grant_type=None, username=None, password=None, scope=None, client_id=None, client_secret=None, *args, **kwargs):  # noqa: E501
         """BodyLoginAccessTokenLoginAccessTokenPost - a model defined in Swagger"""  # noqa: E501
         self._grant_type = None
         self._username = None

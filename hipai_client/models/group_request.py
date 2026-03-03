@@ -35,7 +35,7 @@ class GroupRequest(object):
         'group_id': 'group_id'
     }
 
-    def __init__(self, group_id=None):  # noqa: E501
+    def __init__(self, group_id=None, *args, **kwargs):  # noqa: E501
         """GroupRequest - a model defined in Swagger"""  # noqa: E501
         self._group_id = None
         self.discriminator = None

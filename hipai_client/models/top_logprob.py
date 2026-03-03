@@ -39,7 +39,7 @@ class TopLogprob(object):
         'logprob': 'logprob'
     }
 
-    def __init__(self, token=None, bytes=None, logprob=None):  # noqa: E501
+    def __init__(self, token=None, bytes=None, logprob=None, *args, **kwargs):  # noqa: E501
         """TopLogprob - a model defined in Swagger"""  # noqa: E501
         self._token = None
         self._bytes = None

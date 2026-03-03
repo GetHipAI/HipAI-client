@@ -49,7 +49,7 @@ class ChatCompletion(object):
         'usage': 'usage'
     }
 
-    def __init__(self, id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None):  # noqa: E501
+    def __init__(self, id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, *args, **kwargs):  # noqa: E501
         """ChatCompletion - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._choices = None

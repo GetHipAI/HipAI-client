@@ -49,6 +49,7 @@ from hipai_client.models.api_groups_models_list_response import ApiGroupsModelsL
 from hipai_client.models.api_model_config_models_list_response import ApiModelConfigModelsListResponse
 from hipai_client.models.body_document_upload_api_connection_configs_document_upload_post import BodyDocumentUploadApiConnectionConfigsDocumentUploadPost
 from hipai_client.models.body_login_access_token_login_access_token_post import BodyLoginAccessTokenLoginAccessTokenPost
+from hipai_client.models.build_options_object import BuildOptionsObject
 from hipai_client.models.chat_completion import ChatCompletion
 from hipai_client.models.chat_completion_audio import ChatCompletionAudio
 from hipai_client.models.chat_completion_message import ChatCompletionMessage
@@ -69,6 +70,7 @@ from hipai_client.models.edge_object import EdgeObject
 from hipai_client.models.evaluation_object import EvaluationObject
 from hipai_client.models.evaluation_run_object import EvaluationRunObject
 from hipai_client.models.evaluation_upsert import EvaluationUpsert
+from hipai_client.models.forgot_password_request import ForgotPasswordRequest
 from hipai_client.models.function import Function
 from hipai_client.models.function_call import FunctionCall
 from hipai_client.models.google_login_request import GoogleLoginRequest
@@ -84,7 +86,9 @@ from hipai_client.models.model_config_object import ModelConfigObject
 from hipai_client.models.node_object import NodeObject
 from hipai_client.models.prompt_tokens_details import PromptTokensDetails
 from hipai_client.models.question_object import QuestionObject
+from hipai_client.models.request_access_request import RequestAccessRequest
 from hipai_client.models.requests_sample import RequestsSample
+from hipai_client.models.reset_password_request import ResetPasswordRequest
 from hipai_client.models.response_object import ResponseObject
 from hipai_client.models.response_time_sample import ResponseTimeSample
 from hipai_client.models.token import Token
@@ -93,4 +97,3 @@ from hipai_client.models.top_logprob import TopLogprob
 from hipai_client.models.user_api_keys import UserAPIKeys
 from hipai_client.models.user_public import UserPublic
 from hipai_client.models.validation_error import ValidationError
-from hipai_client.simple_client import SimpleHipAIClient

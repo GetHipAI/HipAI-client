@@ -41,7 +41,7 @@ class ChatCompletionTokenLogprob(object):
         'top_logprobs': 'top_logprobs'
     }
 
-    def __init__(self, token=None, bytes=None, logprob=None, top_logprobs=None):  # noqa: E501
+    def __init__(self, token=None, bytes=None, logprob=None, top_logprobs=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionTokenLogprob - a model defined in Swagger"""  # noqa: E501
         self._token = None
         self._bytes = None

@@ -43,7 +43,7 @@ class EvaluationObject(object):
         'group_id': 'group_id'
     }
 
-    def __init__(self, name=None, created_at=None, updated_at=None, id=None, group_id=None):  # noqa: E501
+    def __init__(self, name=None, created_at=None, updated_at=None, id=None, group_id=None, *args, **kwargs):  # noqa: E501
         """EvaluationObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._created_at = None

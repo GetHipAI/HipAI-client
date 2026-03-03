@@ -37,7 +37,7 @@ class PromptTokensDetails(object):
         'cached_tokens': 'cached_tokens'
     }
 
-    def __init__(self, audio_tokens=None, cached_tokens=None):  # noqa: E501
+    def __init__(self, audio_tokens=None, cached_tokens=None, *args, **kwargs):  # noqa: E501
         """PromptTokensDetails - a model defined in Swagger"""  # noqa: E501
         self._audio_tokens = None
         self._cached_tokens = None

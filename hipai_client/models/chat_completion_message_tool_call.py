@@ -39,7 +39,7 @@ class ChatCompletionMessageToolCall(object):
         'type': 'type'
     }
 
-    def __init__(self, id=None, function=None, type=None):  # noqa: E501
+    def __init__(self, id=None, function=None, type=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionMessageToolCall - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._function = None

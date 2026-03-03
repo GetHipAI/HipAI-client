@@ -37,7 +37,7 @@ class RequestsSample(object):
         'requests': 'requests'
     }
 
-    def __init__(self, _date=None, requests=None):  # noqa: E501
+    def __init__(self, _date=None, requests=None, *args, **kwargs):  # noqa: E501
         """RequestsSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._requests = None

@@ -39,7 +39,7 @@ class NodeObject(object):
         'description': 'description'
     }
 
-    def __init__(self, id=None, name=None, description=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, *args, **kwargs):  # noqa: E501
         """NodeObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None

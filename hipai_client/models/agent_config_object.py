@@ -35,7 +35,8 @@ class AgentConfigObject(object):
         'api_key': 'object',
         'llm_config_id': 'object',
         'graph_id': 'object',
-        'group_id': 'object'
+        'group_id': 'object',
+        'direct_citations': 'object'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class AgentConfigObject(object):
         'api_key': 'api_key',
         'llm_config_id': 'llm_config_id',
         'graph_id': 'graph_id',
-        'group_id': 'group_id'
+        'group_id': 'group_id',
+        'direct_citations': 'direct_citations'
     }
 
-    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None, **kwargs):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None, direct_citations=None, *args, **kwargs):  # noqa: E501
         """AgentConfigObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
@@ -59,6 +61,7 @@ class AgentConfigObject(object):
         self._llm_config_id = None
         self._graph_id = None
         self._group_id = None
+        self._direct_citations = None
         self.discriminator = None
         self.name = name
         self.status = status
@@ -74,6 +77,8 @@ class AgentConfigObject(object):
             self.graph_id = graph_id
         if group_id is not None:
             self.group_id = group_id
+        if direct_citations is not None:
+            self.direct_citations = direct_citations
 
     @property
     def name(self):
@@ -246,6 +251,27 @@ class AgentConfigObject(object):
         """
 
         self._group_id = group_id
+
+    @property
+    def direct_citations(self):
+        """Gets the direct_citations of this AgentConfigObject.  # noqa: E501
+
+
+        :return: The direct_citations of this AgentConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._direct_citations
+
+    @direct_citations.setter
+    def direct_citations(self, direct_citations):
+        """Sets the direct_citations of this AgentConfigObject.
+
+
+        :param direct_citations: The direct_citations of this AgentConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._direct_citations = direct_citations
 
     def to_dict(self):
         """Returns the model properties as a dict"""

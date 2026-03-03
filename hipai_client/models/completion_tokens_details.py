@@ -41,7 +41,7 @@ class CompletionTokensDetails(object):
         'rejected_prediction_tokens': 'rejected_prediction_tokens'
     }
 
-    def __init__(self, accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None):  # noqa: E501
+    def __init__(self, accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, *args, **kwargs):  # noqa: E501
         """CompletionTokensDetails - a model defined in Swagger"""  # noqa: E501
         self._accepted_prediction_tokens = None
         self._audio_tokens = None

@@ -37,7 +37,7 @@ class ResponseTimeSample(object):
         'mean_response_time': 'mean_response_time'
     }
 
-    def __init__(self, _date=None, mean_response_time=None):  # noqa: E501
+    def __init__(self, _date=None, mean_response_time=None, *args, **kwargs):  # noqa: E501
         """ResponseTimeSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._mean_response_time = None

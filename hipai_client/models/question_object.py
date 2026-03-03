@@ -43,7 +43,7 @@ class QuestionObject(object):
         'evaluation_id': 'evaluation_id'
     }
 
-    def __init__(self, index=None, question=None, answer=None, id=None, evaluation_id=None):  # noqa: E501
+    def __init__(self, index=None, question=None, answer=None, id=None, evaluation_id=None, *args, **kwargs):  # noqa: E501
         """QuestionObject - a model defined in Swagger"""  # noqa: E501
         self._index = None
         self._question = None

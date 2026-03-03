@@ -37,7 +37,7 @@ class ChoiceLogprobs(object):
         'refusal': 'refusal'
     }
 
-    def __init__(self, content=None, refusal=None):  # noqa: E501
+    def __init__(self, content=None, refusal=None, *args, **kwargs):  # noqa: E501
         """ChoiceLogprobs - a model defined in Swagger"""  # noqa: E501
         self._content = None
         self._refusal = None

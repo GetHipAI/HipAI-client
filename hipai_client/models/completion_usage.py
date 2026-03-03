@@ -43,7 +43,7 @@ class CompletionUsage(object):
         'prompt_tokens_details': 'prompt_tokens_details'
     }
 
-    def __init__(self, completion_tokens=None, prompt_tokens=None, total_tokens=None, completion_tokens_details=None, prompt_tokens_details=None):  # noqa: E501
+    def __init__(self, completion_tokens=None, prompt_tokens=None, total_tokens=None, completion_tokens_details=None, prompt_tokens_details=None, *args, **kwargs):  # noqa: E501
         """CompletionUsage - a model defined in Swagger"""  # noqa: E501
         self._completion_tokens = None
         self._prompt_tokens = None

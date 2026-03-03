@@ -39,7 +39,7 @@ class ValidationError(object):
         'type': 'type'
     }
 
-    def __init__(self, loc=None, msg=None, type=None):  # noqa: E501
+    def __init__(self, loc=None, msg=None, type=None, *args, **kwargs):  # noqa: E501
         """ValidationError - a model defined in Swagger"""  # noqa: E501
         self._loc = None
         self._msg = None

@@ -37,7 +37,7 @@ class Annotation(object):
         'url_citation': 'url_citation'
     }
 
-    def __init__(self, type=None, url_citation=None):  # noqa: E501
+    def __init__(self, type=None, url_citation=None, *args, **kwargs):  # noqa: E501
         """Annotation - a model defined in Swagger"""  # noqa: E501
         self._type = None
         self._url_citation = None

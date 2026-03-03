@@ -35,7 +35,7 @@ class HTTPValidationError(object):
         'detail': 'detail'
     }
 
-    def __init__(self, detail=None):  # noqa: E501
+    def __init__(self, detail=None, *args, **kwargs):  # noqa: E501
         """HTTPValidationError - a model defined in Swagger"""  # noqa: E501
         self._detail = None
         self.discriminator = None

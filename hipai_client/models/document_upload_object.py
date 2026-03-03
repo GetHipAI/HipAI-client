@@ -39,7 +39,7 @@ class DocumentUploadObject(object):
         'valid': 'valid'
     }
 
-    def __init__(self, name=None, id=None, valid=None):  # noqa: E501
+    def __init__(self, name=None, id=None, valid=None, *args, **kwargs):  # noqa: E501
         """DocumentUploadObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._id = None

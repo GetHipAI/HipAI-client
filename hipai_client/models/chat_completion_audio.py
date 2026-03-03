@@ -41,7 +41,7 @@ class ChatCompletionAudio(object):
         'transcript': 'transcript'
     }
 
-    def __init__(self, id=None, data=None, expires_at=None, transcript=None):  # noqa: E501
+    def __init__(self, id=None, data=None, expires_at=None, transcript=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionAudio - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._data = None

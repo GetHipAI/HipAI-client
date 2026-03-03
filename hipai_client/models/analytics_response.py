@@ -47,7 +47,7 @@ class AnalyticsResponse(object):
         'response_times': 'response_times'
     }
 
-    def __init__(self, total_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None):  # noqa: E501
+    def __init__(self, total_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None, *args, **kwargs):  # noqa: E501
         """AnalyticsResponse - a model defined in Swagger"""  # noqa: E501
         self._total_tokens = None
         self._total_tokens_build = None

@@ -43,7 +43,7 @@ class LimitObject(object):
         'remaining': 'remaining'
     }
 
-    def __init__(self, has_limit=None, limit=None, start_time=None, end_time=None, remaining=None):  # noqa: E501
+    def __init__(self, has_limit=None, limit=None, start_time=None, end_time=None, remaining=None, *args, **kwargs):  # noqa: E501
         """LimitObject - a model defined in Swagger"""  # noqa: E501
         self._has_limit = None
         self._limit = None

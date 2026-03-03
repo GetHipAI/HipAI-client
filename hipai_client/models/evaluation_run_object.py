@@ -57,7 +57,7 @@ class EvaluationRunObject(object):
         'incorrect': 'incorrect'
     }
 
-    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, group_id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None):  # noqa: E501
+    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, group_id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None, *args, **kwargs):  # noqa: E501
         """EvaluationRunObject - a model defined in Swagger"""  # noqa: E501
         self._agent_config_id = None
         self._evaluation_id = None

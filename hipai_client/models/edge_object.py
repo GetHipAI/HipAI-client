@@ -43,7 +43,7 @@ class EdgeObject(object):
         'description': 'description'
     }
 
-    def __init__(self, id=None, parent_id=None, child_id=None, label=None, description=None):  # noqa: E501
+    def __init__(self, id=None, parent_id=None, child_id=None, label=None, description=None, *args, **kwargs):  # noqa: E501
         """EdgeObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._parent_id = None

@@ -37,7 +37,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
         'file': 'file'
     }
 
-    def __init__(self, request=None, file=None):  # noqa: E501
+    def __init__(self, request=None, file=None, *args, **kwargs):  # noqa: E501
         """BodyDocumentUploadApiConnectionConfigsDocumentUploadPost - a model defined in Swagger"""  # noqa: E501
         self._request = None
         self._file = None

@@ -41,7 +41,7 @@ class Choice(object):
         'message': 'message'
     }
 
-    def __init__(self, finish_reason=None, index=None, logprobs=None, message=None):  # noqa: E501
+    def __init__(self, finish_reason=None, index=None, logprobs=None, message=None, *args, **kwargs):  # noqa: E501
         """Choice - a model defined in Swagger"""  # noqa: E501
         self._finish_reason = None
         self._index = None
