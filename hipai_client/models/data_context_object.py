@@ -53,7 +53,7 @@ class DataContextObject(object):
         'used_by_active_agents': 'used_by_active_agents'
     }
 
-    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, **kwargs):  # noqa: E501
         """DataContextObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None

@@ -47,7 +47,7 @@ class AgentConfigResponse(object):
         'graph_id': 'graph_id'
     }
 
-    def __init__(self, id=None, api_key=None, name=None, active=None, updated_at=None, llm_config_id=None, graph_id=None):  # noqa: E501
+    def __init__(self, id=None, api_key=None, name=None, active=None, updated_at=None, llm_config_id=None, graph_id=None, **kwargs):  # noqa: E501
         """AgentConfigResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._api_key = None

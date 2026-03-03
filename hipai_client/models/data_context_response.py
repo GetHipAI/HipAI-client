@@ -45,7 +45,7 @@ class DataContextResponse(object):
         'config': 'config'
     }
 
-    def __init__(self, id=None, name=None, ready=None, conn_schema=None, error_message=None, config=None):  # noqa: E501
+    def __init__(self, id=None, name=None, ready=None, conn_schema=None, error_message=None, config=None, **kwargs):  # noqa: E501
         """DataContextResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
