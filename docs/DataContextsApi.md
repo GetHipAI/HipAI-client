@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**build_logs_api_data_contexts_logs_id_get**](DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
 [**delete_data_context_api_data_contexts_id_delete**](DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+[**get_build_options_api_data_contexts_build_options_id_get**](DataContextsApi.md#get_build_options_api_data_contexts_build_options_id_get) | **GET** /api/data-contexts/build-options/{id} | Get Build Options
 [**list_data_contexts_api_data_contexts_list_post**](DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
 [**load_data_context_api_data_contexts_id_get**](DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
 [**load_graph_api_data_contexts_graph_id_get**](DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
@@ -30,7 +31,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Build Logs
@@ -44,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -80,7 +81,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Delete Data Context
@@ -94,11 +95,63 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
 [**Message**](Message.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_build_options_api_data_contexts_build_options_id_get**
+> BuildOptionsObject get_build_options_api_data_contexts_build_options_id_get(id, group_id=group_id)
+
+Get Build Options
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+group_id = hipai_client.GroupId() # GroupId |  (optional)
+
+try:
+    # Get Build Options
+    api_response = api_instance.get_build_options_api_data_contexts_build_options_id_get(id, group_id=group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataContextsApi->get_build_options_api_data_contexts_build_options_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**str**](.md)|  | 
+ **group_id** | [**GroupId**](.md)|  | [optional] 
+
+### Return type
+
+[**BuildOptionsObject**](BuildOptionsObject.md)
 
 ### Authorization
 
@@ -180,7 +233,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Load Data Context
@@ -194,7 +247,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -230,7 +283,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = hipai_client.Id() # Id | 
 
 try:
     # Load Graph
@@ -244,7 +297,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**Id**](.md)|  | 
 
 ### Return type
 

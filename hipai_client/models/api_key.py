@@ -28,8 +28,8 @@ class APIKey(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key': 'object',
-        'last_used': 'object'
+        'key': 'str',
+        'last_used': 'AnyOfAPIKeyLastUsed'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class APIKey(object):
         'last_used': 'last_used'
     }
 
-    def __init__(self, key=None, last_used=None):  # noqa: E501
+    def __init__(self, key=None, last_used=None, *args, **kwargs):  # noqa: E501
         """APIKey - a model defined in Swagger"""  # noqa: E501
         self._key = None
         self._last_used = None
@@ -52,7 +52,7 @@ class APIKey(object):
 
 
         :return: The key of this APIKey.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._key
 
@@ -62,7 +62,7 @@ class APIKey(object):
 
 
         :param key: The key of this APIKey.  # noqa: E501
-        :type: object
+        :type: str
         """
         if key is None:
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -75,7 +75,7 @@ class APIKey(object):
 
 
         :return: The last_used of this APIKey.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfAPIKeyLastUsed
         """
         return self._last_used
 
@@ -85,7 +85,7 @@ class APIKey(object):
 
 
         :param last_used: The last_used of this APIKey.  # noqa: E501
-        :type: object
+        :type: AnyOfAPIKeyLastUsed
         """
 
         self._last_used = last_used

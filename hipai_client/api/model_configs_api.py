@@ -41,7 +41,7 @@ class ModelConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class ModelConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -135,7 +135,7 @@ class ModelConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object body: (required)
+        :param Request body: (required)
         :return: ApiModelConfigModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +157,7 @@ class ModelConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object body: (required)
+        :param Request body: (required)
         :return: ApiModelConfigModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.

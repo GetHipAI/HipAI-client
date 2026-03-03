@@ -78,7 +78,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.TeamApi(hipai_client.ApiClient(configuration))
-user_id = NULL # object | 
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Remove Team Member
@@ -92,7 +92,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -130,7 +130,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.TeamApi(hipai_client.ApiClient(configuration))
-user_id = NULL # object | 
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Reset User Password
@@ -144,7 +144,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**object**](.md)|  | 
+ **user_id** | [**str**](.md)|  | 
 
 ### Return type
 

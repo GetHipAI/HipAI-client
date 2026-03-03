@@ -28,16 +28,17 @@ class DataContextObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'object',
-        'status': 'object',
-        'id': 'object',
-        'group_id': 'object',
-        'llm_config_id': 'object',
-        'error_message': 'object',
-        'config_ids': 'object',
-        'conn_schemas': 'object',
-        'created_at': 'object',
-        'used_by_active_agents': 'object'
+        'name': 'str',
+        'status': 'str',
+        'id': 'AnyOfDataContextObjectId',
+        'group_id': 'AnyOfDataContextObjectGroupId',
+        'llm_config_id': 'AnyOfDataContextObjectLlmConfigId',
+        'error_message': 'AnyOfDataContextObjectErrorMessage',
+        'config_ids': 'AnyOfDataContextObjectConfigIds',
+        'conn_schemas': 'AnyOfDataContextObjectConnSchemas',
+        'created_at': 'AnyOfDataContextObjectCreatedAt',
+        'used_by_active_agents': 'AnyOfDataContextObjectUsedByActiveAgents',
+        'build_options': 'AnyOfDataContextObjectBuildOptions'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class DataContextObject(object):
         'config_ids': 'config_ids',
         'conn_schemas': 'conn_schemas',
         'created_at': 'created_at',
-        'used_by_active_agents': 'used_by_active_agents'
+        'used_by_active_agents': 'used_by_active_agents',
+        'build_options': 'build_options'
     }
 
-    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, **kwargs):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, build_options=None, *args, **kwargs):  # noqa: E501
         """DataContextObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
@@ -65,6 +67,7 @@ class DataContextObject(object):
         self._conn_schemas = None
         self._created_at = None
         self._used_by_active_agents = None
+        self._build_options = None
         self.discriminator = None
         self.name = name
         self.status = status
@@ -84,6 +87,8 @@ class DataContextObject(object):
             self.created_at = created_at
         if used_by_active_agents is not None:
             self.used_by_active_agents = used_by_active_agents
+        if build_options is not None:
+            self.build_options = build_options
 
     @property
     def name(self):
@@ -91,7 +96,7 @@ class DataContextObject(object):
 
 
         :return: The name of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._name
 
@@ -101,7 +106,7 @@ class DataContextObject(object):
 
 
         :param name: The name of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -114,7 +119,7 @@ class DataContextObject(object):
 
 
         :return: The status of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._status
 
@@ -124,7 +129,7 @@ class DataContextObject(object):
 
 
         :param status: The status of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if status is None:
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
@@ -137,7 +142,7 @@ class DataContextObject(object):
 
 
         :return: The id of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectId
         """
         return self._id
 
@@ -147,7 +152,7 @@ class DataContextObject(object):
 
 
         :param id: The id of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectId
         """
 
         self._id = id
@@ -158,7 +163,7 @@ class DataContextObject(object):
 
 
         :return: The group_id of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectGroupId
         """
         return self._group_id
 
@@ -168,7 +173,7 @@ class DataContextObject(object):
 
 
         :param group_id: The group_id of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectGroupId
         """
 
         self._group_id = group_id
@@ -179,7 +184,7 @@ class DataContextObject(object):
 
 
         :return: The llm_config_id of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectLlmConfigId
         """
         return self._llm_config_id
 
@@ -189,7 +194,7 @@ class DataContextObject(object):
 
 
         :param llm_config_id: The llm_config_id of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectLlmConfigId
         """
 
         self._llm_config_id = llm_config_id
@@ -200,7 +205,7 @@ class DataContextObject(object):
 
 
         :return: The error_message of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectErrorMessage
         """
         return self._error_message
 
@@ -210,7 +215,7 @@ class DataContextObject(object):
 
 
         :param error_message: The error_message of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectErrorMessage
         """
 
         self._error_message = error_message
@@ -221,7 +226,7 @@ class DataContextObject(object):
 
 
         :return: The config_ids of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectConfigIds
         """
         return self._config_ids
 
@@ -231,7 +236,7 @@ class DataContextObject(object):
 
 
         :param config_ids: The config_ids of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectConfigIds
         """
 
         self._config_ids = config_ids
@@ -242,7 +247,7 @@ class DataContextObject(object):
 
 
         :return: The conn_schemas of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectConnSchemas
         """
         return self._conn_schemas
 
@@ -252,7 +257,7 @@ class DataContextObject(object):
 
 
         :param conn_schemas: The conn_schemas of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectConnSchemas
         """
 
         self._conn_schemas = conn_schemas
@@ -263,7 +268,7 @@ class DataContextObject(object):
 
 
         :return: The created_at of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectCreatedAt
         """
         return self._created_at
 
@@ -273,7 +278,7 @@ class DataContextObject(object):
 
 
         :param created_at: The created_at of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectCreatedAt
         """
 
         self._created_at = created_at
@@ -284,7 +289,7 @@ class DataContextObject(object):
 
 
         :return: The used_by_active_agents of this DataContextObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfDataContextObjectUsedByActiveAgents
         """
         return self._used_by_active_agents
 
@@ -294,10 +299,31 @@ class DataContextObject(object):
 
 
         :param used_by_active_agents: The used_by_active_agents of this DataContextObject.  # noqa: E501
-        :type: object
+        :type: AnyOfDataContextObjectUsedByActiveAgents
         """
 
         self._used_by_active_agents = used_by_active_agents
+
+    @property
+    def build_options(self):
+        """Gets the build_options of this DataContextObject.  # noqa: E501
+
+
+        :return: The build_options of this DataContextObject.  # noqa: E501
+        :rtype: AnyOfDataContextObjectBuildOptions
+        """
+        return self._build_options
+
+    @build_options.setter
+    def build_options(self, build_options):
+        """Sets the build_options of this DataContextObject.
+
+
+        :param build_options: The build_options of this DataContextObject.  # noqa: E501
+        :type: AnyOfDataContextObjectBuildOptions
+        """
+
+        self._build_options = build_options
 
     def to_dict(self):
         """Returns the model properties as a dict"""

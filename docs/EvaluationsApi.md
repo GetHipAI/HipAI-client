@@ -4,6 +4,7 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archive_evaluation_run_api_evaluations_runs_run_id_archive_patch**](EvaluationsApi.md#archive_evaluation_run_api_evaluations_runs_run_id_archive_patch) | **PATCH** /api/evaluations/runs/{run_id}/archive | Archive Evaluation Run
 [**delete_evaluation_api_evaluations_id_delete**](EvaluationsApi.md#delete_evaluation_api_evaluations_id_delete) | **DELETE** /api/evaluations/{id} | Delete Evaluation
 [**delete_question_api_evaluations_questions_id_delete**](EvaluationsApi.md#delete_question_api_evaluations_questions_id_delete) | **DELETE** /api/evaluations/questions/{id} | Delete Question
 [**list_evaluations_api_evaluations_list_post**](EvaluationsApi.md#list_evaluations_api_evaluations_list_post) | **POST** /api/evaluations/list | List Evaluations
@@ -13,6 +14,58 @@ Method | HTTP request | Description
 [**run_evaluation_api_evaluations_run_post**](EvaluationsApi.md#run_evaluation_api_evaluations_run_post) | **POST** /api/evaluations/run | Run Evaluation
 [**upsert_evaluation_api_evaluations_post**](EvaluationsApi.md#upsert_evaluation_api_evaluations_post) | **POST** /api/evaluations/ | Upsert Evaluation
 [**upsert_question_api_evaluations_question_post**](EvaluationsApi.md#upsert_question_api_evaluations_question_post) | **POST** /api/evaluations/question | Upsert Question
+
+# **archive_evaluation_run_api_evaluations_runs_run_id_archive_patch**
+> Message archive_evaluation_run_api_evaluations_runs_run_id_archive_patch(run_id)
+
+Archive Evaluation Run
+
+Archive a single evaluation run.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
+run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+
+try:
+    # Archive Evaluation Run
+    api_response = api_instance.archive_evaluation_run_api_evaluations_runs_run_id_archive_patch(run_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EvaluationsApi->archive_evaluation_run_api_evaluations_runs_run_id_archive_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **run_id** | [**str**](.md)|  | 
+
+### Return type
+
+[**Message**](Message.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_evaluation_api_evaluations_id_delete**
 > Message delete_evaluation_api_evaluations_id_delete(id)
@@ -33,7 +86,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Delete Evaluation
@@ -47,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -83,7 +136,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Delete Question
@@ -97,7 +150,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -183,7 +236,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # List Questions
@@ -197,7 +250,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -233,7 +286,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # List Responses
@@ -247,7 +300,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | [**str**](.md)|  | 
 
 ### Return type
 
@@ -265,7 +318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_runs_api_evaluations_runs_post**
-> ApiEvaluationsModelsListResponse list_runs_api_evaluations_runs_post(body)
+> ApiEvaluationsModelsListResponse list_runs_api_evaluations_runs_post(body, include_archived=include_archived)
 
 List Runs
 
@@ -284,10 +337,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
 body = hipai_client.GroupRequest() # GroupRequest | 
+include_archived = false # bool |  (optional) (default to false)
 
 try:
     # List Runs
-    api_response = api_instance.list_runs_api_evaluations_runs_post(body)
+    api_response = api_instance.list_runs_api_evaluations_runs_post(body, include_archived=include_archived)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EvaluationsApi->list_runs_api_evaluations_runs_post: %s\n" % e)
@@ -298,6 +352,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GroupRequest**](GroupRequest.md)|  | 
+ **include_archived** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

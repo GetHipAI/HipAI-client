@@ -28,8 +28,8 @@ class RequestsSample(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'object',
-        'requests': 'object'
+        '_date': 'str',
+        'requests': 'int'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class RequestsSample(object):
         'requests': 'requests'
     }
 
-    def __init__(self, _date=None, requests=None):  # noqa: E501
+    def __init__(self, _date=None, requests=None, *args, **kwargs):  # noqa: E501
         """RequestsSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._requests = None
@@ -51,7 +51,7 @@ class RequestsSample(object):
 
 
         :return: The _date of this RequestsSample.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self.__date
 
@@ -61,7 +61,7 @@ class RequestsSample(object):
 
 
         :param _date: The _date of this RequestsSample.  # noqa: E501
-        :type: object
+        :type: str
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class RequestsSample(object):
 
 
         :return: The requests of this RequestsSample.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._requests
 
@@ -84,7 +84,7 @@ class RequestsSample(object):
 
 
         :param requests: The requests of this RequestsSample.  # noqa: E501
-        :type: object
+        :type: int
         """
         if requests is None:
             raise ValueError("Invalid value for `requests`, must not be `None`")  # noqa: E501

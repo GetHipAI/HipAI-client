@@ -28,22 +28,27 @@ class LogObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'message': 'object',
-        'created_at': 'object'
+        'message': 'str',
+        'created_at': 'datetime',
+        'is_error': 'AnyOfLogObjectIsError'
     }
 
     attribute_map = {
         'message': 'message',
-        'created_at': 'created_at'
+        'created_at': 'created_at',
+        'is_error': 'is_error'
     }
 
-    def __init__(self, message=None, created_at=None):  # noqa: E501
+    def __init__(self, message=None, created_at=None, is_error=None, *args, **kwargs):  # noqa: E501
         """LogObject - a model defined in Swagger"""  # noqa: E501
         self._message = None
         self._created_at = None
+        self._is_error = None
         self.discriminator = None
         self.message = message
         self.created_at = created_at
+        if is_error is not None:
+            self.is_error = is_error
 
     @property
     def message(self):
@@ -51,7 +56,7 @@ class LogObject(object):
 
 
         :return: The message of this LogObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._message
 
@@ -61,7 +66,7 @@ class LogObject(object):
 
 
         :param message: The message of this LogObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if message is None:
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
@@ -74,7 +79,7 @@ class LogObject(object):
 
 
         :return: The created_at of this LogObject.  # noqa: E501
-        :rtype: object
+        :rtype: datetime
         """
         return self._created_at
 
@@ -84,12 +89,33 @@ class LogObject(object):
 
 
         :param created_at: The created_at of this LogObject.  # noqa: E501
-        :type: object
+        :type: datetime
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
 
         self._created_at = created_at
+
+    @property
+    def is_error(self):
+        """Gets the is_error of this LogObject.  # noqa: E501
+
+
+        :return: The is_error of this LogObject.  # noqa: E501
+        :rtype: AnyOfLogObjectIsError
+        """
+        return self._is_error
+
+    @is_error.setter
+    def is_error(self, is_error):
+        """Sets the is_error of this LogObject.
+
+
+        :param is_error: The is_error of this LogObject.  # noqa: E501
+        :type: AnyOfLogObjectIsError
+        """
+
+        self._is_error = is_error
 
     def to_dict(self):
         """Returns the model properties as a dict"""

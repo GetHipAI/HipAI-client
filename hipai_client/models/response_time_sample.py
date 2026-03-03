@@ -28,8 +28,8 @@ class ResponseTimeSample(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'object',
-        'mean_response_time': 'object'
+        '_date': 'str',
+        'mean_response_time': 'float'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class ResponseTimeSample(object):
         'mean_response_time': 'mean_response_time'
     }
 
-    def __init__(self, _date=None, mean_response_time=None):  # noqa: E501
+    def __init__(self, _date=None, mean_response_time=None, *args, **kwargs):  # noqa: E501
         """ResponseTimeSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._mean_response_time = None
@@ -51,7 +51,7 @@ class ResponseTimeSample(object):
 
 
         :return: The _date of this ResponseTimeSample.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self.__date
 
@@ -61,7 +61,7 @@ class ResponseTimeSample(object):
 
 
         :param _date: The _date of this ResponseTimeSample.  # noqa: E501
-        :type: object
+        :type: str
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class ResponseTimeSample(object):
 
 
         :return: The mean_response_time of this ResponseTimeSample.  # noqa: E501
-        :rtype: object
+        :rtype: float
         """
         return self._mean_response_time
 
@@ -84,7 +84,7 @@ class ResponseTimeSample(object):
 
 
         :param mean_response_time: The mean_response_time of this ResponseTimeSample.  # noqa: E501
-        :type: object
+        :type: float
         """
         if mean_response_time is None:
             raise ValueError("Invalid value for `mean_response_time`, must not be `None`")  # noqa: E501

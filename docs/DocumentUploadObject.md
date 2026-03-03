@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **object** |  | 
-**id** | **object** |  | [optional] 
-**valid** | **object** |  | [optional] 
+**name** | **str** |  | 
+**id** | **AnyOfDocumentUploadObjectId** |  | [optional] 
+**valid** | **bool** |  | [optional] [default to True]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

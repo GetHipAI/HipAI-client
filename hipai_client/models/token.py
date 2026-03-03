@@ -28,8 +28,8 @@ class Token(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'access_token': 'object',
-        'token_type': 'object'
+        'access_token': 'str',
+        'token_type': 'str'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class Token(object):
         'token_type': 'token_type'
     }
 
-    def __init__(self, access_token=None, token_type=None):  # noqa: E501
+    def __init__(self, access_token=None, token_type='bearer', *args, **kwargs):  # noqa: E501
         """Token - a model defined in Swagger"""  # noqa: E501
         self._access_token = None
         self._token_type = None
@@ -52,7 +52,7 @@ class Token(object):
 
 
         :return: The access_token of this Token.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._access_token
 
@@ -62,7 +62,7 @@ class Token(object):
 
 
         :param access_token: The access_token of this Token.  # noqa: E501
-        :type: object
+        :type: str
         """
         if access_token is None:
             raise ValueError("Invalid value for `access_token`, must not be `None`")  # noqa: E501
@@ -75,7 +75,7 @@ class Token(object):
 
 
         :return: The token_type of this Token.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._token_type
 
@@ -85,7 +85,7 @@ class Token(object):
 
 
         :param token_type: The token_type of this Token.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._token_type = token_type

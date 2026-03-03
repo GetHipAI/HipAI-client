@@ -28,14 +28,14 @@ class GroupRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group_id': 'object'
+        'group_id': 'AnyOfGroupRequestGroupId'
     }
 
     attribute_map = {
         'group_id': 'group_id'
     }
 
-    def __init__(self, group_id=None):  # noqa: E501
+    def __init__(self, group_id=None, *args, **kwargs):  # noqa: E501
         """GroupRequest - a model defined in Swagger"""  # noqa: E501
         self._group_id = None
         self.discriminator = None
@@ -48,7 +48,7 @@ class GroupRequest(object):
 
 
         :return: The group_id of this GroupRequest.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfGroupRequestGroupId
         """
         return self._group_id
 
@@ -58,7 +58,7 @@ class GroupRequest(object):
 
 
         :param group_id: The group_id of this GroupRequest.  # noqa: E501
-        :type: object
+        :type: AnyOfGroupRequestGroupId
         """
 
         self._group_id = group_id

@@ -42,7 +42,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,7 +64,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -233,7 +233,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -254,7 +254,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param str id: (required)
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.

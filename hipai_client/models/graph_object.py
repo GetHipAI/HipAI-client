@@ -28,8 +28,8 @@ class GraphObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nodes': 'object',
-        'edges': 'object'
+        'nodes': 'AnyOfGraphObjectNodes',
+        'edges': 'AnyOfGraphObjectEdges'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class GraphObject(object):
         'edges': 'edges'
     }
 
-    def __init__(self, nodes=None, edges=None):  # noqa: E501
+    def __init__(self, nodes=None, edges=None, *args, **kwargs):  # noqa: E501
         """GraphObject - a model defined in Swagger"""  # noqa: E501
         self._nodes = None
         self._edges = None
@@ -51,7 +51,7 @@ class GraphObject(object):
 
 
         :return: The nodes of this GraphObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfGraphObjectNodes
         """
         return self._nodes
 
@@ -61,7 +61,7 @@ class GraphObject(object):
 
 
         :param nodes: The nodes of this GraphObject.  # noqa: E501
-        :type: object
+        :type: AnyOfGraphObjectNodes
         """
         if nodes is None:
             raise ValueError("Invalid value for `nodes`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class GraphObject(object):
 
 
         :return: The edges of this GraphObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfGraphObjectEdges
         """
         return self._edges
 
@@ -84,7 +84,7 @@ class GraphObject(object):
 
 
         :param edges: The edges of this GraphObject.  # noqa: E501
-        :type: object
+        :type: AnyOfGraphObjectEdges
         """
         if edges is None:
             raise ValueError("Invalid value for `edges`, must not be `None`")  # noqa: E501

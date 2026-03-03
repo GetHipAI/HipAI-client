@@ -28,12 +28,13 @@ class UserPublic(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'object',
-        'first_name': 'object',
-        'last_name': 'object',
-        'profile_image_url': 'object',
-        'id': 'object',
-        'permission_group': 'object'
+        'email': 'str',
+        'first_name': 'AnyOfUserPublicFirstName',
+        'last_name': 'AnyOfUserPublicLastName',
+        'profile_image_url': 'AnyOfUserPublicProfileImageUrl',
+        'id': 'AnyOfUserPublicId',
+        'permission_group': 'AnyOfUserPublicPermissionGroup',
+        'is_superadmin': 'AnyOfUserPublicIsSuperadmin'
     }
 
     attribute_map = {
@@ -42,10 +43,11 @@ class UserPublic(object):
         'last_name': 'last_name',
         'profile_image_url': 'profile_image_url',
         'id': 'id',
-        'permission_group': 'permission_group'
+        'permission_group': 'permission_group',
+        'is_superadmin': 'is_superadmin'
     }
 
-    def __init__(self, email=None, first_name=None, last_name=None, profile_image_url=None, id=None, permission_group=None):  # noqa: E501
+    def __init__(self, email=None, first_name=None, last_name=None, profile_image_url=None, id=None, permission_group=None, is_superadmin=None, *args, **kwargs):  # noqa: E501
         """UserPublic - a model defined in Swagger"""  # noqa: E501
         self._email = None
         self._first_name = None
@@ -53,16 +55,21 @@ class UserPublic(object):
         self._profile_image_url = None
         self._id = None
         self._permission_group = None
+        self._is_superadmin = None
         self.discriminator = None
         self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
+        if first_name is not None:
+            self.first_name = first_name
+        if last_name is not None:
+            self.last_name = last_name
         if profile_image_url is not None:
             self.profile_image_url = profile_image_url
         if id is not None:
             self.id = id
         if permission_group is not None:
             self.permission_group = permission_group
+        if is_superadmin is not None:
+            self.is_superadmin = is_superadmin
 
     @property
     def email(self):
@@ -70,7 +77,7 @@ class UserPublic(object):
 
 
         :return: The email of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._email
 
@@ -80,7 +87,7 @@ class UserPublic(object):
 
 
         :param email: The email of this UserPublic.  # noqa: E501
-        :type: object
+        :type: str
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
@@ -93,7 +100,7 @@ class UserPublic(object):
 
 
         :return: The first_name of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfUserPublicFirstName
         """
         return self._first_name
 
@@ -103,10 +110,8 @@ class UserPublic(object):
 
 
         :param first_name: The first_name of this UserPublic.  # noqa: E501
-        :type: object
+        :type: AnyOfUserPublicFirstName
         """
-        if first_name is None:
-            raise ValueError("Invalid value for `first_name`, must not be `None`")  # noqa: E501
 
         self._first_name = first_name
 
@@ -116,7 +121,7 @@ class UserPublic(object):
 
 
         :return: The last_name of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfUserPublicLastName
         """
         return self._last_name
 
@@ -126,10 +131,8 @@ class UserPublic(object):
 
 
         :param last_name: The last_name of this UserPublic.  # noqa: E501
-        :type: object
+        :type: AnyOfUserPublicLastName
         """
-        if last_name is None:
-            raise ValueError("Invalid value for `last_name`, must not be `None`")  # noqa: E501
 
         self._last_name = last_name
 
@@ -139,7 +142,7 @@ class UserPublic(object):
 
 
         :return: The profile_image_url of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfUserPublicProfileImageUrl
         """
         return self._profile_image_url
 
@@ -149,7 +152,7 @@ class UserPublic(object):
 
 
         :param profile_image_url: The profile_image_url of this UserPublic.  # noqa: E501
-        :type: object
+        :type: AnyOfUserPublicProfileImageUrl
         """
 
         self._profile_image_url = profile_image_url
@@ -160,7 +163,7 @@ class UserPublic(object):
 
 
         :return: The id of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfUserPublicId
         """
         return self._id
 
@@ -170,7 +173,7 @@ class UserPublic(object):
 
 
         :param id: The id of this UserPublic.  # noqa: E501
-        :type: object
+        :type: AnyOfUserPublicId
         """
 
         self._id = id
@@ -181,7 +184,7 @@ class UserPublic(object):
 
 
         :return: The permission_group of this UserPublic.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfUserPublicPermissionGroup
         """
         return self._permission_group
 
@@ -191,10 +194,31 @@ class UserPublic(object):
 
 
         :param permission_group: The permission_group of this UserPublic.  # noqa: E501
-        :type: object
+        :type: AnyOfUserPublicPermissionGroup
         """
 
         self._permission_group = permission_group
+
+    @property
+    def is_superadmin(self):
+        """Gets the is_superadmin of this UserPublic.  # noqa: E501
+
+
+        :return: The is_superadmin of this UserPublic.  # noqa: E501
+        :rtype: AnyOfUserPublicIsSuperadmin
+        """
+        return self._is_superadmin
+
+    @is_superadmin.setter
+    def is_superadmin(self, is_superadmin):
+        """Sets the is_superadmin of this UserPublic.
+
+
+        :param is_superadmin: The is_superadmin of this UserPublic.  # noqa: E501
+        :type: AnyOfUserPublicIsSuperadmin
+        """
+
+        self._is_superadmin = is_superadmin
 
     def to_dict(self):
         """Returns the model properties as a dict"""

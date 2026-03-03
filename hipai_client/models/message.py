@@ -28,14 +28,14 @@ class Message(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'message': 'object'
+        'message': 'str'
     }
 
     attribute_map = {
         'message': 'message'
     }
 
-    def __init__(self, message=None):  # noqa: E501
+    def __init__(self, message=None, *args, **kwargs):  # noqa: E501
         """Message - a model defined in Swagger"""  # noqa: E501
         self._message = None
         self.discriminator = None
@@ -47,7 +47,7 @@ class Message(object):
 
 
         :return: The message of this Message.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._message
 
@@ -57,7 +57,7 @@ class Message(object):
 
 
         :param message: The message of this Message.  # noqa: E501
-        :type: object
+        :type: str
         """
         if message is None:
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501

@@ -129,7 +129,7 @@ class TeamApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object user_id: (required)
+        :param str user_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -151,7 +151,7 @@ class TeamApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object user_id: (required)
+        :param str user_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -224,7 +224,7 @@ class TeamApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object user_id: (required)
+        :param str user_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -246,7 +246,7 @@ class TeamApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object user_id: (required)
+        :param str user_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.

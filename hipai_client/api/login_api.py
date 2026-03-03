@@ -32,6 +32,105 @@ class LoginApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def forgot_password_auth_forgot_password_post(self, body, **kwargs):  # noqa: E501
+        """Forgot Password  # noqa: E501
+
+        Initiate password reset flow by sending reset email.  Security considerations: - Always returns success to prevent email enumeration attacks - Only sends email if user exists and is not SSO-only - Rate limiting should be added at infrastructure level (API Gateway)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.forgot_password_auth_forgot_password_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ForgotPasswordRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.forgot_password_auth_forgot_password_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.forgot_password_auth_forgot_password_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def forgot_password_auth_forgot_password_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Forgot Password  # noqa: E501
+
+        Initiate password reset flow by sending reset email.  Security considerations: - Always returns success to prevent email enumeration attacks - Only sends email if user exists and is not SSO-only - Rate limiting should be added at infrastructure level (API Gateway)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.forgot_password_auth_forgot_password_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ForgotPasswordRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method forgot_password_auth_forgot_password_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `forgot_password_auth_forgot_password_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/auth/forgot-password', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def login_access_token_login_access_token_post(self, grant_type, username, password, scope, client_id, client_secret, **kwargs):  # noqa: E501
         """Login Access Token  # noqa: E501
 
@@ -43,9 +142,9 @@ class LoginApi(object):
 
         :param async_req bool
         :param object grant_type: (required)
-        :param object username: (required)
-        :param object password: (required)
-        :param object scope: (required)
+        :param str username: (required)
+        :param str password: (required)
+        :param str scope: (required)
         :param object client_id: (required)
         :param object client_secret: (required)
         :return: Token
@@ -70,9 +169,9 @@ class LoginApi(object):
 
         :param async_req bool
         :param object grant_type: (required)
-        :param object username: (required)
-        :param object password: (required)
-        :param object scope: (required)
+        :param str username: (required)
+        :param str password: (required)
+        :param str scope: (required)
         :param object client_id: (required)
         :param object client_secret: (required)
         :return: Token
@@ -263,6 +362,299 @@ class LoginApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Token',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def request_access_auth_request_access_post(self, body, **kwargs):  # noqa: E501
+        """Request Access  # noqa: E501
+
+        Submit a request access form.  Sends an email to request@gethip.ai with the form data. Always returns success to prevent information disclosure.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.request_access_auth_request_access_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RequestAccessRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.request_access_auth_request_access_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.request_access_auth_request_access_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def request_access_auth_request_access_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Request Access  # noqa: E501
+
+        Submit a request access form.  Sends an email to request@gethip.ai with the form data. Always returns success to prevent information disclosure.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.request_access_auth_request_access_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RequestAccessRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method request_access_auth_request_access_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `request_access_auth_request_access_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/auth/request-access', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def reset_password_auth_reset_password_post(self, body, **kwargs):  # noqa: E501
+        """Reset Password  # noqa: E501
+
+        Reset user password using valid token.  Security considerations: - Token must be valid, not expired, and not previously used - Token is single-use only - Password is hashed via custom Password type  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.reset_password_auth_reset_password_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ResetPasswordRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.reset_password_auth_reset_password_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.reset_password_auth_reset_password_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def reset_password_auth_reset_password_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """Reset Password  # noqa: E501
+
+        Reset user password using valid token.  Security considerations: - Token must be valid, not expired, and not previously used - Token is single-use only - Password is hashed via custom Password type  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.reset_password_auth_reset_password_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ResetPasswordRequest body: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method reset_password_auth_reset_password_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `reset_password_auth_reset_password_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/auth/reset-password', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def verify_reset_token_auth_verify_reset_token_token_get(self, token, **kwargs):  # noqa: E501
+        """Verify Reset Token  # noqa: E501
+
+        Verify if a password reset token is valid (frontend can check before showing form).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_reset_token_auth_verify_reset_token_token_get(token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str token: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.verify_reset_token_auth_verify_reset_token_token_get_with_http_info(token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.verify_reset_token_auth_verify_reset_token_token_get_with_http_info(token, **kwargs)  # noqa: E501
+            return data
+
+    def verify_reset_token_auth_verify_reset_token_token_get_with_http_info(self, token, **kwargs):  # noqa: E501
+        """Verify Reset Token  # noqa: E501
+
+        Verify if a password reset token is valid (frontend can check before showing form).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_reset_token_auth_verify_reset_token_token_get_with_http_info(token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str token: (required)
+        :return: Message
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method verify_reset_token_auth_verify_reset_token_token_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'token' is set
+        if ('token' not in params or
+                params['token'] is None):
+            raise ValueError("Missing the required parameter `token` when calling `verify_reset_token_auth_verify_reset_token_token_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'token' in params:
+            path_params['token'] = params['token']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/auth/verify-reset-token/{token}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Message',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

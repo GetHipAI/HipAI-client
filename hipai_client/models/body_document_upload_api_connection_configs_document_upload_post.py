@@ -29,7 +29,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
     """
     swagger_types = {
         'request': 'ConnectionConfigObject',
-        'file': 'object'
+        'file': 'str'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
         'file': 'file'
     }
 
-    def __init__(self, request=None, file=None):  # noqa: E501
+    def __init__(self, request=None, file=None, *args, **kwargs):  # noqa: E501
         """BodyDocumentUploadApiConnectionConfigsDocumentUploadPost - a model defined in Swagger"""  # noqa: E501
         self._request = None
         self._file = None
@@ -74,7 +74,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
 
 
         :return: The file of this BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._file
 
@@ -84,7 +84,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
 
 
         :param file: The file of this BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.  # noqa: E501
-        :type: object
+        :type: str
         """
         if file is None:
             raise ValueError("Invalid value for `file`, must not be `None`")  # noqa: E501

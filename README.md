@@ -28,7 +28,7 @@ import hipai_client
 
 To install the latest release you may run:
 ```sh
-pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1-beta.1
+pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.3
 ```
 
 ### Setuptools
@@ -62,7 +62,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Delete Agent
@@ -92,7 +92,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
 
 try:
     # Load Agent
@@ -139,14 +139,17 @@ Class | Method | HTTP request | Description
 *ConnectionConfigsApi* | [**list_connection_configs_api_connection_configs_list_post**](docs/ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 *ConnectionConfigsApi* | [**list_documents_api_connection_configs_documents_id_get**](docs/ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
 *ConnectionConfigsApi* | [**load_connection_config_api_connection_configs_id_get**](docs/ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
+*ConnectionConfigsApi* | [**test_connection_api_connection_configs_test_connection_post**](docs/ConnectionConfigsApi.md#test_connection_api_connection_configs_test_connection_post) | **POST** /api/connection-configs/test-connection | Test Connection
 *ConnectionConfigsApi* | [**upsert_connection_config_api_connection_configs_post**](docs/ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 *DataContextsApi* | [**build_logs_api_data_contexts_logs_id_get**](docs/DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
 *DataContextsApi* | [**delete_data_context_api_data_contexts_id_delete**](docs/DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+*DataContextsApi* | [**get_build_options_api_data_contexts_build_options_id_get**](docs/DataContextsApi.md#get_build_options_api_data_contexts_build_options_id_get) | **GET** /api/data-contexts/build-options/{id} | Get Build Options
 *DataContextsApi* | [**list_data_contexts_api_data_contexts_list_post**](docs/DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
 *DataContextsApi* | [**load_data_context_api_data_contexts_id_get**](docs/DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
 *DataContextsApi* | [**load_graph_api_data_contexts_graph_id_get**](docs/DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
 *DataContextsApi* | [**upsert_data_context_api_data_contexts_post**](docs/DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 *DefaultApi* | [**ping_ping_get**](docs/DefaultApi.md#ping_ping_get) | **GET** /ping | Ping
+*EvaluationsApi* | [**archive_evaluation_run_api_evaluations_runs_run_id_archive_patch**](docs/EvaluationsApi.md#archive_evaluation_run_api_evaluations_runs_run_id_archive_patch) | **PATCH** /api/evaluations/runs/{run_id}/archive | Archive Evaluation Run
 *EvaluationsApi* | [**delete_evaluation_api_evaluations_id_delete**](docs/EvaluationsApi.md#delete_evaluation_api_evaluations_id_delete) | **DELETE** /api/evaluations/{id} | Delete Evaluation
 *EvaluationsApi* | [**delete_question_api_evaluations_questions_id_delete**](docs/EvaluationsApi.md#delete_question_api_evaluations_questions_id_delete) | **DELETE** /api/evaluations/questions/{id} | Delete Question
 *EvaluationsApi* | [**list_evaluations_api_evaluations_list_post**](docs/EvaluationsApi.md#list_evaluations_api_evaluations_list_post) | **POST** /api/evaluations/list | List Evaluations
@@ -159,8 +162,12 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**delete_group_api_groups_id_delete**](docs/GroupsApi.md#delete_group_api_groups_id_delete) | **DELETE** /api/groups/{id} | Delete Group
 *GroupsApi* | [**list_groups_api_groups_list_get**](docs/GroupsApi.md#list_groups_api_groups_list_get) | **GET** /api/groups/list | List Groups
 *GroupsApi* | [**upsert_group_api_groups_post**](docs/GroupsApi.md#upsert_group_api_groups_post) | **POST** /api/groups/ | Upsert Group
+*LoginApi* | [**forgot_password_auth_forgot_password_post**](docs/LoginApi.md#forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Forgot Password
 *LoginApi* | [**login_access_token_login_access_token_post**](docs/LoginApi.md#login_access_token_login_access_token_post) | **POST** /login/access-token | Login Access Token
 *LoginApi* | [**login_google_login_google_post**](docs/LoginApi.md#login_google_login_google_post) | **POST** /login/google | Login Google
+*LoginApi* | [**request_access_auth_request_access_post**](docs/LoginApi.md#request_access_auth_request_access_post) | **POST** /auth/request-access | Request Access
+*LoginApi* | [**reset_password_auth_reset_password_post**](docs/LoginApi.md#reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset Password
+*LoginApi* | [**verify_reset_token_auth_verify_reset_token_token_get**](docs/LoginApi.md#verify_reset_token_auth_verify_reset_token_token_get) | **GET** /auth/verify-reset-token/{token} | Verify Reset Token
 *ModelConfigsApi* | [**delete_model_config_api_model_configs_id_delete**](docs/ModelConfigsApi.md#delete_model_config_api_model_configs_id_delete) | **DELETE** /api/model-configs/{id} | Delete Model Config
 *ModelConfigsApi* | [**list_model_configs_api_model_configs_list_post**](docs/ModelConfigsApi.md#list_model_configs_api_model_configs_list_post) | **POST** /api/model-configs/list | List Model Configs
 *ModelConfigsApi* | [**upsert_model_config_api_model_configs_post**](docs/ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
@@ -182,6 +189,115 @@ Class | Method | HTTP request | Description
  - [AnalyticsResponse](docs/AnalyticsResponse.md)
  - [Annotation](docs/Annotation.md)
  - [AnnotationURLCitation](docs/AnnotationURLCitation.md)
+ - [AnyOfAPIKeyLastUsed](docs/AnyOfAPIKeyLastUsed.md)
+ - [AnyOfAgentConfigObjectApiKey](docs/AnyOfAgentConfigObjectApiKey.md)
+ - [AnyOfAgentConfigObjectDirectCitations](docs/AnyOfAgentConfigObjectDirectCitations.md)
+ - [AnyOfAgentConfigObjectGraphId](docs/AnyOfAgentConfigObjectGraphId.md)
+ - [AnyOfAgentConfigObjectGroupId](docs/AnyOfAgentConfigObjectGroupId.md)
+ - [AnyOfAgentConfigObjectId](docs/AnyOfAgentConfigObjectId.md)
+ - [AnyOfAgentConfigObjectLlmConfigId](docs/AnyOfAgentConfigObjectLlmConfigId.md)
+ - [AnyOfAgentConfigObjectUpdatedAt](docs/AnyOfAgentConfigObjectUpdatedAt.md)
+ - [AnyOfAnalyticsQueryAgentConfigId](docs/AnyOfAnalyticsQueryAgentConfigId.md)
+ - [AnyOfAnalyticsQueryLlmConfigId](docs/AnyOfAnalyticsQueryLlmConfigId.md)
+ - [AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientId](docs/AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientId.md)
+ - [AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientSecret](docs/AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientSecret.md)
+ - [AnyOfBodyLoginAccessTokenLoginAccessTokenPostGrantType](docs/AnyOfBodyLoginAccessTokenLoginAccessTokenPostGrantType.md)
+ - [AnyOfBuildOptionsObjectEvaluationId](docs/AnyOfBuildOptionsObjectEvaluationId.md)
+ - [AnyOfBuildOptionsObjectFileImportPrompt](docs/AnyOfBuildOptionsObjectFileImportPrompt.md)
+ - [AnyOfBuildOptionsObjectGraphId](docs/AnyOfBuildOptionsObjectGraphId.md)
+ - [AnyOfBuildOptionsObjectGraphStructurePrompt](docs/AnyOfBuildOptionsObjectGraphStructurePrompt.md)
+ - [AnyOfBuildOptionsObjectId](docs/AnyOfBuildOptionsObjectId.md)
+ - [AnyOfBuildOptionsObjectSqlImportPrompt](docs/AnyOfBuildOptionsObjectSqlImportPrompt.md)
+ - [AnyOfChatCompletionRequestAgentApiKey](docs/AnyOfChatCompletionRequestAgentApiKey.md)
+ - [AnyOfChatCompletionRequestAgentId](docs/AnyOfChatCompletionRequestAgentId.md)
+ - [AnyOfChatCompletionRequestDirectCitations](docs/AnyOfChatCompletionRequestDirectCitations.md)
+ - [AnyOfChatCompletionRequestFrequencyPenalty](docs/AnyOfChatCompletionRequestFrequencyPenalty.md)
+ - [AnyOfChatCompletionRequestGroupId](docs/AnyOfChatCompletionRequestGroupId.md)
+ - [AnyOfChatCompletionRequestMaxCompletionTokens](docs/AnyOfChatCompletionRequestMaxCompletionTokens.md)
+ - [AnyOfChatCompletionRequestMaxTokens](docs/AnyOfChatCompletionRequestMaxTokens.md)
+ - [AnyOfChatCompletionRequestModel](docs/AnyOfChatCompletionRequestModel.md)
+ - [AnyOfChatCompletionRequestReasoningEffort](docs/AnyOfChatCompletionRequestReasoningEffort.md)
+ - [AnyOfChatCompletionRequestTemperature](docs/AnyOfChatCompletionRequestTemperature.md)
+ - [AnyOfChatCompletionRequestTopP](docs/AnyOfChatCompletionRequestTopP.md)
+ - [AnyOfChatMessageContent](docs/AnyOfChatMessageContent.md)
+ - [AnyOfChatMessageReasoningContent](docs/AnyOfChatMessageReasoningContent.md)
+ - [AnyOfChatMessageToolCallId](docs/AnyOfChatMessageToolCallId.md)
+ - [AnyOfChatMessageToolCalls](docs/AnyOfChatMessageToolCalls.md)
+ - [AnyOfCompanyObjectId](docs/AnyOfCompanyObjectId.md)
+ - [AnyOfCompanyObjectRules](docs/AnyOfCompanyObjectRules.md)
+ - [AnyOfConnectionConfigObjectAccount](docs/AnyOfConnectionConfigObjectAccount.md)
+ - [AnyOfConnectionConfigObjectDatabase](docs/AnyOfConnectionConfigObjectDatabase.md)
+ - [AnyOfConnectionConfigObjectGraphId](docs/AnyOfConnectionConfigObjectGraphId.md)
+ - [AnyOfConnectionConfigObjectGroupId](docs/AnyOfConnectionConfigObjectGroupId.md)
+ - [AnyOfConnectionConfigObjectHostnamePath](docs/AnyOfConnectionConfigObjectHostnamePath.md)
+ - [AnyOfConnectionConfigObjectId](docs/AnyOfConnectionConfigObjectId.md)
+ - [AnyOfConnectionConfigObjectName](docs/AnyOfConnectionConfigObjectName.md)
+ - [AnyOfConnectionConfigObjectParameters](docs/AnyOfConnectionConfigObjectParameters.md)
+ - [AnyOfConnectionConfigObjectPassword](docs/AnyOfConnectionConfigObjectPassword.md)
+ - [AnyOfConnectionConfigObjectPort](docs/AnyOfConnectionConfigObjectPort.md)
+ - [AnyOfConnectionConfigObjectRole](docs/AnyOfConnectionConfigObjectRole.md)
+ - [AnyOfConnectionConfigObjectSfSchema](docs/AnyOfConnectionConfigObjectSfSchema.md)
+ - [AnyOfConnectionConfigObjectUsername](docs/AnyOfConnectionConfigObjectUsername.md)
+ - [AnyOfConnectionConfigObjectWarehouse](docs/AnyOfConnectionConfigObjectWarehouse.md)
+ - [AnyOfDataContextObjectBuildOptions](docs/AnyOfDataContextObjectBuildOptions.md)
+ - [AnyOfDataContextObjectConfigIds](docs/AnyOfDataContextObjectConfigIds.md)
+ - [AnyOfDataContextObjectConnSchemas](docs/AnyOfDataContextObjectConnSchemas.md)
+ - [AnyOfDataContextObjectCreatedAt](docs/AnyOfDataContextObjectCreatedAt.md)
+ - [AnyOfDataContextObjectErrorMessage](docs/AnyOfDataContextObjectErrorMessage.md)
+ - [AnyOfDataContextObjectGroupId](docs/AnyOfDataContextObjectGroupId.md)
+ - [AnyOfDataContextObjectId](docs/AnyOfDataContextObjectId.md)
+ - [AnyOfDataContextObjectLlmConfigId](docs/AnyOfDataContextObjectLlmConfigId.md)
+ - [AnyOfDataContextObjectUsedByActiveAgents](docs/AnyOfDataContextObjectUsedByActiveAgents.md)
+ - [AnyOfDocumentUploadObjectId](docs/AnyOfDocumentUploadObjectId.md)
+ - [AnyOfEvaluationObjectCreatedAt](docs/AnyOfEvaluationObjectCreatedAt.md)
+ - [AnyOfEvaluationObjectGroupId](docs/AnyOfEvaluationObjectGroupId.md)
+ - [AnyOfEvaluationObjectId](docs/AnyOfEvaluationObjectId.md)
+ - [AnyOfEvaluationObjectUpdatedAt](docs/AnyOfEvaluationObjectUpdatedAt.md)
+ - [AnyOfEvaluationRunObjectAgentName](docs/AnyOfEvaluationRunObjectAgentName.md)
+ - [AnyOfEvaluationRunObjectCorrect](docs/AnyOfEvaluationRunObjectCorrect.md)
+ - [AnyOfEvaluationRunObjectCreatedAt](docs/AnyOfEvaluationRunObjectCreatedAt.md)
+ - [AnyOfEvaluationRunObjectEndTime](docs/AnyOfEvaluationRunObjectEndTime.md)
+ - [AnyOfEvaluationRunObjectGroupId](docs/AnyOfEvaluationRunObjectGroupId.md)
+ - [AnyOfEvaluationRunObjectId](docs/AnyOfEvaluationRunObjectId.md)
+ - [AnyOfEvaluationRunObjectIncorrect](docs/AnyOfEvaluationRunObjectIncorrect.md)
+ - [AnyOfEvaluationRunObjectName](docs/AnyOfEvaluationRunObjectName.md)
+ - [AnyOfEvaluationRunObjectStartTime](docs/AnyOfEvaluationRunObjectStartTime.md)
+ - [AnyOfEvaluationRunObjectStatus](docs/AnyOfEvaluationRunObjectStatus.md)
+ - [AnyOfEvaluationUpsertGroupId](docs/AnyOfEvaluationUpsertGroupId.md)
+ - [AnyOfEvaluationUpsertId](docs/AnyOfEvaluationUpsertId.md)
+ - [AnyOfGraphObjectEdges](docs/AnyOfGraphObjectEdges.md)
+ - [AnyOfGraphObjectNodes](docs/AnyOfGraphObjectNodes.md)
+ - [AnyOfGroupIsolationObjectId](docs/AnyOfGroupIsolationObjectId.md)
+ - [AnyOfGroupRequestGroupId](docs/AnyOfGroupRequestGroupId.md)
+ - [AnyOfLimitObjectEndTime](docs/AnyOfLimitObjectEndTime.md)
+ - [AnyOfLimitObjectLimit](docs/AnyOfLimitObjectLimit.md)
+ - [AnyOfLimitObjectRemaining](docs/AnyOfLimitObjectRemaining.md)
+ - [AnyOfLimitObjectStartTime](docs/AnyOfLimitObjectStartTime.md)
+ - [AnyOfLogObjectIsError](docs/AnyOfLogObjectIsError.md)
+ - [AnyOfModelConfigObjectClientType](docs/AnyOfModelConfigObjectClientType.md)
+ - [AnyOfModelConfigObjectGroupId](docs/AnyOfModelConfigObjectGroupId.md)
+ - [AnyOfModelConfigObjectId](docs/AnyOfModelConfigObjectId.md)
+ - [AnyOfModelConfigObjectModelName](docs/AnyOfModelConfigObjectModelName.md)
+ - [AnyOfModelConfigObjectName](docs/AnyOfModelConfigObjectName.md)
+ - [AnyOfModelConfigObjectToken](docs/AnyOfModelConfigObjectToken.md)
+ - [AnyOfModelConfigObjectUrl](docs/AnyOfModelConfigObjectUrl.md)
+ - [AnyOfModelConfigObjectUsedByActiveAgent](docs/AnyOfModelConfigObjectUsedByActiveAgent.md)
+ - [AnyOfQuestionObjectEvaluationId](docs/AnyOfQuestionObjectEvaluationId.md)
+ - [AnyOfQuestionObjectId](docs/AnyOfQuestionObjectId.md)
+ - [AnyOfResponseObjectAnswer](docs/AnyOfResponseObjectAnswer.md)
+ - [AnyOfResponseObjectQuestion](docs/AnyOfResponseObjectQuestion.md)
+ - [AnyOfUserAPIKeysReplacementKey](docs/AnyOfUserAPIKeysReplacementKey.md)
+ - [AnyOfUserPublicFirstName](docs/AnyOfUserPublicFirstName.md)
+ - [AnyOfUserPublicId](docs/AnyOfUserPublicId.md)
+ - [AnyOfUserPublicIsSuperadmin](docs/AnyOfUserPublicIsSuperadmin.md)
+ - [AnyOfUserPublicLastName](docs/AnyOfUserPublicLastName.md)
+ - [AnyOfUserPublicPermissionGroup](docs/AnyOfUserPublicPermissionGroup.md)
+ - [AnyOfUserPublicProfileImageUrl](docs/AnyOfUserPublicProfileImageUrl.md)
+ - [AnyOfValidationErrorLocItems](docs/AnyOfValidationErrorLocItems.md)
+ - [AnyOfapiConnectionConfigsModelsListRequestGroupId](docs/AnyOfapiConnectionConfigsModelsListRequestGroupId.md)
+ - [AnyOfapiConnectionConfigsModelsListRequestIds](docs/AnyOfapiConnectionConfigsModelsListRequestIds.md)
+ - [AnyOfapiDataContextsModelsListRequestGroupId](docs/AnyOfapiDataContextsModelsListRequestGroupId.md)
+ - [AnyOfapiEvaluationsModelsListResponseDataItems](docs/AnyOfapiEvaluationsModelsListResponseDataItems.md)
  - [ApiAgentsModelsListResponse](docs/ApiAgentsModelsListResponse.md)
  - [ApiAuthModelsListResponse](docs/ApiAuthModelsListResponse.md)
  - [ApiConnectionConfigsModelsListRequest](docs/ApiConnectionConfigsModelsListRequest.md)
@@ -193,6 +309,7 @@ Class | Method | HTTP request | Description
  - [ApiModelConfigModelsListResponse](docs/ApiModelConfigModelsListResponse.md)
  - [BodyDocumentUploadApiConnectionConfigsDocumentUploadPost](docs/BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.md)
  - [BodyLoginAccessTokenLoginAccessTokenPost](docs/BodyLoginAccessTokenLoginAccessTokenPost.md)
+ - [BuildOptionsObject](docs/BuildOptionsObject.md)
  - [ChatCompletion](docs/ChatCompletion.md)
  - [ChatCompletionAudio](docs/ChatCompletionAudio.md)
  - [ChatCompletionMessage](docs/ChatCompletionMessage.md)
@@ -213,13 +330,18 @@ Class | Method | HTTP request | Description
  - [EvaluationObject](docs/EvaluationObject.md)
  - [EvaluationRunObject](docs/EvaluationRunObject.md)
  - [EvaluationUpsert](docs/EvaluationUpsert.md)
+ - [ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [Function](docs/Function.md)
  - [FunctionCall](docs/FunctionCall.md)
  - [GoogleLoginRequest](docs/GoogleLoginRequest.md)
  - [GraphObject](docs/GraphObject.md)
+ - [GroupId](docs/GroupId.md)
  - [GroupIsolationObject](docs/GroupIsolationObject.md)
  - [GroupRequest](docs/GroupRequest.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
+ - [Id](docs/Id.md)
+ - [Id1](docs/Id1.md)
+ - [Id2](docs/Id2.md)
  - [LimitObject](docs/LimitObject.md)
  - [ListResponseLogs](docs/ListResponseLogs.md)
  - [LogObject](docs/LogObject.md)
@@ -228,7 +350,10 @@ Class | Method | HTTP request | Description
  - [NodeObject](docs/NodeObject.md)
  - [PromptTokensDetails](docs/PromptTokensDetails.md)
  - [QuestionObject](docs/QuestionObject.md)
+ - [Request](docs/Request.md)
+ - [RequestAccessRequest](docs/RequestAccessRequest.md)
  - [RequestsSample](docs/RequestsSample.md)
+ - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [ResponseObject](docs/ResponseObject.md)
  - [ResponseTimeSample](docs/ResponseTimeSample.md)
  - [Token](docs/Token.md)

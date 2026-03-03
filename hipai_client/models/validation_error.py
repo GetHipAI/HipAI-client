@@ -28,9 +28,9 @@ class ValidationError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'loc': 'object',
-        'msg': 'object',
-        'type': 'object'
+        'loc': 'list[AnyOfValidationErrorLocItems]',
+        'msg': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
@@ -39,7 +39,7 @@ class ValidationError(object):
         'type': 'type'
     }
 
-    def __init__(self, loc=None, msg=None, type=None):  # noqa: E501
+    def __init__(self, loc=None, msg=None, type=None, *args, **kwargs):  # noqa: E501
         """ValidationError - a model defined in Swagger"""  # noqa: E501
         self._loc = None
         self._msg = None
@@ -55,7 +55,7 @@ class ValidationError(object):
 
 
         :return: The loc of this ValidationError.  # noqa: E501
-        :rtype: object
+        :rtype: list[AnyOfValidationErrorLocItems]
         """
         return self._loc
 
@@ -65,7 +65,7 @@ class ValidationError(object):
 
 
         :param loc: The loc of this ValidationError.  # noqa: E501
-        :type: object
+        :type: list[AnyOfValidationErrorLocItems]
         """
         if loc is None:
             raise ValueError("Invalid value for `loc`, must not be `None`")  # noqa: E501
@@ -78,7 +78,7 @@ class ValidationError(object):
 
 
         :return: The msg of this ValidationError.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._msg
 
@@ -88,7 +88,7 @@ class ValidationError(object):
 
 
         :param msg: The msg of this ValidationError.  # noqa: E501
-        :type: object
+        :type: str
         """
         if msg is None:
             raise ValueError("Invalid value for `msg`, must not be `None`")  # noqa: E501
@@ -101,7 +101,7 @@ class ValidationError(object):
 
 
         :return: The type of this ValidationError.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._type
 
@@ -111,7 +111,7 @@ class ValidationError(object):
 
 
         :param type: The type of this ValidationError.  # noqa: E501
-        :type: object
+        :type: str
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501

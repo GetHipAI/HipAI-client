@@ -28,21 +28,21 @@ class ConnectionConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'conn_schema': 'object',
-        'name': 'object',
-        'hostname_path': 'object',
-        'graph_id': 'object',
-        'group_id': 'object',
-        'id': 'object',
-        'username': 'object',
-        'password': 'object',
-        'port': 'object',
-        'database': 'object',
-        'parameters': 'object',
-        'account': 'object',
-        'warehouse': 'object',
-        'role': 'object',
-        'sf_schema': 'object'
+        'conn_schema': 'str',
+        'name': 'AnyOfConnectionConfigObjectName',
+        'hostname_path': 'AnyOfConnectionConfigObjectHostnamePath',
+        'graph_id': 'AnyOfConnectionConfigObjectGraphId',
+        'group_id': 'AnyOfConnectionConfigObjectGroupId',
+        'id': 'AnyOfConnectionConfigObjectId',
+        'username': 'AnyOfConnectionConfigObjectUsername',
+        'password': 'AnyOfConnectionConfigObjectPassword',
+        'port': 'AnyOfConnectionConfigObjectPort',
+        'database': 'AnyOfConnectionConfigObjectDatabase',
+        'parameters': 'AnyOfConnectionConfigObjectParameters',
+        'account': 'AnyOfConnectionConfigObjectAccount',
+        'warehouse': 'AnyOfConnectionConfigObjectWarehouse',
+        'role': 'AnyOfConnectionConfigObjectRole',
+        'sf_schema': 'AnyOfConnectionConfigObjectSfSchema'
     }
 
     attribute_map = {
@@ -63,7 +63,7 @@ class ConnectionConfigObject(object):
         'sf_schema': 'sf_schema'
     }
 
-    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None):  # noqa: E501
+    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, *args, **kwargs):  # noqa: E501
         """ConnectionConfigObject - a model defined in Swagger"""  # noqa: E501
         self._conn_schema = None
         self._name = None
@@ -117,7 +117,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The conn_schema of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._conn_schema
 
@@ -127,7 +127,7 @@ class ConnectionConfigObject(object):
 
 
         :param conn_schema: The conn_schema of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if conn_schema is None:
             raise ValueError("Invalid value for `conn_schema`, must not be `None`")  # noqa: E501
@@ -140,7 +140,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The name of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectName
         """
         return self._name
 
@@ -150,7 +150,7 @@ class ConnectionConfigObject(object):
 
 
         :param name: The name of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectName
         """
 
         self._name = name
@@ -161,7 +161,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The hostname_path of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectHostnamePath
         """
         return self._hostname_path
 
@@ -171,7 +171,7 @@ class ConnectionConfigObject(object):
 
 
         :param hostname_path: The hostname_path of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectHostnamePath
         """
 
         self._hostname_path = hostname_path
@@ -182,7 +182,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The graph_id of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectGraphId
         """
         return self._graph_id
 
@@ -192,7 +192,7 @@ class ConnectionConfigObject(object):
 
 
         :param graph_id: The graph_id of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectGraphId
         """
 
         self._graph_id = graph_id
@@ -203,7 +203,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The group_id of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectGroupId
         """
         return self._group_id
 
@@ -213,7 +213,7 @@ class ConnectionConfigObject(object):
 
 
         :param group_id: The group_id of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectGroupId
         """
 
         self._group_id = group_id
@@ -224,7 +224,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The id of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectId
         """
         return self._id
 
@@ -234,7 +234,7 @@ class ConnectionConfigObject(object):
 
 
         :param id: The id of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectId
         """
 
         self._id = id
@@ -245,7 +245,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The username of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectUsername
         """
         return self._username
 
@@ -255,7 +255,7 @@ class ConnectionConfigObject(object):
 
 
         :param username: The username of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectUsername
         """
 
         self._username = username
@@ -266,7 +266,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The password of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectPassword
         """
         return self._password
 
@@ -276,7 +276,7 @@ class ConnectionConfigObject(object):
 
 
         :param password: The password of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectPassword
         """
 
         self._password = password
@@ -287,7 +287,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The port of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectPort
         """
         return self._port
 
@@ -297,7 +297,7 @@ class ConnectionConfigObject(object):
 
 
         :param port: The port of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectPort
         """
 
         self._port = port
@@ -308,7 +308,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The database of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectDatabase
         """
         return self._database
 
@@ -318,7 +318,7 @@ class ConnectionConfigObject(object):
 
 
         :param database: The database of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectDatabase
         """
 
         self._database = database
@@ -329,7 +329,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The parameters of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectParameters
         """
         return self._parameters
 
@@ -339,7 +339,7 @@ class ConnectionConfigObject(object):
 
 
         :param parameters: The parameters of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectParameters
         """
 
         self._parameters = parameters
@@ -350,7 +350,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The account of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectAccount
         """
         return self._account
 
@@ -360,7 +360,7 @@ class ConnectionConfigObject(object):
 
 
         :param account: The account of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectAccount
         """
 
         self._account = account
@@ -371,7 +371,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The warehouse of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectWarehouse
         """
         return self._warehouse
 
@@ -381,7 +381,7 @@ class ConnectionConfigObject(object):
 
 
         :param warehouse: The warehouse of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectWarehouse
         """
 
         self._warehouse = warehouse
@@ -392,7 +392,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The role of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectRole
         """
         return self._role
 
@@ -402,7 +402,7 @@ class ConnectionConfigObject(object):
 
 
         :param role: The role of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectRole
         """
 
         self._role = role
@@ -413,7 +413,7 @@ class ConnectionConfigObject(object):
 
 
         :return: The sf_schema of this ConnectionConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfConnectionConfigObjectSfSchema
         """
         return self._sf_schema
 
@@ -423,7 +423,7 @@ class ConnectionConfigObject(object):
 
 
         :param sf_schema: The sf_schema of this ConnectionConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfConnectionConfigObjectSfSchema
         """
 
         self._sf_schema = sf_schema

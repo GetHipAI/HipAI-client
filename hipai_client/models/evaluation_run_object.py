@@ -28,18 +28,18 @@ class EvaluationRunObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'agent_config_id': 'object',
-        'evaluation_id': 'object',
-        'id': 'object',
-        'group_id': 'object',
-        'status': 'object',
-        'start_time': 'object',
-        'created_at': 'object',
-        'end_time': 'object',
-        'agent_name': 'object',
-        'name': 'object',
-        'correct': 'object',
-        'incorrect': 'object'
+        'agent_config_id': 'str',
+        'evaluation_id': 'str',
+        'id': 'AnyOfEvaluationRunObjectId',
+        'group_id': 'AnyOfEvaluationRunObjectGroupId',
+        'status': 'AnyOfEvaluationRunObjectStatus',
+        'start_time': 'AnyOfEvaluationRunObjectStartTime',
+        'created_at': 'AnyOfEvaluationRunObjectCreatedAt',
+        'end_time': 'AnyOfEvaluationRunObjectEndTime',
+        'agent_name': 'AnyOfEvaluationRunObjectAgentName',
+        'name': 'AnyOfEvaluationRunObjectName',
+        'correct': 'AnyOfEvaluationRunObjectCorrect',
+        'incorrect': 'AnyOfEvaluationRunObjectIncorrect'
     }
 
     attribute_map = {
@@ -57,7 +57,7 @@ class EvaluationRunObject(object):
         'incorrect': 'incorrect'
     }
 
-    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, group_id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None):  # noqa: E501
+    def __init__(self, agent_config_id=None, evaluation_id=None, id=None, group_id=None, status=None, start_time=None, created_at=None, end_time=None, agent_name=None, name=None, correct=None, incorrect=None, *args, **kwargs):  # noqa: E501
         """EvaluationRunObject - a model defined in Swagger"""  # noqa: E501
         self._agent_config_id = None
         self._evaluation_id = None
@@ -101,7 +101,7 @@ class EvaluationRunObject(object):
 
 
         :return: The agent_config_id of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._agent_config_id
 
@@ -111,7 +111,7 @@ class EvaluationRunObject(object):
 
 
         :param agent_config_id: The agent_config_id of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if agent_config_id is None:
             raise ValueError("Invalid value for `agent_config_id`, must not be `None`")  # noqa: E501
@@ -124,7 +124,7 @@ class EvaluationRunObject(object):
 
 
         :return: The evaluation_id of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._evaluation_id
 
@@ -134,7 +134,7 @@ class EvaluationRunObject(object):
 
 
         :param evaluation_id: The evaluation_id of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if evaluation_id is None:
             raise ValueError("Invalid value for `evaluation_id`, must not be `None`")  # noqa: E501
@@ -147,7 +147,7 @@ class EvaluationRunObject(object):
 
 
         :return: The id of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectId
         """
         return self._id
 
@@ -157,7 +157,7 @@ class EvaluationRunObject(object):
 
 
         :param id: The id of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectId
         """
 
         self._id = id
@@ -168,7 +168,7 @@ class EvaluationRunObject(object):
 
 
         :return: The group_id of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectGroupId
         """
         return self._group_id
 
@@ -178,7 +178,7 @@ class EvaluationRunObject(object):
 
 
         :param group_id: The group_id of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectGroupId
         """
 
         self._group_id = group_id
@@ -189,7 +189,7 @@ class EvaluationRunObject(object):
 
 
         :return: The status of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectStatus
         """
         return self._status
 
@@ -199,7 +199,7 @@ class EvaluationRunObject(object):
 
 
         :param status: The status of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectStatus
         """
 
         self._status = status
@@ -210,7 +210,7 @@ class EvaluationRunObject(object):
 
 
         :return: The start_time of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectStartTime
         """
         return self._start_time
 
@@ -220,7 +220,7 @@ class EvaluationRunObject(object):
 
 
         :param start_time: The start_time of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectStartTime
         """
 
         self._start_time = start_time
@@ -231,7 +231,7 @@ class EvaluationRunObject(object):
 
 
         :return: The created_at of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectCreatedAt
         """
         return self._created_at
 
@@ -241,7 +241,7 @@ class EvaluationRunObject(object):
 
 
         :param created_at: The created_at of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectCreatedAt
         """
 
         self._created_at = created_at
@@ -252,7 +252,7 @@ class EvaluationRunObject(object):
 
 
         :return: The end_time of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectEndTime
         """
         return self._end_time
 
@@ -262,7 +262,7 @@ class EvaluationRunObject(object):
 
 
         :param end_time: The end_time of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectEndTime
         """
 
         self._end_time = end_time
@@ -273,7 +273,7 @@ class EvaluationRunObject(object):
 
 
         :return: The agent_name of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectAgentName
         """
         return self._agent_name
 
@@ -283,7 +283,7 @@ class EvaluationRunObject(object):
 
 
         :param agent_name: The agent_name of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectAgentName
         """
 
         self._agent_name = agent_name
@@ -294,7 +294,7 @@ class EvaluationRunObject(object):
 
 
         :return: The name of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectName
         """
         return self._name
 
@@ -304,7 +304,7 @@ class EvaluationRunObject(object):
 
 
         :param name: The name of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectName
         """
 
         self._name = name
@@ -315,7 +315,7 @@ class EvaluationRunObject(object):
 
 
         :return: The correct of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectCorrect
         """
         return self._correct
 
@@ -325,7 +325,7 @@ class EvaluationRunObject(object):
 
 
         :param correct: The correct of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectCorrect
         """
 
         self._correct = correct
@@ -336,7 +336,7 @@ class EvaluationRunObject(object):
 
 
         :return: The incorrect of this EvaluationRunObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationRunObjectIncorrect
         """
         return self._incorrect
 
@@ -346,7 +346,7 @@ class EvaluationRunObject(object):
 
 
         :param incorrect: The incorrect of this EvaluationRunObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationRunObjectIncorrect
         """
 
         self._incorrect = incorrect

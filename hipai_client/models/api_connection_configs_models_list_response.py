@@ -28,8 +28,8 @@ class ApiConnectionConfigsModelsListResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data': 'object',
-        'count': 'object'
+        'data': 'list[ConnectionConfigObject]',
+        'count': 'int'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class ApiConnectionConfigsModelsListResponse(object):
         'count': 'count'
     }
 
-    def __init__(self, data=None, count=None):  # noqa: E501
+    def __init__(self, data=None, count=None, *args, **kwargs):  # noqa: E501
         """ApiConnectionConfigsModelsListResponse - a model defined in Swagger"""  # noqa: E501
         self._data = None
         self._count = None
@@ -51,7 +51,7 @@ class ApiConnectionConfigsModelsListResponse(object):
 
 
         :return: The data of this ApiConnectionConfigsModelsListResponse.  # noqa: E501
-        :rtype: object
+        :rtype: list[ConnectionConfigObject]
         """
         return self._data
 
@@ -61,7 +61,7 @@ class ApiConnectionConfigsModelsListResponse(object):
 
 
         :param data: The data of this ApiConnectionConfigsModelsListResponse.  # noqa: E501
-        :type: object
+        :type: list[ConnectionConfigObject]
         """
         if data is None:
             raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class ApiConnectionConfigsModelsListResponse(object):
 
 
         :return: The count of this ApiConnectionConfigsModelsListResponse.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._count
 
@@ -84,7 +84,7 @@ class ApiConnectionConfigsModelsListResponse(object):
 
 
         :param count: The count of this ApiConnectionConfigsModelsListResponse.  # noqa: E501
-        :type: object
+        :type: int
         """
         if count is None:
             raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501

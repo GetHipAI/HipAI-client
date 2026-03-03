@@ -28,8 +28,8 @@ class ApiDataContextsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'only_active': 'object',
-        'group_id': 'object'
+        'only_active': 'bool',
+        'group_id': 'AnyOfapiDataContextsModelsListRequestGroupId'
     }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class ApiDataContextsModelsListRequest(object):
         'group_id': 'group_id'
     }
 
-    def __init__(self, only_active=None, group_id=None):  # noqa: E501
+    def __init__(self, only_active=False, group_id=None, *args, **kwargs):  # noqa: E501
         """ApiDataContextsModelsListRequest - a model defined in Swagger"""  # noqa: E501
         self._only_active = None
         self._group_id = None
@@ -53,7 +53,7 @@ class ApiDataContextsModelsListRequest(object):
 
 
         :return: The only_active of this ApiDataContextsModelsListRequest.  # noqa: E501
-        :rtype: object
+        :rtype: bool
         """
         return self._only_active
 
@@ -63,7 +63,7 @@ class ApiDataContextsModelsListRequest(object):
 
 
         :param only_active: The only_active of this ApiDataContextsModelsListRequest.  # noqa: E501
-        :type: object
+        :type: bool
         """
 
         self._only_active = only_active
@@ -74,7 +74,7 @@ class ApiDataContextsModelsListRequest(object):
 
 
         :return: The group_id of this ApiDataContextsModelsListRequest.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfapiDataContextsModelsListRequestGroupId
         """
         return self._group_id
 
@@ -84,7 +84,7 @@ class ApiDataContextsModelsListRequest(object):
 
 
         :param group_id: The group_id of this ApiDataContextsModelsListRequest.  # noqa: E501
-        :type: object
+        :type: AnyOfapiDataContextsModelsListRequestGroupId
         """
 
         self._group_id = group_id

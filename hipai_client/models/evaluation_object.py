@@ -28,11 +28,11 @@ class EvaluationObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'object',
-        'created_at': 'object',
-        'updated_at': 'object',
-        'id': 'object',
-        'group_id': 'object'
+        'name': 'str',
+        'created_at': 'AnyOfEvaluationObjectCreatedAt',
+        'updated_at': 'AnyOfEvaluationObjectUpdatedAt',
+        'id': 'AnyOfEvaluationObjectId',
+        'group_id': 'AnyOfEvaluationObjectGroupId'
     }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class EvaluationObject(object):
         'group_id': 'group_id'
     }
 
-    def __init__(self, name=None, created_at=None, updated_at=None, id=None, group_id=None):  # noqa: E501
+    def __init__(self, name=None, created_at=None, updated_at=None, id=None, group_id=None, *args, **kwargs):  # noqa: E501
         """EvaluationObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._created_at = None
@@ -67,7 +67,7 @@ class EvaluationObject(object):
 
 
         :return: The name of this EvaluationObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._name
 
@@ -77,7 +77,7 @@ class EvaluationObject(object):
 
 
         :param name: The name of this EvaluationObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -90,7 +90,7 @@ class EvaluationObject(object):
 
 
         :return: The created_at of this EvaluationObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationObjectCreatedAt
         """
         return self._created_at
 
@@ -100,7 +100,7 @@ class EvaluationObject(object):
 
 
         :param created_at: The created_at of this EvaluationObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationObjectCreatedAt
         """
 
         self._created_at = created_at
@@ -111,7 +111,7 @@ class EvaluationObject(object):
 
 
         :return: The updated_at of this EvaluationObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationObjectUpdatedAt
         """
         return self._updated_at
 
@@ -121,7 +121,7 @@ class EvaluationObject(object):
 
 
         :param updated_at: The updated_at of this EvaluationObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationObjectUpdatedAt
         """
 
         self._updated_at = updated_at
@@ -132,7 +132,7 @@ class EvaluationObject(object):
 
 
         :return: The id of this EvaluationObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationObjectId
         """
         return self._id
 
@@ -142,7 +142,7 @@ class EvaluationObject(object):
 
 
         :param id: The id of this EvaluationObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationObjectId
         """
 
         self._id = id
@@ -153,7 +153,7 @@ class EvaluationObject(object):
 
 
         :return: The group_id of this EvaluationObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationObjectGroupId
         """
         return self._group_id
 
@@ -163,7 +163,7 @@ class EvaluationObject(object):
 
 
         :param group_id: The group_id of this EvaluationObject.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationObjectGroupId
         """
 
         self._group_id = group_id

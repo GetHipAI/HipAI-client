@@ -28,14 +28,15 @@ class ModelConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'object',
-        'name': 'object',
-        'url': 'object',
-        'token': 'object',
-        'model_name': 'object',
-        'on_prem': 'object',
-        'used_by_active_agent': 'object',
-        'group_id': 'object'
+        'id': 'AnyOfModelConfigObjectId',
+        'name': 'AnyOfModelConfigObjectName',
+        'url': 'AnyOfModelConfigObjectUrl',
+        'token': 'AnyOfModelConfigObjectToken',
+        'model_name': 'AnyOfModelConfigObjectModelName',
+        'on_prem': 'bool',
+        'used_by_active_agent': 'AnyOfModelConfigObjectUsedByActiveAgent',
+        'group_id': 'AnyOfModelConfigObjectGroupId',
+        'client_type': 'AnyOfModelConfigObjectClientType'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class ModelConfigObject(object):
         'model_name': 'model_name',
         'on_prem': 'on_prem',
         'used_by_active_agent': 'used_by_active_agent',
-        'group_id': 'group_id'
+        'group_id': 'group_id',
+        'client_type': 'client_type'
     }
 
-    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None):  # noqa: E501
+    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=False, used_by_active_agent=None, group_id=None, client_type=None, *args, **kwargs):  # noqa: E501
         """ModelConfigObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -59,6 +61,7 @@ class ModelConfigObject(object):
         self._on_prem = None
         self._used_by_active_agent = None
         self._group_id = None
+        self._client_type = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -76,6 +79,8 @@ class ModelConfigObject(object):
             self.used_by_active_agent = used_by_active_agent
         if group_id is not None:
             self.group_id = group_id
+        if client_type is not None:
+            self.client_type = client_type
 
     @property
     def id(self):
@@ -83,7 +88,7 @@ class ModelConfigObject(object):
 
 
         :return: The id of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectId
         """
         return self._id
 
@@ -93,7 +98,7 @@ class ModelConfigObject(object):
 
 
         :param id: The id of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectId
         """
 
         self._id = id
@@ -104,7 +109,7 @@ class ModelConfigObject(object):
 
 
         :return: The name of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectName
         """
         return self._name
 
@@ -114,7 +119,7 @@ class ModelConfigObject(object):
 
 
         :param name: The name of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectName
         """
 
         self._name = name
@@ -125,7 +130,7 @@ class ModelConfigObject(object):
 
 
         :return: The url of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectUrl
         """
         return self._url
 
@@ -135,7 +140,7 @@ class ModelConfigObject(object):
 
 
         :param url: The url of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectUrl
         """
 
         self._url = url
@@ -146,7 +151,7 @@ class ModelConfigObject(object):
 
 
         :return: The token of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectToken
         """
         return self._token
 
@@ -156,7 +161,7 @@ class ModelConfigObject(object):
 
 
         :param token: The token of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectToken
         """
 
         self._token = token
@@ -167,7 +172,7 @@ class ModelConfigObject(object):
 
 
         :return: The model_name of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectModelName
         """
         return self._model_name
 
@@ -177,7 +182,7 @@ class ModelConfigObject(object):
 
 
         :param model_name: The model_name of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectModelName
         """
 
         self._model_name = model_name
@@ -188,7 +193,7 @@ class ModelConfigObject(object):
 
 
         :return: The on_prem of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: bool
         """
         return self._on_prem
 
@@ -198,7 +203,7 @@ class ModelConfigObject(object):
 
 
         :param on_prem: The on_prem of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: bool
         """
 
         self._on_prem = on_prem
@@ -209,7 +214,7 @@ class ModelConfigObject(object):
 
 
         :return: The used_by_active_agent of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectUsedByActiveAgent
         """
         return self._used_by_active_agent
 
@@ -219,7 +224,7 @@ class ModelConfigObject(object):
 
 
         :param used_by_active_agent: The used_by_active_agent of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectUsedByActiveAgent
         """
 
         self._used_by_active_agent = used_by_active_agent
@@ -230,7 +235,7 @@ class ModelConfigObject(object):
 
 
         :return: The group_id of this ModelConfigObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfModelConfigObjectGroupId
         """
         return self._group_id
 
@@ -240,10 +245,31 @@ class ModelConfigObject(object):
 
 
         :param group_id: The group_id of this ModelConfigObject.  # noqa: E501
-        :type: object
+        :type: AnyOfModelConfigObjectGroupId
         """
 
         self._group_id = group_id
+
+    @property
+    def client_type(self):
+        """Gets the client_type of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The client_type of this ModelConfigObject.  # noqa: E501
+        :rtype: AnyOfModelConfigObjectClientType
+        """
+        return self._client_type
+
+    @client_type.setter
+    def client_type(self, client_type):
+        """Sets the client_type of this ModelConfigObject.
+
+
+        :param client_type: The client_type of this ModelConfigObject.  # noqa: E501
+        :type: AnyOfModelConfigObjectClientType
+        """
+
+        self._client_type = client_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

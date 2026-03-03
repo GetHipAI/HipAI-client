@@ -28,10 +28,10 @@ class EvaluationUpsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'object',
-        'questions': 'object',
-        'group_id': 'object',
-        'id': 'object'
+        'name': 'str',
+        'questions': 'list[QuestionObject]',
+        'group_id': 'AnyOfEvaluationUpsertGroupId',
+        'id': 'AnyOfEvaluationUpsertId'
     }
 
     attribute_map = {
@@ -41,7 +41,7 @@ class EvaluationUpsert(object):
         'id': 'id'
     }
 
-    def __init__(self, name=None, questions=None, group_id=None, id=None):  # noqa: E501
+    def __init__(self, name=None, questions=None, group_id=None, id=None, *args, **kwargs):  # noqa: E501
         """EvaluationUpsert - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._questions = None
@@ -61,7 +61,7 @@ class EvaluationUpsert(object):
 
 
         :return: The name of this EvaluationUpsert.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._name
 
@@ -71,7 +71,7 @@ class EvaluationUpsert(object):
 
 
         :param name: The name of this EvaluationUpsert.  # noqa: E501
-        :type: object
+        :type: str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -84,7 +84,7 @@ class EvaluationUpsert(object):
 
 
         :return: The questions of this EvaluationUpsert.  # noqa: E501
-        :rtype: object
+        :rtype: list[QuestionObject]
         """
         return self._questions
 
@@ -94,7 +94,7 @@ class EvaluationUpsert(object):
 
 
         :param questions: The questions of this EvaluationUpsert.  # noqa: E501
-        :type: object
+        :type: list[QuestionObject]
         """
         if questions is None:
             raise ValueError("Invalid value for `questions`, must not be `None`")  # noqa: E501
@@ -107,7 +107,7 @@ class EvaluationUpsert(object):
 
 
         :return: The group_id of this EvaluationUpsert.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationUpsertGroupId
         """
         return self._group_id
 
@@ -117,7 +117,7 @@ class EvaluationUpsert(object):
 
 
         :param group_id: The group_id of this EvaluationUpsert.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationUpsertGroupId
         """
 
         self._group_id = group_id
@@ -128,7 +128,7 @@ class EvaluationUpsert(object):
 
 
         :return: The id of this EvaluationUpsert.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfEvaluationUpsertId
         """
         return self._id
 
@@ -138,7 +138,7 @@ class EvaluationUpsert(object):
 
 
         :param id: The id of this EvaluationUpsert.  # noqa: E501
-        :type: object
+        :type: AnyOfEvaluationUpsertId
         """
 
         self._id = id

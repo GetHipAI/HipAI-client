@@ -28,21 +28,26 @@ class CompanyObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'object',
-        'id': 'object'
+        'name': 'str',
+        'rules': 'AnyOfCompanyObjectRules',
+        'id': 'AnyOfCompanyObjectId'
     }
 
     attribute_map = {
         'name': 'name',
+        'rules': 'rules',
         'id': 'id'
     }
 
-    def __init__(self, name=None, id=None):  # noqa: E501
+    def __init__(self, name=None, rules=None, id=None, *args, **kwargs):  # noqa: E501
         """CompanyObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
+        self._rules = None
         self._id = None
         self.discriminator = None
         self.name = name
+        if rules is not None:
+            self.rules = rules
         if id is not None:
             self.id = id
 
@@ -52,7 +57,7 @@ class CompanyObject(object):
 
 
         :return: The name of this CompanyObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._name
 
@@ -62,7 +67,7 @@ class CompanyObject(object):
 
 
         :param name: The name of this CompanyObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -70,12 +75,33 @@ class CompanyObject(object):
         self._name = name
 
     @property
+    def rules(self):
+        """Gets the rules of this CompanyObject.  # noqa: E501
+
+
+        :return: The rules of this CompanyObject.  # noqa: E501
+        :rtype: AnyOfCompanyObjectRules
+        """
+        return self._rules
+
+    @rules.setter
+    def rules(self, rules):
+        """Sets the rules of this CompanyObject.
+
+
+        :param rules: The rules of this CompanyObject.  # noqa: E501
+        :type: AnyOfCompanyObjectRules
+        """
+
+        self._rules = rules
+
+    @property
     def id(self):
         """Gets the id of this CompanyObject.  # noqa: E501
 
 
         :return: The id of this CompanyObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfCompanyObjectId
         """
         return self._id
 
@@ -85,7 +111,7 @@ class CompanyObject(object):
 
 
         :param id: The id of this CompanyObject.  # noqa: E501
-        :type: object
+        :type: AnyOfCompanyObjectId
         """
 
         self._id = id

@@ -28,22 +28,20 @@ class ResponseObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'object',
-        'response': 'object',
-        'explanation': 'object',
-        'evaluation_question_id': 'object',
-        'context_token_usage': 'object',
-        'generative_token_usage': 'object',
-        'response_time': 'object',
-        'correct': 'object',
-        'question': 'object',
-        'answer': 'object'
+        'id': 'str',
+        'response': 'str',
+        'evaluation_question_id': 'str',
+        'context_token_usage': 'int',
+        'generative_token_usage': 'int',
+        'response_time': 'float',
+        'correct': 'bool',
+        'question': 'AnyOfResponseObjectQuestion',
+        'answer': 'AnyOfResponseObjectAnswer'
     }
 
     attribute_map = {
         'id': 'id',
         'response': 'response',
-        'explanation': 'explanation',
         'evaluation_question_id': 'evaluation_question_id',
         'context_token_usage': 'context_token_usage',
         'generative_token_usage': 'generative_token_usage',
@@ -53,11 +51,10 @@ class ResponseObject(object):
         'answer': 'answer'
     }
 
-    def __init__(self, id=None, response=None, explanation=None, evaluation_question_id=None, context_token_usage=None, generative_token_usage=None, response_time=None, correct=None, question=None, answer=None):  # noqa: E501
+    def __init__(self, id=None, response=None, evaluation_question_id=None, context_token_usage=None, generative_token_usage=None, response_time=None, correct=None, question=None, answer=None, *args, **kwargs):  # noqa: E501
         """ResponseObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._response = None
-        self._explanation = None
         self._evaluation_question_id = None
         self._context_token_usage = None
         self._generative_token_usage = None
@@ -68,7 +65,6 @@ class ResponseObject(object):
         self.discriminator = None
         self.id = id
         self.response = response
-        self.explanation = explanation
         self.evaluation_question_id = evaluation_question_id
         self.context_token_usage = context_token_usage
         self.generative_token_usage = generative_token_usage
@@ -85,7 +81,7 @@ class ResponseObject(object):
 
 
         :return: The id of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._id
 
@@ -95,7 +91,7 @@ class ResponseObject(object):
 
 
         :param id: The id of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if id is None:
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
@@ -108,7 +104,7 @@ class ResponseObject(object):
 
 
         :return: The response of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._response
 
@@ -118,7 +114,7 @@ class ResponseObject(object):
 
 
         :param response: The response of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if response is None:
             raise ValueError("Invalid value for `response`, must not be `None`")  # noqa: E501
@@ -126,35 +122,12 @@ class ResponseObject(object):
         self._response = response
 
     @property
-    def explanation(self):
-        """Gets the explanation of this ResponseObject.  # noqa: E501
-
-
-        :return: The explanation of this ResponseObject.  # noqa: E501
-        :rtype: object
-        """
-        return self._explanation
-
-    @explanation.setter
-    def explanation(self, explanation):
-        """Sets the explanation of this ResponseObject.
-
-
-        :param explanation: The explanation of this ResponseObject.  # noqa: E501
-        :type: object
-        """
-        if explanation is None:
-            raise ValueError("Invalid value for `explanation`, must not be `None`")  # noqa: E501
-
-        self._explanation = explanation
-
-    @property
     def evaluation_question_id(self):
         """Gets the evaluation_question_id of this ResponseObject.  # noqa: E501
 
 
         :return: The evaluation_question_id of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._evaluation_question_id
 
@@ -164,7 +137,7 @@ class ResponseObject(object):
 
 
         :param evaluation_question_id: The evaluation_question_id of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if evaluation_question_id is None:
             raise ValueError("Invalid value for `evaluation_question_id`, must not be `None`")  # noqa: E501
@@ -177,7 +150,7 @@ class ResponseObject(object):
 
 
         :return: The context_token_usage of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._context_token_usage
 
@@ -187,7 +160,7 @@ class ResponseObject(object):
 
 
         :param context_token_usage: The context_token_usage of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: int
         """
         if context_token_usage is None:
             raise ValueError("Invalid value for `context_token_usage`, must not be `None`")  # noqa: E501
@@ -200,7 +173,7 @@ class ResponseObject(object):
 
 
         :return: The generative_token_usage of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._generative_token_usage
 
@@ -210,7 +183,7 @@ class ResponseObject(object):
 
 
         :param generative_token_usage: The generative_token_usage of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: int
         """
         if generative_token_usage is None:
             raise ValueError("Invalid value for `generative_token_usage`, must not be `None`")  # noqa: E501
@@ -223,7 +196,7 @@ class ResponseObject(object):
 
 
         :return: The response_time of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: float
         """
         return self._response_time
 
@@ -233,7 +206,7 @@ class ResponseObject(object):
 
 
         :param response_time: The response_time of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: float
         """
         if response_time is None:
             raise ValueError("Invalid value for `response_time`, must not be `None`")  # noqa: E501
@@ -246,7 +219,7 @@ class ResponseObject(object):
 
 
         :return: The correct of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: bool
         """
         return self._correct
 
@@ -256,7 +229,7 @@ class ResponseObject(object):
 
 
         :param correct: The correct of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: bool
         """
         if correct is None:
             raise ValueError("Invalid value for `correct`, must not be `None`")  # noqa: E501
@@ -269,7 +242,7 @@ class ResponseObject(object):
 
 
         :return: The question of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfResponseObjectQuestion
         """
         return self._question
 
@@ -279,7 +252,7 @@ class ResponseObject(object):
 
 
         :param question: The question of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: AnyOfResponseObjectQuestion
         """
 
         self._question = question
@@ -290,7 +263,7 @@ class ResponseObject(object):
 
 
         :return: The answer of this ResponseObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfResponseObjectAnswer
         """
         return self._answer
 
@@ -300,7 +273,7 @@ class ResponseObject(object):
 
 
         :param answer: The answer of this ResponseObject.  # noqa: E501
-        :type: object
+        :type: AnyOfResponseObjectAnswer
         """
 
         self._answer = answer

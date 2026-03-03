@@ -28,13 +28,13 @@ class AnalyticsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'total_tokens': 'object',
-        'total_tokens_build': 'object',
-        'total_requests': 'object',
-        'requests': 'object',
-        'tokens': 'object',
-        'tokens_build': 'object',
-        'response_times': 'object'
+        'total_tokens': 'int',
+        'total_tokens_build': 'int',
+        'total_requests': 'int',
+        'requests': 'list[RequestsSample]',
+        'tokens': 'list[TokensSample]',
+        'tokens_build': 'list[TokensSample]',
+        'response_times': 'list[ResponseTimeSample]'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class AnalyticsResponse(object):
         'response_times': 'response_times'
     }
 
-    def __init__(self, total_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None):  # noqa: E501
+    def __init__(self, total_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None, *args, **kwargs):  # noqa: E501
         """AnalyticsResponse - a model defined in Swagger"""  # noqa: E501
         self._total_tokens = None
         self._total_tokens_build = None
@@ -71,7 +71,7 @@ class AnalyticsResponse(object):
 
 
         :return: The total_tokens of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._total_tokens
 
@@ -81,7 +81,7 @@ class AnalyticsResponse(object):
 
 
         :param total_tokens: The total_tokens of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: int
         """
         if total_tokens is None:
             raise ValueError("Invalid value for `total_tokens`, must not be `None`")  # noqa: E501
@@ -94,7 +94,7 @@ class AnalyticsResponse(object):
 
 
         :return: The total_tokens_build of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._total_tokens_build
 
@@ -104,7 +104,7 @@ class AnalyticsResponse(object):
 
 
         :param total_tokens_build: The total_tokens_build of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: int
         """
         if total_tokens_build is None:
             raise ValueError("Invalid value for `total_tokens_build`, must not be `None`")  # noqa: E501
@@ -117,7 +117,7 @@ class AnalyticsResponse(object):
 
 
         :return: The total_requests of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._total_requests
 
@@ -127,7 +127,7 @@ class AnalyticsResponse(object):
 
 
         :param total_requests: The total_requests of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: int
         """
         if total_requests is None:
             raise ValueError("Invalid value for `total_requests`, must not be `None`")  # noqa: E501
@@ -140,7 +140,7 @@ class AnalyticsResponse(object):
 
 
         :return: The requests of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: list[RequestsSample]
         """
         return self._requests
 
@@ -150,7 +150,7 @@ class AnalyticsResponse(object):
 
 
         :param requests: The requests of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: list[RequestsSample]
         """
         if requests is None:
             raise ValueError("Invalid value for `requests`, must not be `None`")  # noqa: E501
@@ -163,7 +163,7 @@ class AnalyticsResponse(object):
 
 
         :return: The tokens of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: list[TokensSample]
         """
         return self._tokens
 
@@ -173,7 +173,7 @@ class AnalyticsResponse(object):
 
 
         :param tokens: The tokens of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: list[TokensSample]
         """
         if tokens is None:
             raise ValueError("Invalid value for `tokens`, must not be `None`")  # noqa: E501
@@ -186,7 +186,7 @@ class AnalyticsResponse(object):
 
 
         :return: The tokens_build of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: list[TokensSample]
         """
         return self._tokens_build
 
@@ -196,7 +196,7 @@ class AnalyticsResponse(object):
 
 
         :param tokens_build: The tokens_build of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: list[TokensSample]
         """
         if tokens_build is None:
             raise ValueError("Invalid value for `tokens_build`, must not be `None`")  # noqa: E501
@@ -209,7 +209,7 @@ class AnalyticsResponse(object):
 
 
         :return: The response_times of this AnalyticsResponse.  # noqa: E501
-        :rtype: object
+        :rtype: list[ResponseTimeSample]
         """
         return self._response_times
 
@@ -219,7 +219,7 @@ class AnalyticsResponse(object):
 
 
         :param response_times: The response_times of this AnalyticsResponse.  # noqa: E501
-        :type: object
+        :type: list[ResponseTimeSample]
         """
         if response_times is None:
             raise ValueError("Invalid value for `response_times`, must not be `None`")  # noqa: E501

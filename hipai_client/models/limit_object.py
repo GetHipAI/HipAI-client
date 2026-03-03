@@ -28,11 +28,11 @@ class LimitObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'has_limit': 'object',
-        'limit': 'object',
-        'start_time': 'object',
-        'end_time': 'object',
-        'remaining': 'object'
+        'has_limit': 'bool',
+        'limit': 'AnyOfLimitObjectLimit',
+        'start_time': 'AnyOfLimitObjectStartTime',
+        'end_time': 'AnyOfLimitObjectEndTime',
+        'remaining': 'AnyOfLimitObjectRemaining'
     }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class LimitObject(object):
         'remaining': 'remaining'
     }
 
-    def __init__(self, has_limit=None, limit=None, start_time=None, end_time=None, remaining=None):  # noqa: E501
+    def __init__(self, has_limit=None, limit=None, start_time=None, end_time=None, remaining=None, *args, **kwargs):  # noqa: E501
         """LimitObject - a model defined in Swagger"""  # noqa: E501
         self._has_limit = None
         self._limit = None
@@ -67,7 +67,7 @@ class LimitObject(object):
 
 
         :return: The has_limit of this LimitObject.  # noqa: E501
-        :rtype: object
+        :rtype: bool
         """
         return self._has_limit
 
@@ -77,7 +77,7 @@ class LimitObject(object):
 
 
         :param has_limit: The has_limit of this LimitObject.  # noqa: E501
-        :type: object
+        :type: bool
         """
         if has_limit is None:
             raise ValueError("Invalid value for `has_limit`, must not be `None`")  # noqa: E501
@@ -90,7 +90,7 @@ class LimitObject(object):
 
 
         :return: The limit of this LimitObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfLimitObjectLimit
         """
         return self._limit
 
@@ -100,7 +100,7 @@ class LimitObject(object):
 
 
         :param limit: The limit of this LimitObject.  # noqa: E501
-        :type: object
+        :type: AnyOfLimitObjectLimit
         """
 
         self._limit = limit
@@ -111,7 +111,7 @@ class LimitObject(object):
 
 
         :return: The start_time of this LimitObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfLimitObjectStartTime
         """
         return self._start_time
 
@@ -121,7 +121,7 @@ class LimitObject(object):
 
 
         :param start_time: The start_time of this LimitObject.  # noqa: E501
-        :type: object
+        :type: AnyOfLimitObjectStartTime
         """
 
         self._start_time = start_time
@@ -132,7 +132,7 @@ class LimitObject(object):
 
 
         :return: The end_time of this LimitObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfLimitObjectEndTime
         """
         return self._end_time
 
@@ -142,7 +142,7 @@ class LimitObject(object):
 
 
         :param end_time: The end_time of this LimitObject.  # noqa: E501
-        :type: object
+        :type: AnyOfLimitObjectEndTime
         """
 
         self._end_time = end_time
@@ -153,7 +153,7 @@ class LimitObject(object):
 
 
         :return: The remaining of this LimitObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfLimitObjectRemaining
         """
         return self._remaining
 
@@ -163,7 +163,7 @@ class LimitObject(object):
 
 
         :param remaining: The remaining of this LimitObject.  # noqa: E501
-        :type: object
+        :type: AnyOfLimitObjectRemaining
         """
 
         self._remaining = remaining

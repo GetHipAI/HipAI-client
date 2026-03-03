@@ -28,11 +28,11 @@ class QuestionObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'index': 'object',
-        'question': 'object',
-        'answer': 'object',
-        'id': 'object',
-        'evaluation_id': 'object'
+        'index': 'int',
+        'question': 'str',
+        'answer': 'str',
+        'id': 'AnyOfQuestionObjectId',
+        'evaluation_id': 'AnyOfQuestionObjectEvaluationId'
     }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class QuestionObject(object):
         'evaluation_id': 'evaluation_id'
     }
 
-    def __init__(self, index=None, question=None, answer=None, id=None, evaluation_id=None):  # noqa: E501
+    def __init__(self, index=None, question=None, answer=None, id=None, evaluation_id=None, *args, **kwargs):  # noqa: E501
         """QuestionObject - a model defined in Swagger"""  # noqa: E501
         self._index = None
         self._question = None
@@ -65,7 +65,7 @@ class QuestionObject(object):
 
 
         :return: The index of this QuestionObject.  # noqa: E501
-        :rtype: object
+        :rtype: int
         """
         return self._index
 
@@ -75,7 +75,7 @@ class QuestionObject(object):
 
 
         :param index: The index of this QuestionObject.  # noqa: E501
-        :type: object
+        :type: int
         """
         if index is None:
             raise ValueError("Invalid value for `index`, must not be `None`")  # noqa: E501
@@ -88,7 +88,7 @@ class QuestionObject(object):
 
 
         :return: The question of this QuestionObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._question
 
@@ -98,7 +98,7 @@ class QuestionObject(object):
 
 
         :param question: The question of this QuestionObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if question is None:
             raise ValueError("Invalid value for `question`, must not be `None`")  # noqa: E501
@@ -111,7 +111,7 @@ class QuestionObject(object):
 
 
         :return: The answer of this QuestionObject.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._answer
 
@@ -121,7 +121,7 @@ class QuestionObject(object):
 
 
         :param answer: The answer of this QuestionObject.  # noqa: E501
-        :type: object
+        :type: str
         """
         if answer is None:
             raise ValueError("Invalid value for `answer`, must not be `None`")  # noqa: E501
@@ -134,7 +134,7 @@ class QuestionObject(object):
 
 
         :return: The id of this QuestionObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfQuestionObjectId
         """
         return self._id
 
@@ -144,7 +144,7 @@ class QuestionObject(object):
 
 
         :param id: The id of this QuestionObject.  # noqa: E501
-        :type: object
+        :type: AnyOfQuestionObjectId
         """
 
         self._id = id
@@ -155,7 +155,7 @@ class QuestionObject(object):
 
 
         :return: The evaluation_id of this QuestionObject.  # noqa: E501
-        :rtype: object
+        :rtype: AnyOfQuestionObjectEvaluationId
         """
         return self._evaluation_id
 
@@ -165,7 +165,7 @@ class QuestionObject(object):
 
 
         :param evaluation_id: The evaluation_id of this QuestionObject.  # noqa: E501
-        :type: object
+        :type: AnyOfQuestionObjectEvaluationId
         """
 
         self._evaluation_id = evaluation_id
