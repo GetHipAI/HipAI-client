@@ -41,7 +41,7 @@ class GroupsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class GroupsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.

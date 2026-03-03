@@ -77,9 +77,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = hipai_client.LoginApi()
 grant_type = NULL # object | 
-username = 'username_example' # str | 
-password = 'password_example' # str | 
-scope = 'scope_example' # str | 
+username = NULL # object | 
+password = NULL # object | 
+scope = NULL # object | 
 client_id = NULL # object | 
 client_secret = NULL # object | 
 
@@ -96,9 +96,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grant_type** | [**object**](.md)|  | 
- **username** | **str**|  | 
- **password** | **str**|  | 
- **scope** | **str**|  | 
+ **username** | [**object**](.md)|  | 
+ **password** | [**object**](.md)|  | 
+ **scope** | [**object**](.md)|  | 
  **client_id** | [**object**](.md)|  | 
  **client_secret** | [**object**](.md)|  | 
 
@@ -278,7 +278,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = hipai_client.LoginApi()
-token = 'token_example' # str | 
+token = NULL # object | 
 
 try:
     # Verify Reset Token
@@ -292,7 +292,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **str**|  | 
+ **token** | [**object**](.md)|  | 
 
 ### Return type
 

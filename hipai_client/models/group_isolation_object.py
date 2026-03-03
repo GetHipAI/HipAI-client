@@ -28,8 +28,8 @@ class GroupIsolationObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'AnyOfGroupIsolationObjectId'
+        'name': 'object',
+        'id': 'object'
     }
 
     attribute_map = {
@@ -52,7 +52,7 @@ class GroupIsolationObject(object):
 
 
         :return: The name of this GroupIsolationObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._name
 
@@ -62,7 +62,7 @@ class GroupIsolationObject(object):
 
 
         :param name: The name of this GroupIsolationObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -75,7 +75,7 @@ class GroupIsolationObject(object):
 
 
         :return: The id of this GroupIsolationObject.  # noqa: E501
-        :rtype: AnyOfGroupIsolationObjectId
+        :rtype: object
         """
         return self._id
 
@@ -85,7 +85,7 @@ class GroupIsolationObject(object):
 
 
         :param id: The id of this GroupIsolationObject.  # noqa: E501
-        :type: AnyOfGroupIsolationObjectId
+        :type: object
         """
 
         self._id = id

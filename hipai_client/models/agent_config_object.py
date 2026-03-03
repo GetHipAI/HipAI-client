@@ -28,15 +28,15 @@ class AgentConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'status': 'str',
-        'id': 'AnyOfAgentConfigObjectId',
-        'updated_at': 'AnyOfAgentConfigObjectUpdatedAt',
-        'api_key': 'AnyOfAgentConfigObjectApiKey',
-        'llm_config_id': 'AnyOfAgentConfigObjectLlmConfigId',
-        'graph_id': 'AnyOfAgentConfigObjectGraphId',
-        'group_id': 'AnyOfAgentConfigObjectGroupId',
-        'direct_citations': 'AnyOfAgentConfigObjectDirectCitations'
+        'name': 'object',
+        'status': 'object',
+        'id': 'object',
+        'updated_at': 'object',
+        'api_key': 'object',
+        'llm_config_id': 'object',
+        'graph_id': 'object',
+        'group_id': 'object',
+        'direct_citations': 'object'
     }
 
     attribute_map = {
@@ -86,7 +86,7 @@ class AgentConfigObject(object):
 
 
         :return: The name of this AgentConfigObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._name
 
@@ -96,7 +96,7 @@ class AgentConfigObject(object):
 
 
         :param name: The name of this AgentConfigObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -109,7 +109,7 @@ class AgentConfigObject(object):
 
 
         :return: The status of this AgentConfigObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._status
 
@@ -119,7 +119,7 @@ class AgentConfigObject(object):
 
 
         :param status: The status of this AgentConfigObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if status is None:
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
@@ -132,7 +132,7 @@ class AgentConfigObject(object):
 
 
         :return: The id of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectId
+        :rtype: object
         """
         return self._id
 
@@ -142,7 +142,7 @@ class AgentConfigObject(object):
 
 
         :param id: The id of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectId
+        :type: object
         """
 
         self._id = id
@@ -153,7 +153,7 @@ class AgentConfigObject(object):
 
 
         :return: The updated_at of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectUpdatedAt
+        :rtype: object
         """
         return self._updated_at
 
@@ -163,7 +163,7 @@ class AgentConfigObject(object):
 
 
         :param updated_at: The updated_at of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectUpdatedAt
+        :type: object
         """
 
         self._updated_at = updated_at
@@ -174,7 +174,7 @@ class AgentConfigObject(object):
 
 
         :return: The api_key of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectApiKey
+        :rtype: object
         """
         return self._api_key
 
@@ -184,7 +184,7 @@ class AgentConfigObject(object):
 
 
         :param api_key: The api_key of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectApiKey
+        :type: object
         """
 
         self._api_key = api_key
@@ -195,7 +195,7 @@ class AgentConfigObject(object):
 
 
         :return: The llm_config_id of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectLlmConfigId
+        :rtype: object
         """
         return self._llm_config_id
 
@@ -205,7 +205,7 @@ class AgentConfigObject(object):
 
 
         :param llm_config_id: The llm_config_id of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectLlmConfigId
+        :type: object
         """
 
         self._llm_config_id = llm_config_id
@@ -216,7 +216,7 @@ class AgentConfigObject(object):
 
 
         :return: The graph_id of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectGraphId
+        :rtype: object
         """
         return self._graph_id
 
@@ -226,7 +226,7 @@ class AgentConfigObject(object):
 
 
         :param graph_id: The graph_id of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectGraphId
+        :type: object
         """
 
         self._graph_id = graph_id
@@ -237,7 +237,7 @@ class AgentConfigObject(object):
 
 
         :return: The group_id of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectGroupId
+        :rtype: object
         """
         return self._group_id
 
@@ -247,7 +247,7 @@ class AgentConfigObject(object):
 
 
         :param group_id: The group_id of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectGroupId
+        :type: object
         """
 
         self._group_id = group_id
@@ -258,7 +258,7 @@ class AgentConfigObject(object):
 
 
         :return: The direct_citations of this AgentConfigObject.  # noqa: E501
-        :rtype: AnyOfAgentConfigObjectDirectCitations
+        :rtype: object
         """
         return self._direct_citations
 
@@ -268,7 +268,7 @@ class AgentConfigObject(object):
 
 
         :param direct_citations: The direct_citations of this AgentConfigObject.  # noqa: E501
-        :type: AnyOfAgentConfigObjectDirectCitations
+        :type: object
         """
 
         self._direct_citations = direct_citations

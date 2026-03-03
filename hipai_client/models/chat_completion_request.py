@@ -28,18 +28,18 @@ class ChatCompletionRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'messages': 'list[ChatMessage]',
-        'agent_id': 'AnyOfChatCompletionRequestAgentId',
-        'agent_api_key': 'AnyOfChatCompletionRequestAgentApiKey',
-        'group_id': 'AnyOfChatCompletionRequestGroupId',
-        'model': 'AnyOfChatCompletionRequestModel',
-        'reasoning_effort': 'AnyOfChatCompletionRequestReasoningEffort',
-        'max_completion_tokens': 'AnyOfChatCompletionRequestMaxCompletionTokens',
-        'max_tokens': 'AnyOfChatCompletionRequestMaxTokens',
-        'top_p': 'AnyOfChatCompletionRequestTopP',
-        'temperature': 'AnyOfChatCompletionRequestTemperature',
-        'frequency_penalty': 'AnyOfChatCompletionRequestFrequencyPenalty',
-        'direct_citations': 'AnyOfChatCompletionRequestDirectCitations'
+        'messages': 'object',
+        'agent_id': 'object',
+        'agent_api_key': 'object',
+        'group_id': 'object',
+        'model': 'object',
+        'reasoning_effort': 'object',
+        'max_completion_tokens': 'object',
+        'max_tokens': 'object',
+        'top_p': 'object',
+        'temperature': 'object',
+        'frequency_penalty': 'object',
+        'direct_citations': 'object'
     }
 
     attribute_map = {
@@ -102,7 +102,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The messages of this ChatCompletionRequest.  # noqa: E501
-        :rtype: list[ChatMessage]
+        :rtype: object
         """
         return self._messages
 
@@ -112,7 +112,7 @@ class ChatCompletionRequest(object):
 
 
         :param messages: The messages of this ChatCompletionRequest.  # noqa: E501
-        :type: list[ChatMessage]
+        :type: object
         """
         if messages is None:
             raise ValueError("Invalid value for `messages`, must not be `None`")  # noqa: E501
@@ -125,7 +125,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The agent_id of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestAgentId
+        :rtype: object
         """
         return self._agent_id
 
@@ -135,7 +135,7 @@ class ChatCompletionRequest(object):
 
 
         :param agent_id: The agent_id of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestAgentId
+        :type: object
         """
 
         self._agent_id = agent_id
@@ -146,7 +146,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The agent_api_key of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestAgentApiKey
+        :rtype: object
         """
         return self._agent_api_key
 
@@ -156,7 +156,7 @@ class ChatCompletionRequest(object):
 
 
         :param agent_api_key: The agent_api_key of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestAgentApiKey
+        :type: object
         """
 
         self._agent_api_key = agent_api_key
@@ -167,7 +167,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The group_id of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestGroupId
+        :rtype: object
         """
         return self._group_id
 
@@ -177,7 +177,7 @@ class ChatCompletionRequest(object):
 
 
         :param group_id: The group_id of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestGroupId
+        :type: object
         """
 
         self._group_id = group_id
@@ -188,7 +188,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The model of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestModel
+        :rtype: object
         """
         return self._model
 
@@ -198,7 +198,7 @@ class ChatCompletionRequest(object):
 
 
         :param model: The model of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestModel
+        :type: object
         """
 
         self._model = model
@@ -209,7 +209,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The reasoning_effort of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestReasoningEffort
+        :rtype: object
         """
         return self._reasoning_effort
 
@@ -219,7 +219,7 @@ class ChatCompletionRequest(object):
 
 
         :param reasoning_effort: The reasoning_effort of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestReasoningEffort
+        :type: object
         """
 
         self._reasoning_effort = reasoning_effort
@@ -230,7 +230,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The max_completion_tokens of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestMaxCompletionTokens
+        :rtype: object
         """
         return self._max_completion_tokens
 
@@ -240,7 +240,7 @@ class ChatCompletionRequest(object):
 
 
         :param max_completion_tokens: The max_completion_tokens of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestMaxCompletionTokens
+        :type: object
         """
 
         self._max_completion_tokens = max_completion_tokens
@@ -251,7 +251,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The max_tokens of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestMaxTokens
+        :rtype: object
         """
         return self._max_tokens
 
@@ -261,7 +261,7 @@ class ChatCompletionRequest(object):
 
 
         :param max_tokens: The max_tokens of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestMaxTokens
+        :type: object
         """
 
         self._max_tokens = max_tokens
@@ -272,7 +272,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The top_p of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestTopP
+        :rtype: object
         """
         return self._top_p
 
@@ -282,7 +282,7 @@ class ChatCompletionRequest(object):
 
 
         :param top_p: The top_p of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestTopP
+        :type: object
         """
 
         self._top_p = top_p
@@ -293,7 +293,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The temperature of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestTemperature
+        :rtype: object
         """
         return self._temperature
 
@@ -303,7 +303,7 @@ class ChatCompletionRequest(object):
 
 
         :param temperature: The temperature of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestTemperature
+        :type: object
         """
 
         self._temperature = temperature
@@ -314,7 +314,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The frequency_penalty of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestFrequencyPenalty
+        :rtype: object
         """
         return self._frequency_penalty
 
@@ -324,7 +324,7 @@ class ChatCompletionRequest(object):
 
 
         :param frequency_penalty: The frequency_penalty of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestFrequencyPenalty
+        :type: object
         """
 
         self._frequency_penalty = frequency_penalty
@@ -335,7 +335,7 @@ class ChatCompletionRequest(object):
 
 
         :return: The direct_citations of this ChatCompletionRequest.  # noqa: E501
-        :rtype: AnyOfChatCompletionRequestDirectCitations
+        :rtype: object
         """
         return self._direct_citations
 
@@ -345,7 +345,7 @@ class ChatCompletionRequest(object):
 
 
         :param direct_citations: The direct_citations of this ChatCompletionRequest.  # noqa: E501
-        :type: AnyOfChatCompletionRequestDirectCitations
+        :type: object
         """
 
         self._direct_citations = direct_citations

@@ -28,11 +28,11 @@ class EdgeObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'parent_id': 'str',
-        'child_id': 'str',
-        'label': 'str',
-        'description': 'str'
+        'id': 'object',
+        'parent_id': 'object',
+        'child_id': 'object',
+        'label': 'object',
+        'description': 'object'
     }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class EdgeObject(object):
         'description': 'description'
     }
 
-    def __init__(self, id=None, parent_id=None, child_id=None, label=None, description='', *args, **kwargs):  # noqa: E501
+    def __init__(self, id=None, parent_id=None, child_id=None, label=None, description=None, *args, **kwargs):  # noqa: E501
         """EdgeObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._parent_id = None
@@ -64,7 +64,7 @@ class EdgeObject(object):
 
 
         :return: The id of this EdgeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._id
 
@@ -74,7 +74,7 @@ class EdgeObject(object):
 
 
         :param id: The id of this EdgeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if id is None:
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
@@ -87,7 +87,7 @@ class EdgeObject(object):
 
 
         :return: The parent_id of this EdgeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._parent_id
 
@@ -97,7 +97,7 @@ class EdgeObject(object):
 
 
         :param parent_id: The parent_id of this EdgeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if parent_id is None:
             raise ValueError("Invalid value for `parent_id`, must not be `None`")  # noqa: E501
@@ -110,7 +110,7 @@ class EdgeObject(object):
 
 
         :return: The child_id of this EdgeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._child_id
 
@@ -120,7 +120,7 @@ class EdgeObject(object):
 
 
         :param child_id: The child_id of this EdgeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if child_id is None:
             raise ValueError("Invalid value for `child_id`, must not be `None`")  # noqa: E501
@@ -133,7 +133,7 @@ class EdgeObject(object):
 
 
         :return: The label of this EdgeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._label
 
@@ -143,7 +143,7 @@ class EdgeObject(object):
 
 
         :param label: The label of this EdgeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if label is None:
             raise ValueError("Invalid value for `label`, must not be `None`")  # noqa: E501
@@ -156,7 +156,7 @@ class EdgeObject(object):
 
 
         :return: The description of this EdgeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._description
 
@@ -166,7 +166,7 @@ class EdgeObject(object):
 
 
         :param description: The description of this EdgeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._description = description

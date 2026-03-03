@@ -28,11 +28,11 @@ class AnalyticsQuery(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'days': 'int',
-        'tz_offset': 'int',
-        'agent_config_id': 'AnyOfAnalyticsQueryAgentConfigId',
-        'llm_config_id': 'AnyOfAnalyticsQueryLlmConfigId',
-        'all': 'bool'
+        'days': 'object',
+        'tz_offset': 'object',
+        'agent_config_id': 'object',
+        'llm_config_id': 'object',
+        'all': 'object'
     }
 
     attribute_map = {
@@ -43,7 +43,7 @@ class AnalyticsQuery(object):
         'all': 'all'
     }
 
-    def __init__(self, days=None, tz_offset=0, agent_config_id=None, llm_config_id=None, all=False, *args, **kwargs):  # noqa: E501
+    def __init__(self, days=None, tz_offset=None, agent_config_id=None, llm_config_id=None, all=None, *args, **kwargs):  # noqa: E501
         """AnalyticsQuery - a model defined in Swagger"""  # noqa: E501
         self._days = None
         self._tz_offset = None
@@ -67,7 +67,7 @@ class AnalyticsQuery(object):
 
 
         :return: The days of this AnalyticsQuery.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._days
 
@@ -77,7 +77,7 @@ class AnalyticsQuery(object):
 
 
         :param days: The days of this AnalyticsQuery.  # noqa: E501
-        :type: int
+        :type: object
         """
         if days is None:
             raise ValueError("Invalid value for `days`, must not be `None`")  # noqa: E501
@@ -90,7 +90,7 @@ class AnalyticsQuery(object):
 
 
         :return: The tz_offset of this AnalyticsQuery.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._tz_offset
 
@@ -100,7 +100,7 @@ class AnalyticsQuery(object):
 
 
         :param tz_offset: The tz_offset of this AnalyticsQuery.  # noqa: E501
-        :type: int
+        :type: object
         """
 
         self._tz_offset = tz_offset
@@ -111,7 +111,7 @@ class AnalyticsQuery(object):
 
 
         :return: The agent_config_id of this AnalyticsQuery.  # noqa: E501
-        :rtype: AnyOfAnalyticsQueryAgentConfigId
+        :rtype: object
         """
         return self._agent_config_id
 
@@ -121,7 +121,7 @@ class AnalyticsQuery(object):
 
 
         :param agent_config_id: The agent_config_id of this AnalyticsQuery.  # noqa: E501
-        :type: AnyOfAnalyticsQueryAgentConfigId
+        :type: object
         """
 
         self._agent_config_id = agent_config_id
@@ -132,7 +132,7 @@ class AnalyticsQuery(object):
 
 
         :return: The llm_config_id of this AnalyticsQuery.  # noqa: E501
-        :rtype: AnyOfAnalyticsQueryLlmConfigId
+        :rtype: object
         """
         return self._llm_config_id
 
@@ -142,7 +142,7 @@ class AnalyticsQuery(object):
 
 
         :param llm_config_id: The llm_config_id of this AnalyticsQuery.  # noqa: E501
-        :type: AnyOfAnalyticsQueryLlmConfigId
+        :type: object
         """
 
         self._llm_config_id = llm_config_id
@@ -153,7 +153,7 @@ class AnalyticsQuery(object):
 
 
         :return: The all of this AnalyticsQuery.  # noqa: E501
-        :rtype: bool
+        :rtype: object
         """
         return self._all
 
@@ -163,7 +163,7 @@ class AnalyticsQuery(object):
 
 
         :param all: The all of this AnalyticsQuery.  # noqa: E501
-        :type: bool
+        :type: object
         """
 
         self._all = all

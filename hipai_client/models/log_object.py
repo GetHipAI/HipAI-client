@@ -28,9 +28,9 @@ class LogObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'message': 'str',
-        'created_at': 'datetime',
-        'is_error': 'AnyOfLogObjectIsError'
+        'message': 'object',
+        'created_at': 'object',
+        'is_error': 'object'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class LogObject(object):
 
 
         :return: The message of this LogObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._message
 
@@ -66,7 +66,7 @@ class LogObject(object):
 
 
         :param message: The message of this LogObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if message is None:
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
@@ -79,7 +79,7 @@ class LogObject(object):
 
 
         :return: The created_at of this LogObject.  # noqa: E501
-        :rtype: datetime
+        :rtype: object
         """
         return self._created_at
 
@@ -89,7 +89,7 @@ class LogObject(object):
 
 
         :param created_at: The created_at of this LogObject.  # noqa: E501
-        :type: datetime
+        :type: object
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
@@ -102,7 +102,7 @@ class LogObject(object):
 
 
         :return: The is_error of this LogObject.  # noqa: E501
-        :rtype: AnyOfLogObjectIsError
+        :rtype: object
         """
         return self._is_error
 
@@ -112,7 +112,7 @@ class LogObject(object):
 
 
         :param is_error: The is_error of this LogObject.  # noqa: E501
-        :type: AnyOfLogObjectIsError
+        :type: object
         """
 
         self._is_error = is_error

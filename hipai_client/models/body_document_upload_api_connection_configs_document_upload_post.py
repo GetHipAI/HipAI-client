@@ -29,7 +29,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
     """
     swagger_types = {
         'request': 'ConnectionConfigObject',
-        'file': 'str'
+        'file': 'object'
     }
 
     attribute_map = {
@@ -74,7 +74,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
 
 
         :return: The file of this BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._file
 
@@ -84,7 +84,7 @@ class BodyDocumentUploadApiConnectionConfigsDocumentUploadPost(object):
 
 
         :param file: The file of this BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.  # noqa: E501
-        :type: str
+        :type: object
         """
         if file is None:
             raise ValueError("Invalid value for `file`, must not be `None`")  # noqa: E501

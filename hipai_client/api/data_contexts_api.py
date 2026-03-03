@@ -41,7 +41,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,7 +134,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -155,7 +155,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -227,8 +227,8 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param GroupId group_id:
+        :param object id: (required)
+        :param object group_id:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -249,8 +249,8 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param GroupId group_id:
+        :param object id: (required)
+        :param object group_id:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -421,7 +421,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -442,7 +442,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -514,7 +514,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id id: (required)
+        :param object id: (required)
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -535,7 +535,7 @@ class DataContextsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id id: (required)
+        :param object id: (required)
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.

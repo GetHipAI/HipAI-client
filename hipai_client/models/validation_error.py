@@ -28,9 +28,9 @@ class ValidationError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'loc': 'list[AnyOfValidationErrorLocItems]',
-        'msg': 'str',
-        'type': 'str'
+        'loc': 'object',
+        'msg': 'object',
+        'type': 'object'
     }
 
     attribute_map = {
@@ -55,7 +55,7 @@ class ValidationError(object):
 
 
         :return: The loc of this ValidationError.  # noqa: E501
-        :rtype: list[AnyOfValidationErrorLocItems]
+        :rtype: object
         """
         return self._loc
 
@@ -65,7 +65,7 @@ class ValidationError(object):
 
 
         :param loc: The loc of this ValidationError.  # noqa: E501
-        :type: list[AnyOfValidationErrorLocItems]
+        :type: object
         """
         if loc is None:
             raise ValueError("Invalid value for `loc`, must not be `None`")  # noqa: E501
@@ -78,7 +78,7 @@ class ValidationError(object):
 
 
         :return: The msg of this ValidationError.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._msg
 
@@ -88,7 +88,7 @@ class ValidationError(object):
 
 
         :param msg: The msg of this ValidationError.  # noqa: E501
-        :type: str
+        :type: object
         """
         if msg is None:
             raise ValueError("Invalid value for `msg`, must not be `None`")  # noqa: E501
@@ -101,7 +101,7 @@ class ValidationError(object):
 
 
         :return: The type of this ValidationError.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._type
 
@@ -111,7 +111,7 @@ class ValidationError(object):
 
 
         :param type: The type of this ValidationError.  # noqa: E501
-        :type: str
+        :type: object
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501

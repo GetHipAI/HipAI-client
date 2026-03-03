@@ -28,13 +28,13 @@ class UserPublic(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
-        'first_name': 'AnyOfUserPublicFirstName',
-        'last_name': 'AnyOfUserPublicLastName',
-        'profile_image_url': 'AnyOfUserPublicProfileImageUrl',
-        'id': 'AnyOfUserPublicId',
-        'permission_group': 'AnyOfUserPublicPermissionGroup',
-        'is_superadmin': 'AnyOfUserPublicIsSuperadmin'
+        'email': 'object',
+        'first_name': 'object',
+        'last_name': 'object',
+        'profile_image_url': 'object',
+        'id': 'object',
+        'permission_group': 'object',
+        'is_superadmin': 'object'
     }
 
     attribute_map = {
@@ -77,7 +77,7 @@ class UserPublic(object):
 
 
         :return: The email of this UserPublic.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._email
 
@@ -87,7 +87,7 @@ class UserPublic(object):
 
 
         :param email: The email of this UserPublic.  # noqa: E501
-        :type: str
+        :type: object
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
@@ -100,7 +100,7 @@ class UserPublic(object):
 
 
         :return: The first_name of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicFirstName
+        :rtype: object
         """
         return self._first_name
 
@@ -110,7 +110,7 @@ class UserPublic(object):
 
 
         :param first_name: The first_name of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicFirstName
+        :type: object
         """
 
         self._first_name = first_name
@@ -121,7 +121,7 @@ class UserPublic(object):
 
 
         :return: The last_name of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicLastName
+        :rtype: object
         """
         return self._last_name
 
@@ -131,7 +131,7 @@ class UserPublic(object):
 
 
         :param last_name: The last_name of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicLastName
+        :type: object
         """
 
         self._last_name = last_name
@@ -142,7 +142,7 @@ class UserPublic(object):
 
 
         :return: The profile_image_url of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicProfileImageUrl
+        :rtype: object
         """
         return self._profile_image_url
 
@@ -152,7 +152,7 @@ class UserPublic(object):
 
 
         :param profile_image_url: The profile_image_url of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicProfileImageUrl
+        :type: object
         """
 
         self._profile_image_url = profile_image_url
@@ -163,7 +163,7 @@ class UserPublic(object):
 
 
         :return: The id of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicId
+        :rtype: object
         """
         return self._id
 
@@ -173,7 +173,7 @@ class UserPublic(object):
 
 
         :param id: The id of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicId
+        :type: object
         """
 
         self._id = id
@@ -184,7 +184,7 @@ class UserPublic(object):
 
 
         :return: The permission_group of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicPermissionGroup
+        :rtype: object
         """
         return self._permission_group
 
@@ -194,7 +194,7 @@ class UserPublic(object):
 
 
         :param permission_group: The permission_group of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicPermissionGroup
+        :type: object
         """
 
         self._permission_group = permission_group
@@ -205,7 +205,7 @@ class UserPublic(object):
 
 
         :return: The is_superadmin of this UserPublic.  # noqa: E501
-        :rtype: AnyOfUserPublicIsSuperadmin
+        :rtype: object
         """
         return self._is_superadmin
 
@@ -215,7 +215,7 @@ class UserPublic(object):
 
 
         :param is_superadmin: The is_superadmin of this UserPublic.  # noqa: E501
-        :type: AnyOfUserPublicIsSuperadmin
+        :type: object
         """
 
         self._is_superadmin = is_superadmin

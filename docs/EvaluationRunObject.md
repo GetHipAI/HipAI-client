@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agent_config_id** | **str** |  | 
-**evaluation_id** | **str** |  | 
-**id** | **AnyOfEvaluationRunObjectId** |  | [optional] 
-**group_id** | **AnyOfEvaluationRunObjectGroupId** |  | [optional] 
-**status** | **AnyOfEvaluationRunObjectStatus** |  | [optional] 
-**start_time** | **AnyOfEvaluationRunObjectStartTime** |  | [optional] 
-**created_at** | **AnyOfEvaluationRunObjectCreatedAt** |  | [optional] 
-**end_time** | **AnyOfEvaluationRunObjectEndTime** |  | [optional] 
-**agent_name** | **AnyOfEvaluationRunObjectAgentName** |  | [optional] 
-**name** | **AnyOfEvaluationRunObjectName** |  | [optional] 
-**correct** | **AnyOfEvaluationRunObjectCorrect** |  | [optional] 
-**incorrect** | **AnyOfEvaluationRunObjectIncorrect** |  | [optional] 
+**agent_config_id** | **object** |  | 
+**evaluation_id** | **object** |  | 
+**id** | **object** |  | [optional] 
+**group_id** | **object** |  | [optional] 
+**status** | **object** |  | [optional] 
+**start_time** | **object** |  | [optional] 
+**created_at** | **object** |  | [optional] 
+**end_time** | **object** |  | [optional] 
+**agent_name** | **object** |  | [optional] 
+**name** | **object** |  | [optional] 
+**correct** | **object** |  | [optional] 
+**incorrect** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

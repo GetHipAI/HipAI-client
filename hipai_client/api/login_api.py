@@ -142,9 +142,9 @@ class LoginApi(object):
 
         :param async_req bool
         :param object grant_type: (required)
-        :param str username: (required)
-        :param str password: (required)
-        :param str scope: (required)
+        :param object username: (required)
+        :param object password: (required)
+        :param object scope: (required)
         :param object client_id: (required)
         :param object client_secret: (required)
         :return: Token
@@ -169,9 +169,9 @@ class LoginApi(object):
 
         :param async_req bool
         :param object grant_type: (required)
-        :param str username: (required)
-        :param str password: (required)
-        :param str scope: (required)
+        :param object username: (required)
+        :param object password: (required)
+        :param object scope: (required)
         :param object client_id: (required)
         :param object client_secret: (required)
         :return: Token
@@ -577,7 +577,7 @@ class LoginApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token: (required)
+        :param object token: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -599,7 +599,7 @@ class LoginApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token: (required)
+        :param object token: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.

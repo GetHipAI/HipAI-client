@@ -28,8 +28,8 @@ class ApiConnectionConfigsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ids': 'AnyOfapiConnectionConfigsModelsListRequestIds',
-        'group_id': 'AnyOfapiConnectionConfigsModelsListRequestGroupId'
+        'ids': 'object',
+        'group_id': 'object'
     }
 
     attribute_map = {
@@ -53,7 +53,7 @@ class ApiConnectionConfigsModelsListRequest(object):
 
 
         :return: The ids of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
-        :rtype: AnyOfapiConnectionConfigsModelsListRequestIds
+        :rtype: object
         """
         return self._ids
 
@@ -63,7 +63,7 @@ class ApiConnectionConfigsModelsListRequest(object):
 
 
         :param ids: The ids of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
-        :type: AnyOfapiConnectionConfigsModelsListRequestIds
+        :type: object
         """
 
         self._ids = ids
@@ -74,7 +74,7 @@ class ApiConnectionConfigsModelsListRequest(object):
 
 
         :return: The group_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
-        :rtype: AnyOfapiConnectionConfigsModelsListRequestGroupId
+        :rtype: object
         """
         return self._group_id
 
@@ -84,7 +84,7 @@ class ApiConnectionConfigsModelsListRequest(object):
 
 
         :param group_id: The group_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
-        :type: AnyOfapiConnectionConfigsModelsListRequestGroupId
+        :type: object
         """
 
         self._group_id = group_id

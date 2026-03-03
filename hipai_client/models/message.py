@@ -28,7 +28,7 @@ class Message(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'message': 'str'
+        'message': 'object'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class Message(object):
 
 
         :return: The message of this Message.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._message
 
@@ -57,7 +57,7 @@ class Message(object):
 
 
         :param message: The message of this Message.  # noqa: E501
-        :type: str
+        :type: object
         """
         if message is None:
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501

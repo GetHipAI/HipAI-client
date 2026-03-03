@@ -27,7 +27,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.GroupsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Group
@@ -41,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 

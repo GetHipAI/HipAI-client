@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **AnyOfBuildOptionsObjectId** |  | [optional] 
-**graph_id** | **AnyOfBuildOptionsObjectGraphId** |  | [optional] 
-**evaluation_id** | **AnyOfBuildOptionsObjectEvaluationId** |  | [optional] 
-**graph_structure_prompt** | **AnyOfBuildOptionsObjectGraphStructurePrompt** |  | [optional] 
-**file_import_prompt** | **AnyOfBuildOptionsObjectFileImportPrompt** |  | [optional] 
-**sql_import_prompt** | **AnyOfBuildOptionsObjectSqlImportPrompt** |  | [optional] 
-**domain** | **str** |  | [optional] [default to 'any']
+**id** | **object** |  | [optional] 
+**graph_id** | **object** |  | [optional] 
+**evaluation_id** | **object** |  | [optional] 
+**graph_structure_prompt** | **object** |  | [optional] 
+**file_import_prompt** | **object** |  | [optional] 
+**sql_import_prompt** | **object** |  | [optional] 
+**domain** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

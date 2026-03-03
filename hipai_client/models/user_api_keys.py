@@ -29,7 +29,7 @@ class UserAPIKeys(object):
     """
     swagger_types = {
         'primary_key': 'APIKey',
-        'replacement_key': 'AnyOfUserAPIKeysReplacementKey'
+        'replacement_key': 'object'
     }
 
     attribute_map = {
@@ -75,7 +75,7 @@ class UserAPIKeys(object):
 
 
         :return: The replacement_key of this UserAPIKeys.  # noqa: E501
-        :rtype: AnyOfUserAPIKeysReplacementKey
+        :rtype: object
         """
         return self._replacement_key
 
@@ -85,7 +85,7 @@ class UserAPIKeys(object):
 
 
         :param replacement_key: The replacement_key of this UserAPIKeys.  # noqa: E501
-        :type: AnyOfUserAPIKeysReplacementKey
+        :type: object
         """
 
         self._replacement_key = replacement_key

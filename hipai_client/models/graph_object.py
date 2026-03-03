@@ -28,8 +28,8 @@ class GraphObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nodes': 'AnyOfGraphObjectNodes',
-        'edges': 'AnyOfGraphObjectEdges'
+        'nodes': 'object',
+        'edges': 'object'
     }
 
     attribute_map = {
@@ -51,7 +51,7 @@ class GraphObject(object):
 
 
         :return: The nodes of this GraphObject.  # noqa: E501
-        :rtype: AnyOfGraphObjectNodes
+        :rtype: object
         """
         return self._nodes
 
@@ -61,7 +61,7 @@ class GraphObject(object):
 
 
         :param nodes: The nodes of this GraphObject.  # noqa: E501
-        :type: AnyOfGraphObjectNodes
+        :type: object
         """
         if nodes is None:
             raise ValueError("Invalid value for `nodes`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class GraphObject(object):
 
 
         :return: The edges of this GraphObject.  # noqa: E501
-        :rtype: AnyOfGraphObjectEdges
+        :rtype: object
         """
         return self._edges
 
@@ -84,7 +84,7 @@ class GraphObject(object):
 
 
         :param edges: The edges of this GraphObject.  # noqa: E501
-        :type: AnyOfGraphObjectEdges
+        :type: object
         """
         if edges is None:
             raise ValueError("Invalid value for `edges`, must not be `None`")  # noqa: E501

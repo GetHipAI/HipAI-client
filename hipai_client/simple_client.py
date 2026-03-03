@@ -670,7 +670,7 @@ class SimpleHipAIClient:
         data_context_id: Optional[Union[str, UUID]] = None,
         llm_config_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
-        direction_citations: Opational[bool] = None,
+        direct_citations: Optional[bool] = None,
         async_req: bool = False,
         **kwargs,
     ) -> Union[AgentConfigObject, ApplyResult]:
@@ -694,8 +694,10 @@ class SimpleHipAIClient:
             Optional LLM config id override for the agent.
         group_id : str or uuid.UUID, optional
             Group isolation id to associate.
-        direction_citations: bool, optional
-            Whether to include direct citations in the gnerated response
+        direct_citations: bool, optional
+            Whether to include direct citations in the gnerated response (defaults to False). When set True
+            citations are inserted into the agent's chat responses like so
+            `<qc source_document='NAME_OF_SOURCE_DOCUMENT' page='PAGE_NUMBER' quote='RELEVANT_QUOTATION'/>`
         async_req : bool, optional
             When ``True``, returns a :class:`multiprocessing.pool.ApplyResult`.
         **kwargs
@@ -740,7 +742,7 @@ class SimpleHipAIClient:
             graph_id=data_context_id,
             llm_config_id=llm_config_id,
             group_id=group_id,
-            direction_citations=direction_citations,
+            direct_citations=direct_citations,
             **kwargs,
         )
         return hipai_client.AgentsApi(self.client).upsert_agent_api_agents_post(agent, async_req=async_req)

@@ -28,7 +28,7 @@ class HTTPValidationError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'detail': 'list[ValidationError]'
+        'detail': 'object'
     }
 
     attribute_map = {
@@ -48,7 +48,7 @@ class HTTPValidationError(object):
 
 
         :return: The detail of this HTTPValidationError.  # noqa: E501
-        :rtype: list[ValidationError]
+        :rtype: object
         """
         return self._detail
 
@@ -58,7 +58,7 @@ class HTTPValidationError(object):
 
 
         :param detail: The detail of this HTTPValidationError.  # noqa: E501
-        :type: list[ValidationError]
+        :type: object
         """
 
         self._detail = detail

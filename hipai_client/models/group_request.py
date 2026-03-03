@@ -28,7 +28,7 @@ class GroupRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group_id': 'AnyOfGroupRequestGroupId'
+        'group_id': 'object'
     }
 
     attribute_map = {
@@ -48,7 +48,7 @@ class GroupRequest(object):
 
 
         :return: The group_id of this GroupRequest.  # noqa: E501
-        :rtype: AnyOfGroupRequestGroupId
+        :rtype: object
         """
         return self._group_id
 
@@ -58,7 +58,7 @@ class GroupRequest(object):
 
 
         :param group_id: The group_id of this GroupRequest.  # noqa: E501
-        :type: AnyOfGroupRequestGroupId
+        :type: object
         """
 
         self._group_id = group_id

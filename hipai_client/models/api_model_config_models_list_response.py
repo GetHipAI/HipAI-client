@@ -28,8 +28,8 @@ class ApiModelConfigModelsListResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data': 'list[ModelConfigObject]',
-        'count': 'int'
+        'data': 'object',
+        'count': 'object'
     }
 
     attribute_map = {
@@ -51,7 +51,7 @@ class ApiModelConfigModelsListResponse(object):
 
 
         :return: The data of this ApiModelConfigModelsListResponse.  # noqa: E501
-        :rtype: list[ModelConfigObject]
+        :rtype: object
         """
         return self._data
 
@@ -61,7 +61,7 @@ class ApiModelConfigModelsListResponse(object):
 
 
         :param data: The data of this ApiModelConfigModelsListResponse.  # noqa: E501
-        :type: list[ModelConfigObject]
+        :type: object
         """
         if data is None:
             raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class ApiModelConfigModelsListResponse(object):
 
 
         :return: The count of this ApiModelConfigModelsListResponse.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._count
 
@@ -84,7 +84,7 @@ class ApiModelConfigModelsListResponse(object):
 
 
         :param count: The count of this ApiModelConfigModelsListResponse.  # noqa: E501
-        :type: int
+        :type: object
         """
         if count is None:
             raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501

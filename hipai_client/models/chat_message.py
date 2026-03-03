@@ -28,11 +28,11 @@ class ChatMessage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'role': 'str',
-        'content': 'AnyOfChatMessageContent',
-        'reasoning_content': 'AnyOfChatMessageReasoningContent',
-        'tool_call_id': 'AnyOfChatMessageToolCallId',
-        'tool_calls': 'AnyOfChatMessageToolCalls'
+        'role': 'object',
+        'content': 'object',
+        'reasoning_content': 'object',
+        'tool_call_id': 'object',
+        'tool_calls': 'object'
     }
 
     attribute_map = {
@@ -67,7 +67,7 @@ class ChatMessage(object):
 
 
         :return: The role of this ChatMessage.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._role
 
@@ -77,7 +77,7 @@ class ChatMessage(object):
 
 
         :param role: The role of this ChatMessage.  # noqa: E501
-        :type: str
+        :type: object
         """
         if role is None:
             raise ValueError("Invalid value for `role`, must not be `None`")  # noqa: E501
@@ -90,7 +90,7 @@ class ChatMessage(object):
 
 
         :return: The content of this ChatMessage.  # noqa: E501
-        :rtype: AnyOfChatMessageContent
+        :rtype: object
         """
         return self._content
 
@@ -100,7 +100,7 @@ class ChatMessage(object):
 
 
         :param content: The content of this ChatMessage.  # noqa: E501
-        :type: AnyOfChatMessageContent
+        :type: object
         """
 
         self._content = content
@@ -111,7 +111,7 @@ class ChatMessage(object):
 
 
         :return: The reasoning_content of this ChatMessage.  # noqa: E501
-        :rtype: AnyOfChatMessageReasoningContent
+        :rtype: object
         """
         return self._reasoning_content
 
@@ -121,7 +121,7 @@ class ChatMessage(object):
 
 
         :param reasoning_content: The reasoning_content of this ChatMessage.  # noqa: E501
-        :type: AnyOfChatMessageReasoningContent
+        :type: object
         """
 
         self._reasoning_content = reasoning_content
@@ -132,7 +132,7 @@ class ChatMessage(object):
 
 
         :return: The tool_call_id of this ChatMessage.  # noqa: E501
-        :rtype: AnyOfChatMessageToolCallId
+        :rtype: object
         """
         return self._tool_call_id
 
@@ -142,7 +142,7 @@ class ChatMessage(object):
 
 
         :param tool_call_id: The tool_call_id of this ChatMessage.  # noqa: E501
-        :type: AnyOfChatMessageToolCallId
+        :type: object
         """
 
         self._tool_call_id = tool_call_id
@@ -153,7 +153,7 @@ class ChatMessage(object):
 
 
         :return: The tool_calls of this ChatMessage.  # noqa: E501
-        :rtype: AnyOfChatMessageToolCalls
+        :rtype: object
         """
         return self._tool_calls
 
@@ -163,7 +163,7 @@ class ChatMessage(object):
 
 
         :param tool_calls: The tool_calls of this ChatMessage.  # noqa: E501
-        :type: AnyOfChatMessageToolCalls
+        :type: object
         """
 
         self._tool_calls = tool_calls

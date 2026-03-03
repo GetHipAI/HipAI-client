@@ -28,9 +28,9 @@ class CompanyObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'rules': 'AnyOfCompanyObjectRules',
-        'id': 'AnyOfCompanyObjectId'
+        'name': 'object',
+        'rules': 'object',
+        'id': 'object'
     }
 
     attribute_map = {
@@ -57,7 +57,7 @@ class CompanyObject(object):
 
 
         :return: The name of this CompanyObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._name
 
@@ -67,7 +67,7 @@ class CompanyObject(object):
 
 
         :param name: The name of this CompanyObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -80,7 +80,7 @@ class CompanyObject(object):
 
 
         :return: The rules of this CompanyObject.  # noqa: E501
-        :rtype: AnyOfCompanyObjectRules
+        :rtype: object
         """
         return self._rules
 
@@ -90,7 +90,7 @@ class CompanyObject(object):
 
 
         :param rules: The rules of this CompanyObject.  # noqa: E501
-        :type: AnyOfCompanyObjectRules
+        :type: object
         """
 
         self._rules = rules
@@ -101,7 +101,7 @@ class CompanyObject(object):
 
 
         :return: The id of this CompanyObject.  # noqa: E501
-        :rtype: AnyOfCompanyObjectId
+        :rtype: object
         """
         return self._id
 
@@ -111,7 +111,7 @@ class CompanyObject(object):
 
 
         :param id: The id of this CompanyObject.  # noqa: E501
-        :type: AnyOfCompanyObjectId
+        :type: object
         """
 
         self._id = id

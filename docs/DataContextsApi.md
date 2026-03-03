@@ -31,7 +31,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Build Logs
@@ -45,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -81,7 +81,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Data Context
@@ -95,7 +95,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -131,8 +131,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
-group_id = hipai_client.GroupId() # GroupId |  (optional)
+id = NULL # object | 
+group_id = NULL # object |  (optional)
 
 try:
     # Get Build Options
@@ -146,8 +146,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
- **group_id** | [**GroupId**](.md)|  | [optional] 
+ **id** | [**object**](.md)|  | 
+ **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -233,7 +233,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Load Data Context
@@ -247,7 +247,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -283,7 +283,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
-id = hipai_client.Id() # Id | 
+id = NULL # object | 
 
 try:
     # Load Graph
@@ -297,7 +297,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Id**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 

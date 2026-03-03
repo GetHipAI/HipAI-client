@@ -28,7 +28,7 @@ class ForgotPasswordRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str'
+        'email': 'object'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class ForgotPasswordRequest(object):
 
 
         :return: The email of this ForgotPasswordRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._email
 
@@ -57,7 +57,7 @@ class ForgotPasswordRequest(object):
 
 
         :param email: The email of this ForgotPasswordRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501

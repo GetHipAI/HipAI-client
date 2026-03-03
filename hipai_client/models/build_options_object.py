@@ -28,13 +28,13 @@ class BuildOptionsObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'AnyOfBuildOptionsObjectId',
-        'graph_id': 'AnyOfBuildOptionsObjectGraphId',
-        'evaluation_id': 'AnyOfBuildOptionsObjectEvaluationId',
-        'graph_structure_prompt': 'AnyOfBuildOptionsObjectGraphStructurePrompt',
-        'file_import_prompt': 'AnyOfBuildOptionsObjectFileImportPrompt',
-        'sql_import_prompt': 'AnyOfBuildOptionsObjectSqlImportPrompt',
-        'domain': 'str'
+        'id': 'object',
+        'graph_id': 'object',
+        'evaluation_id': 'object',
+        'graph_structure_prompt': 'object',
+        'file_import_prompt': 'object',
+        'sql_import_prompt': 'object',
+        'domain': 'object'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class BuildOptionsObject(object):
         'domain': 'domain'
     }
 
-    def __init__(self, id=None, graph_id=None, evaluation_id=None, graph_structure_prompt=None, file_import_prompt=None, sql_import_prompt=None, domain='any', *args, **kwargs):  # noqa: E501
+    def __init__(self, id=None, graph_id=None, evaluation_id=None, graph_structure_prompt=None, file_import_prompt=None, sql_import_prompt=None, domain=None, *args, **kwargs):  # noqa: E501
         """BuildOptionsObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._graph_id = None
@@ -78,7 +78,7 @@ class BuildOptionsObject(object):
 
 
         :return: The id of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectId
+        :rtype: object
         """
         return self._id
 
@@ -88,7 +88,7 @@ class BuildOptionsObject(object):
 
 
         :param id: The id of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectId
+        :type: object
         """
 
         self._id = id
@@ -99,7 +99,7 @@ class BuildOptionsObject(object):
 
 
         :return: The graph_id of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectGraphId
+        :rtype: object
         """
         return self._graph_id
 
@@ -109,7 +109,7 @@ class BuildOptionsObject(object):
 
 
         :param graph_id: The graph_id of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectGraphId
+        :type: object
         """
 
         self._graph_id = graph_id
@@ -120,7 +120,7 @@ class BuildOptionsObject(object):
 
 
         :return: The evaluation_id of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectEvaluationId
+        :rtype: object
         """
         return self._evaluation_id
 
@@ -130,7 +130,7 @@ class BuildOptionsObject(object):
 
 
         :param evaluation_id: The evaluation_id of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectEvaluationId
+        :type: object
         """
 
         self._evaluation_id = evaluation_id
@@ -141,7 +141,7 @@ class BuildOptionsObject(object):
 
 
         :return: The graph_structure_prompt of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectGraphStructurePrompt
+        :rtype: object
         """
         return self._graph_structure_prompt
 
@@ -151,7 +151,7 @@ class BuildOptionsObject(object):
 
 
         :param graph_structure_prompt: The graph_structure_prompt of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectGraphStructurePrompt
+        :type: object
         """
 
         self._graph_structure_prompt = graph_structure_prompt
@@ -162,7 +162,7 @@ class BuildOptionsObject(object):
 
 
         :return: The file_import_prompt of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectFileImportPrompt
+        :rtype: object
         """
         return self._file_import_prompt
 
@@ -172,7 +172,7 @@ class BuildOptionsObject(object):
 
 
         :param file_import_prompt: The file_import_prompt of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectFileImportPrompt
+        :type: object
         """
 
         self._file_import_prompt = file_import_prompt
@@ -183,7 +183,7 @@ class BuildOptionsObject(object):
 
 
         :return: The sql_import_prompt of this BuildOptionsObject.  # noqa: E501
-        :rtype: AnyOfBuildOptionsObjectSqlImportPrompt
+        :rtype: object
         """
         return self._sql_import_prompt
 
@@ -193,7 +193,7 @@ class BuildOptionsObject(object):
 
 
         :param sql_import_prompt: The sql_import_prompt of this BuildOptionsObject.  # noqa: E501
-        :type: AnyOfBuildOptionsObjectSqlImportPrompt
+        :type: object
         """
 
         self._sql_import_prompt = sql_import_prompt
@@ -204,7 +204,7 @@ class BuildOptionsObject(object):
 
 
         :return: The domain of this BuildOptionsObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._domain
 
@@ -214,7 +214,7 @@ class BuildOptionsObject(object):
 
 
         :param domain: The domain of this BuildOptionsObject.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._domain = domain

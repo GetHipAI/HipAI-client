@@ -33,7 +33,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Connection Config
@@ -47,7 +47,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
-id = hipai_client.Id2() # Id2 | 
+id = NULL # object | 
 
 try:
     # Delete Document
@@ -97,7 +97,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Id2**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -184,7 +184,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 request = hipai_client.ConnectionConfigObject() # ConnectionConfigObject | 
-file = 'file_example' # str | 
+file = NULL # object | 
 
 try:
     # Document Upload
@@ -199,7 +199,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**ConnectionConfigObject**](.md)|  | 
- **file** | **str**|  | 
+ **file** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -285,7 +285,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
-id = hipai_client.Id1() # Id1 | 
+id = NULL # object | 
 
 try:
     # List Documents
@@ -299,7 +299,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Id1**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -335,7 +335,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Load Connection Config
@@ -349,7 +349,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 

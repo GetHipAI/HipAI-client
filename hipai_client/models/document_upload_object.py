@@ -28,9 +28,9 @@ class DocumentUploadObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'AnyOfDocumentUploadObjectId',
-        'valid': 'bool'
+        'name': 'object',
+        'id': 'object',
+        'valid': 'object'
     }
 
     attribute_map = {
@@ -39,7 +39,7 @@ class DocumentUploadObject(object):
         'valid': 'valid'
     }
 
-    def __init__(self, name=None, id=None, valid=True, *args, **kwargs):  # noqa: E501
+    def __init__(self, name=None, id=None, valid=None, *args, **kwargs):  # noqa: E501
         """DocumentUploadObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._id = None
@@ -57,7 +57,7 @@ class DocumentUploadObject(object):
 
 
         :return: The name of this DocumentUploadObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._name
 
@@ -67,7 +67,7 @@ class DocumentUploadObject(object):
 
 
         :param name: The name of this DocumentUploadObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -80,7 +80,7 @@ class DocumentUploadObject(object):
 
 
         :return: The id of this DocumentUploadObject.  # noqa: E501
-        :rtype: AnyOfDocumentUploadObjectId
+        :rtype: object
         """
         return self._id
 
@@ -90,7 +90,7 @@ class DocumentUploadObject(object):
 
 
         :param id: The id of this DocumentUploadObject.  # noqa: E501
-        :type: AnyOfDocumentUploadObjectId
+        :type: object
         """
 
         self._id = id
@@ -101,7 +101,7 @@ class DocumentUploadObject(object):
 
 
         :return: The valid of this DocumentUploadObject.  # noqa: E501
-        :rtype: bool
+        :rtype: object
         """
         return self._valid
 
@@ -111,7 +111,7 @@ class DocumentUploadObject(object):
 
 
         :param valid: The valid of this DocumentUploadObject.  # noqa: E501
-        :type: bool
+        :type: object
         """
 
         self._valid = valid

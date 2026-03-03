@@ -28,12 +28,12 @@ class TokensSample(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'str',
-        'cached': 'int',
-        'input': 'int',
-        'output': 'int',
-        'response': 'int',
-        'total': 'int'
+        '_date': 'object',
+        'cached': 'object',
+        'input': 'object',
+        'output': 'object',
+        'response': 'object',
+        'total': 'object'
     }
 
     attribute_map = {
@@ -67,7 +67,7 @@ class TokensSample(object):
 
 
         :return: The _date of this TokensSample.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self.__date
 
@@ -77,7 +77,7 @@ class TokensSample(object):
 
 
         :param _date: The _date of this TokensSample.  # noqa: E501
-        :type: str
+        :type: object
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
@@ -90,7 +90,7 @@ class TokensSample(object):
 
 
         :return: The cached of this TokensSample.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._cached
 
@@ -100,7 +100,7 @@ class TokensSample(object):
 
 
         :param cached: The cached of this TokensSample.  # noqa: E501
-        :type: int
+        :type: object
         """
         if cached is None:
             raise ValueError("Invalid value for `cached`, must not be `None`")  # noqa: E501
@@ -113,7 +113,7 @@ class TokensSample(object):
 
 
         :return: The input of this TokensSample.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._input
 
@@ -123,7 +123,7 @@ class TokensSample(object):
 
 
         :param input: The input of this TokensSample.  # noqa: E501
-        :type: int
+        :type: object
         """
         if input is None:
             raise ValueError("Invalid value for `input`, must not be `None`")  # noqa: E501
@@ -136,7 +136,7 @@ class TokensSample(object):
 
 
         :return: The output of this TokensSample.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._output
 
@@ -146,7 +146,7 @@ class TokensSample(object):
 
 
         :param output: The output of this TokensSample.  # noqa: E501
-        :type: int
+        :type: object
         """
         if output is None:
             raise ValueError("Invalid value for `output`, must not be `None`")  # noqa: E501
@@ -159,7 +159,7 @@ class TokensSample(object):
 
 
         :return: The response of this TokensSample.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._response
 
@@ -169,7 +169,7 @@ class TokensSample(object):
 
 
         :param response: The response of this TokensSample.  # noqa: E501
-        :type: int
+        :type: object
         """
         if response is None:
             raise ValueError("Invalid value for `response`, must not be `None`")  # noqa: E501
@@ -182,7 +182,7 @@ class TokensSample(object):
 
 
         :return: The total of this TokensSample.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._total
 
@@ -192,7 +192,7 @@ class TokensSample(object):
 
 
         :param total: The total of this TokensSample.  # noqa: E501
-        :type: int
+        :type: object
         """
         if total is None:
             raise ValueError("Invalid value for `total`, must not be `None`")  # noqa: E501

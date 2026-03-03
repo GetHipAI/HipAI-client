@@ -28,8 +28,8 @@ class ResetPasswordRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'token': 'str',
-        'new_password': 'str'
+        'token': 'object',
+        'new_password': 'object'
     }
 
     attribute_map = {
@@ -51,7 +51,7 @@ class ResetPasswordRequest(object):
 
 
         :return: The token of this ResetPasswordRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._token
 
@@ -61,7 +61,7 @@ class ResetPasswordRequest(object):
 
 
         :param token: The token of this ResetPasswordRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if token is None:
             raise ValueError("Invalid value for `token`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class ResetPasswordRequest(object):
 
 
         :return: The new_password of this ResetPasswordRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._new_password
 
@@ -84,7 +84,7 @@ class ResetPasswordRequest(object):
 
 
         :param new_password: The new_password of this ResetPasswordRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if new_password is None:
             raise ValueError("Invalid value for `new_password`, must not be `None`")  # noqa: E501

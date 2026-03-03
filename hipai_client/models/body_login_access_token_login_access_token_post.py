@@ -28,12 +28,12 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'grant_type': 'AnyOfBodyLoginAccessTokenLoginAccessTokenPostGrantType',
-        'username': 'str',
-        'password': 'str',
-        'scope': 'str',
-        'client_id': 'AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientId',
-        'client_secret': 'AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientSecret'
+        'grant_type': 'object',
+        'username': 'object',
+        'password': 'object',
+        'scope': 'object',
+        'client_id': 'object',
+        'client_secret': 'object'
     }
 
     attribute_map = {
@@ -45,7 +45,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
         'client_secret': 'client_secret'
     }
 
-    def __init__(self, grant_type=None, username=None, password=None, scope='', client_id=None, client_secret=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, grant_type=None, username=None, password=None, scope=None, client_id=None, client_secret=None, *args, **kwargs):  # noqa: E501
         """BodyLoginAccessTokenLoginAccessTokenPost - a model defined in Swagger"""  # noqa: E501
         self._grant_type = None
         self._username = None
@@ -71,7 +71,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The grant_type of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: AnyOfBodyLoginAccessTokenLoginAccessTokenPostGrantType
+        :rtype: object
         """
         return self._grant_type
 
@@ -81,7 +81,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param grant_type: The grant_type of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: AnyOfBodyLoginAccessTokenLoginAccessTokenPostGrantType
+        :type: object
         """
 
         self._grant_type = grant_type
@@ -92,7 +92,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The username of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._username
 
@@ -102,7 +102,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param username: The username of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: str
+        :type: object
         """
         if username is None:
             raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
@@ -115,7 +115,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The password of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._password
 
@@ -125,7 +125,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param password: The password of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: str
+        :type: object
         """
         if password is None:
             raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
@@ -138,7 +138,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The scope of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._scope
 
@@ -148,7 +148,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param scope: The scope of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._scope = scope
@@ -159,7 +159,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The client_id of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientId
+        :rtype: object
         """
         return self._client_id
 
@@ -169,7 +169,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param client_id: The client_id of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientId
+        :type: object
         """
 
         self._client_id = client_id
@@ -180,7 +180,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :return: The client_secret of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :rtype: AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientSecret
+        :rtype: object
         """
         return self._client_secret
 
@@ -190,7 +190,7 @@ class BodyLoginAccessTokenLoginAccessTokenPost(object):
 
 
         :param client_secret: The client_secret of this BodyLoginAccessTokenLoginAccessTokenPost.  # noqa: E501
-        :type: AnyOfBodyLoginAccessTokenLoginAccessTokenPostClientSecret
+        :type: object
         """
 
         self._client_secret = client_secret

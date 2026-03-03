@@ -36,7 +36,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+run_id = NULL # object | 
 
 try:
     # Archive Evaluation Run
@@ -50,7 +50,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **run_id** | [**str**](.md)|  | 
+ **run_id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -86,7 +86,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Evaluation
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -136,7 +136,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Question
@@ -150,7 +150,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -236,7 +236,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # List Questions
@@ -250,7 +250,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -286,7 +286,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # List Responses
@@ -300,7 +300,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -337,7 +337,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.EvaluationsApi(hipai_client.ApiClient(configuration))
 body = hipai_client.GroupRequest() # GroupRequest | 
-include_archived = false # bool |  (optional) (default to false)
+include_archived = false # object |  (optional) (default to false)
 
 try:
     # List Runs
@@ -352,7 +352,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GroupRequest**](GroupRequest.md)|  | 
- **include_archived** | **bool**|  | [optional] [default to false]
+ **include_archived** | [**object**](.md)|  | [optional] [default to false]
 
 ### Return type
 

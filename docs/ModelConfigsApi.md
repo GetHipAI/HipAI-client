@@ -27,7 +27,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ModelConfigsApi(hipai_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | 
+id = NULL # object | 
 
 try:
     # Delete Model Config
@@ -41,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**object**](.md)|  | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.ModelConfigsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.Request() # Request | 
+body = NULL # object | 
 
 try:
     # List Model Configs
@@ -93,7 +93,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Request**](Request.md)|  | 
+ **body** | [**object**](object.md)|  | 
 
 ### Return type
 

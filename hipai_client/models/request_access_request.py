@@ -28,10 +28,10 @@ class RequestAccessRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'first_name': 'str',
-        'last_name': 'str',
-        'email': 'str',
-        'company': 'str'
+        'first_name': 'object',
+        'last_name': 'object',
+        'email': 'object',
+        'company': 'object'
     }
 
     attribute_map = {
@@ -59,7 +59,7 @@ class RequestAccessRequest(object):
 
 
         :return: The first_name of this RequestAccessRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._first_name
 
@@ -69,7 +69,7 @@ class RequestAccessRequest(object):
 
 
         :param first_name: The first_name of this RequestAccessRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if first_name is None:
             raise ValueError("Invalid value for `first_name`, must not be `None`")  # noqa: E501
@@ -82,7 +82,7 @@ class RequestAccessRequest(object):
 
 
         :return: The last_name of this RequestAccessRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._last_name
 
@@ -92,7 +92,7 @@ class RequestAccessRequest(object):
 
 
         :param last_name: The last_name of this RequestAccessRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if last_name is None:
             raise ValueError("Invalid value for `last_name`, must not be `None`")  # noqa: E501
@@ -105,7 +105,7 @@ class RequestAccessRequest(object):
 
 
         :return: The email of this RequestAccessRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._email
 
@@ -115,7 +115,7 @@ class RequestAccessRequest(object):
 
 
         :param email: The email of this RequestAccessRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
@@ -128,7 +128,7 @@ class RequestAccessRequest(object):
 
 
         :return: The company of this RequestAccessRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._company
 
@@ -138,7 +138,7 @@ class RequestAccessRequest(object):
 
 
         :param company: The company of this RequestAccessRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if company is None:
             raise ValueError("Invalid value for `company`, must not be `None`")  # noqa: E501

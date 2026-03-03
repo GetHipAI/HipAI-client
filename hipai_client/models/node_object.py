@@ -28,9 +28,9 @@ class NodeObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
-        'description': 'str'
+        'id': 'object',
+        'name': 'object',
+        'description': 'object'
     }
 
     attribute_map = {
@@ -39,7 +39,7 @@ class NodeObject(object):
         'description': 'description'
     }
 
-    def __init__(self, id=None, name=None, description='', *args, **kwargs):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, *args, **kwargs):  # noqa: E501
         """NodeObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -56,7 +56,7 @@ class NodeObject(object):
 
 
         :return: The id of this NodeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._id
 
@@ -66,7 +66,7 @@ class NodeObject(object):
 
 
         :param id: The id of this NodeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if id is None:
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
@@ -79,7 +79,7 @@ class NodeObject(object):
 
 
         :return: The name of this NodeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._name
 
@@ -89,7 +89,7 @@ class NodeObject(object):
 
 
         :param name: The name of this NodeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -102,7 +102,7 @@ class NodeObject(object):
 
 
         :return: The description of this NodeObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._description
 
@@ -112,7 +112,7 @@ class NodeObject(object):
 
 
         :param description: The description of this NodeObject.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._description = description

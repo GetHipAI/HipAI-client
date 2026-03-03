@@ -42,7 +42,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str run_id: (required)
+        :param object run_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,7 +64,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str run_id: (required)
+        :param object run_id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -136,7 +136,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +157,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -229,7 +229,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -250,7 +250,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -419,7 +419,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -440,7 +440,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -512,7 +512,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -533,7 +533,7 @@ class EvaluationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -606,7 +606,7 @@ class EvaluationsApi(object):
 
         :param async_req bool
         :param GroupRequest body: (required)
-        :param bool include_archived:
+        :param object include_archived:
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -628,7 +628,7 @@ class EvaluationsApi(object):
 
         :param async_req bool
         :param GroupRequest body: (required)
-        :param bool include_archived:
+        :param object include_archived:
         :return: ApiEvaluationsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.

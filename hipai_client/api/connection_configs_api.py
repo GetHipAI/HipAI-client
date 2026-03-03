@@ -41,7 +41,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,7 +62,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -134,7 +134,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id2 id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -155,7 +155,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id2 id: (required)
+        :param object id: (required)
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -325,7 +325,7 @@ class ConnectionConfigsApi(object):
 
         :param async_req bool
         :param ConnectionConfigObject request: (required)
-        :param str file: (required)
+        :param object file: (required)
         :return: ConnectionConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -347,7 +347,7 @@ class ConnectionConfigsApi(object):
 
         :param async_req bool
         :param ConnectionConfigObject request: (required)
-        :param str file: (required)
+        :param object file: (required)
         :return: ConnectionConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -390,7 +390,7 @@ class ConnectionConfigsApi(object):
         if 'request' in params:
             form_params.append(('request', params['request']))  # noqa: E501
         if 'file' in params:
-            local_var_files['file'] = params['file']  # noqa: E501
+            form_params.append(('file', params['file']))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -526,7 +526,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id1 id: (required)
+        :param object id: (required)
         :return: DocumentListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -547,7 +547,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Id1 id: (required)
+        :param object id: (required)
         :return: DocumentListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -619,7 +619,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ConnectionConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -640,7 +640,7 @@ class ConnectionConfigsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param object id: (required)
         :return: ConnectionConfigObject
                  If the method is called asynchronously,
                  returns the request thread.

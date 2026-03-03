@@ -28,11 +28,11 @@ class QuestionObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'index': 'int',
-        'question': 'str',
-        'answer': 'str',
-        'id': 'AnyOfQuestionObjectId',
-        'evaluation_id': 'AnyOfQuestionObjectEvaluationId'
+        'index': 'object',
+        'question': 'object',
+        'answer': 'object',
+        'id': 'object',
+        'evaluation_id': 'object'
     }
 
     attribute_map = {
@@ -65,7 +65,7 @@ class QuestionObject(object):
 
 
         :return: The index of this QuestionObject.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._index
 
@@ -75,7 +75,7 @@ class QuestionObject(object):
 
 
         :param index: The index of this QuestionObject.  # noqa: E501
-        :type: int
+        :type: object
         """
         if index is None:
             raise ValueError("Invalid value for `index`, must not be `None`")  # noqa: E501
@@ -88,7 +88,7 @@ class QuestionObject(object):
 
 
         :return: The question of this QuestionObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._question
 
@@ -98,7 +98,7 @@ class QuestionObject(object):
 
 
         :param question: The question of this QuestionObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if question is None:
             raise ValueError("Invalid value for `question`, must not be `None`")  # noqa: E501
@@ -111,7 +111,7 @@ class QuestionObject(object):
 
 
         :return: The answer of this QuestionObject.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._answer
 
@@ -121,7 +121,7 @@ class QuestionObject(object):
 
 
         :param answer: The answer of this QuestionObject.  # noqa: E501
-        :type: str
+        :type: object
         """
         if answer is None:
             raise ValueError("Invalid value for `answer`, must not be `None`")  # noqa: E501
@@ -134,7 +134,7 @@ class QuestionObject(object):
 
 
         :return: The id of this QuestionObject.  # noqa: E501
-        :rtype: AnyOfQuestionObjectId
+        :rtype: object
         """
         return self._id
 
@@ -144,7 +144,7 @@ class QuestionObject(object):
 
 
         :param id: The id of this QuestionObject.  # noqa: E501
-        :type: AnyOfQuestionObjectId
+        :type: object
         """
 
         self._id = id
@@ -155,7 +155,7 @@ class QuestionObject(object):
 
 
         :return: The evaluation_id of this QuestionObject.  # noqa: E501
-        :rtype: AnyOfQuestionObjectEvaluationId
+        :rtype: object
         """
         return self._evaluation_id
 
@@ -165,7 +165,7 @@ class QuestionObject(object):
 
 
         :param evaluation_id: The evaluation_id of this QuestionObject.  # noqa: E501
-        :type: AnyOfQuestionObjectEvaluationId
+        :type: object
         """
 
         self._evaluation_id = evaluation_id

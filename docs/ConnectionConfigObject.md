@@ -3,21 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conn_schema** | **str** |  | 
-**name** | **AnyOfConnectionConfigObjectName** |  | [optional] 
-**hostname_path** | **AnyOfConnectionConfigObjectHostnamePath** |  | [optional] 
-**graph_id** | **AnyOfConnectionConfigObjectGraphId** |  | [optional] 
-**group_id** | **AnyOfConnectionConfigObjectGroupId** |  | [optional] 
-**id** | **AnyOfConnectionConfigObjectId** |  | [optional] 
-**username** | **AnyOfConnectionConfigObjectUsername** |  | [optional] 
-**password** | **AnyOfConnectionConfigObjectPassword** |  | [optional] 
-**port** | **AnyOfConnectionConfigObjectPort** |  | [optional] 
-**database** | **AnyOfConnectionConfigObjectDatabase** |  | [optional] 
-**parameters** | **AnyOfConnectionConfigObjectParameters** |  | [optional] 
-**account** | **AnyOfConnectionConfigObjectAccount** |  | [optional] 
-**warehouse** | **AnyOfConnectionConfigObjectWarehouse** |  | [optional] 
-**role** | **AnyOfConnectionConfigObjectRole** |  | [optional] 
-**sf_schema** | **AnyOfConnectionConfigObjectSfSchema** |  | [optional] 
+**conn_schema** | **object** |  | 
+**name** | **object** |  | [optional] 
+**hostname_path** | **object** |  | [optional] 
+**graph_id** | **object** |  | [optional] 
+**group_id** | **object** |  | [optional] 
+**id** | **object** |  | [optional] 
+**username** | **object** |  | [optional] 
+**password** | **object** |  | [optional] 
+**port** | **object** |  | [optional] 
+**database** | **object** |  | [optional] 
+**parameters** | **object** |  | [optional] 
+**account** | **object** |  | [optional] 
+**warehouse** | **object** |  | [optional] 
+**role** | **object** |  | [optional] 
+**sf_schema** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

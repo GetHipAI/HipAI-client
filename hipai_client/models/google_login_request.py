@@ -28,7 +28,7 @@ class GoogleLoginRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'credential': 'str'
+        'credential': 'object'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class GoogleLoginRequest(object):
 
 
         :return: The credential of this GoogleLoginRequest.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._credential
 
@@ -57,7 +57,7 @@ class GoogleLoginRequest(object):
 
 
         :param credential: The credential of this GoogleLoginRequest.  # noqa: E501
-        :type: str
+        :type: object
         """
         if credential is None:
             raise ValueError("Invalid value for `credential`, must not be `None`")  # noqa: E501

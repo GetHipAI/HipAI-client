@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | **list[AnyOfValidationErrorLocItems]** |  | 
-**msg** | **str** |  | 
-**type** | **str** |  | 
+**loc** | **object** |  | 
+**msg** | **object** |  | 
+**type** | **object** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

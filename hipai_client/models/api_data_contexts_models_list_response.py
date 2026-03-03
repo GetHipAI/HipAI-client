@@ -28,8 +28,8 @@ class ApiDataContextsModelsListResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data': 'list[DataContextObject]',
-        'count': 'int'
+        'data': 'object',
+        'count': 'object'
     }
 
     attribute_map = {
@@ -51,7 +51,7 @@ class ApiDataContextsModelsListResponse(object):
 
 
         :return: The data of this ApiDataContextsModelsListResponse.  # noqa: E501
-        :rtype: list[DataContextObject]
+        :rtype: object
         """
         return self._data
 
@@ -61,7 +61,7 @@ class ApiDataContextsModelsListResponse(object):
 
 
         :param data: The data of this ApiDataContextsModelsListResponse.  # noqa: E501
-        :type: list[DataContextObject]
+        :type: object
         """
         if data is None:
             raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
@@ -74,7 +74,7 @@ class ApiDataContextsModelsListResponse(object):
 
 
         :return: The count of this ApiDataContextsModelsListResponse.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._count
 
@@ -84,7 +84,7 @@ class ApiDataContextsModelsListResponse(object):
 
 
         :param count: The count of this ApiDataContextsModelsListResponse.  # noqa: E501
-        :type: int
+        :type: object
         """
         if count is None:
             raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
