@@ -3,6 +3,7 @@ from __future__ import absolute_import
 from typing import Any, Dict, List, Literal, Optional, TypeAlias, Union
 from uuid import UUID
 from hipai_client.models import (
+    BuildOptionsObject,
     ConnectionConfigObject,
     DataContextObject,
     AgentConfigObject,
@@ -572,6 +573,7 @@ class SimpleHipAIClient:
         group_id: Optional[Union[str, UUID]] = None,
         connection_config_ids: Optional[List[str]] = None,
         build: bool = False,
+        build_options: Optional[BuildOptionsObject] = None,
         async_req: bool = False,
         **kwargs,
     ) -> Union[DataContextObject, ApplyResult]:
@@ -596,6 +598,9 @@ class SimpleHipAIClient:
             Connection config ids referenced by this data context.
         build : bool, optional
             If ``True``, sets status to ``queued`` (to trigger building). Otherwise uses ``draft``.
+        build_options : hipai_client.models.BuildOptionsObject, optional
+            Optional build configuration (prompts, domain, graph settings, etc.) applied when
+            constructing a new data context. Ignored when ``data_context`` is provided directly.
         async_req : bool, optional
             When ``True``, returns a :class:`multiprocessing.pool.ApplyResult`.
         **kwargs
@@ -650,6 +655,7 @@ class SimpleHipAIClient:
             group_id=group_id,
             config_ids=connection_config_ids,
             status=DataContextStatuses.QUEUED.value if build else DataContextStatuses.DRAFT.value,
+            build_options=build_options,
             **kwargs,
         )
         return hipai_client.DataContextsApi(self.client).upsert_data_context_api_data_contexts_post(
@@ -664,6 +670,7 @@ class SimpleHipAIClient:
         data_context_id: Optional[Union[str, UUID]] = None,
         llm_config_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
+        direction_citations: Opational[bool] = None,
         async_req: bool = False,
         **kwargs,
     ) -> Union[AgentConfigObject, ApplyResult]:
@@ -687,6 +694,8 @@ class SimpleHipAIClient:
             Optional LLM config id override for the agent.
         group_id : str or uuid.UUID, optional
             Group isolation id to associate.
+        direction_citations: bool, optional
+            Whether to include direct citations in the gnerated response
         async_req : bool, optional
             When ``True``, returns a :class:`multiprocessing.pool.ApplyResult`.
         **kwargs
@@ -731,6 +740,7 @@ class SimpleHipAIClient:
             graph_id=data_context_id,
             llm_config_id=llm_config_id,
             group_id=group_id,
+            direction_citations=direction_citations,
             **kwargs,
         )
         return hipai_client.AgentsApi(self.client).upsert_agent_api_agents_post(agent, async_req=async_req)
@@ -849,6 +859,37 @@ class SimpleHipAIClient:
         if isinstance(id, UUID):
             id = str(id)
         return hipai_client.DataContextsApi(self.client).load_data_context_api_data_contexts_id_get(id, **kwargs)
+
+    def get_build_options(self, id: Union[UUID, str], group_id: Optional[Union[str, UUID]] = None, **kwargs) -> BuildOptionsObject:
+        """
+        Retrieve the build options for a specific data context.
+
+        Parameters
+        ----------
+        id : uuid.UUID or str
+            Data context id.
+        group_id : str or uuid.UUID, optional
+            Group isolation id.
+        **kwargs
+            Additional keyword arguments passed through to the underlying OpenAPI call.
+
+        Returns
+        -------
+        hipai_client.models.BuildOptionsObject
+            The build options for the given data context.
+
+        Examples
+        --------
+        >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
+        >>> opts = client.get_build_options("DATA_CONTEXT_ID")
+        """
+        if isinstance(id, UUID):
+            id = str(id)
+        if isinstance(group_id, UUID):
+            group_id = str(group_id)
+        return hipai_client.DataContextsApi(self.client).get_build_options_api_data_contexts_build_options_id_get(
+            id, group_id=group_id, **kwargs
+        )
 
     def load_agent(self, id: Union[UUID, str], **kwargs) -> AgentConfigObject:
         """
