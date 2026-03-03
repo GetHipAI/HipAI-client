@@ -49,7 +49,7 @@ class AgentConfigObject(object):
         'group_id': 'group_id'
     }
 
-    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None):  # noqa: E501
+    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None, **kwargs):  # noqa: E501
         """AgentConfigObject - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._status = None
