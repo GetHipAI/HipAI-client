@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.data_contexts_api import DataContextsApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.api.data_contexts_api import DataContextsApi  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestDataContextsApi(unittest.TestCase):
@@ -28,24 +28,52 @@ class TestDataContextsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_data_context_upsert_data_contexts_post(self):
-        """Test case for data_context_upsert_data_contexts_post
+    def test_build_logs_api_data_contexts_logs_id_get(self):
+        """Test case for build_logs_api_data_contexts_logs_id_get
 
-        Data Context Upsert  # noqa: E501
+        Build Logs  # noqa: E501
         """
         pass
 
-    def test_get_list_data_contexts_list_get(self):
-        """Test case for get_list_data_contexts_list_get
+    def test_delete_data_context_api_data_contexts_id_delete(self):
+        """Test case for delete_data_context_api_data_contexts_id_delete
 
-        Get List  # noqa: E501
+        Delete Data Context  # noqa: E501
         """
         pass
 
-    def test_load_data_contexts_get(self):
-        """Test case for load_data_contexts_get
+    def test_get_build_options_api_data_contexts_build_options_id_get(self):
+        """Test case for get_build_options_api_data_contexts_build_options_id_get
 
-        Load  # noqa: E501
+        Get Build Options  # noqa: E501
+        """
+        pass
+
+    def test_list_data_contexts_api_data_contexts_list_post(self):
+        """Test case for list_data_contexts_api_data_contexts_list_post
+
+        List Data Contexts  # noqa: E501
+        """
+        pass
+
+    def test_load_data_context_api_data_contexts_id_get(self):
+        """Test case for load_data_context_api_data_contexts_id_get
+
+        Load Data Context  # noqa: E501
+        """
+        pass
+
+    def test_load_graph_api_data_contexts_graph_id_get(self):
+        """Test case for load_graph_api_data_contexts_graph_id_get
+
+        Load Graph  # noqa: E501
+        """
+        pass
+
+    def test_upsert_data_context_api_data_contexts_post(self):
+        """Test case for upsert_data_context_api_data_contexts_post
+
+        Upsert Data Context  # noqa: E501
         """
         pass
 

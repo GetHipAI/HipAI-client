@@ -10,6 +10,9 @@ from hipai_client.models import (
     ModelConfigObject,
     ChatCompletionRequest,
     GroupIsolationObject,
+    ProjectPermissionObject,
+    ProjectObject,
+    ProjectPermissionUpsert,
     UserPublic,
 )
 from requests_toolbelt.multipart.encoder import MultipartEncoder
@@ -1263,3 +1266,104 @@ class SimpleHipAIClient:
         if isinstance(id, UUID):
             id = str(id)
         return hipai_client.TeamApi(self.client).remove_team_member_api_team_members_user_id_delete(id)
+
+    def list_accessible_project_permissions(self):
+        """
+        List permission objects for all accessible projects.
+
+        Returns
+        -------
+        list[hipai_client.models.ProjectPermissionObject]
+            A list of project level permissions. Roles are either "read" or "edit"
+
+        Examples
+        --------
+        >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
+        >>> project_permissions = client.list_agents(group_id="GROUP_ID")
+        >>> isinstance(project_permissions, list)
+        True
+        """
+        return [
+            ProjectPermissionObject(**project_permission)
+            for project_permission in hipai_client.ProjectsApi(self.client).get_user_permissions_api_projects_user_permissions_get().data
+        ]
+
+    def add_project(self, project: Optional[ProjectObject] = None, name: Optional[str] = None):
+        """
+        Add a new Project.
+
+        Parameters
+        ----------
+        project : hipai_client.models.ProjectObject, optional
+            Pre-built project object. If provided, takes precedence.
+        name : str, optional
+            The name to assign to the project
+
+        Returns
+        -------
+        hipai_client.models.ProjectObject
+            The added project.
+
+        Examples
+        --------
+
+        >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
+        >>> project = client.add_project(name="new project")
+        >>> project.name
+        'new project'
+        """
+        project = project or ProjectObject(name=name)
+        return hipai_client.ProjectsApi(self.client).upsert_project_api_projects_post(project)
+
+    def add_project_permission(self, user_id: Union[str, UUID], project_id: Union[str, UUID], access_level: Literal["read", "edit"] = "read"):
+        """
+        Assigns Permissions within a project to a user.
+
+        Parameters
+        ----------
+        user_id : str or UUID
+            The user to assign the access level on the project to
+        project_id : str or UUID
+            The project on which to assign access
+        access_level : "read" or "edit"
+            The level of access to assign to the user.
+
+
+        Examples
+        --------
+
+        >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
+        >>> client.add_project_permission(user_id="USER_ID", project_id="PROJECT_ID", access_level="edit")
+        """
+        if isinstance(user_id, UUID):
+            user_id = str(user_id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        return hipai_client.ProjectsApi(self.client).upsert_project_permission_api_projects_permissions_post(
+            ProjectPermissionUpsert(user_id=user_id, project_id=project_id, access_level=access_level)
+        )
+
+    def revoke_project_access(self, user_id: Union[str, UUID], project_id: Union[str, UUID]):
+        """
+        Revokes permissions within a project from a user.
+
+        Parameters
+        ----------
+        user_id : str or UUID
+            The user from whom to revoke permissions
+        project_id : str or UUID
+            The project on which to revoke access
+
+        Examples
+        --------
+
+        >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
+        >>> client.revoke_project_access(user_id="USER_ID", project_id="PROJECT_ID")
+        """
+        if isinstance(user_id, UUID):
+            user_id = str(user_id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        return hipai_client.ProjectsApi(self.client).upsert_project_permission_api_projects_permissions_post(
+            ProjectPermissionUpsert(user_id=user_id, project_id=project_id, access_level=None)
+        )

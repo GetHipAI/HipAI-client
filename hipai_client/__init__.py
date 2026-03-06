@@ -13,6 +13,7 @@
 """
 
 from __future__ import absolute_import
+from .simple_client import *
 
 # import apis into sdk package
 from hipai_client.api.agents_api import AgentsApi
@@ -26,6 +27,7 @@ from hipai_client.api.evaluations_api import EvaluationsApi
 from hipai_client.api.groups_api import GroupsApi
 from hipai_client.api.login_api import LoginApi
 from hipai_client.api.model_configs_api import ModelConfigsApi
+from hipai_client.api.projects_api import ProjectsApi
 from hipai_client.api.team_api import TeamApi
 from hipai_client.api.users_api import UsersApi
 # import ApiClient
@@ -47,6 +49,7 @@ from hipai_client.models.api_data_contexts_models_list_response import ApiDataCo
 from hipai_client.models.api_evaluations_models_list_response import ApiEvaluationsModelsListResponse
 from hipai_client.models.api_groups_models_list_response import ApiGroupsModelsListResponse
 from hipai_client.models.api_model_config_models_list_response import ApiModelConfigModelsListResponse
+from hipai_client.models.api_projects_models_list_response import ApiProjectsModelsListResponse
 from hipai_client.models.body_document_upload_api_connection_configs_document_upload_post import BodyDocumentUploadApiConnectionConfigsDocumentUploadPost
 from hipai_client.models.body_login_access_token_login_access_token_post import BodyLoginAccessTokenLoginAccessTokenPost
 from hipai_client.models.build_options_object import BuildOptionsObject
@@ -79,11 +82,16 @@ from hipai_client.models.group_isolation_object import GroupIsolationObject
 from hipai_client.models.group_request import GroupRequest
 from hipai_client.models.http_validation_error import HTTPValidationError
 from hipai_client.models.limit_object import LimitObject
+from hipai_client.models.list_load_request import ListLoadRequest
 from hipai_client.models.list_response_logs import ListResponseLogs
 from hipai_client.models.log_object import LogObject
 from hipai_client.models.message import Message
 from hipai_client.models.model_config_object import ModelConfigObject
 from hipai_client.models.node_object import NodeObject
+from hipai_client.models.project_mixin import ProjectMixin
+from hipai_client.models.project_object import ProjectObject
+from hipai_client.models.project_permission_object import ProjectPermissionObject
+from hipai_client.models.project_permission_upsert import ProjectPermissionUpsert
 from hipai_client.models.prompt_tokens_details import PromptTokensDetails
 from hipai_client.models.question_object import QuestionObject
 from hipai_client.models.request_access_request import RequestAccessRequest
@@ -95,5 +103,7 @@ from hipai_client.models.token import Token
 from hipai_client.models.tokens_sample import TokensSample
 from hipai_client.models.top_logprob import TopLogprob
 from hipai_client.models.user_api_keys import UserAPIKeys
+from hipai_client.models.user_permissions_entry import UserPermissionsEntry
+from hipai_client.models.user_permissions_list_response import UserPermissionsListResponse
 from hipai_client.models.user_public import UserPublic
 from hipai_client.models.validation_error import ValidationError

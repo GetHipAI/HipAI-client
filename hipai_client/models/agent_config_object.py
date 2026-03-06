@@ -28,6 +28,7 @@ class AgentConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'name': 'object',
         'status': 'object',
         'id': 'object',
@@ -40,6 +41,7 @@ class AgentConfigObject(object):
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'name': 'name',
         'status': 'status',
         'id': 'id',
@@ -51,8 +53,9 @@ class AgentConfigObject(object):
         'direct_citations': 'direct_citations'
     }
 
-    def __init__(self, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None, direct_citations=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, name=None, status=None, id=None, updated_at=None, api_key=None, llm_config_id=None, graph_id=None, group_id=None, direct_citations=None, *args, **kwargs):  # noqa: E501
         """AgentConfigObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._name = None
         self._status = None
         self._id = None
@@ -63,6 +66,8 @@ class AgentConfigObject(object):
         self._group_id = None
         self._direct_citations = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.name = name
         self.status = status
         if id is not None:
@@ -79,6 +84,27 @@ class AgentConfigObject(object):
             self.group_id = group_id
         if direct_citations is not None:
             self.direct_citations = direct_citations
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this AgentConfigObject.  # noqa: E501
+
+
+        :return: The project_id of this AgentConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this AgentConfigObject.
+
+
+        :param project_id: The project_id of this AgentConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def name(self):

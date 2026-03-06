@@ -43,6 +43,7 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,12 +66,13 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -104,8 +106,14 @@ class AgentsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -136,7 +144,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GroupRequest body: (required)
+        :param object body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +165,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GroupRequest body: (required)
+        :param object body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -234,6 +242,7 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -255,12 +264,13 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -294,8 +304,14 @@ class AgentsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting

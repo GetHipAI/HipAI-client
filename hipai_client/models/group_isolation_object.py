@@ -28,23 +28,49 @@ class GroupIsolationObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'name': 'object',
         'id': 'object'
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'name': 'name',
         'id': 'id'
     }
 
-    def __init__(self, name=None, id=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, name=None, id=None, *args, **kwargs):  # noqa: E501
         """GroupIsolationObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._name = None
         self._id = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.name = name
         if id is not None:
             self.id = id
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this GroupIsolationObject.  # noqa: E501
+
+
+        :return: The project_id of this GroupIsolationObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this GroupIsolationObject.
+
+
+        :param project_id: The project_id of this GroupIsolationObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def name(self):

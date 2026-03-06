@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.model_config_object import ModelConfigObject  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.models.model_config_object import ModelConfigObject  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestModelConfigObject(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestModelConfigObject(unittest.TestCase):
     def testModelConfigObject(self):
         """Test ModelConfigObject"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.model_config_object.ModelConfigObject()  # noqa: E501
+        # model = hipai_client.models.model_config_object.ModelConfigObject()  # noqa: E501
         pass
 
 

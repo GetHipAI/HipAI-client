@@ -28,6 +28,7 @@ class ConnectionConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'conn_schema': 'object',
         'name': 'object',
         'hostname_path': 'object',
@@ -46,6 +47,7 @@ class ConnectionConfigObject(object):
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'conn_schema': 'conn_schema',
         'name': 'name',
         'hostname_path': 'hostname_path',
@@ -63,8 +65,9 @@ class ConnectionConfigObject(object):
         'sf_schema': 'sf_schema'
     }
 
-    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, *args, **kwargs):  # noqa: E501
         """ConnectionConfigObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._conn_schema = None
         self._name = None
         self._hostname_path = None
@@ -81,6 +84,8 @@ class ConnectionConfigObject(object):
         self._role = None
         self._sf_schema = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.conn_schema = conn_schema
         if name is not None:
             self.name = name
@@ -110,6 +115,27 @@ class ConnectionConfigObject(object):
             self.role = role
         if sf_schema is not None:
             self.sf_schema = sf_schema
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ConnectionConfigObject.  # noqa: E501
+
+
+        :return: The project_id of this ConnectionConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ConnectionConfigObject.
+
+
+        :param project_id: The project_id of this ConnectionConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def conn_schema(self):

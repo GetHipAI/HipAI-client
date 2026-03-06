@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.login_api import LoginApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.api.login_api import LoginApi  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestLoginApi(unittest.TestCase):
@@ -28,10 +28,45 @@ class TestLoginApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_forgot_password_auth_forgot_password_post(self):
+        """Test case for forgot_password_auth_forgot_password_post
+
+        Forgot Password  # noqa: E501
+        """
+        pass
+
     def test_login_access_token_login_access_token_post(self):
         """Test case for login_access_token_login_access_token_post
 
         Login Access Token  # noqa: E501
+        """
+        pass
+
+    def test_login_google_login_google_post(self):
+        """Test case for login_google_login_google_post
+
+        Login Google  # noqa: E501
+        """
+        pass
+
+    def test_request_access_auth_request_access_post(self):
+        """Test case for request_access_auth_request_access_post
+
+        Request Access  # noqa: E501
+        """
+        pass
+
+    def test_reset_password_auth_reset_password_post(self):
+        """Test case for reset_password_auth_reset_password_post
+
+        Reset Password  # noqa: E501
+        """
+        pass
+
+    def test_verify_reset_token_auth_verify_reset_token_token_get(self):
+        """Test case for verify_reset_token_auth_verify_reset_token_token_get
+
+        Verify Reset Token  # noqa: E501
         """
         pass
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.chat_completion_request import ChatCompletionRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.models.chat_completion_request import ChatCompletionRequest  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestChatCompletionRequest(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestChatCompletionRequest(unittest.TestCase):
     def testChatCompletionRequest(self):
         """Test ChatCompletionRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.chat_completion_request.ChatCompletionRequest()  # noqa: E501
+        # model = hipai_client.models.chat_completion_request.ChatCompletionRequest()  # noqa: E501
         pass
 
 

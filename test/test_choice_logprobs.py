@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.choice_logprobs import ChoiceLogprobs  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.models.choice_logprobs import ChoiceLogprobs  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestChoiceLogprobs(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestChoiceLogprobs(unittest.TestCase):
     def testChoiceLogprobs(self):
         """Test ChoiceLogprobs"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.choice_logprobs.ChoiceLogprobs()  # noqa: E501
+        # model = hipai_client.models.choice_logprobs.ChoiceLogprobs()  # noqa: E501
         pass
 
 

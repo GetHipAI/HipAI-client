@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.prompt_tokens_details import PromptTokensDetails  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.models.prompt_tokens_details import PromptTokensDetails  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestPromptTokensDetails(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPromptTokensDetails(unittest.TestCase):
     def testPromptTokensDetails(self):
         """Test PromptTokensDetails"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.prompt_tokens_details.PromptTokensDetails()  # noqa: E501
+        # model = hipai_client.models.prompt_tokens_details.PromptTokensDetails()  # noqa: E501
         pass
 
 

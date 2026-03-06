@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **conn_schema** | **object** |  | 
 **name** | **object** |  | [optional] 
 **hostname_path** | **object** |  | [optional] 

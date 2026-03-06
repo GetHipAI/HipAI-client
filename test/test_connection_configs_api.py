@@ -77,6 +77,13 @@ class TestConnectionConfigsApi(unittest.TestCase):
         """
         pass
 
+    def test_test_connection_api_connection_configs_test_connection_post(self):
+        """Test case for test_connection_api_connection_configs_test_connection_post
+
+        Test Connection  # noqa: E501
+        """
+        pass
+
     def test_upsert_connection_config_api_connection_configs_post(self):
         """Test case for upsert_connection_config_api_connection_configs_post
 

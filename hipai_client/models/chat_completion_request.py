@@ -28,6 +28,7 @@ class ChatCompletionRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'messages': 'object',
         'agent_id': 'object',
         'agent_api_key': 'object',
@@ -43,6 +44,7 @@ class ChatCompletionRequest(object):
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'messages': 'messages',
         'agent_id': 'agent_id',
         'agent_api_key': 'agent_api_key',
@@ -57,8 +59,9 @@ class ChatCompletionRequest(object):
         'direct_citations': 'direct_citations'
     }
 
-    def __init__(self, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None, direct_citations=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None, direct_citations=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionRequest - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._messages = None
         self._agent_id = None
         self._agent_api_key = None
@@ -72,6 +75,8 @@ class ChatCompletionRequest(object):
         self._frequency_penalty = None
         self._direct_citations = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.messages = messages
         if agent_id is not None:
             self.agent_id = agent_id
@@ -95,6 +100,27 @@ class ChatCompletionRequest(object):
             self.frequency_penalty = frequency_penalty
         if direct_citations is not None:
             self.direct_citations = direct_citations
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The project_id of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ChatCompletionRequest.
+
+
+        :param project_id: The project_id of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def messages(self):

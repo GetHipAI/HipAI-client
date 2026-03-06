@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.default_api import DefaultApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.api.default_api import DefaultApi  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestDefaultApi(unittest.TestCase):

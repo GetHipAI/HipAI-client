@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**upsert_connection_config_api_connection_configs_post**](ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 
 # **delete_connection_config_api_connection_configs_id_delete**
-> Message delete_connection_config_api_connection_configs_id_delete(id)
+> Message delete_connection_config_api_connection_configs_id_delete(id, body=body)
 
 Delete Connection Config
 
@@ -34,10 +34,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # Delete Connection Config
-    api_response = api_instance.delete_connection_config_api_connection_configs_id_delete(id)
+    api_response = api_instance.delete_connection_config_api_connection_configs_id_delete(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->delete_connection_config_api_connection_configs_id_delete: %s\n" % e)
@@ -48,6 +49,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **body** | [**object**](object.md)|  | [optional] 
 
 ### Return type
 
@@ -59,13 +61,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_document_api_connection_configs_documents_id_delete**
-> Message delete_document_api_connection_configs_documents_id_delete(id)
+> Message delete_document_api_connection_configs_documents_id_delete(id, body=body)
 
 Delete Document
 
@@ -84,10 +86,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # Delete Document
-    api_response = api_instance.delete_document_api_connection_configs_documents_id_delete(id)
+    api_response = api_instance.delete_document_api_connection_configs_documents_id_delete(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->delete_document_api_connection_configs_documents_id_delete: %s\n" % e)
@@ -98,6 +101,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **body** | [**object**](object.md)|  | [optional] 
 
 ### Return type
 
@@ -109,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -267,7 +271,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_documents_api_connection_configs_documents_id_get**
-> DocumentListResponse list_documents_api_connection_configs_documents_id_get(id)
+> DocumentListResponse list_documents_api_connection_configs_documents_id_get(id, body=body)
 
 List Documents
 
@@ -286,10 +290,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # List Documents
-    api_response = api_instance.list_documents_api_connection_configs_documents_id_get(id)
+    api_response = api_instance.list_documents_api_connection_configs_documents_id_get(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->list_documents_api_connection_configs_documents_id_get: %s\n" % e)
@@ -300,6 +305,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **body** | [**object**](object.md)|  | [optional] 
 
 ### Return type
 
@@ -311,13 +317,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_connection_config_api_connection_configs_id_get**
-> ConnectionConfigObject load_connection_config_api_connection_configs_id_get(id)
+> ConnectionConfigObject load_connection_config_api_connection_configs_id_get(id, body=body)
 
 Load Connection Config
 
@@ -336,10 +342,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # Load Connection Config
-    api_response = api_instance.load_connection_config_api_connection_configs_id_get(id)
+    api_response = api_instance.load_connection_config_api_connection_configs_id_get(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->load_connection_config_api_connection_configs_id_get: %s\n" % e)
@@ -350,6 +357,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **body** | [**object**](object.md)|  | [optional] 
 
 ### Return type
 
@@ -361,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

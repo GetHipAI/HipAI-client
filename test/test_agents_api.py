@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.agents_api import AgentsApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.api.agents_api import AgentsApi  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestAgentsApi(unittest.TestCase):
@@ -28,24 +28,31 @@ class TestAgentsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_agent_config_upsert_agents_post(self):
-        """Test case for agent_config_upsert_agents_post
+    def test_delete_agent_api_agents_id_delete(self):
+        """Test case for delete_agent_api_agents_id_delete
 
-        Agent Config Upsert  # noqa: E501
+        Delete Agent  # noqa: E501
         """
         pass
 
-    def test_get_list_agents_list_get(self):
-        """Test case for get_list_agents_list_get
+    def test_list_agents_api_agents_list_post(self):
+        """Test case for list_agents_api_agents_list_post
 
-        Get List  # noqa: E501
+        List Agents  # noqa: E501
         """
         pass
 
-    def test_load_agents_get(self):
-        """Test case for load_agents_get
+    def test_load_agent_api_agents_id_get(self):
+        """Test case for load_agent_api_agents_id_get
 
-        Load  # noqa: E501
+        Load Agent  # noqa: E501
+        """
+        pass
+
+    def test_upsert_agent_api_agents_post(self):
+        """Test case for upsert_agent_api_agents_post
+
+        Upsert Agent  # noqa: E501
         """
         pass
 

@@ -28,10 +28,31 @@ class TestUsersApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_generate_replacement_api_key_api_users_api_keys_generate_replacement_post(self):
+        """Test case for generate_replacement_api_key_api_users_api_keys_generate_replacement_post
+
+        Generate Replacement Api Key  # noqa: E501
+        """
+        pass
+
+    def test_get_api_key_api_users_api_keys_get(self):
+        """Test case for get_api_key_api_users_api_keys_get
+
+        Get Api Key  # noqa: E501
+        """
+        pass
+
     def test_get_current_user_api_users_get(self):
         """Test case for get_current_user_api_users_get
 
         Get Current User  # noqa: E501
+        """
+        pass
+
+    def test_replace_api_key_api_users_api_keys_replace_post(self):
+        """Test case for replace_api_key_api_users_api_keys_replace_post
+
+        Replace Api Key  # noqa: E501
         """
         pass
 

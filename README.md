@@ -28,8 +28,9 @@ import hipai_client
 
 To install the latest release you may run:
 ```sh
-pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.3
+pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.4
 ```
+
 
 ### Setuptools
 
@@ -63,10 +64,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # Delete Agent
-    api_response = api_instance.delete_agent_api_agents_id_delete(id)
+    api_response = api_instance.delete_agent_api_agents_id_delete(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->delete_agent_api_agents_id_delete: %s\n" % e)
@@ -77,7 +79,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.GroupRequest() # GroupRequest | 
+body = NULL # object | 
 
 try:
     # List Agents
@@ -93,10 +95,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+body = NULL # object |  (optional)
 
 try:
     # Load Agent
-    api_response = api_instance.load_agent_api_agents_id_get(id)
+    api_response = api_instance.load_agent_api_agents_id_get(id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->load_agent_api_agents_id_get: %s\n" % e)
@@ -171,6 +174,12 @@ Class | Method | HTTP request | Description
 *ModelConfigsApi* | [**delete_model_config_api_model_configs_id_delete**](docs/ModelConfigsApi.md#delete_model_config_api_model_configs_id_delete) | **DELETE** /api/model-configs/{id} | Delete Model Config
 *ModelConfigsApi* | [**list_model_configs_api_model_configs_list_post**](docs/ModelConfigsApi.md#list_model_configs_api_model_configs_list_post) | **POST** /api/model-configs/list | List Model Configs
 *ModelConfigsApi* | [**upsert_model_config_api_model_configs_post**](docs/ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
+*ProjectsApi* | [**delete_project_api_projects_id_delete**](docs/ProjectsApi.md#delete_project_api_projects_id_delete) | **DELETE** /api/projects/{id} | Delete Project
+*ProjectsApi* | [**get_user_permissions_api_projects_user_permissions_get**](docs/ProjectsApi.md#get_user_permissions_api_projects_user_permissions_get) | **GET** /api/projects/user-permissions | Get User Permissions
+*ProjectsApi* | [**list_project_permissions_api_projects_permissions_id_get**](docs/ProjectsApi.md#list_project_permissions_api_projects_permissions_id_get) | **GET** /api/projects/permissions/{id} | List Project Permissions
+*ProjectsApi* | [**list_projects_api_projects_get**](docs/ProjectsApi.md#list_projects_api_projects_get) | **GET** /api/projects/ | List Projects
+*ProjectsApi* | [**upsert_project_api_projects_post**](docs/ProjectsApi.md#upsert_project_api_projects_post) | **POST** /api/projects/ | Upsert Project
+*ProjectsApi* | [**upsert_project_permission_api_projects_permissions_post**](docs/ProjectsApi.md#upsert_project_permission_api_projects_permissions_post) | **POST** /api/projects/permissions | Upsert Project Permission
 *TeamApi* | [**list_team_members_api_team_members_get**](docs/TeamApi.md#list_team_members_api_team_members_get) | **GET** /api/team/members | List Team Members
 *TeamApi* | [**remove_team_member_api_team_members_user_id_delete**](docs/TeamApi.md#remove_team_member_api_team_members_user_id_delete) | **DELETE** /api/team/members/{user_id} | Remove Team Member
 *TeamApi* | [**reset_user_password_api_team_reset_password_user_id_post**](docs/TeamApi.md#reset_user_password_api_team_reset_password_user_id_post) | **POST** /api/team/reset-password/{user_id} | Reset User Password
@@ -198,6 +207,7 @@ Class | Method | HTTP request | Description
  - [ApiEvaluationsModelsListResponse](docs/ApiEvaluationsModelsListResponse.md)
  - [ApiGroupsModelsListResponse](docs/ApiGroupsModelsListResponse.md)
  - [ApiModelConfigModelsListResponse](docs/ApiModelConfigModelsListResponse.md)
+ - [ApiProjectsModelsListResponse](docs/ApiProjectsModelsListResponse.md)
  - [BodyDocumentUploadApiConnectionConfigsDocumentUploadPost](docs/BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.md)
  - [BodyLoginAccessTokenLoginAccessTokenPost](docs/BodyLoginAccessTokenLoginAccessTokenPost.md)
  - [BuildOptionsObject](docs/BuildOptionsObject.md)
@@ -230,11 +240,16 @@ Class | Method | HTTP request | Description
  - [GroupRequest](docs/GroupRequest.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [LimitObject](docs/LimitObject.md)
+ - [ListLoadRequest](docs/ListLoadRequest.md)
  - [ListResponseLogs](docs/ListResponseLogs.md)
  - [LogObject](docs/LogObject.md)
  - [Message](docs/Message.md)
  - [ModelConfigObject](docs/ModelConfigObject.md)
  - [NodeObject](docs/NodeObject.md)
+ - [ProjectMixin](docs/ProjectMixin.md)
+ - [ProjectObject](docs/ProjectObject.md)
+ - [ProjectPermissionObject](docs/ProjectPermissionObject.md)
+ - [ProjectPermissionUpsert](docs/ProjectPermissionUpsert.md)
  - [PromptTokensDetails](docs/PromptTokensDetails.md)
  - [QuestionObject](docs/QuestionObject.md)
  - [RequestAccessRequest](docs/RequestAccessRequest.md)
@@ -246,6 +261,8 @@ Class | Method | HTTP request | Description
  - [TokensSample](docs/TokensSample.md)
  - [TopLogprob](docs/TopLogprob.md)
  - [UserAPIKeys](docs/UserAPIKeys.md)
+ - [UserPermissionsEntry](docs/UserPermissionsEntry.md)
+ - [UserPermissionsListResponse](docs/UserPermissionsListResponse.md)
  - [UserPublic](docs/UserPublic.md)
  - [ValidationError](docs/ValidationError.md)
 

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **messages** | **object** |  | 
 **agent_id** | **object** |  | [optional] 
 **agent_api_key** | **object** |  | [optional] 

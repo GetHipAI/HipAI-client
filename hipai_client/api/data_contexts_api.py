@@ -42,6 +42,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,12 +64,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -102,8 +104,14 @@ class DataContextsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -135,6 +143,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,12 +165,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -195,8 +205,14 @@ class DataContextsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -228,7 +244,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
-        :param object group_id:
+        :param object body:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -250,13 +266,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
-        :param object group_id:
+        :param object body:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'group_id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -283,8 +299,6 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
-        if 'group_id' in params:
-            query_params.append(('group_id', params['group_id']))  # noqa: E501
 
         header_params = {}
 
@@ -292,8 +306,14 @@ class DataContextsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -422,6 +442,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -443,12 +464,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -482,8 +504,14 @@ class DataContextsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -515,6 +543,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -536,12 +565,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object body:
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -575,8 +605,14 @@ class DataContextsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting

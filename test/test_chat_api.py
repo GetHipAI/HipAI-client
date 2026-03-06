@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.chat_api import ChatApi  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.api.chat_api import ChatApi  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestChatApi(unittest.TestCase):
@@ -28,24 +28,17 @@ class TestChatApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_chat_chat_post(self):
-        """Test case for chat_chat_post
+    def test_completions_api_chat_completions_post(self):
+        """Test case for completions_api_chat_completions_post
 
-        Chat  # noqa: E501
+        Completions  # noqa: E501
         """
         pass
 
-    def test_get_list_chat_list_get(self):
-        """Test case for get_list_chat_list_get
+    def test_streaming_completions_api_chat_completions_stream_post(self):
+        """Test case for streaming_completions_api_chat_completions_stream_post
 
-        Get List  # noqa: E501
-        """
-        pass
-
-    def test_load_chat_load_get(self):
-        """Test case for load_chat_load_get
-
-        Load  # noqa: E501
+        Streaming Completions  # noqa: E501
         """
         pass
 
