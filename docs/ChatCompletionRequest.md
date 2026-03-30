@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **messages** | **object** |  | 
 **agent_id** | **object** |  | [optional] 
 **agent_api_key** | **object** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **temperature** | **object** |  | [optional] 
 **frequency_penalty** | **object** |  | [optional] 
 **direct_citations** | **object** |  | [optional] 
+**stream_response** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

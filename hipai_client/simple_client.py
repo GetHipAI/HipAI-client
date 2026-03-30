@@ -135,6 +135,7 @@ True
 def instantiate_connection_config(
     conn_schema: ConnectionSchema,
     name: str,
+    project_id: Optional[Union[str, UUID]],
     hostname_path: str = "",
     graph_id: Optional[Union[str, UUID]] = None,
     group_id: Optional[Union[str, UUID]] = None,
@@ -161,6 +162,8 @@ def instantiate_connection_config(
         ``"snowflake"``, or ``"sqlite"``.
     name : str
         Human-friendly name for the connection configuration.
+    project_id : str or uuid.UUID
+        The id of the project to which this connection configuration should be assigned.
     hostname_path : str, optional
         For database connections this is typically the hostname (and sometimes path).
         For ``"sqlite"`` it should be the path to the database file.
@@ -234,6 +237,7 @@ def instantiate_connection_config(
         return ConnectionConfigObject(
             conn_schema=conn_schema,
             name=name,
+            project_id=project_id,
             hostname_path=hostname_path,
             group_id=group_id,
             graph_id=graph_id,
@@ -252,6 +256,7 @@ def instantiate_connection_config(
             conn_schema=conn_schema,
             name=name,
             hostname_path=hostname_path,
+            project_id=project_id,
             group_id=group_id,
             graph_id=graph_id,
             username=username,
@@ -269,6 +274,7 @@ def instantiate_connection_config(
         return ConnectionConfigObject(
             conn_schema=conn_schema,
             name=name,
+            project_id=project_id,
             hostname_path=hostname_path,
             group_id=group_id,
             graph_id=graph_id,
@@ -283,6 +289,7 @@ def instantiate_connection_config(
         return ConnectionConfigObject(
             conn_schema=conn_schema,
             name=name,
+            project_id=project_id,
             hostname_path=hostname_path,
             group_id=group_id,
             graph_id=graph_id,
@@ -322,7 +329,7 @@ class SimpleHipAIClient:
     --------
     >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
     >>> # Create a group
-    >>> group = client.create_group(name="My Group")
+    >>> group = client.create_group(name="My Group", project_id="PROJECT_ID")
     """
 
     def __init__(self, access_token: str, hostname: str = DEFAULT_PRODUCTION_API_HOST):
@@ -345,6 +352,7 @@ class SimpleHipAIClient:
         self,
         group: Optional[GroupIsolationObject] = None,
         name: Optional[str] = None,
+        project_id: Optional[Union[str, UUID]] = None,
         async_req: bool = False,
         **kwargs,
     ) -> Union[GroupIsolationObject, ApplyResult]:
@@ -352,14 +360,18 @@ class SimpleHipAIClient:
         Create (or upsert) a group isolation object.
 
         You can either provide an already-constructed :class:`~hipai_client.models.GroupIsolationObject`
-        or provide a ``name`` (and optional extra fields) and the object will be created for you.
+        or provide a ``name`` and ``project_id`` (and optional extra fields) and the object will be
+        created for you.
 
         Parameters
         ----------
         group : hipai_client.models.GroupIsolationObject, optional
-            A pre-constructed group object to upsert.
+            A pre-constructed group object to upsert. When provided, ``project_id`` is not required.
         name : str, optional
             Name used to construct a group object when ``group`` is not provided.
+        project_id : str or uuid.UUID, optional
+            The project to which the group belongs. Required when constructing a new group from
+            ``name``; ignored when ``group`` is provided directly.
         async_req : bool, optional
             When ``True``, returns a :class:`multiprocessing.pool.ApplyResult` for async execution.
         **kwargs
@@ -376,17 +388,19 @@ class SimpleHipAIClient:
         Create using a name:
 
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> group = client.create_group(name="Analytics Team")
+        >>> group = client.create_group(name="Analytics Team", project_id="PROJECT_ID")
         >>> group.name
         'Analytics Team'
 
         Create using an explicit object:
 
-        >>> group_obj = GroupIsolationObject(name="Research Team")
+        >>> group_obj = GroupIsolationObject(name="Research Team", project_id="PROJECT_ID")
         >>> group = client.create_group(group=group_obj)
         """
         assert group is not None or name is not None, "#create_group requires either a GroupIsolationObject or a name passed."
-        group = group or GroupIsolationObject(name=name, **kwargs)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        group = group or GroupIsolationObject(name=name, project_id=project_id, **kwargs)
         return hipai_client.GroupsApi(self.client).upsert_group_api_groups_post(group, async_req=async_req)
 
     def upsert_llm_config(
@@ -395,6 +409,7 @@ class SimpleHipAIClient:
         name: Optional[str] = None,
         token: Optional[str] = None,
         model_name: Optional[str] = "gpt-5.2",
+        project_id: Optional[Union[str, UUID]] = None,
         async_req: bool = False,
         **kwargs,
     ) -> Union[ModelConfigObject, ApplyResult]:
@@ -402,18 +417,22 @@ class SimpleHipAIClient:
         Create or update an LLM model configuration.
 
         Provide either a full :class:`~hipai_client.models.ModelConfigObject` or enough fields
-        to construct one (``name``, ``token``, and ``model_name``).
+        to construct one (``name``, ``token``, ``model_name``, and ``project_id``).
 
         Parameters
         ----------
         config : hipai_client.models.ModelConfigObject, optional
-            Pre-built model config object. If provided, takes precedence.
+            Pre-built model config object. If provided, takes precedence and ``project_id`` is
+            not required.
         name : str, optional
             Used to construct the config when ``config`` is not provided.
         token : str, optional
             Provider/API token used by the backend for the model configuration.
         model_name : str, optional
             Model identifier/name (defaults to ``"gpt-5.2"``).
+        project_id : str or uuid.UUID, optional
+            The project to which the model config belongs. Required when constructing a new config
+            from ``name``/``token``/``model_name``; ignored when ``config`` is provided directly.
         async_req : bool, optional
             When ``True``, returns a :class:`multiprocessing.pool.ApplyResult`.
         **kwargs
@@ -430,7 +449,7 @@ class SimpleHipAIClient:
         Create (no ``config`` passed):
 
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> llm = client.upsert_llm_config(name="OpenAI Default", token="PROVIDER_TOKEN", model_name="gpt-5.2")
+        >>> llm = client.upsert_llm_config(name="OpenAI Default", token="PROVIDER_TOKEN", model_name="gpt-5.2", project_id="PROJECT_ID")
         >>> llm.name
         'OpenAI Default'
 
@@ -442,8 +461,10 @@ class SimpleHipAIClient:
         """
         assert config is not None or (name is not None and token is not None and model_name is not None), \
             "#upsert_llm_config requires either a ModelConfigObject or name, token, and model_name so that a ModelConfigObject can be constructed"
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if config is None:
-            config = ModelConfigObject(name=name, token=token, model_name=model_name, **kwargs)
+            config = ModelConfigObject(name=name, token=token, model_name=model_name, project_id=project_id, **kwargs)
         return hipai_client.ModelConfigsApi(self.client).upsert_model_config_api_model_configs_post(config, async_req=async_req)
 
     def upsert_connection_config(
@@ -451,6 +472,7 @@ class SimpleHipAIClient:
         connection_config: Optional[ConnectionConfigObject] = None,
         conn_schema: Optional[ConnectionSchema] = None,
         name: Optional[str] = None,
+        project_id: Optional[Union[str, UUID]] = None,
         hostname_path: str = "",
         graph_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
@@ -470,17 +492,22 @@ class SimpleHipAIClient:
         Create or update a connection configuration.
 
         You can either pass a fully-formed :class:`~hipai_client.models.ConnectionConfigObject`
-        or pass convenience parameters (``conn_schema`` and ``name`` plus schema-specific fields),
-        which will be validated and converted via :func:`instantiate_connection_config`.
+        or pass convenience parameters (``conn_schema``, ``name``, and ``project_id`` plus
+        schema-specific fields), which will be validated and converted via
+        :func:`instantiate_connection_config`.
 
         Parameters
         ----------
         connection_config : hipai_client.models.ConnectionConfigObject, optional
-            Pre-built connection config object. If provided, it will be upserted directly.
+            Pre-built connection config object. If provided, it will be upserted directly and
+            ``project_id`` is not required.
         conn_schema : ConnectionSchema, optional
             Schema used when constructing a config (e.g. ``"postgresql"`` or ``"documents"``).
         name : str, optional
             Name used when constructing a config.
+        project_id : str or uuid.UUID, optional
+            The project to which the connection config belongs. Required when constructing a new
+            config from ``conn_schema``/``name``; ignored when ``connection_config`` is provided.
         hostname_path : str, optional
             Host/path for the connection (schema-dependent).
         graph_id : str or uuid.UUID, optional
@@ -520,7 +547,7 @@ class SimpleHipAIClient:
         Create (documents):
 
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> created = client.upsert_connection_config(conn_schema="documents", name="Uploads", group_id="GROUP_ID")
+        >>> created = client.upsert_connection_config(conn_schema="documents", name="Uploads", project_id="PROJECT_ID", group_id="GROUP_ID")
         >>> created.conn_schema
         'documents'
 
@@ -529,6 +556,7 @@ class SimpleHipAIClient:
         >>> created = client.upsert_connection_config(
         ...     conn_schema="postgresql",
         ...     name="Warehouse",
+        ...     project_id="PROJECT_ID",
         ...     hostname_path="db.example.com",
         ...     username="analytics",
         ...     password="secret",
@@ -538,7 +566,7 @@ class SimpleHipAIClient:
 
         Update (fetch, modify, upsert):
 
-        >>> existing = client.list_connection_configs()[0]
+        >>> existing = client.list_connection_configs(project_id="PROJECT_ID")[0]
         >>> existing.name = "Warehouse (Updated)"
         >>> updated = client.upsert_connection_config(connection_config=existing)
         """
@@ -547,6 +575,7 @@ class SimpleHipAIClient:
         connection_config = connection_config or instantiate_connection_config(
             conn_schema,
             name,
+            project_id,
             hostname_path,
             graph_id,
             group_id,
@@ -569,6 +598,7 @@ class SimpleHipAIClient:
         self,
         data_context: Optional[DataContextObject] = None,
         name: Optional[str] = None,
+        project_id: Optional[Union[str, UUID]] = None,
         llm_config_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
         connection_config_ids: Optional[List[str]] = None,
@@ -587,9 +617,12 @@ class SimpleHipAIClient:
         Parameters
         ----------
         data_context : hipai_client.models.DataContextObject, optional
-            Pre-built data context object to upsert.
+            Pre-built data context object to upsert. When provided, ``project_id`` is not required.
         name : str, optional
             Name used when constructing a data context.
+        project_id : str or uuid.UUID, optional
+            The project to which the data context belongs. Required when constructing a new data
+            context from ``name``; ignored when ``data_context`` is provided directly.
         llm_config_id : str or uuid.UUID, optional
             Associated LLM config id.
         group_id : str or uuid.UUID, optional
@@ -619,6 +652,7 @@ class SimpleHipAIClient:
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
         >>> dc = client.upsert_data_context(
         ...     name="Customer Support",
+        ...     project_id="PROJECT_ID",
         ...     llm_config_id="LLM_ID",
         ...     group_id="GROUP_ID",
         ...     connection_config_ids=["CONN_ID_1", "CONN_ID_2"],
@@ -629,6 +663,7 @@ class SimpleHipAIClient:
 
         >>> dc = client.upsert_data_context(
         ...     name="Customer Support",
+        ...     project_id="PROJECT_ID",
         ...     llm_config_id="LLM_ID",
         ...     group_id="GROUP_ID",
         ...     connection_config_ids=["CONN_ID_1"],
@@ -639,18 +674,21 @@ class SimpleHipAIClient:
 
         Update (modify existing object):
 
-        >>> existing = client.list_data_contexts()[0]
+        >>> existing = client.list_data_contexts(project_id="PROJECT_ID")[0]
         >>> existing.name = "Customer Support (Updated)"
         >>> updated = client.upsert_data_context(data_context=existing)
         """
         assert data_context is not None or name is not None, \
             "#upsert_data_context requires either a valid DataContextObject or a name parameter passed."
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(llm_config_id, UUID):
             llm_config_id = str(llm_config_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         data_context = data_context or DataContextObject(
             name=name,
+            project_id=project_id,
             llm_config_id=llm_config_id,
             group_id=group_id,
             config_ids=connection_config_ids,
@@ -668,6 +706,7 @@ class SimpleHipAIClient:
         name: Optional[str] = None,
         status: Optional[AgentStatus] = None,
         data_context_id: Optional[Union[str, UUID]] = None,
+        project_id: Optional[Union[str, UUID]] = None,
         llm_config_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
         direct_citations: Optional[bool] = None,
@@ -678,18 +717,21 @@ class SimpleHipAIClient:
         Create or update an agent configuration.
 
         Provide either a full :class:`~hipai_client.models.AgentConfigObject` or enough fields
-        to construct one (``name``, ``status``, and ``data_context_id``).
+        to construct one (``name``, ``status``, ``data_context_id``, and ``project_id``).
 
         Parameters
         ----------
         agent : hipai_client.models.AgentConfigObject, optional
-            Pre-built agent config object.
+            Pre-built agent config object. When provided, ``project_id`` is not required.
         name : str, optional
             Agent name used when constructing an agent config.
         status : AgentStatus, optional
             Agent status (``"active"`` or ``"inactive"``).
         data_context_id : str or uuid.UUID, optional
             Data context (graph) id to associate with the agent.
+        project_id : str or uuid.UUID, optional
+            The project to which the agent belongs. Required when constructing a new agent from
+            ``name``/``status``/``data_context_id``; ignored when ``agent`` is provided directly.
         llm_config_id : str or uuid.UUID, optional
             Optional LLM config id override for the agent.
         group_id : str or uuid.UUID, optional
@@ -718,18 +760,21 @@ class SimpleHipAIClient:
         ...     name="Support Agent",
         ...     status="active",
         ...     data_context_id="DATA_CONTEXT_ID",
+        ...     project_id="PROJECT_ID",
         ...     llm_config_id="LLM_ID",
         ...     group_id="GROUP_ID",
         ... )
 
         Update:
 
-        >>> existing = client.list_agents()[0]
+        >>> existing = client.list_agents(project_id="PROJECT_ID")[0]
         >>> existing.status = "inactive"
         >>> updated = client.upsert_agent(agent=existing)
         """
         assert agent is not None or (name is not None and status is not None and data_context_id is not None), \
             "#upsert_agent requires either a valid AgentConfigObject or a valid name, status, and data_context_id to be passed."
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(llm_config_id, UUID):
             llm_config_id = str(llm_config_id)
         if isinstance(data_context_id, UUID):
@@ -740,6 +785,7 @@ class SimpleHipAIClient:
             name=name,
             status=status,
             graph_id=data_context_id,
+            project_id=project_id,
             llm_config_id=llm_config_id,
             group_id=group_id,
             direct_citations=direct_citations,
@@ -810,7 +856,7 @@ class SimpleHipAIClient:
             headers=headers,
         )
 
-    def load_connection_config(self, id: Union[UUID, str], **kwargs) -> ConnectionConfigObject:
+    def load_connection_config(self, id: Union[UUID, str], project_id: Union[str, UUID], **kwargs) -> ConnectionConfigObject:
         """
         Load a connection configuration by id.
 
@@ -818,6 +864,8 @@ class SimpleHipAIClient:
         ----------
         id : uuid.UUID or str
             Connection config id.
+        project_id : str or uuid.UUID
+            The project to which this connection config belongs.
         **kwargs
             Additional keyword arguments passed through to the underlying OpenAPI call.
 
@@ -829,15 +877,17 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> cfg = client.load_connection_config("CONN_ID")
+        >>> cfg = client.load_connection_config("CONN_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         return hipai_client.ConnectionConfigsApi(self.client).load_connection_config_api_connection_configs_id_get(
-            id, **kwargs
+            id, project_id=project_id, **kwargs
         )
 
-    def load_data_context(self, id: Union[UUID, str], **kwargs) -> DataContextObject:
+    def load_data_context(self, id: Union[UUID, str], project_id: Union[str, UUID], **kwargs) -> DataContextObject:
         """
         Load a data context by id.
 
@@ -845,6 +895,8 @@ class SimpleHipAIClient:
         ----------
         id : uuid.UUID or str
             Data context id.
+        project_id : str or uuid.UUID
+            The project to which this data context belongs.
         **kwargs
             Additional keyword arguments passed through to the underlying OpenAPI call.
 
@@ -856,13 +908,15 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> dc = client.load_data_context("DATA_CONTEXT_ID")
+        >>> dc = client.load_data_context("DATA_CONTEXT_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        return hipai_client.DataContextsApi(self.client).load_data_context_api_data_contexts_id_get(id, **kwargs)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        return hipai_client.DataContextsApi(self.client).load_data_context_api_data_contexts_id_get(id, project_id=project_id, **kwargs)
 
-    def get_build_options(self, id: Union[UUID, str], group_id: Optional[Union[str, UUID]] = None, **kwargs) -> BuildOptionsObject:
+    def get_build_options(self, id: Union[UUID, str], project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None, **kwargs) -> BuildOptionsObject:
         """
         Retrieve the build options for a specific data context.
 
@@ -870,6 +924,8 @@ class SimpleHipAIClient:
         ----------
         id : uuid.UUID or str
             Data context id.
+        project_id : str or uuid.UUID
+            The project to which this data context belongs.
         group_id : str or uuid.UUID, optional
             Group isolation id.
         **kwargs
@@ -883,17 +939,19 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> opts = client.get_build_options("DATA_CONTEXT_ID")
+        >>> opts = client.get_build_options("DATA_CONTEXT_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         return hipai_client.DataContextsApi(self.client).get_build_options_api_data_contexts_build_options_id_get(
-            id, group_id=group_id, **kwargs
+            id, project_id=project_id, group_id=group_id, **kwargs
         )
 
-    def load_agent(self, id: Union[UUID, str], **kwargs) -> AgentConfigObject:
+    def load_agent(self, id: Union[UUID, str], project_id: Union[str, UUID], **kwargs) -> AgentConfigObject:
         """
         Load an agent by id.
 
@@ -901,6 +959,8 @@ class SimpleHipAIClient:
         ----------
         id : uuid.UUID or str
             Agent id.
+        project_id : str or uuid.UUID
+            The project to which this agent belongs.
         **kwargs
             Additional keyword arguments passed through to the underlying OpenAPI call.
 
@@ -912,11 +972,13 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> agent = client.load_agent("AGENT_ID")
+        >>> agent = client.load_agent("AGENT_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        return hipai_client.AgentsApi(self.client).load_agent_api_agents_id_get(id, **kwargs)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        return hipai_client.AgentsApi(self.client).load_agent_api_agents_id_get(id, project_id=project_id, **kwargs)
 
     def list_llm_configs(self, group_id: Optional[Union[str, UUID]] = None):
         """
@@ -945,14 +1007,16 @@ class SimpleHipAIClient:
             hipai_client.GroupRequest(group_id=group_id)
         ).data]
 
-    def list_connection_configs(self, group_id: Optional[Union[str, UUID]] = None):
+    def list_connection_configs(self, project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None):
         """
-        List connection configurations (optionally filtered by group).
+        List connection configurations filtered by project (and optionally by group).
 
         Parameters
         ----------
+        project_id : str or uuid.UUID
+            The project whose connection configs should be listed.
         group_id : str or uuid.UUID, optional
-            Group isolation id to filter results.
+            Group isolation id to further filter results.
 
         Returns
         -------
@@ -962,19 +1026,22 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> conns = client.list_connection_configs(group_id="GROUP_ID")
+        >>> conns = client.list_connection_configs(project_id="PROJECT_ID", group_id="GROUP_ID")
         >>> isinstance(conns, list)
         True
         """
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         return [ConnectionConfigObject(**config) for config in hipai_client.ConnectionConfigsApi(self.client).list_connection_configs_api_connection_configs_list_post(
-            hipai_client.ApiConnectionConfigsModelsListRequest(group_id=group_id)
+            hipai_client.ApiConnectionConfigsModelsListRequest(project_id=project_id, group_id=group_id)
         ).data]
 
-    def list_data_contexts(self, group_id: Optional[Union[str, UUID]] = None, only_ready: bool = False):
+    def list_data_contexts(self, project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None, only_ready: bool = False):
         """
-        List data contexts (optionally filtered by group), optionally limited to ready/active contexts.
+        List data contexts filtered by project (and optionally by group), optionally limited to
+        ready/active contexts.
 
         Note
         ----
@@ -982,8 +1049,10 @@ class SimpleHipAIClient:
 
         Parameters
         ----------
+        project_id : str or uuid.UUID
+            The project whose data contexts should be listed.
         group_id : str or uuid.UUID, optional
-            Group isolation id to filter results.
+            Group isolation id to further filter results.
         only_ready : bool, optional
             If ``True``, request only ready/active data contexts (backend-dependent).
 
@@ -995,19 +1064,26 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> dcs = client.list_data_contexts(group_id="GROUP_ID", only_ready=True)
+        >>> dcs = client.list_data_contexts(project_id="PROJECT_ID", group_id="GROUP_ID", only_ready=True)
         >>> isinstance(dcs, list)
         True
         """
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         return [DataContextObject(**context) for context in hipai_client.DataContextsApi(self.client).list_data_contexts_api_data_contexts_list_post(
-            hipai_client.ApiDataContextsModelsListRequest(group_id=group_id, only_active=only_ready)
+            hipai_client.ApiDataContextsModelsListRequest(project_id=project_id, group_id=group_id, only_active=only_ready)
         ).data]
 
-    def list_groups(self):
+    def list_groups(self, project_id: Union[str, UUID]):
         """
-        List groups for company.
+        List groups for a project.
+
+        Parameters
+        ----------
+        project_id : str or uuid.UUID
+            The project whose groups should be listed.
 
         Returns
         -------
@@ -1017,11 +1093,13 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> agents = client.list_groups()
-        >>> isinstance(agents, list)
+        >>> groups = client.list_groups(project_id="PROJECT_ID")
+        >>> isinstance(groups, list)
         True
         """
-        return [GroupIsolationObject(**group) for group in hipai_client.GroupsApi(self.client).list_groups_api_groups_list_get().data]
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        return [GroupIsolationObject(**group) for group in hipai_client.GroupsApi(self.client).list_groups_api_groups_list_get(project_id=project_id).data]
 
     def list_users(self):
         """
@@ -1041,14 +1119,16 @@ class SimpleHipAIClient:
         """
         return [UserPublic(**user) for user in hipai_client.TeamApi(self.client).list_team_members_api_team_members_get().data]
 
-    def list_agents(self, group_id: Optional[Union[str, UUID]] = None):
+    def list_agents(self, project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None):
         """
-        List agent configurations (optionally filtered by group).
+        List agent configurations filtered by project (and optionally by group).
 
         Parameters
         ----------
+        project_id : str or uuid.UUID
+            The project whose agents should be listed.
         group_id : str or uuid.UUID, optional
-            Group isolation id to filter results.
+            Group isolation id to further filter results.
 
         Returns
         -------
@@ -1058,20 +1138,23 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> agents = client.list_agents(group_id="GROUP_ID")
+        >>> agents = client.list_agents(project_id="PROJECT_ID", group_id="GROUP_ID")
         >>> isinstance(agents, list)
         True
         """
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         return [AgentConfigObject(**agent) for agent in hipai_client.AgentsApi(self.client).list_agents_api_agents_list_post(
-            hipai_client.GroupRequest(group_id=group_id)
+            hipai_client.GroupRequest(project_id=project_id, group_id=group_id)
         ).data]
 
     def chat(
         self,
         prompt: str,
         agent_api_key: str,
+        project_id: Union[str, UUID],
         group_id: Optional[Union[str, UUID]] = None,
         ongoing: Optional[List[Dict[str, str]]] = None,
     ):
@@ -1087,6 +1170,8 @@ class SimpleHipAIClient:
             User message content to send to the chat endpoint.
         agent_api_key : str
             Agent API key used to route the request.
+        project_id : str or uuid.UUID
+            The project context for the chat request.
         group_id : str or uuid.UUID, optional
             Optional group isolation id.
         ongoing : list[dict[str, str]], optional
@@ -1107,25 +1192,27 @@ class SimpleHipAIClient:
         Start a conversation:
 
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> text, messages, raw = client.chat(prompt="Hello!", agent_api_key="AGENT_KEY")
+        >>> text, messages, raw = client.chat(prompt="Hello!", agent_api_key="AGENT_KEY", project_id="PROJECT_ID")
         >>> isinstance(text, str)
         True
 
         Continue the conversation:
 
-        >>> text2, messages, raw2 = client.chat(prompt="Tell me a joke.", agent_api_key="AGENT_KEY", ongoing=messages)
+        >>> text2, messages, raw2 = client.chat(prompt="Tell me a joke.", agent_api_key="AGENT_KEY", project_id="PROJECT_ID", ongoing=messages)
         """
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
         messages = ongoing or []
         messages.append({"role": "user", "content": prompt})
-        request = ChatCompletionRequest(messages=messages, agent_api_key=agent_api_key, group_id=group_id)
+        request = ChatCompletionRequest(messages=messages, agent_api_key=agent_api_key, project_id=project_id, group_id=group_id)
         response = hipai_client.ChatApi(self.client).completions_api_chat_completions_post(request)
         response_content = response.choices[0]["message"]["content"]
         messages.append({"role": "assistant", "content": response_content})
         return response_content, messages, response
 
-    def delete_llm_config(self, id: Optional[Union[str, UUID]]):
+    def delete_llm_config(self, id: Optional[Union[str, UUID]], project_id: Union[str, UUID]):
         """
         Delete an LLM model configuration by id.
 
@@ -1133,17 +1220,21 @@ class SimpleHipAIClient:
         ----------
         id : str or uuid.UUID, optional
             Model config id to delete.
+        project_id : str or uuid.UUID
+            The project to which this model config belongs.
 
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> client.delete_llm_config("LLM_ID")
+        >>> client.delete_llm_config("LLM_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        hipai_client.ModelConfigsApi(self.client).delete_model_config_api_model_configs_id_delete(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        hipai_client.ModelConfigsApi(self.client).delete_model_config_api_model_configs_id_delete(id, project_id=project_id)
 
-    def delete_group(self, id: Optional[Union[str, UUID]]):
+    def delete_group(self, id: Optional[Union[str, UUID]], project_id: Union[str, UUID]):
         """
         Delete a group by id.
 
@@ -1151,17 +1242,21 @@ class SimpleHipAIClient:
         ----------
         id : str or uuid.UUID, optional
             Group id to delete.
+        project_id : str or uuid.UUID
+            The project to which this group belongs.
 
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> client.delete_group("GROUP_ID")
+        >>> client.delete_group("GROUP_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        hipai_client.GroupsApi(self.client).delete_group_api_groups_id_delete(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        hipai_client.GroupsApi(self.client).delete_group_api_groups_id_delete(id, project_id=project_id)
 
-    def delete_connection_config(self, id: Optional[Union[str, UUID]]):
+    def delete_connection_config(self, id: Optional[Union[str, UUID]], project_id: Union[str, UUID]):
         """
         Delete a connection configuration by id.
 
@@ -1169,17 +1264,21 @@ class SimpleHipAIClient:
         ----------
         id : str or uuid.UUID, optional
             Connection config id to delete.
+        project_id : str or uuid.UUID
+            The project to which this connection config belongs.
 
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> client.delete_connection_config("CONN_ID")
+        >>> client.delete_connection_config("CONN_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        hipai_client.ConnectionConfigsApi(self.client).delete_connection_config_api_connection_configs_id_delete(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        hipai_client.ConnectionConfigsApi(self.client).delete_connection_config_api_connection_configs_id_delete(id, project_id=project_id)
 
-    def delete_data_context(self, id: Optional[Union[str, UUID]]):
+    def delete_data_context(self, id: Optional[Union[str, UUID]], project_id: Union[str, UUID]):
         """
         Delete a data context by id.
 
@@ -1187,17 +1286,21 @@ class SimpleHipAIClient:
         ----------
         id : str or uuid.UUID, optional
             Data context id to delete.
+        project_id : str or uuid.UUID
+            The project to which this data context belongs.
 
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> client.delete_data_context("DATA_CONTEXT_ID")
+        >>> client.delete_data_context("DATA_CONTEXT_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        hipai_client.DataContextsApi(self.client).delete_data_context_api_data_contexts_id_delete(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        hipai_client.DataContextsApi(self.client).delete_data_context_api_data_contexts_id_delete(id, project_id=project_id)
 
-    def delete_agent(self, id: Optional[Union[str, UUID]]):
+    def delete_agent(self, id: Optional[Union[str, UUID]], project_id: Union[str, UUID]):
         """
         Delete an agent by id.
 
@@ -1205,15 +1308,19 @@ class SimpleHipAIClient:
         ----------
         id : str or uuid.UUID, optional
             Agent id to delete.
+        project_id : str or uuid.UUID
+            The project to which this agent belongs.
 
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> client.delete_agent("AGENT_ID")
+        >>> client.delete_agent("AGENT_ID", project_id="PROJECT_ID")
         """
         if isinstance(id, UUID):
             id = str(id)
-        hipai_client.AgentsApi(self.client).delete_agent_api_agents_id_delete(id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
+        hipai_client.AgentsApi(self.client).delete_agent_api_agents_id_delete(id, project_id=project_id)
 
     def add_new_user(self, email: str, first_name: str = "", last_name: str = "", is_admin: bool = False):
         """

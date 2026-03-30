@@ -35,7 +35,7 @@ class AgentsApi(object):
     def delete_agent_api_agents_id_delete(self, id, **kwargs):  # noqa: E501
         """Delete Agent  # noqa: E501
 
-        Deletes an Agent Config. Admin only.  # noqa: E501
+        Deletes an Agent Config.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_agent_api_agents_id_delete(id, async_req=True)
@@ -43,6 +43,7 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -57,7 +58,7 @@ class AgentsApi(object):
     def delete_agent_api_agents_id_delete_with_http_info(self, id, **kwargs):  # noqa: E501
         """Delete Agent  # noqa: E501
 
-        Deletes an Agent Config. Admin only.  # noqa: E501
+        Deletes an Agent Config.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_agent_api_agents_id_delete_with_http_info(id, async_req=True)
@@ -65,12 +66,13 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -97,6 +99,8 @@ class AgentsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
 
         header_params = {}
 
@@ -136,7 +140,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GroupRequest body: (required)
+        :param object body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +161,7 @@ class AgentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GroupRequest body: (required)
+        :param object body: (required)
         :return: ApiAgentsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -234,6 +238,8 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -255,12 +261,14 @@ class AgentsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: AgentConfigObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id', 'group_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -287,6 +295,10 @@ class AgentsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
+        if 'group_id' in params:
+            query_params.append(('group_id', params['group_id']))  # noqa: E501
 
         header_params = {}
 

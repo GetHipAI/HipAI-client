@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**upsert_model_config_api_model_configs_post**](ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
 
 # **delete_model_config_api_model_configs_id_delete**
-> Message delete_model_config_api_model_configs_id_delete(id)
+> Message delete_model_config_api_model_configs_id_delete(id, project_id=project_id)
 
 Delete Model Config
 
@@ -28,10 +28,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ModelConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Model Config
-    api_response = api_instance.delete_model_config_api_model_configs_id_delete(id)
+    api_response = api_instance.delete_model_config_api_model_configs_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelConfigsApi->delete_model_config_api_model_configs_id_delete: %s\n" % e)
@@ -42,6 +43,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 

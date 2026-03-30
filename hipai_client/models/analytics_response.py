@@ -29,6 +29,7 @@ class AnalyticsResponse(object):
     """
     swagger_types = {
         'total_tokens': 'object',
+        'total_embedding_tokens': 'object',
         'total_tokens_build': 'object',
         'total_requests': 'object',
         'requests': 'object',
@@ -39,6 +40,7 @@ class AnalyticsResponse(object):
 
     attribute_map = {
         'total_tokens': 'total_tokens',
+        'total_embedding_tokens': 'total_embedding_tokens',
         'total_tokens_build': 'total_tokens_build',
         'total_requests': 'total_requests',
         'requests': 'requests',
@@ -47,9 +49,10 @@ class AnalyticsResponse(object):
         'response_times': 'response_times'
     }
 
-    def __init__(self, total_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, total_tokens=None, total_embedding_tokens=None, total_tokens_build=None, total_requests=None, requests=None, tokens=None, tokens_build=None, response_times=None, *args, **kwargs):  # noqa: E501
         """AnalyticsResponse - a model defined in Swagger"""  # noqa: E501
         self._total_tokens = None
+        self._total_embedding_tokens = None
         self._total_tokens_build = None
         self._total_requests = None
         self._requests = None
@@ -58,6 +61,7 @@ class AnalyticsResponse(object):
         self._response_times = None
         self.discriminator = None
         self.total_tokens = total_tokens
+        self.total_embedding_tokens = total_embedding_tokens
         self.total_tokens_build = total_tokens_build
         self.total_requests = total_requests
         self.requests = requests
@@ -87,6 +91,29 @@ class AnalyticsResponse(object):
             raise ValueError("Invalid value for `total_tokens`, must not be `None`")  # noqa: E501
 
         self._total_tokens = total_tokens
+
+    @property
+    def total_embedding_tokens(self):
+        """Gets the total_embedding_tokens of this AnalyticsResponse.  # noqa: E501
+
+
+        :return: The total_embedding_tokens of this AnalyticsResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._total_embedding_tokens
+
+    @total_embedding_tokens.setter
+    def total_embedding_tokens(self, total_embedding_tokens):
+        """Sets the total_embedding_tokens of this AnalyticsResponse.
+
+
+        :param total_embedding_tokens: The total_embedding_tokens of this AnalyticsResponse.  # noqa: E501
+        :type: object
+        """
+        if total_embedding_tokens is None:
+            raise ValueError("Invalid value for `total_embedding_tokens`, must not be `None`")  # noqa: E501
+
+        self._total_embedding_tokens = total_embedding_tokens
 
     @property
     def total_tokens_build(self):

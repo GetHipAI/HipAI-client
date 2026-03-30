@@ -28,35 +28,43 @@ class BuildOptionsObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'id': 'object',
         'graph_id': 'object',
         'evaluation_id': 'object',
         'graph_structure_prompt': 'object',
         'file_import_prompt': 'object',
         'sql_import_prompt': 'object',
+        'low_precision': 'object',
         'domain': 'object'
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'id': 'id',
         'graph_id': 'graph_id',
         'evaluation_id': 'evaluation_id',
         'graph_structure_prompt': 'graph_structure_prompt',
         'file_import_prompt': 'file_import_prompt',
         'sql_import_prompt': 'sql_import_prompt',
+        'low_precision': 'low_precision',
         'domain': 'domain'
     }
 
-    def __init__(self, id=None, graph_id=None, evaluation_id=None, graph_structure_prompt=None, file_import_prompt=None, sql_import_prompt=None, domain=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, id=None, graph_id=None, evaluation_id=None, graph_structure_prompt=None, file_import_prompt=None, sql_import_prompt=None, low_precision=None, domain=None, *args, **kwargs):  # noqa: E501
         """BuildOptionsObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._id = None
         self._graph_id = None
         self._evaluation_id = None
         self._graph_structure_prompt = None
         self._file_import_prompt = None
         self._sql_import_prompt = None
+        self._low_precision = None
         self._domain = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         if id is not None:
             self.id = id
         if graph_id is not None:
@@ -69,8 +77,31 @@ class BuildOptionsObject(object):
             self.file_import_prompt = file_import_prompt
         if sql_import_prompt is not None:
             self.sql_import_prompt = sql_import_prompt
+        if low_precision is not None:
+            self.low_precision = low_precision
         if domain is not None:
             self.domain = domain
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this BuildOptionsObject.  # noqa: E501
+
+
+        :return: The project_id of this BuildOptionsObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this BuildOptionsObject.
+
+
+        :param project_id: The project_id of this BuildOptionsObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def id(self):
@@ -197,6 +228,27 @@ class BuildOptionsObject(object):
         """
 
         self._sql_import_prompt = sql_import_prompt
+
+    @property
+    def low_precision(self):
+        """Gets the low_precision of this BuildOptionsObject.  # noqa: E501
+
+
+        :return: The low_precision of this BuildOptionsObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._low_precision
+
+    @low_precision.setter
+    def low_precision(self, low_precision):
+        """Sets the low_precision of this BuildOptionsObject.
+
+
+        :param low_precision: The low_precision of this BuildOptionsObject.  # noqa: E501
+        :type: object
+        """
+
+        self._low_precision = low_precision
 
     @property
     def domain(self):

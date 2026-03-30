@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **only_active** | **object** |  | [optional] 
 **group_id** | **object** |  | [optional] 
 

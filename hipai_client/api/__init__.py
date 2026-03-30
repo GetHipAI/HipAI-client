@@ -14,5 +14,6 @@ from hipai_client.api.evaluations_api import EvaluationsApi
 from hipai_client.api.groups_api import GroupsApi
 from hipai_client.api.login_api import LoginApi
 from hipai_client.api.model_configs_api import ModelConfigsApi
+from hipai_client.api.projects_api import ProjectsApi
 from hipai_client.api.team_api import TeamApi
 from hipai_client.api.users_api import UsersApi

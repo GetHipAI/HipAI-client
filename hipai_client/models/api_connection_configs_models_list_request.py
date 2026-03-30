@@ -28,24 +28,50 @@ class ApiConnectionConfigsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'ids': 'object',
         'group_id': 'object'
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'ids': 'ids',
         'group_id': 'group_id'
     }
 
-    def __init__(self, ids=None, group_id=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, ids=None, group_id=None, *args, **kwargs):  # noqa: E501
         """ApiConnectionConfigsModelsListRequest - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._ids = None
         self._group_id = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         if ids is not None:
             self.ids = ids
         if group_id is not None:
             self.group_id = group_id
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+
+
+        :return: The project_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ApiConnectionConfigsModelsListRequest.
+
+
+        :param project_id: The project_id of this ApiConnectionConfigsModelsListRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def ids(self):

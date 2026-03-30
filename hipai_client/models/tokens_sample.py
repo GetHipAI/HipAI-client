@@ -33,6 +33,7 @@ class TokensSample(object):
         'input': 'object',
         'output': 'object',
         'response': 'object',
+        'embedding': 'object',
         'total': 'object'
     }
 
@@ -42,16 +43,18 @@ class TokensSample(object):
         'input': 'input',
         'output': 'output',
         'response': 'response',
+        'embedding': 'embedding',
         'total': 'total'
     }
 
-    def __init__(self, _date=None, cached=None, input=None, output=None, response=None, total=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, _date=None, cached=None, input=None, output=None, response=None, embedding=None, total=None, *args, **kwargs):  # noqa: E501
         """TokensSample - a model defined in Swagger"""  # noqa: E501
         self.__date = None
         self._cached = None
         self._input = None
         self._output = None
         self._response = None
+        self._embedding = None
         self._total = None
         self.discriminator = None
         self._date = _date
@@ -59,6 +62,7 @@ class TokensSample(object):
         self.input = input
         self.output = output
         self.response = response
+        self.embedding = embedding
         self.total = total
 
     @property
@@ -175,6 +179,29 @@ class TokensSample(object):
             raise ValueError("Invalid value for `response`, must not be `None`")  # noqa: E501
 
         self._response = response
+
+    @property
+    def embedding(self):
+        """Gets the embedding of this TokensSample.  # noqa: E501
+
+
+        :return: The embedding of this TokensSample.  # noqa: E501
+        :rtype: object
+        """
+        return self._embedding
+
+    @embedding.setter
+    def embedding(self, embedding):
+        """Sets the embedding of this TokensSample.
+
+
+        :param embedding: The embedding of this TokensSample.  # noqa: E501
+        :type: object
+        """
+        if embedding is None:
+            raise ValueError("Invalid value for `embedding`, must not be `None`")  # noqa: E501
+
+        self._embedding = embedding
 
     @property
     def total(self):

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**upsert_group_api_groups_post**](GroupsApi.md#upsert_group_api_groups_post) | **POST** /api/groups/ | Upsert Group
 
 # **delete_group_api_groups_id_delete**
-> Message delete_group_api_groups_id_delete(id)
+> Message delete_group_api_groups_id_delete(id, project_id=project_id)
 
 Delete Group
 
@@ -28,10 +28,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.GroupsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Group
-    api_response = api_instance.delete_group_api_groups_id_delete(id)
+    api_response = api_instance.delete_group_api_groups_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupsApi->delete_group_api_groups_id_delete: %s\n" % e)
@@ -42,6 +43,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_groups_api_groups_list_get**
-> ApiGroupsModelsListResponse list_groups_api_groups_list_get()
+> ApiGroupsModelsListResponse list_groups_api_groups_list_get(project_id=project_id)
 
 List Groups
 
@@ -77,17 +79,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.GroupsApi(hipai_client.ApiClient(configuration))
+project_id = NULL # object |  (optional)
 
 try:
     # List Groups
-    api_response = api_instance.list_groups_api_groups_list_get()
+    api_response = api_instance.list_groups_api_groups_list_get(project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupsApi->list_groups_api_groups_list_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 

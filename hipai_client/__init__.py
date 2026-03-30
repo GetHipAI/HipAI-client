@@ -26,6 +26,7 @@ from hipai_client.api.evaluations_api import EvaluationsApi
 from hipai_client.api.groups_api import GroupsApi
 from hipai_client.api.login_api import LoginApi
 from hipai_client.api.model_configs_api import ModelConfigsApi
+from hipai_client.api.projects_api import ProjectsApi
 from hipai_client.api.team_api import TeamApi
 from hipai_client.api.users_api import UsersApi
 # import ApiClient
@@ -47,13 +48,15 @@ from hipai_client.models.api_data_contexts_models_list_response import ApiDataCo
 from hipai_client.models.api_evaluations_models_list_response import ApiEvaluationsModelsListResponse
 from hipai_client.models.api_groups_models_list_response import ApiGroupsModelsListResponse
 from hipai_client.models.api_model_config_models_list_response import ApiModelConfigModelsListResponse
+from hipai_client.models.api_projects_models_list_response import ApiProjectsModelsListResponse
 from hipai_client.models.body_document_upload_api_connection_configs_document_upload_post import BodyDocumentUploadApiConnectionConfigsDocumentUploadPost
 from hipai_client.models.body_login_access_token_login_access_token_post import BodyLoginAccessTokenLoginAccessTokenPost
 from hipai_client.models.build_options_object import BuildOptionsObject
 from hipai_client.models.chat_completion import ChatCompletion
 from hipai_client.models.chat_completion_audio import ChatCompletionAudio
 from hipai_client.models.chat_completion_message import ChatCompletionMessage
-from hipai_client.models.chat_completion_message_tool_call import ChatCompletionMessageToolCall
+from hipai_client.models.chat_completion_message_custom_tool_call import ChatCompletionMessageCustomToolCall
+from hipai_client.models.chat_completion_message_function_tool_call import ChatCompletionMessageFunctionToolCall
 from hipai_client.models.chat_completion_request import ChatCompletionRequest
 from hipai_client.models.chat_completion_token_logprob import ChatCompletionTokenLogprob
 from hipai_client.models.chat_message import ChatMessage
@@ -63,6 +66,7 @@ from hipai_client.models.company_object import CompanyObject
 from hipai_client.models.completion_tokens_details import CompletionTokensDetails
 from hipai_client.models.completion_usage import CompletionUsage
 from hipai_client.models.connection_config_object import ConnectionConfigObject
+from hipai_client.models.custom import Custom
 from hipai_client.models.data_context_object import DataContextObject
 from hipai_client.models.document_list_response import DocumentListResponse
 from hipai_client.models.document_upload_object import DocumentUploadObject
@@ -84,8 +88,13 @@ from hipai_client.models.log_object import LogObject
 from hipai_client.models.message import Message
 from hipai_client.models.model_config_object import ModelConfigObject
 from hipai_client.models.node_object import NodeObject
+from hipai_client.models.notification_preference_update import NotificationPreferenceUpdate
+from hipai_client.models.project_object import ProjectObject
+from hipai_client.models.project_permission_object import ProjectPermissionObject
+from hipai_client.models.project_permission_upsert import ProjectPermissionUpsert
 from hipai_client.models.prompt_tokens_details import PromptTokensDetails
 from hipai_client.models.question_object import QuestionObject
+from hipai_client.models.remote_files_response import RemoteFilesResponse
 from hipai_client.models.request_access_request import RequestAccessRequest
 from hipai_client.models.requests_sample import RequestsSample
 from hipai_client.models.reset_password_request import ResetPasswordRequest
@@ -95,5 +104,7 @@ from hipai_client.models.token import Token
 from hipai_client.models.tokens_sample import TokensSample
 from hipai_client.models.top_logprob import TopLogprob
 from hipai_client.models.user_api_keys import UserAPIKeys
+from hipai_client.models.user_permissions_entry import UserPermissionsEntry
+from hipai_client.models.user_permissions_list_response import UserPermissionsListResponse
 from hipai_client.models.user_public import UserPublic
 from hipai_client.models.validation_error import ValidationError

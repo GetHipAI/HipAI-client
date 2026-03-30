@@ -42,6 +42,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,12 +64,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: ListResponseLogs
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,6 +97,8 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
 
         header_params = {}
 
@@ -135,6 +139,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,12 +161,13 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -188,6 +194,8 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
 
         header_params = {}
 
@@ -228,6 +236,7 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :param object group_id:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
@@ -250,13 +259,14 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :param object group_id:
         :return: BuildOptionsObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'group_id']  # noqa: E501
+        all_params = ['id', 'project_id', 'group_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -283,6 +293,8 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
         if 'group_id' in params:
             query_params.append(('group_id', params['group_id']))  # noqa: E501
 
@@ -422,6 +434,8 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -443,12 +457,14 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: DataContextObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id', 'group_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -475,6 +491,10 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
+        if 'group_id' in params:
+            query_params.append(('group_id', params['group_id']))  # noqa: E501
 
         header_params = {}
 
@@ -515,6 +535,8 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -536,12 +558,14 @@ class DataContextsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
+        :param object group_id:
         :return: GraphObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id', 'group_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -568,6 +592,10 @@ class DataContextsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
+        if 'group_id' in params:
+            query_params.append(('group_id', params['group_id']))  # noqa: E501
 
         header_params = {}
 

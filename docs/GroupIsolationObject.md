@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **name** | **object** |  | 
 **id** | **object** |  | [optional] 
 

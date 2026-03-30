@@ -28,24 +28,50 @@ class ApiDataContextsModelsListRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'only_active': 'object',
         'group_id': 'object'
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'only_active': 'only_active',
         'group_id': 'group_id'
     }
 
-    def __init__(self, only_active=None, group_id=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, only_active=None, group_id=None, *args, **kwargs):  # noqa: E501
         """ApiDataContextsModelsListRequest - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._only_active = None
         self._group_id = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         if only_active is not None:
             self.only_active = only_active
         if group_id is not None:
             self.group_id = group_id
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+
+
+        :return: The project_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ApiDataContextsModelsListRequest.
+
+
+        :param project_id: The project_id of this ApiDataContextsModelsListRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def only_active(self):

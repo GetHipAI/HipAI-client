@@ -28,6 +28,7 @@ class ModelConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'id': 'object',
         'name': 'object',
         'url': 'object',
@@ -40,6 +41,7 @@ class ModelConfigObject(object):
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'id': 'id',
         'name': 'name',
         'url': 'url',
@@ -51,8 +53,9 @@ class ModelConfigObject(object):
         'client_type': 'client_type'
     }
 
-    def __init__(self, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None, client_type=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None, client_type=None, *args, **kwargs):  # noqa: E501
         """ModelConfigObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._id = None
         self._name = None
         self._url = None
@@ -63,6 +66,8 @@ class ModelConfigObject(object):
         self._group_id = None
         self._client_type = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         if id is not None:
             self.id = id
         if name is not None:
@@ -81,6 +86,27 @@ class ModelConfigObject(object):
             self.group_id = group_id
         if client_type is not None:
             self.client_type = client_type
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The project_id of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ModelConfigObject.
+
+
+        :param project_id: The project_id of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def id(self):
