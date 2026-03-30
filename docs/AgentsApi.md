@@ -10,11 +10,11 @@ Method | HTTP request | Description
 [**upsert_agent_api_agents_post**](AgentsApi.md#upsert_agent_api_agents_post) | **POST** /api/agents/ | Upsert Agent
 
 # **delete_agent_api_agents_id_delete**
-> Message delete_agent_api_agents_id_delete(id)
+> Message delete_agent_api_agents_id_delete(id, project_id=project_id)
 
 Delete Agent
 
-Deletes an Agent Config. Admin only.
+Deletes an Agent Config.
 
 ### Example
 ```python
@@ -31,10 +31,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Agent
-    api_response = api_instance.delete_agent_api_agents_id_delete(id)
+    api_response = api_instance.delete_agent_api_agents_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->delete_agent_api_agents_id_delete: %s\n" % e)
@@ -45,6 +46,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -80,7 +82,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.GroupRequest() # GroupRequest | 
+body = NULL # object | 
 
 try:
     # List Agents
@@ -94,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GroupRequest**](GroupRequest.md)|  | 
+ **body** | [**object**](object.md)|  | 
 
 ### Return type
 
@@ -112,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_agent_api_agents_id_get**
-> AgentConfigObject load_agent_api_agents_id_get(id)
+> AgentConfigObject load_agent_api_agents_id_get(id, project_id=project_id, group_id=group_id)
 
 Load Agent
 
@@ -131,10 +133,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
+group_id = NULL # object |  (optional)
 
 try:
     # Load Agent
-    api_response = api_instance.load_agent_api_agents_id_get(id)
+    api_response = api_instance.load_agent_api_agents_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->load_agent_api_agents_id_get: %s\n" % e)
@@ -145,6 +149,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
+ **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**upsert_data_context_api_data_contexts_post**](DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 
 # **build_logs_api_data_contexts_logs_id_get**
-> ListResponseLogs build_logs_api_data_contexts_logs_id_get(id)
+> ListResponseLogs build_logs_api_data_contexts_logs_id_get(id, project_id=project_id)
 
 Build Logs
 
@@ -32,10 +32,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Build Logs
-    api_response = api_instance.build_logs_api_data_contexts_logs_id_get(id)
+    api_response = api_instance.build_logs_api_data_contexts_logs_id_get(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->build_logs_api_data_contexts_logs_id_get: %s\n" % e)
@@ -46,6 +47,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_data_context_api_data_contexts_id_delete**
-> Message delete_data_context_api_data_contexts_id_delete(id)
+> Message delete_data_context_api_data_contexts_id_delete(id, project_id=project_id)
 
 Delete Data Context
 
@@ -82,10 +84,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Data Context
-    api_response = api_instance.delete_data_context_api_data_contexts_id_delete(id)
+    api_response = api_instance.delete_data_context_api_data_contexts_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->delete_data_context_api_data_contexts_id_delete: %s\n" % e)
@@ -96,6 +99,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -113,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_build_options_api_data_contexts_build_options_id_get**
-> BuildOptionsObject get_build_options_api_data_contexts_build_options_id_get(id, group_id=group_id)
+> BuildOptionsObject get_build_options_api_data_contexts_build_options_id_get(id, project_id=project_id, group_id=group_id)
 
 Get Build Options
 
@@ -132,11 +136,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 group_id = NULL # object |  (optional)
 
 try:
     # Get Build Options
-    api_response = api_instance.get_build_options_api_data_contexts_build_options_id_get(id, group_id=group_id)
+    api_response = api_instance.get_build_options_api_data_contexts_build_options_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->get_build_options_api_data_contexts_build_options_id_get: %s\n" % e)
@@ -147,6 +152,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
  **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
@@ -215,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_data_context_api_data_contexts_id_get**
-> DataContextObject load_data_context_api_data_contexts_id_get(id)
+> DataContextObject load_data_context_api_data_contexts_id_get(id, project_id=project_id, group_id=group_id)
 
 Load Data Context
 
@@ -234,10 +240,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
+group_id = NULL # object |  (optional)
 
 try:
     # Load Data Context
-    api_response = api_instance.load_data_context_api_data_contexts_id_get(id)
+    api_response = api_instance.load_data_context_api_data_contexts_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->load_data_context_api_data_contexts_id_get: %s\n" % e)
@@ -248,6 +256,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
+ **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -265,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_graph_api_data_contexts_graph_id_get**
-> GraphObject load_graph_api_data_contexts_graph_id_get(id)
+> GraphObject load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id)
 
 Load Graph
 
@@ -284,10 +294,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
+group_id = NULL # object |  (optional)
 
 try:
     # Load Graph
-    api_response = api_instance.load_graph_api_data_contexts_graph_id_get(id)
+    api_response = api_instance.load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->load_graph_api_data_contexts_graph_id_get: %s\n" % e)
@@ -298,6 +310,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
+ **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 

@@ -28,6 +28,7 @@ class DataContextObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'name': 'object',
         'status': 'object',
         'id': 'object',
@@ -42,6 +43,7 @@ class DataContextObject(object):
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'name': 'name',
         'status': 'status',
         'id': 'id',
@@ -55,8 +57,9 @@ class DataContextObject(object):
         'build_options': 'build_options'
     }
 
-    def __init__(self, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, build_options=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, name=None, status=None, id=None, group_id=None, llm_config_id=None, error_message=None, config_ids=None, conn_schemas=None, created_at=None, used_by_active_agents=None, build_options=None, *args, **kwargs):  # noqa: E501
         """DataContextObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._name = None
         self._status = None
         self._id = None
@@ -69,6 +72,8 @@ class DataContextObject(object):
         self._used_by_active_agents = None
         self._build_options = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.name = name
         self.status = status
         if id is not None:
@@ -89,6 +94,27 @@ class DataContextObject(object):
             self.used_by_active_agents = used_by_active_agents
         if build_options is not None:
             self.build_options = build_options
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this DataContextObject.  # noqa: E501
+
+
+        :return: The project_id of this DataContextObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this DataContextObject.
+
+
+        :param project_id: The project_id of this DataContextObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def name(self):

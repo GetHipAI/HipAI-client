@@ -28,6 +28,7 @@ class ConnectionConfigObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'project_id': 'object',
         'conn_schema': 'object',
         'name': 'object',
         'hostname_path': 'object',
@@ -42,10 +43,13 @@ class ConnectionConfigObject(object):
         'account': 'object',
         'warehouse': 'object',
         'role': 'object',
-        'sf_schema': 'object'
+        'sf_schema': 'object',
+        'region': 'object',
+        'bucket_container_name': 'object'
     }
 
     attribute_map = {
+        'project_id': 'project_id',
         'conn_schema': 'conn_schema',
         'name': 'name',
         'hostname_path': 'hostname_path',
@@ -60,11 +64,14 @@ class ConnectionConfigObject(object):
         'account': 'account',
         'warehouse': 'warehouse',
         'role': 'role',
-        'sf_schema': 'sf_schema'
+        'sf_schema': 'sf_schema',
+        'region': 'region',
+        'bucket_container_name': 'bucket_container_name'
     }
 
-    def __init__(self, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, conn_schema=None, name=None, hostname_path=None, graph_id=None, group_id=None, id=None, username=None, password=None, port=None, database=None, parameters=None, account=None, warehouse=None, role=None, sf_schema=None, region=None, bucket_container_name=None, *args, **kwargs):  # noqa: E501
         """ConnectionConfigObject - a model defined in Swagger"""  # noqa: E501
+        self._project_id = None
         self._conn_schema = None
         self._name = None
         self._hostname_path = None
@@ -80,7 +87,11 @@ class ConnectionConfigObject(object):
         self._warehouse = None
         self._role = None
         self._sf_schema = None
+        self._region = None
+        self._bucket_container_name = None
         self.discriminator = None
+        if project_id is not None:
+            self.project_id = project_id
         self.conn_schema = conn_schema
         if name is not None:
             self.name = name
@@ -110,6 +121,31 @@ class ConnectionConfigObject(object):
             self.role = role
         if sf_schema is not None:
             self.sf_schema = sf_schema
+        if region is not None:
+            self.region = region
+        if bucket_container_name is not None:
+            self.bucket_container_name = bucket_container_name
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this ConnectionConfigObject.  # noqa: E501
+
+
+        :return: The project_id of this ConnectionConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this ConnectionConfigObject.
+
+
+        :param project_id: The project_id of this ConnectionConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._project_id = project_id
 
     @property
     def conn_schema(self):
@@ -427,6 +463,48 @@ class ConnectionConfigObject(object):
         """
 
         self._sf_schema = sf_schema
+
+    @property
+    def region(self):
+        """Gets the region of this ConnectionConfigObject.  # noqa: E501
+
+
+        :return: The region of this ConnectionConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this ConnectionConfigObject.
+
+
+        :param region: The region of this ConnectionConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._region = region
+
+    @property
+    def bucket_container_name(self):
+        """Gets the bucket_container_name of this ConnectionConfigObject.  # noqa: E501
+
+
+        :return: The bucket_container_name of this ConnectionConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._bucket_container_name
+
+    @bucket_container_name.setter
+    def bucket_container_name(self, bucket_container_name):
+        """Sets the bucket_container_name of this ConnectionConfigObject.
+
+
+        :param bucket_container_name: The bucket_container_name of this ConnectionConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._bucket_container_name = bucket_container_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

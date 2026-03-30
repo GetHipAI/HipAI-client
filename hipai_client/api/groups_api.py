@@ -42,6 +42,7 @@ class GroupsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,12 +64,13 @@ class GroupsApi(object):
 
         :param async_req bool
         :param object id: (required)
+        :param object project_id:
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'project_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,6 +97,8 @@ class GroupsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
 
         header_params = {}
 
@@ -134,6 +138,7 @@ class GroupsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param object project_id:
         :return: ApiGroupsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -154,12 +159,13 @@ class GroupsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param object project_id:
         :return: ApiGroupsModelsListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['project_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -180,6 +186,8 @@ class GroupsApi(object):
         path_params = {}
 
         query_params = []
+        if 'project_id' in params:
+            query_params.append(('project_id', params['project_id']))  # noqa: E501
 
         header_params = {}
 

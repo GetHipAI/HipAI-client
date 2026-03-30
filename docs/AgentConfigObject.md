@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**project_id** | **object** |  | [optional] 
 **name** | **object** |  | 
 **status** | **object** |  | 
 **id** | **object** |  | [optional] 
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **graph_id** | **object** |  | [optional] 
 **group_id** | **object** |  | [optional] 
 **direct_citations** | **object** |  | [optional] 
+**preemptive_context_caching** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

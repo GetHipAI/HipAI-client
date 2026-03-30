@@ -10,12 +10,13 @@ Method | HTTP request | Description
 [**document_upload_api_connection_configs_document_upload_post**](ConnectionConfigsApi.md#document_upload_api_connection_configs_document_upload_post) | **POST** /api/connection-configs/document-upload | Document Upload
 [**list_connection_configs_api_connection_configs_list_post**](ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 [**list_documents_api_connection_configs_documents_id_get**](ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
+[**list_remote_files_api_connection_configs_remote_files_post**](ConnectionConfigsApi.md#list_remote_files_api_connection_configs_remote_files_post) | **POST** /api/connection-configs/remote-files | List Remote Files
 [**load_connection_config_api_connection_configs_id_get**](ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
 [**test_connection_api_connection_configs_test_connection_post**](ConnectionConfigsApi.md#test_connection_api_connection_configs_test_connection_post) | **POST** /api/connection-configs/test-connection | Test Connection
 [**upsert_connection_config_api_connection_configs_post**](ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 
 # **delete_connection_config_api_connection_configs_id_delete**
-> Message delete_connection_config_api_connection_configs_id_delete(id)
+> Message delete_connection_config_api_connection_configs_id_delete(id, project_id=project_id)
 
 Delete Connection Config
 
@@ -34,10 +35,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Connection Config
-    api_response = api_instance.delete_connection_config_api_connection_configs_id_delete(id)
+    api_response = api_instance.delete_connection_config_api_connection_configs_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->delete_connection_config_api_connection_configs_id_delete: %s\n" % e)
@@ -48,6 +50,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -65,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_document_api_connection_configs_documents_id_delete**
-> Message delete_document_api_connection_configs_documents_id_delete(id)
+> Message delete_document_api_connection_configs_documents_id_delete(id, project_id=project_id)
 
 Delete Document
 
@@ -84,10 +87,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Document
-    api_response = api_instance.delete_document_api_connection_configs_documents_id_delete(id)
+    api_response = api_instance.delete_document_api_connection_configs_documents_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->delete_document_api_connection_configs_documents_id_delete: %s\n" % e)
@@ -98,6 +102,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -267,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_documents_api_connection_configs_documents_id_get**
-> DocumentListResponse list_documents_api_connection_configs_documents_id_get(id)
+> DocumentListResponse list_documents_api_connection_configs_documents_id_get(id, project_id=project_id)
 
 List Documents
 
@@ -286,10 +291,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # List Documents
-    api_response = api_instance.list_documents_api_connection_configs_documents_id_get(id)
+    api_response = api_instance.list_documents_api_connection_configs_documents_id_get(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->list_documents_api_connection_configs_documents_id_get: %s\n" % e)
@@ -300,6 +306,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 
@@ -316,8 +323,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_remote_files_api_connection_configs_remote_files_post**
+> RemoteFilesResponse list_remote_files_api_connection_configs_remote_files_post(body)
+
+List Remote Files
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.ConnectionConfigObject() # ConnectionConfigObject | 
+
+try:
+    # List Remote Files
+    api_response = api_instance.list_remote_files_api_connection_configs_remote_files_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConnectionConfigsApi->list_remote_files_api_connection_configs_remote_files_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ConnectionConfigObject**](ConnectionConfigObject.md)|  | 
+
+### Return type
+
+[**RemoteFilesResponse**](RemoteFilesResponse.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **load_connection_config_api_connection_configs_id_get**
-> ConnectionConfigObject load_connection_config_api_connection_configs_id_get(id)
+> ConnectionConfigObject load_connection_config_api_connection_configs_id_get(id, project_id=project_id, group_id=group_id)
 
 Load Connection Config
 
@@ -336,10 +393,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
+group_id = NULL # object |  (optional)
 
 try:
     # Load Connection Config
-    api_response = api_instance.load_connection_config_api_connection_configs_id_get(id)
+    api_response = api_instance.load_connection_config_api_connection_configs_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConnectionConfigsApi->load_connection_config_api_connection_configs_id_get: %s\n" % e)
@@ -350,6 +409,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**object**](.md)|  | 
+ **project_id** | [**object**](.md)|  | [optional] 
+ **group_id** | [**object**](.md)|  | [optional] 
 
 ### Return type
 

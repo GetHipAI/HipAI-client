@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total_tokens** | **object** |  | 
+**total_embedding_tokens** | **object** |  | 
 **total_tokens_build** | **object** |  | 
 **total_requests** | **object** |  | 
 **requests** | **object** |  | 
