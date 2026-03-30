@@ -108,3 +108,4 @@ from hipai_client.models.user_permissions_entry import UserPermissionsEntry
 from hipai_client.models.user_permissions_list_response import UserPermissionsListResponse
 from hipai_client.models.user_public import UserPublic
 from hipai_client.models.validation_error import ValidationError
+from hipai_client.simple_client import *
