@@ -28,6 +28,27 @@ class TestUsersApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_complete_onboarding_api_users_onboarding_complete_post(self):
+        """Test case for complete_onboarding_api_users_onboarding_complete_post
+
+        Complete Onboarding  # noqa: E501
+        """
+        pass
+
+    def test_generate_replacement_api_key_api_users_api_keys_generate_replacement_post(self):
+        """Test case for generate_replacement_api_key_api_users_api_keys_generate_replacement_post
+
+        Generate Replacement Api Key  # noqa: E501
+        """
+        pass
+
+    def test_get_api_key_api_users_api_keys_get(self):
+        """Test case for get_api_key_api_users_api_keys_get
+
+        Get Api Key  # noqa: E501
+        """
+        pass
+
     def test_get_current_user_api_users_get(self):
         """Test case for get_current_user_api_users_get
 
@@ -35,10 +56,31 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
+    def test_get_notification_preferences_api_users_notifications_get(self):
+        """Test case for get_notification_preferences_api_users_notifications_get
+
+        Get Notification Preferences  # noqa: E501
+        """
+        pass
+
+    def test_replace_api_key_api_users_api_keys_replace_post(self):
+        """Test case for replace_api_key_api_users_api_keys_replace_post
+
+        Replace Api Key  # noqa: E501
+        """
+        pass
+
     def test_update_current_user_api_users_post(self):
         """Test case for update_current_user_api_users_post
 
         Update Current User  # noqa: E501
+        """
+        pass
+
+    def test_update_notification_preference_api_users_notifications_post(self):
+        """Test case for update_notification_preference_api_users_notifications_post
+
+        Update Notification Preference  # noqa: E501
         """
         pass
 

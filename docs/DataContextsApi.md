@@ -6,10 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**build_logs_api_data_contexts_logs_id_get**](DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
 [**delete_data_context_api_data_contexts_id_delete**](DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+[**estimate_build_api_data_contexts_estimations_post**](DataContextsApi.md#estimate_build_api_data_contexts_estimations_post) | **POST** /api/data-contexts/estimations | Estimate Build
+[**generate_api_key_api_data_contexts_api_keys_generate_id_post**](DataContextsApi.md#generate_api_key_api_data_contexts_api_keys_generate_id_post) | **POST** /api/data-contexts/api-keys/generate/{id} | Generate Api Key
+[**get_api_keys_api_data_contexts_api_keys_id_post**](DataContextsApi.md#get_api_keys_api_data_contexts_api_keys_id_post) | **POST** /api/data-contexts/api-keys/{id} | Get Api Keys
 [**get_build_options_api_data_contexts_build_options_id_get**](DataContextsApi.md#get_build_options_api_data_contexts_build_options_id_get) | **GET** /api/data-contexts/build-options/{id} | Get Build Options
 [**list_data_contexts_api_data_contexts_list_post**](DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
 [**load_data_context_api_data_contexts_id_get**](DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
 [**load_graph_api_data_contexts_graph_id_get**](DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
+[**remove_api_key_api_data_contexts_api_keys_remove_id_post**](DataContextsApi.md#remove_api_key_api_data_contexts_api_keys_remove_id_post) | **POST** /api/data-contexts/api-keys/remove/{id} | Remove Api Key
 [**upsert_data_context_api_data_contexts_post**](DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 
 # **build_logs_api_data_contexts_logs_id_get**
@@ -112,6 +116,160 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **estimate_build_api_data_contexts_estimations_post**
+> EstimationResponse estimate_build_api_data_contexts_estimations_post(body)
+
+Estimate Build
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.DataContextObject() # DataContextObject | 
+
+try:
+    # Estimate Build
+    api_response = api_instance.estimate_build_api_data_contexts_estimations_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataContextsApi->estimate_build_api_data_contexts_estimations_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataContextObject**](DataContextObject.md)|  | 
+
+### Return type
+
+[**EstimationResponse**](EstimationResponse.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_api_key_api_data_contexts_api_keys_generate_id_post**
+> DataContextAPITokens generate_api_key_api_data_contexts_api_keys_generate_id_post(body, id)
+
+Generate Api Key
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.ListLoadRequest() # ListLoadRequest | 
+id = NULL # object | 
+
+try:
+    # Generate Api Key
+    api_response = api_instance.generate_api_key_api_data_contexts_api_keys_generate_id_post(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataContextsApi->generate_api_key_api_data_contexts_api_keys_generate_id_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListLoadRequest**](ListLoadRequest.md)|  | 
+ **id** | [**object**](.md)|  | 
+
+### Return type
+
+[**DataContextAPITokens**](DataContextAPITokens.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api_keys_api_data_contexts_api_keys_id_post**
+> DataContextAPITokens get_api_keys_api_data_contexts_api_keys_id_post(body, id)
+
+Get Api Keys
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.ListLoadRequest() # ListLoadRequest | 
+id = NULL # object | 
+
+try:
+    # Get Api Keys
+    api_response = api_instance.get_api_keys_api_data_contexts_api_keys_id_post(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataContextsApi->get_api_keys_api_data_contexts_api_keys_id_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListLoadRequest**](ListLoadRequest.md)|  | 
+ **id** | [**object**](.md)|  | 
+
+### Return type
+
+[**DataContextAPITokens**](DataContextAPITokens.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -275,7 +433,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_graph_api_data_contexts_graph_id_get**
-> GraphObject load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id)
+> GraphObject load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id, replay=replay)
 
 Load Graph
 
@@ -296,10 +454,11 @@ api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration
 id = NULL # object | 
 project_id = NULL # object |  (optional)
 group_id = NULL # object |  (optional)
+replay = false # object |  (optional) (default to false)
 
 try:
     # Load Graph
-    api_response = api_instance.load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id)
+    api_response = api_instance.load_graph_api_data_contexts_graph_id_get(id, project_id=project_id, group_id=group_id, replay=replay)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataContextsApi->load_graph_api_data_contexts_graph_id_get: %s\n" % e)
@@ -312,6 +471,7 @@ Name | Type | Description  | Notes
  **id** | [**object**](.md)|  | 
  **project_id** | [**object**](.md)|  | [optional] 
  **group_id** | [**object**](.md)|  | [optional] 
+ **replay** | [**object**](.md)|  | [optional] [default to false]
 
 ### Return type
 
@@ -324,6 +484,58 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_api_key_api_data_contexts_api_keys_remove_id_post**
+> DataContextAPITokens remove_api_key_api_data_contexts_api_keys_remove_id_post(body, id)
+
+Remove Api Key
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.DataContextsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.DataContextApiKeyDeletionRequest() # DataContextApiKeyDeletionRequest | 
+id = NULL # object | 
+
+try:
+    # Remove Api Key
+    api_response = api_instance.remove_api_key_api_data_contexts_api_keys_remove_id_post(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataContextsApi->remove_api_key_api_data_contexts_api_keys_remove_id_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataContextApiKeyDeletionRequest**](DataContextApiKeyDeletionRequest.md)|  | 
+ **id** | [**object**](.md)|  | 
+
+### Return type
+
+[**DataContextAPITokens**](DataContextAPITokens.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

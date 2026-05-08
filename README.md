@@ -28,7 +28,7 @@ import hipai_client
 
 To install the latest release you may run:
 ```sh
-pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.5
+pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
 ```
 
 ### Setuptools
@@ -63,10 +63,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
 
 try:
     # Delete Agent
-    api_response = api_instance.delete_agent_api_agents_id_delete(id)
+    api_response = api_instance.delete_agent_api_agents_id_delete(id, project_id=project_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->delete_agent_api_agents_id_delete: %s\n" % e)
@@ -77,7 +78,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.GroupRequest() # GroupRequest | 
+body = NULL # object | 
 
 try:
     # List Agents
@@ -93,10 +94,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
 id = NULL # object | 
+project_id = NULL # object |  (optional)
+group_id = NULL # object |  (optional)
 
 try:
     # Load Agent
-    api_response = api_instance.load_agent_api_agents_id_get(id)
+    api_response = api_instance.load_agent_api_agents_id_get(id, project_id=project_id, group_id=group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentsApi->load_agent_api_agents_id_get: %s\n" % e)
@@ -136,17 +139,25 @@ Class | Method | HTTP request | Description
 *ConnectionConfigsApi* | [**delete_document_api_connection_configs_documents_id_delete**](docs/ConnectionConfigsApi.md#delete_document_api_connection_configs_documents_id_delete) | **DELETE** /api/connection-configs/documents/{id} | Delete Document
 *ConnectionConfigsApi* | [**delete_many_connection_configs_api_connection_configs_delete_many_post**](docs/ConnectionConfigsApi.md#delete_many_connection_configs_api_connection_configs_delete_many_post) | **POST** /api/connection-configs/delete_many | Delete Many Connection Configs
 *ConnectionConfigsApi* | [**document_upload_api_connection_configs_document_upload_post**](docs/ConnectionConfigsApi.md#document_upload_api_connection_configs_document_upload_post) | **POST** /api/connection-configs/document-upload | Document Upload
+*ConnectionConfigsApi* | [**gdrive_auth_url_api_connection_configs_gdrive_auth_url_get**](docs/ConnectionConfigsApi.md#gdrive_auth_url_api_connection_configs_gdrive_auth_url_get) | **GET** /api/connection-configs/gdrive/auth-url | Gdrive Auth Url
+*ConnectionConfigsApi* | [**gdrive_exchange_api_connection_configs_gdrive_exchange_post**](docs/ConnectionConfigsApi.md#gdrive_exchange_api_connection_configs_gdrive_exchange_post) | **POST** /api/connection-configs/gdrive/exchange | Gdrive Exchange
+*ConnectionConfigsApi* | [**gdrive_picker_token_api_connection_configs_gdrive_picker_token_get**](docs/ConnectionConfigsApi.md#gdrive_picker_token_api_connection_configs_gdrive_picker_token_get) | **GET** /api/connection-configs/gdrive/picker-token | Gdrive Picker Token
 *ConnectionConfigsApi* | [**list_connection_configs_api_connection_configs_list_post**](docs/ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 *ConnectionConfigsApi* | [**list_documents_api_connection_configs_documents_id_get**](docs/ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
+*ConnectionConfigsApi* | [**list_remote_files_api_connection_configs_remote_files_post**](docs/ConnectionConfigsApi.md#list_remote_files_api_connection_configs_remote_files_post) | **POST** /api/connection-configs/remote-files | List Remote Files
 *ConnectionConfigsApi* | [**load_connection_config_api_connection_configs_id_get**](docs/ConnectionConfigsApi.md#load_connection_config_api_connection_configs_id_get) | **GET** /api/connection-configs/{id} | Load Connection Config
 *ConnectionConfigsApi* | [**test_connection_api_connection_configs_test_connection_post**](docs/ConnectionConfigsApi.md#test_connection_api_connection_configs_test_connection_post) | **POST** /api/connection-configs/test-connection | Test Connection
 *ConnectionConfigsApi* | [**upsert_connection_config_api_connection_configs_post**](docs/ConnectionConfigsApi.md#upsert_connection_config_api_connection_configs_post) | **POST** /api/connection-configs/ | Upsert Connection Config
 *DataContextsApi* | [**build_logs_api_data_contexts_logs_id_get**](docs/DataContextsApi.md#build_logs_api_data_contexts_logs_id_get) | **GET** /api/data-contexts/logs/{id} | Build Logs
 *DataContextsApi* | [**delete_data_context_api_data_contexts_id_delete**](docs/DataContextsApi.md#delete_data_context_api_data_contexts_id_delete) | **DELETE** /api/data-contexts/{id} | Delete Data Context
+*DataContextsApi* | [**estimate_build_api_data_contexts_estimations_post**](docs/DataContextsApi.md#estimate_build_api_data_contexts_estimations_post) | **POST** /api/data-contexts/estimations | Estimate Build
+*DataContextsApi* | [**generate_api_key_api_data_contexts_api_keys_generate_id_post**](docs/DataContextsApi.md#generate_api_key_api_data_contexts_api_keys_generate_id_post) | **POST** /api/data-contexts/api-keys/generate/{id} | Generate Api Key
+*DataContextsApi* | [**get_api_keys_api_data_contexts_api_keys_id_post**](docs/DataContextsApi.md#get_api_keys_api_data_contexts_api_keys_id_post) | **POST** /api/data-contexts/api-keys/{id} | Get Api Keys
 *DataContextsApi* | [**get_build_options_api_data_contexts_build_options_id_get**](docs/DataContextsApi.md#get_build_options_api_data_contexts_build_options_id_get) | **GET** /api/data-contexts/build-options/{id} | Get Build Options
 *DataContextsApi* | [**list_data_contexts_api_data_contexts_list_post**](docs/DataContextsApi.md#list_data_contexts_api_data_contexts_list_post) | **POST** /api/data-contexts/list | List Data Contexts
 *DataContextsApi* | [**load_data_context_api_data_contexts_id_get**](docs/DataContextsApi.md#load_data_context_api_data_contexts_id_get) | **GET** /api/data-contexts/{id} | Load Data Context
 *DataContextsApi* | [**load_graph_api_data_contexts_graph_id_get**](docs/DataContextsApi.md#load_graph_api_data_contexts_graph_id_get) | **GET** /api/data-contexts/graph/{id} | Load Graph
+*DataContextsApi* | [**remove_api_key_api_data_contexts_api_keys_remove_id_post**](docs/DataContextsApi.md#remove_api_key_api_data_contexts_api_keys_remove_id_post) | **POST** /api/data-contexts/api-keys/remove/{id} | Remove Api Key
 *DataContextsApi* | [**upsert_data_context_api_data_contexts_post**](docs/DataContextsApi.md#upsert_data_context_api_data_contexts_post) | **POST** /api/data-contexts/ | Upsert Data Context
 *DefaultApi* | [**ping_ping_get**](docs/DefaultApi.md#ping_ping_get) | **GET** /ping | Ping
 *EvaluationsApi* | [**archive_evaluation_run_api_evaluations_runs_run_id_archive_patch**](docs/EvaluationsApi.md#archive_evaluation_run_api_evaluations_runs_run_id_archive_patch) | **PATCH** /api/evaluations/runs/{run_id}/archive | Archive Evaluation Run
@@ -165,21 +176,31 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**forgot_password_auth_forgot_password_post**](docs/LoginApi.md#forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Forgot Password
 *LoginApi* | [**login_access_token_login_access_token_post**](docs/LoginApi.md#login_access_token_login_access_token_post) | **POST** /login/access-token | Login Access Token
 *LoginApi* | [**login_google_login_google_post**](docs/LoginApi.md#login_google_login_google_post) | **POST** /login/google | Login Google
+*LoginApi* | [**logout_logout_get**](docs/LoginApi.md#logout_logout_get) | **GET** /logout | Logout
 *LoginApi* | [**request_access_auth_request_access_post**](docs/LoginApi.md#request_access_auth_request_access_post) | **POST** /auth/request-access | Request Access
 *LoginApi* | [**reset_password_auth_reset_password_post**](docs/LoginApi.md#reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset Password
 *LoginApi* | [**verify_reset_token_auth_verify_reset_token_token_get**](docs/LoginApi.md#verify_reset_token_auth_verify_reset_token_token_get) | **GET** /auth/verify-reset-token/{token} | Verify Reset Token
 *ModelConfigsApi* | [**delete_model_config_api_model_configs_id_delete**](docs/ModelConfigsApi.md#delete_model_config_api_model_configs_id_delete) | **DELETE** /api/model-configs/{id} | Delete Model Config
 *ModelConfigsApi* | [**list_model_configs_api_model_configs_list_post**](docs/ModelConfigsApi.md#list_model_configs_api_model_configs_list_post) | **POST** /api/model-configs/list | List Model Configs
 *ModelConfigsApi* | [**upsert_model_config_api_model_configs_post**](docs/ModelConfigsApi.md#upsert_model_config_api_model_configs_post) | **POST** /api/model-configs/ | Upsert Model Config
+*ProjectsApi* | [**delete_project_api_projects_id_delete**](docs/ProjectsApi.md#delete_project_api_projects_id_delete) | **DELETE** /api/projects/{id} | Delete Project
+*ProjectsApi* | [**get_user_permissions_api_projects_user_permissions_get**](docs/ProjectsApi.md#get_user_permissions_api_projects_user_permissions_get) | **GET** /api/projects/user-permissions | Get User Permissions
+*ProjectsApi* | [**list_project_permissions_api_projects_permissions_id_get**](docs/ProjectsApi.md#list_project_permissions_api_projects_permissions_id_get) | **GET** /api/projects/permissions/{id} | List Project Permissions
+*ProjectsApi* | [**list_projects_api_projects_get**](docs/ProjectsApi.md#list_projects_api_projects_get) | **GET** /api/projects/ | List Projects
+*ProjectsApi* | [**upsert_project_api_projects_post**](docs/ProjectsApi.md#upsert_project_api_projects_post) | **POST** /api/projects/ | Upsert Project
+*ProjectsApi* | [**upsert_project_permission_api_projects_permissions_post**](docs/ProjectsApi.md#upsert_project_permission_api_projects_permissions_post) | **POST** /api/projects/permissions | Upsert Project Permission
 *TeamApi* | [**list_team_members_api_team_members_get**](docs/TeamApi.md#list_team_members_api_team_members_get) | **GET** /api/team/members | List Team Members
 *TeamApi* | [**remove_team_member_api_team_members_user_id_delete**](docs/TeamApi.md#remove_team_member_api_team_members_user_id_delete) | **DELETE** /api/team/members/{user_id} | Remove Team Member
 *TeamApi* | [**reset_user_password_api_team_reset_password_user_id_post**](docs/TeamApi.md#reset_user_password_api_team_reset_password_user_id_post) | **POST** /api/team/reset-password/{user_id} | Reset User Password
 *TeamApi* | [**upsert_team_member_api_team_members_upsert_post**](docs/TeamApi.md#upsert_team_member_api_team_members_upsert_post) | **POST** /api/team/members/upsert | Upsert Team Member
+*UsersApi* | [**complete_onboarding_api_users_onboarding_complete_post**](docs/UsersApi.md#complete_onboarding_api_users_onboarding_complete_post) | **POST** /api/users/onboarding-complete | Complete Onboarding
 *UsersApi* | [**generate_replacement_api_key_api_users_api_keys_generate_replacement_post**](docs/UsersApi.md#generate_replacement_api_key_api_users_api_keys_generate_replacement_post) | **POST** /api/users/api-keys/generate-replacement | Generate Replacement Api Key
 *UsersApi* | [**get_api_key_api_users_api_keys_get**](docs/UsersApi.md#get_api_key_api_users_api_keys_get) | **GET** /api/users/api-keys | Get Api Key
 *UsersApi* | [**get_current_user_api_users_get**](docs/UsersApi.md#get_current_user_api_users_get) | **GET** /api/users/ | Get Current User
+*UsersApi* | [**get_notification_preferences_api_users_notifications_get**](docs/UsersApi.md#get_notification_preferences_api_users_notifications_get) | **GET** /api/users/notifications | Get Notification Preferences
 *UsersApi* | [**replace_api_key_api_users_api_keys_replace_post**](docs/UsersApi.md#replace_api_key_api_users_api_keys_replace_post) | **POST** /api/users/api-keys/replace | Replace Api Key
 *UsersApi* | [**update_current_user_api_users_post**](docs/UsersApi.md#update_current_user_api_users_post) | **POST** /api/users/ | Update Current User
+*UsersApi* | [**update_notification_preference_api_users_notifications_post**](docs/UsersApi.md#update_notification_preference_api_users_notifications_post) | **POST** /api/users/notifications | Update Notification Preference
 
 ## Documentation For Models
 
@@ -198,13 +219,15 @@ Class | Method | HTTP request | Description
  - [ApiEvaluationsModelsListResponse](docs/ApiEvaluationsModelsListResponse.md)
  - [ApiGroupsModelsListResponse](docs/ApiGroupsModelsListResponse.md)
  - [ApiModelConfigModelsListResponse](docs/ApiModelConfigModelsListResponse.md)
+ - [ApiProjectsModelsListResponse](docs/ApiProjectsModelsListResponse.md)
  - [BodyDocumentUploadApiConnectionConfigsDocumentUploadPost](docs/BodyDocumentUploadApiConnectionConfigsDocumentUploadPost.md)
  - [BodyLoginAccessTokenLoginAccessTokenPost](docs/BodyLoginAccessTokenLoginAccessTokenPost.md)
  - [BuildOptionsObject](docs/BuildOptionsObject.md)
  - [ChatCompletion](docs/ChatCompletion.md)
  - [ChatCompletionAudio](docs/ChatCompletionAudio.md)
  - [ChatCompletionMessage](docs/ChatCompletionMessage.md)
- - [ChatCompletionMessageToolCall](docs/ChatCompletionMessageToolCall.md)
+ - [ChatCompletionMessageCustomToolCall](docs/ChatCompletionMessageCustomToolCall.md)
+ - [ChatCompletionMessageFunctionToolCall](docs/ChatCompletionMessageFunctionToolCall.md)
  - [ChatCompletionRequest](docs/ChatCompletionRequest.md)
  - [ChatCompletionTokenLogprob](docs/ChatCompletionTokenLogprob.md)
  - [ChatMessage](docs/ChatMessage.md)
@@ -214,29 +237,43 @@ Class | Method | HTTP request | Description
  - [CompletionTokensDetails](docs/CompletionTokensDetails.md)
  - [CompletionUsage](docs/CompletionUsage.md)
  - [ConnectionConfigObject](docs/ConnectionConfigObject.md)
+ - [Custom](docs/Custom.md)
+ - [DataContextAPITokens](docs/DataContextAPITokens.md)
+ - [DataContextApiKeyDeletionRequest](docs/DataContextApiKeyDeletionRequest.md)
  - [DataContextObject](docs/DataContextObject.md)
  - [DocumentListResponse](docs/DocumentListResponse.md)
  - [DocumentUploadObject](docs/DocumentUploadObject.md)
  - [EdgeObject](docs/EdgeObject.md)
+ - [EstimationResponse](docs/EstimationResponse.md)
  - [EvaluationObject](docs/EvaluationObject.md)
  - [EvaluationRunObject](docs/EvaluationRunObject.md)
  - [EvaluationUpsert](docs/EvaluationUpsert.md)
  - [ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [Function](docs/Function.md)
  - [FunctionCall](docs/FunctionCall.md)
+ - [GDriveAuthUrlResponse](docs/GDriveAuthUrlResponse.md)
+ - [GDriveExchangeRequest](docs/GDriveExchangeRequest.md)
+ - [GDriveExchangeResponse](docs/GDriveExchangeResponse.md)
+ - [GDrivePickerTokenResponse](docs/GDrivePickerTokenResponse.md)
  - [GoogleLoginRequest](docs/GoogleLoginRequest.md)
  - [GraphObject](docs/GraphObject.md)
  - [GroupIsolationObject](docs/GroupIsolationObject.md)
  - [GroupRequest](docs/GroupRequest.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [LimitObject](docs/LimitObject.md)
+ - [ListLoadRequest](docs/ListLoadRequest.md)
  - [ListResponseLogs](docs/ListResponseLogs.md)
  - [LogObject](docs/LogObject.md)
  - [Message](docs/Message.md)
  - [ModelConfigObject](docs/ModelConfigObject.md)
  - [NodeObject](docs/NodeObject.md)
+ - [NotificationPreferenceUpdate](docs/NotificationPreferenceUpdate.md)
+ - [ProjectObject](docs/ProjectObject.md)
+ - [ProjectPermissionObject](docs/ProjectPermissionObject.md)
+ - [ProjectPermissionUpsert](docs/ProjectPermissionUpsert.md)
  - [PromptTokensDetails](docs/PromptTokensDetails.md)
  - [QuestionObject](docs/QuestionObject.md)
+ - [RemoteFilesResponse](docs/RemoteFilesResponse.md)
  - [RequestAccessRequest](docs/RequestAccessRequest.md)
  - [RequestsSample](docs/RequestsSample.md)
  - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
@@ -246,6 +283,8 @@ Class | Method | HTTP request | Description
  - [TokensSample](docs/TokensSample.md)
  - [TopLogprob](docs/TopLogprob.md)
  - [UserAPIKeys](docs/UserAPIKeys.md)
+ - [UserPermissionsEntry](docs/UserPermissionsEntry.md)
+ - [UserPermissionsListResponse](docs/UserPermissionsListResponse.md)
  - [UserPublic](docs/UserPublic.md)
  - [ValidationError](docs/ValidationError.md)
 

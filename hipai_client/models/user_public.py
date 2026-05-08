@@ -34,7 +34,8 @@ class UserPublic(object):
         'profile_image_url': 'object',
         'id': 'object',
         'permission_group': 'object',
-        'is_superadmin': 'object'
+        'is_superadmin': 'object',
+        'has_completed_onboarding': 'object'
     }
 
     attribute_map = {
@@ -44,10 +45,11 @@ class UserPublic(object):
         'profile_image_url': 'profile_image_url',
         'id': 'id',
         'permission_group': 'permission_group',
-        'is_superadmin': 'is_superadmin'
+        'is_superadmin': 'is_superadmin',
+        'has_completed_onboarding': 'has_completed_onboarding'
     }
 
-    def __init__(self, email=None, first_name=None, last_name=None, profile_image_url=None, id=None, permission_group=None, is_superadmin=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, email=None, first_name=None, last_name=None, profile_image_url=None, id=None, permission_group=None, is_superadmin=None, has_completed_onboarding=None, *args, **kwargs):  # noqa: E501
         """UserPublic - a model defined in Swagger"""  # noqa: E501
         self._email = None
         self._first_name = None
@@ -56,6 +58,7 @@ class UserPublic(object):
         self._id = None
         self._permission_group = None
         self._is_superadmin = None
+        self._has_completed_onboarding = None
         self.discriminator = None
         self.email = email
         if first_name is not None:
@@ -70,6 +73,8 @@ class UserPublic(object):
             self.permission_group = permission_group
         if is_superadmin is not None:
             self.is_superadmin = is_superadmin
+        if has_completed_onboarding is not None:
+            self.has_completed_onboarding = has_completed_onboarding
 
     @property
     def email(self):
@@ -219,6 +224,27 @@ class UserPublic(object):
         """
 
         self._is_superadmin = is_superadmin
+
+    @property
+    def has_completed_onboarding(self):
+        """Gets the has_completed_onboarding of this UserPublic.  # noqa: E501
+
+
+        :return: The has_completed_onboarding of this UserPublic.  # noqa: E501
+        :rtype: object
+        """
+        return self._has_completed_onboarding
+
+    @has_completed_onboarding.setter
+    def has_completed_onboarding(self, has_completed_onboarding):
+        """Sets the has_completed_onboarding of this UserPublic.
+
+
+        :param has_completed_onboarding: The has_completed_onboarding of this UserPublic.  # noqa: E501
+        :type: object
+        """
+
+        self._has_completed_onboarding = has_completed_onboarding
 
     def to_dict(self):
         """Returns the model properties as a dict"""

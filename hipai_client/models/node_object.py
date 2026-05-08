@@ -30,25 +30,40 @@ class NodeObject(object):
     swagger_types = {
         'id': 'object',
         'name': 'object',
-        'description': 'object'
+        'description': 'object',
+        'change_hash': 'object',
+        'change_list': 'object',
+        'fill': 'object'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'description': 'description'
+        'description': 'description',
+        'change_hash': 'change_hash',
+        'change_list': 'change_list',
+        'fill': 'fill'
     }
 
-    def __init__(self, id=None, name=None, description=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, change_hash=None, change_list=None, fill=None, *args, **kwargs):  # noqa: E501
         """NodeObject - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
         self._description = None
+        self._change_hash = None
+        self._change_list = None
+        self._fill = None
         self.discriminator = None
         self.id = id
         self.name = name
         if description is not None:
             self.description = description
+        if change_hash is not None:
+            self.change_hash = change_hash
+        if change_list is not None:
+            self.change_list = change_list
+        if fill is not None:
+            self.fill = fill
 
     @property
     def id(self):
@@ -116,6 +131,69 @@ class NodeObject(object):
         """
 
         self._description = description
+
+    @property
+    def change_hash(self):
+        """Gets the change_hash of this NodeObject.  # noqa: E501
+
+
+        :return: The change_hash of this NodeObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._change_hash
+
+    @change_hash.setter
+    def change_hash(self, change_hash):
+        """Sets the change_hash of this NodeObject.
+
+
+        :param change_hash: The change_hash of this NodeObject.  # noqa: E501
+        :type: object
+        """
+
+        self._change_hash = change_hash
+
+    @property
+    def change_list(self):
+        """Gets the change_list of this NodeObject.  # noqa: E501
+
+
+        :return: The change_list of this NodeObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._change_list
+
+    @change_list.setter
+    def change_list(self, change_list):
+        """Sets the change_list of this NodeObject.
+
+
+        :param change_list: The change_list of this NodeObject.  # noqa: E501
+        :type: object
+        """
+
+        self._change_list = change_list
+
+    @property
+    def fill(self):
+        """Gets the fill of this NodeObject.  # noqa: E501
+
+
+        :return: The fill of this NodeObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._fill
+
+    @fill.setter
+    def fill(self, fill):
+        """Sets the fill of this NodeObject.
+
+
+        :param fill: The fill of this NodeObject.  # noqa: E501
+        :type: object
+        """
+
+        self._fill = fill
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.annotation_url_citation import AnnotationURLCitation  # noqa: E501
-from swagger_client.rest import ApiException
+import hipai_client
+from hipai_client.models.annotation_url_citation import AnnotationURLCitation  # noqa: E501
+from hipai_client.rest import ApiException
 
 
 class TestAnnotationURLCitation(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAnnotationURLCitation(unittest.TestCase):
     def testAnnotationURLCitation(self):
         """Test AnnotationURLCitation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.annotation_url_citation.AnnotationURLCitation()  # noqa: E501
+        # model = hipai_client.models.annotation_url_citation.AnnotationURLCitation()  # noqa: E501
         pass
 
 
