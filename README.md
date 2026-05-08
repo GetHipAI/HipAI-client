@@ -31,41 +31,131 @@ To install the latest release you may run:
 pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
 ```
 
-For most uses cases see the [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/main/hipai_client/simple_client.py) which can be stood up and used via:
+For most uses cases, [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/main/hipai_client/simple_client.py)  should be adequate. Here is an end to end example:
 
 ```python
-from hipai_client import SimpleHipAIClient
+"""
+HipAI end-to-end: create an LLM config, build a data context, create an agent, chat.
 
-client = SimpleHipAIClient(access_token="YOUR-API-TOKEN")
-```
+Prereqs
+-------
+- pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
+- A HipAI account, a User API token (Account → Edit Account → API Tokens),
+- and your project id either from GET /api/projects/ or copied from https://dashboard.gethip.ai/projects ).
+"""
+import os
+import time
 
-E.G. in order to build a Data Context, you can run the following:
-```python
-from hipai_client import SimpleHipAIClient
+from hipai_client.models import BuildOptionsObject
+from hipai_client.simple_client import (
+    AgentStatuses,
+    ConnectionConfigurationSchemas,
+    DataContextStatuses,
+    SimpleHipAIClient,
+)
 
-client = SimpleHipAIClient(access_token="YOUR-API-TOKEN")
-project_id = "YOUR-CURRENT-PROJECT-ID"
+# -------------------------------------------------------------------- config
+USER_API_TOKEN = os.environ["HIPAI_USER_TOKEN"]   # "et-..." from your account
+PROJECT_ID     = os.environ["HIPAI_PROJECT_ID"]   # UUID of the target project
+OPENAI_KEY     = os.environ["OPENAI_API_KEY"]     # provider token for the LLM config
 
-llm_config = client.upsert_llm_config("OpenAI Config", token="OPEN-AI-TOKEN", model="gpt-5.2", project_id=project_id)
-connection_config = client.upsert_connection_config(name="document test config", conn_schema='documents', project_id=project_id)
-with open("FILE_TO_UPLOAD", "rb") as f:
-    client.upload_file("FILE_TO_UPLOAD", f, "application/pdf", connection_config)
+PG_HOST     = os.environ["PG_HOST"]
+PG_USER     = os.environ["PG_USER"]
+PG_PASSWORD = os.environ["PG_PASSWORD"]
+PG_DATABASE = os.environ["PG_DATABASE"]
 
-data_context = client.upsert_data_context(name="end-to-end document test", project_id=project_id, connection_config_ids=[connection_config.id], llm_config_id=llm_config.id, build=True)
-```
+DOCS_TO_UPLOAD = ["./handbook.pdf", "./policies.md"]    # any mix of pdf/md/txt/html/zip
 
-And in order to use the Data Context in an active agent just wait for it to be ready (a list of possible statuses can be found alongside the [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/0ca9e8c1dcaea4460fddc3e47d2744dd60189b92/hipai_client/simple_client.py#L26)) and run the following:
-```python
-...
-data_context = client.load_data_context("DATA-CONTEXT-ID")
-if data_context.status == "ready":
-    agent = client.upsert_agent(
-        name="New Agent", 
-        status="active", 
-        data_context_id=data_context.id, 
-        llm_config_id=LLM_CONFIG_ID,
-        project_id=PROJECTP_ID
-    )
+client = SimpleHipAIClient(access_token=USER_API_TOKEN)
+
+# ---------------------------------------------------------- 1. LLM config
+llm = client.upsert_llm_config(
+    name="OpenAI GPT-5.2",
+    token=OPENAI_KEY,
+    model_name="gpt-5.2",
+    project_id=PROJECT_ID,
+)
+print(f"LLM config: {llm.id}")
+
+# ------------------------------------------------ 2. Connection configs
+# 2a. Postgres
+pg_conn = client.upsert_connection_config(
+    conn_schema=ConnectionConfigurationSchemas.POSTGRESQL.value,
+    name="Production DB",
+    project_id=PROJECT_ID,
+    hostname_path=PG_HOST,
+    username=PG_USER,
+    password=PG_PASSWORD,
+    database=PG_DATABASE,
+    port=5432,
+)
+
+# 2b. Documents — create the connection, then upload files into it
+doc_conn = client.upsert_connection_config(
+    conn_schema=ConnectionConfigurationSchemas.DOCUMENT.value,
+    name="Internal Docs",
+    project_id=PROJECT_ID,
+)
+for path in DOCS_TO_UPLOAD:
+    mime = "application/pdf" if path.lower().endswith(".pdf") else "text/plain"
+    with open(path, "rb") as fh:
+        client.upload_file(
+            file_name=os.path.basename(path),
+            file=fh,
+            file_mime_type=mime,
+            connection_config=doc_conn,
+        )
+
+# ----------------------------------------- 3. Data context — build & poll
+context = client.upsert_data_context(
+    name="Company Knowledge",
+    project_id=PROJECT_ID,
+    llm_config_id=llm.id,
+    connection_config_ids=[pg_conn.id, doc_conn.id],
+    build=True,                                  # queues a build immediately
+    build_options=BuildOptionsObject(
+        domain="any",
+        low_precision=True,                      # set False for high-precision (enterprise)
+    ),
+)
+print(f"Data context queued: {context.id}")
+
+# Builds usually take 10 minutes to 2 hours depending on size — poll until ready.
+TERMINAL_STATUSES = {DataContextStatuses.READY.value, "error"}
+while context.status not in TERMINAL_STATUSES:
+    time.sleep(30)
+    context = client.load_data_context(context.id, project_id=PROJECT_ID)
+    print(f"  status: {context.status}")
+
+if context.status == "error":
+    raise RuntimeError(f"Build failed: {context.error_message}")
+
+# ------------------------------------------------------------- 4. Agent
+agent = client.upsert_agent(
+    name="Knowledge Bot",
+    status=AgentStatuses.ACTIVE.value,
+    data_context_id=context.id,
+    llm_config_id=llm.id,
+    project_id=PROJECT_ID,
+)
+print(f"Agent ready: {agent.id} (api_key: {agent.api_key[:8]}…)")
+
+# ----------------------------------------------------------- 5. Chat it
+reply, messages, _raw = client.chat(
+    prompt="What does our handbook say about expense reports?",
+    agent_api_key=agent.api_key,
+    project_id=PROJECT_ID,
+)
+print("Agent:", reply)
+
+# Follow-up turn — pass `messages` back in to keep history.
+reply, messages, _raw = client.chat(
+    prompt="And what's the approval threshold?",
+    agent_api_key=agent.api_key,
+    project_id=PROJECT_ID,
+    ongoing=messages,
+)
+print("Agent:", reply)
 
 ```
 
