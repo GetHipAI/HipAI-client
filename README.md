@@ -141,21 +141,14 @@ agent = client.upsert_agent(
 print(f"Agent ready: {agent.id} (api_key: {agent.api_key[:8]}…)")
 
 # ----------------------------------------------------------- 5. Chat it
+# add additional questions as necessary for the data sources you use
 reply, messages, _raw = client.chat(
-    prompt="What does our handbook say about expense reports?",
+    prompt="What does our handbook say about expense reports?", # or any question relevant to the document you included
     agent_api_key=agent.api_key,
     project_id=PROJECT_ID,
 )
 print("Agent:", reply)
 
-# Follow-up turn — pass `messages` back in to keep history.
-reply, messages, _raw = client.chat(
-    prompt="And what's the approval threshold?",
-    agent_api_key=agent.api_key,
-    project_id=PROJECT_ID,
-    ongoing=messages,
-)
-print("Agent:", reply)
 
 ```
 
