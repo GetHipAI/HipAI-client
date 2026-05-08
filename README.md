@@ -31,6 +31,14 @@ To install the latest release you may run:
 pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
 ```
 
+For most uses cases see the [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/main/hipai_client/simple_client.py) which can be stood up and used via:
+
+```python
+from hipai_client import SimpleHipAIClient
+
+client = SimpleHipAIClient(access_token="YOUR-API-TOKEN")
+```
+
 ### Setuptools
 
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
