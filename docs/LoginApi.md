@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**forgot_password_auth_forgot_password_post**](LoginApi.md#forgot_password_auth_forgot_password_post) | **POST** /auth/forgot-password | Forgot Password
 [**login_access_token_login_access_token_post**](LoginApi.md#login_access_token_login_access_token_post) | **POST** /login/access-token | Login Access Token
 [**login_google_login_google_post**](LoginApi.md#login_google_login_google_post) | **POST** /login/google | Login Google
+[**logout_logout_get**](LoginApi.md#logout_logout_get) | **GET** /logout | Logout
 [**request_access_auth_request_access_post**](LoginApi.md#request_access_auth_request_access_post) | **POST** /auth/request-access | Request Access
 [**reset_password_auth_reset_password_post**](LoginApi.md#reset_password_auth_reset_password_post) | **POST** /auth/reset-password | Reset Password
 [**verify_reset_token_auth_verify_reset_token_token_get**](LoginApi.md#verify_reset_token_auth_verify_reset_token_token_get) | **GET** /auth/verify-reset-token/{token} | Verify Reset Token
@@ -161,6 +162,48 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logout_logout_get**
+> Message logout_logout_get()
+
+Logout
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = hipai_client.LoginApi()
+
+try:
+    # Logout
+    api_response = api_instance.logout_logout_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginApi->logout_logout_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Message**](Message.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

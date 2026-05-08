@@ -35,6 +35,13 @@ class TestCompanyApi(unittest.TestCase):
         """
         pass
 
+    def test_get_limits_api_company_limits_get(self):
+        """Test case for get_limits_api_company_limits_get
+
+        Get Limits  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -28,6 +28,13 @@ class TestEvaluationsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_archive_evaluation_run_api_evaluations_runs_run_id_archive_patch(self):
+        """Test case for archive_evaluation_run_api_evaluations_runs_run_id_archive_patch
+
+        Archive Evaluation Run  # noqa: E501
+        """
+        pass
+
     def test_delete_evaluation_api_evaluations_id_delete(self):
         """Test case for delete_evaluation_api_evaluations_id_delete
 
@@ -42,8 +49,8 @@ class TestEvaluationsApi(unittest.TestCase):
         """
         pass
 
-    def test_list_evaluations_api_evaluations_list_get(self):
-        """Test case for list_evaluations_api_evaluations_list_get
+    def test_list_evaluations_api_evaluations_list_post(self):
+        """Test case for list_evaluations_api_evaluations_list_post
 
         List Evaluations  # noqa: E501
         """
@@ -63,8 +70,8 @@ class TestEvaluationsApi(unittest.TestCase):
         """
         pass
 
-    def test_list_runs_api_evaluations_runs_get(self):
-        """Test case for list_runs_api_evaluations_runs_get
+    def test_list_runs_api_evaluations_runs_post(self):
+        """Test case for list_runs_api_evaluations_runs_post
 
         List Runs  # noqa: E501
         """

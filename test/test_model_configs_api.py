@@ -35,8 +35,8 @@ class TestModelConfigsApi(unittest.TestCase):
         """
         pass
 
-    def test_list_model_configs_api_model_configs_list_get(self):
-        """Test case for list_model_configs_api_model_configs_list_get
+    def test_list_model_configs_api_model_configs_list_post(self):
+        """Test case for list_model_configs_api_model_configs_list_post
 
         List Model Configs  # noqa: E501
         """

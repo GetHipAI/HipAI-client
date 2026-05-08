@@ -37,7 +37,10 @@ class ModelConfigObject(object):
         'on_prem': 'object',
         'used_by_active_agent': 'object',
         'group_id': 'object',
-        'client_type': 'object'
+        'client_type': 'object',
+        'location': 'object',
+        'vertex': 'object',
+        'api_version': 'object'
     }
 
     attribute_map = {
@@ -50,10 +53,13 @@ class ModelConfigObject(object):
         'on_prem': 'on_prem',
         'used_by_active_agent': 'used_by_active_agent',
         'group_id': 'group_id',
-        'client_type': 'client_type'
+        'client_type': 'client_type',
+        'location': 'location',
+        'vertex': 'vertex',
+        'api_version': 'api_version'
     }
 
-    def __init__(self, project_id=None, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None, client_type=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, id=None, name=None, url=None, token=None, model_name=None, on_prem=None, used_by_active_agent=None, group_id=None, client_type=None, location=None, vertex=None, api_version=None, *args, **kwargs):  # noqa: E501
         """ModelConfigObject - a model defined in Swagger"""  # noqa: E501
         self._project_id = None
         self._id = None
@@ -65,6 +71,9 @@ class ModelConfigObject(object):
         self._used_by_active_agent = None
         self._group_id = None
         self._client_type = None
+        self._location = None
+        self._vertex = None
+        self._api_version = None
         self.discriminator = None
         if project_id is not None:
             self.project_id = project_id
@@ -86,6 +95,12 @@ class ModelConfigObject(object):
             self.group_id = group_id
         if client_type is not None:
             self.client_type = client_type
+        if location is not None:
+            self.location = location
+        if vertex is not None:
+            self.vertex = vertex
+        if api_version is not None:
+            self.api_version = api_version
 
     @property
     def project_id(self):
@@ -296,6 +311,69 @@ class ModelConfigObject(object):
         """
 
         self._client_type = client_type
+
+    @property
+    def location(self):
+        """Gets the location of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The location of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """Sets the location of this ModelConfigObject.
+
+
+        :param location: The location of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._location = location
+
+    @property
+    def vertex(self):
+        """Gets the vertex of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The vertex of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._vertex
+
+    @vertex.setter
+    def vertex(self, vertex):
+        """Sets the vertex of this ModelConfigObject.
+
+
+        :param vertex: The vertex of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._vertex = vertex
+
+    @property
+    def api_version(self):
+        """Gets the api_version of this ModelConfigObject.  # noqa: E501
+
+
+        :return: The api_version of this ModelConfigObject.  # noqa: E501
+        :rtype: object
+        """
+        return self._api_version
+
+    @api_version.setter
+    def api_version(self, api_version):
+        """Sets the api_version of this ModelConfigObject.
+
+
+        :param api_version: The api_version of this ModelConfigObject.  # noqa: E501
+        :type: object
+        """
+
+        self._api_version = api_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

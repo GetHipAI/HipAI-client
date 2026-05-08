@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **object** |  | [optional] 
 **permission_group** | **object** |  | [optional] 
 **is_superadmin** | **object** |  | [optional] 
+**has_completed_onboarding** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

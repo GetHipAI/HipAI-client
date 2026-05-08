@@ -8,6 +8,9 @@ Method | HTTP request | Description
 [**delete_document_api_connection_configs_documents_id_delete**](ConnectionConfigsApi.md#delete_document_api_connection_configs_documents_id_delete) | **DELETE** /api/connection-configs/documents/{id} | Delete Document
 [**delete_many_connection_configs_api_connection_configs_delete_many_post**](ConnectionConfigsApi.md#delete_many_connection_configs_api_connection_configs_delete_many_post) | **POST** /api/connection-configs/delete_many | Delete Many Connection Configs
 [**document_upload_api_connection_configs_document_upload_post**](ConnectionConfigsApi.md#document_upload_api_connection_configs_document_upload_post) | **POST** /api/connection-configs/document-upload | Document Upload
+[**gdrive_auth_url_api_connection_configs_gdrive_auth_url_get**](ConnectionConfigsApi.md#gdrive_auth_url_api_connection_configs_gdrive_auth_url_get) | **GET** /api/connection-configs/gdrive/auth-url | Gdrive Auth Url
+[**gdrive_exchange_api_connection_configs_gdrive_exchange_post**](ConnectionConfigsApi.md#gdrive_exchange_api_connection_configs_gdrive_exchange_post) | **POST** /api/connection-configs/gdrive/exchange | Gdrive Exchange
+[**gdrive_picker_token_api_connection_configs_gdrive_picker_token_get**](ConnectionConfigsApi.md#gdrive_picker_token_api_connection_configs_gdrive_picker_token_get) | **GET** /api/connection-configs/gdrive/picker-token | Gdrive Picker Token
 [**list_connection_configs_api_connection_configs_list_post**](ConnectionConfigsApi.md#list_connection_configs_api_connection_configs_list_post) | **POST** /api/connection-configs/list | List Connection Configs
 [**list_documents_api_connection_configs_documents_id_get**](ConnectionConfigsApi.md#list_documents_api_connection_configs_documents_id_get) | **GET** /api/connection-configs/documents/{id} | List Documents
 [**list_remote_files_api_connection_configs_remote_files_post**](ConnectionConfigsApi.md#list_remote_files_api_connection_configs_remote_files_post) | **POST** /api/connection-configs/remote-files | List Remote Files
@@ -217,6 +220,164 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gdrive_auth_url_api_connection_configs_gdrive_auth_url_get**
+> GDriveAuthUrlResponse gdrive_auth_url_api_connection_configs_gdrive_auth_url_get(redirect_uri, state=state)
+
+Gdrive Auth Url
+
+Returns the Google OAuth2 authorization URL. The frontend should redirect the user to this URL. After the user authenticates, Google will redirect back to ``redirect_uri`` with a ``code`` parameter. Pass ``state`` to have it returned unchanged in the callback (e.g. the connection_config_id).
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
+redirect_uri = NULL # object | 
+state = NULL # object |  (optional)
+
+try:
+    # Gdrive Auth Url
+    api_response = api_instance.gdrive_auth_url_api_connection_configs_gdrive_auth_url_get(redirect_uri, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConnectionConfigsApi->gdrive_auth_url_api_connection_configs_gdrive_auth_url_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **redirect_uri** | [**object**](.md)|  | 
+ **state** | [**object**](.md)|  | [optional] 
+
+### Return type
+
+[**GDriveAuthUrlResponse**](GDriveAuthUrlResponse.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gdrive_exchange_api_connection_configs_gdrive_exchange_post**
+> GDriveExchangeResponse gdrive_exchange_api_connection_configs_gdrive_exchange_post(body)
+
+Gdrive Exchange
+
+Exchanges the OAuth2 authorization code for a refresh token and attaches credentials to the specified ConnectionConfig. Call this after the user is redirected back from Google. The connection config is located by company_id + connection_config_id only (no project_id required, since this endpoint is called from an OAuth popup that does not carry project context).
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
+body = hipai_client.GDriveExchangeRequest() # GDriveExchangeRequest | 
+
+try:
+    # Gdrive Exchange
+    api_response = api_instance.gdrive_exchange_api_connection_configs_gdrive_exchange_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConnectionConfigsApi->gdrive_exchange_api_connection_configs_gdrive_exchange_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GDriveExchangeRequest**](GDriveExchangeRequest.md)|  | 
+
+### Return type
+
+[**GDriveExchangeResponse**](GDriveExchangeResponse.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gdrive_picker_token_api_connection_configs_gdrive_picker_token_get**
+> GDrivePickerTokenResponse gdrive_picker_token_api_connection_configs_gdrive_picker_token_get(connection_config_id)
+
+Gdrive Picker Token
+
+Returns a short-lived access token for the authenticated user's Google Drive connection. Used by the frontend to open the Google Drive Folder Picker.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import hipai_client
+from hipai_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
+configuration = hipai_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = hipai_client.ConnectionConfigsApi(hipai_client.ApiClient(configuration))
+connection_config_id = NULL # object | 
+
+try:
+    # Gdrive Picker Token
+    api_response = api_instance.gdrive_picker_token_api_connection_configs_gdrive_picker_token_get(connection_config_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConnectionConfigsApi->gdrive_picker_token_api_connection_configs_gdrive_picker_token_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connection_config_id** | [**object**](.md)|  | 
+
+### Return type
+
+[**GDrivePickerTokenResponse**](GDrivePickerTokenResponse.md)
+
+### Authorization
+
+[OAuth2PasswordBearer](../README.md#OAuth2PasswordBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

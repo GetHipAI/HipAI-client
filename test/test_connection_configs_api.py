@@ -56,6 +56,27 @@ class TestConnectionConfigsApi(unittest.TestCase):
         """
         pass
 
+    def test_gdrive_auth_url_api_connection_configs_gdrive_auth_url_get(self):
+        """Test case for gdrive_auth_url_api_connection_configs_gdrive_auth_url_get
+
+        Gdrive Auth Url  # noqa: E501
+        """
+        pass
+
+    def test_gdrive_exchange_api_connection_configs_gdrive_exchange_post(self):
+        """Test case for gdrive_exchange_api_connection_configs_gdrive_exchange_post
+
+        Gdrive Exchange  # noqa: E501
+        """
+        pass
+
+    def test_gdrive_picker_token_api_connection_configs_gdrive_picker_token_get(self):
+        """Test case for gdrive_picker_token_api_connection_configs_gdrive_picker_token_get
+
+        Gdrive Picker Token  # noqa: E501
+        """
+        pass
+
     def test_list_connection_configs_api_connection_configs_list_post(self):
         """Test case for list_connection_configs_api_connection_configs_list_post
 
@@ -70,10 +91,24 @@ class TestConnectionConfigsApi(unittest.TestCase):
         """
         pass
 
+    def test_list_remote_files_api_connection_configs_remote_files_post(self):
+        """Test case for list_remote_files_api_connection_configs_remote_files_post
+
+        List Remote Files  # noqa: E501
+        """
+        pass
+
     def test_load_connection_config_api_connection_configs_id_get(self):
         """Test case for load_connection_config_api_connection_configs_id_get
 
         Load Connection Config  # noqa: E501
+        """
+        pass
+
+    def test_test_connection_api_connection_configs_test_connection_post(self):
+        """Test case for test_connection_api_connection_configs_test_connection_post
+
+        Test Connection  # noqa: E501
         """
         pass
 

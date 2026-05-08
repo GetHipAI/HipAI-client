@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **used_by_active_agent** | **object** |  | [optional] 
 **group_id** | **object** |  | [optional] 
 **client_type** | **object** |  | [optional] 
+**location** | **object** |  | [optional] 
+**vertex** | **object** |  | [optional] 
+**api_version** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
