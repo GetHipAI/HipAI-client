@@ -980,12 +980,14 @@ class SimpleHipAIClient:
             project_id = str(project_id)
         return hipai_client.AgentsApi(self.client).load_agent_api_agents_id_get(id, project_id=project_id, **kwargs)
 
-    def list_llm_configs(self, group_id: Optional[Union[str, UUID]] = None):
+    def list_llm_configs(self, project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None):
         """
         List LLM model configurations (optionally filtered by group).
 
         Parameters
         ----------
+        project_id : str or uuid.UUID
+            The project whose llm_configs should be listed.
         group_id : str or uuid.UUID, optional
             Group isolation id to filter results.
 
@@ -997,14 +999,16 @@ class SimpleHipAIClient:
         Examples
         --------
         >>> client = SimpleHipAIClient(access_token="YOUR_TOKEN")
-        >>> configs = client.list_llm_configs(group_id="GROUP_ID")
+        >>> configs = client.list_llm_configs(project_id="PROJECT_ID", group_id="GROUP_ID")
         >>> isinstance(configs, list)
         True
         """
         if isinstance(group_id, UUID):
             group_id = str(group_id)
+        if isinstance(project_id, UUID):
+            project_id = str(project_id)
         return [ModelConfigObject(**model_config) for model_config in hipai_client.ModelConfigsApi(self.client).list_model_configs_api_model_configs_list_post(
-            hipai_client.GroupRequest(group_id=group_id)
+            hipai_client.GroupRequest(group_id=group_id, project_id=project_id)
         ).data]
 
     def list_connection_configs(self, project_id: Union[str, UUID], group_id: Optional[Union[str, UUID]] = None):

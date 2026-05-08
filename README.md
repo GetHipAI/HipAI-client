@@ -39,6 +39,36 @@ from hipai_client import SimpleHipAIClient
 client = SimpleHipAIClient(access_token="YOUR-API-TOKEN")
 ```
 
+E.G. in order to build a Data Context, you can run the following:
+```python
+from hipai_client import SimpleHipAIClient
+
+client = SimpleHipAIClient(access_token="YOUR-API-TOKEN")
+project_id = "YOUR-CURRENT-PROJECT-ID"
+
+llm_config = client.upsert_llm_config("OpenAI Config", token="OPEN-AI-TOKEN", model="gpt-5.2", project_id=project_id)
+connection_config = client.upsert_connection_config(name="document test config", conn_schema='documents', project_id=project_id)
+with open("FILE_TO_UPLOAD", "rb") as f:
+    client.upload_file("FILE_TO_UPLOAD", f, "application/pdf", connection_config)
+
+data_context = client.upsert_data_context(name="end-to-end document test", project_id=project_id, connection_config_ids=[connection_config.id], llm_config_id=llm_config.id, build=True)
+```
+
+And in order to use the Data Context in an active agent just wait for it to be ready (a list of possible statuses can be found alongside the [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/0ca9e8c1dcaea4460fddc3e47d2744dd60189b92/hipai_client/simple_client.py#L26)) and run the following:
+```python
+...
+data_context = client.load_data_context("DATA-CONTEXT-ID")
+if data_context.status == "ready":
+    agent = client.upsert_agent(
+        name="New Agent", 
+        status="active", 
+        data_context_id=data_context.id, 
+        llm_config_id=LLM_CONFIG_ID,
+        project_id=PROJECTP_ID
+    )
+
+```
+
 ### Setuptools
 
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
