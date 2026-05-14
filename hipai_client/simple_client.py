@@ -851,7 +851,7 @@ class SimpleHipAIClient:
             "Content-Type": encoded_data.content_type,
         }
         return requests.post(
-            f"{self.conf.host}//api/connection-configs/document-upload",
+            f"{self.conf.host}/api/connection-configs/document-upload",
             data=encoded_data,
             headers=headers,
         )
