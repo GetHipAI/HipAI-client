@@ -1157,8 +1157,9 @@ class SimpleHipAIClient:
     def chat(
         self,
         prompt: str,
-        agent_api_key: str,
         project_id: Union[str, UUID],
+        agent_api_key: Optional[str] = None,
+        graph_id: Optional[Union[str, UUID]] = None,
         group_id: Optional[Union[str, UUID]] = None,
         ongoing: Optional[List[Dict[str, str]]] = None,
     ):
@@ -1172,10 +1173,13 @@ class SimpleHipAIClient:
         ----------
         prompt : str
             User message content to send to the chat endpoint.
-        agent_api_key : str
-            Agent API key used to route the request.
+
         project_id : str or uuid.UUID
             The project context for the chat request.
+        agent_api_key : str, optional
+            Agent API key used to route the request. Only optional when a graph id is specified.
+        graph_id : str or uuid.UUID, optional
+            Optional graph id. The graph to perform the chat equest against. Only optional when an agent_api_key is not specified.
         group_id : str or uuid.UUID, optional
             Optional group isolation id.
         ongoing : list[dict[str, str]], optional
@@ -1208,9 +1212,10 @@ class SimpleHipAIClient:
             project_id = str(project_id)
         if isinstance(group_id, UUID):
             group_id = str(group_id)
+        assert graph_id is not None or agent_api_key is not None
         messages = ongoing or []
         messages.append({"role": "user", "content": prompt})
-        request = ChatCompletionRequest(messages=messages, agent_api_key=agent_api_key, project_id=project_id, group_id=group_id)
+        request = ChatCompletionRequest(messages=messages, agent_api_key=agent_api_key, graph_id=graph_id, project_id=project_id, group_id=group_id)
         response = hipai_client.ChatApi(self.client).completions_api_chat_completions_post(request)
         response_content = response.choices[0]["message"]["content"]
         messages.append({"role": "assistant", "content": response_content})

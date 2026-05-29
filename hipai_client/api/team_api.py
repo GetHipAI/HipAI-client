@@ -217,7 +217,7 @@ class TeamApi(object):
     def reset_user_password_api_team_reset_password_user_id_post(self, user_id, **kwargs):  # noqa: E501
         """Reset User Password  # noqa: E501
 
-        Reset a team member's password.  # noqa: E501
+        Trigger a password-reset email for a team member.  Mirrors the self-serve ``/auth/forgot-password`` flow: writes a fresh ``password_reset_token`` on the target user and dispatches a ``PasswordResetEmail`` with copy that names the admin who initiated the reset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.reset_user_password_api_team_reset_password_user_id_post(user_id, async_req=True)
@@ -239,7 +239,7 @@ class TeamApi(object):
     def reset_user_password_api_team_reset_password_user_id_post_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Reset User Password  # noqa: E501
 
-        Reset a team member's password.  # noqa: E501
+        Trigger a password-reset email for a team member.  Mirrors the self-serve ``/auth/forgot-password`` flow: writes a fresh ``password_reset_token`` on the target user and dispatches a ``PasswordResetEmail`` with copy that names the admin who initiated the reset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.reset_user_password_api_team_reset_password_user_id_post_with_http_info(user_id, async_req=True)
