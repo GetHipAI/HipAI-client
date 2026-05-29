@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **messages** | **object** |  | 
 **agent_id** | **object** |  | [optional] 
 **agent_api_key** | **object** |  | [optional] 
+**graph_id** | **object** |  | [optional] 
 **group_id** | **object** |  | [optional] 
 **model** | **object** |  | [optional] 
 **reasoning_effort** | **object** |  | [optional] 
@@ -16,7 +17,9 @@ Name | Type | Description | Notes
 **temperature** | **object** |  | [optional] 
 **frequency_penalty** | **object** |  | [optional] 
 **direct_citations** | **object** |  | [optional] 
+**citation_checking** | **object** |  | [optional] 
 **stream_response** | **object** |  | [optional] 
+**emit_graph_nodes** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

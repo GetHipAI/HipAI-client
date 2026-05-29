@@ -28,7 +28,7 @@ import hipai_client
 
 To install the latest release you may run:
 ```sh
-pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
+pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.7
 ```
 
 For most uses cases, [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-client/blob/main/hipai_client/simple_client.py)  should be adequate. Here is an end to end example:

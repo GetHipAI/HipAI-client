@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 Reset User Password
 
-Reset a team member's password.
+Trigger a password-reset email for a team member.  Mirrors the self-serve ``/auth/forgot-password`` flow: writes a fresh ``password_reset_token`` on the target user and dispatches a ``PasswordResetEmail`` with copy that names the admin who initiated the reset.
 
 ### Example
 ```python

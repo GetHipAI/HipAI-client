@@ -32,6 +32,7 @@ class ChatCompletionRequest(object):
         'messages': 'object',
         'agent_id': 'object',
         'agent_api_key': 'object',
+        'graph_id': 'object',
         'group_id': 'object',
         'model': 'object',
         'reasoning_effort': 'object',
@@ -41,7 +42,9 @@ class ChatCompletionRequest(object):
         'temperature': 'object',
         'frequency_penalty': 'object',
         'direct_citations': 'object',
-        'stream_response': 'object'
+        'citation_checking': 'object',
+        'stream_response': 'object',
+        'emit_graph_nodes': 'object'
     }
 
     attribute_map = {
@@ -49,6 +52,7 @@ class ChatCompletionRequest(object):
         'messages': 'messages',
         'agent_id': 'agent_id',
         'agent_api_key': 'agent_api_key',
+        'graph_id': 'graph_id',
         'group_id': 'group_id',
         'model': 'model',
         'reasoning_effort': 'reasoning_effort',
@@ -58,15 +62,18 @@ class ChatCompletionRequest(object):
         'temperature': 'temperature',
         'frequency_penalty': 'frequency_penalty',
         'direct_citations': 'direct_citations',
-        'stream_response': 'stream_response'
+        'citation_checking': 'citation_checking',
+        'stream_response': 'stream_response',
+        'emit_graph_nodes': 'emit_graph_nodes'
     }
 
-    def __init__(self, project_id=None, messages=None, agent_id=None, agent_api_key=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None, direct_citations=None, stream_response=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, project_id=None, messages=None, agent_id=None, agent_api_key=None, graph_id=None, group_id=None, model=None, reasoning_effort=None, max_completion_tokens=None, max_tokens=None, top_p=None, temperature=None, frequency_penalty=None, direct_citations=None, citation_checking=None, stream_response=None, emit_graph_nodes=None, *args, **kwargs):  # noqa: E501
         """ChatCompletionRequest - a model defined in Swagger"""  # noqa: E501
         self._project_id = None
         self._messages = None
         self._agent_id = None
         self._agent_api_key = None
+        self._graph_id = None
         self._group_id = None
         self._model = None
         self._reasoning_effort = None
@@ -76,7 +83,9 @@ class ChatCompletionRequest(object):
         self._temperature = None
         self._frequency_penalty = None
         self._direct_citations = None
+        self._citation_checking = None
         self._stream_response = None
+        self._emit_graph_nodes = None
         self.discriminator = None
         if project_id is not None:
             self.project_id = project_id
@@ -85,6 +94,8 @@ class ChatCompletionRequest(object):
             self.agent_id = agent_id
         if agent_api_key is not None:
             self.agent_api_key = agent_api_key
+        if graph_id is not None:
+            self.graph_id = graph_id
         if group_id is not None:
             self.group_id = group_id
         if model is not None:
@@ -103,8 +114,12 @@ class ChatCompletionRequest(object):
             self.frequency_penalty = frequency_penalty
         if direct_citations is not None:
             self.direct_citations = direct_citations
+        if citation_checking is not None:
+            self.citation_checking = citation_checking
         if stream_response is not None:
             self.stream_response = stream_response
+        if emit_graph_nodes is not None:
+            self.emit_graph_nodes = emit_graph_nodes
 
     @property
     def project_id(self):
@@ -191,6 +206,27 @@ class ChatCompletionRequest(object):
         """
 
         self._agent_api_key = agent_api_key
+
+    @property
+    def graph_id(self):
+        """Gets the graph_id of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The graph_id of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._graph_id
+
+    @graph_id.setter
+    def graph_id(self, graph_id):
+        """Sets the graph_id of this ChatCompletionRequest.
+
+
+        :param graph_id: The graph_id of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._graph_id = graph_id
 
     @property
     def group_id(self):
@@ -382,6 +418,27 @@ class ChatCompletionRequest(object):
         self._direct_citations = direct_citations
 
     @property
+    def citation_checking(self):
+        """Gets the citation_checking of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The citation_checking of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._citation_checking
+
+    @citation_checking.setter
+    def citation_checking(self, citation_checking):
+        """Sets the citation_checking of this ChatCompletionRequest.
+
+
+        :param citation_checking: The citation_checking of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._citation_checking = citation_checking
+
+    @property
     def stream_response(self):
         """Gets the stream_response of this ChatCompletionRequest.  # noqa: E501
 
@@ -401,6 +458,27 @@ class ChatCompletionRequest(object):
         """
 
         self._stream_response = stream_response
+
+    @property
+    def emit_graph_nodes(self):
+        """Gets the emit_graph_nodes of this ChatCompletionRequest.  # noqa: E501
+
+
+        :return: The emit_graph_nodes of this ChatCompletionRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._emit_graph_nodes
+
+    @emit_graph_nodes.setter
+    def emit_graph_nodes(self, emit_graph_nodes):
+        """Sets the emit_graph_nodes of this ChatCompletionRequest.
+
+
+        :param emit_graph_nodes: The emit_graph_nodes of this ChatCompletionRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._emit_graph_nodes = emit_graph_nodes
 
     def to_dict(self):
         """Returns the model properties as a dict"""
