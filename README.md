@@ -35,7 +35,6 @@ For most uses cases, [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-clien
 
 ```python
 """
-"""
 HipAI end-to-end: create an LLM config, build a data context, chat with it.
 
 Prereqs
