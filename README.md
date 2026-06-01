@@ -35,20 +35,20 @@ For most uses cases, [SimpleHipAIClient](https://github.com/GetHipAI/HipAI-clien
 
 ```python
 """
-HipAI end-to-end: create an LLM config, build a data context, create an agent, chat.
+"""
+HipAI end-to-end: create an LLM config, build a data context, chat with it.
 
 Prereqs
 -------
-- pip install git+https://github.com/GetHipAI/HipAI-client.git@v0.1.6
+- pip install git+https://github.com/GetHipAI/HipAI-client.git
 - A HipAI account, a User API token (Account → Edit Account → API Tokens),
-- and your project id either from GET /api/projects/ or copied from https://dashboard.gethip.ai/projects ).
+  and your project id (GET /api/projects/ or https://dashboard.gethip.ai/projects).
 """
 import os
 import time
 
 from hipai_client.models import BuildOptionsObject
 from hipai_client.simple_client import (
-    AgentStatuses,
     ConnectionConfigurationSchemas,
     DataContextStatuses,
     SimpleHipAIClient,
@@ -58,11 +58,6 @@ from hipai_client.simple_client import (
 USER_API_TOKEN = os.environ["HIPAI_USER_TOKEN"]   # "et-..." from your account
 PROJECT_ID     = os.environ["HIPAI_PROJECT_ID"]   # UUID of the target project
 OPENAI_KEY     = os.environ["OPENAI_API_KEY"]     # provider token for the LLM config
-
-PG_HOST     = os.environ["PG_HOST"]
-PG_USER     = os.environ["PG_USER"]
-PG_PASSWORD = os.environ["PG_PASSWORD"]
-PG_DATABASE = os.environ["PG_DATABASE"]
 
 DOCS_TO_UPLOAD = ["./handbook.pdf", "./policies.md"]    # any mix of pdf/md/txt/html/zip
 
@@ -78,19 +73,7 @@ llm = client.upsert_llm_config(
 print(f"LLM config: {llm.id}")
 
 # ------------------------------------------------ 2. Connection configs
-# 2a. Postgres
-pg_conn = client.upsert_connection_config(
-    conn_schema=ConnectionConfigurationSchemas.POSTGRESQL.value,
-    name="Production DB",
-    project_id=PROJECT_ID,
-    hostname_path=PG_HOST,
-    username=PG_USER,
-    password=PG_PASSWORD,
-    database=PG_DATABASE,
-    port=5432,
-)
-
-# 2b. Documents — create the connection, then upload files into it
+# 2a. Documents — create the connection, then upload files into it
 doc_conn = client.upsert_connection_config(
     conn_schema=ConnectionConfigurationSchemas.DOCUMENT.value,
     name="Internal Docs",
@@ -106,12 +89,18 @@ for path in DOCS_TO_UPLOAD:
             connection_config=doc_conn,
         )
 
+# 2b. Add other data connections here — PostgreSQL, MySQL, SQLite, Snowflake,
+# S3, or Azure Blob. See ConnectionConfigurationSchemas for available types
+# and the Data Contexts docs for the fields each schema requires. Append the
+# resulting ids to connection_config_ids below.
+connection_config_ids = [doc_conn.id]
+
 # ----------------------------------------- 3. Data context — build & poll
 context = client.upsert_data_context(
     name="Company Knowledge",
     project_id=PROJECT_ID,
     llm_config_id=llm.id,
-    connection_config_ids=[pg_conn.id, doc_conn.id],
+    connection_config_ids=connection_config_ids,
     build=True,                                  # queues a build immediately
     build_options=BuildOptionsObject(
         domain="any",
@@ -120,7 +109,7 @@ context = client.upsert_data_context(
 )
 print(f"Data context queued: {context.id}")
 
-# Builds usually take 10 minutes to 2 hours depending on size — poll until ready.
+# Builds usually take 5 minutes to an hour depending on size — poll until ready.
 TERMINAL_STATUSES = {DataContextStatuses.READY.value, "error"}
 while context.status not in TERMINAL_STATUSES:
     time.sleep(30)
@@ -130,24 +119,14 @@ while context.status not in TERMINAL_STATUSES:
 if context.status == "error":
     raise RuntimeError(f"Build failed: {context.error_message}")
 
-# ------------------------------------------------------------- 4. Agent
-agent = client.upsert_agent(
-    name="Knowledge Bot",
-    status=AgentStatuses.ACTIVE.value,
-    data_context_id=context.id,
-    llm_config_id=llm.id,
-    project_id=PROJECT_ID,
-)
-print(f"Agent ready: {agent.id} (api_key: {agent.api_key[:8]}…)")
-
-# ----------------------------------------------------------- 5. Chat it
-# add additional questions as necessary for the data sources you use
+# ------------------------------------------------------------- 4. Chat it
+# Chat directly against the data context — no Agent required.
 reply, messages, _raw = client.chat(
-    prompt="What does our handbook say about expense reports?", # or any question relevant to the document you included
-    agent_api_key=agent.api_key,
+    prompt="What does our handbook say about expense reports?",
+    graph_id=context.id,
     project_id=PROJECT_ID,
 )
-print("Agent:", reply)
+print("Reply:", reply)
 
 
 ```
@@ -164,81 +143,6 @@ python setup.py install --user
 Then import the package:
 ```python
 import hipai_client
-```
-
-## Getting Started
-
-Please follow the [installation procedure](#installation--usage) and then run the following:
-
-```python
-from __future__ import print_function
-import time
-import hipai_client
-from hipai_client.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
-project_id = NULL # object |  (optional)
-
-try:
-    # Delete Agent
-    api_response = api_instance.delete_agent_api_agents_id_delete(id, project_id=project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->delete_agent_api_agents_id_delete: %s\n" % e)
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = NULL # object | 
-
-try:
-    # List Agents
-    api_response = api_instance.list_agents_api_agents_list_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->list_agents_api_agents_list_post: %s\n" % e)
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-id = NULL # object | 
-project_id = NULL # object |  (optional)
-group_id = NULL # object |  (optional)
-
-try:
-    # Load Agent
-    api_response = api_instance.load_agent_api_agents_id_get(id, project_id=project_id, group_id=group_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->load_agent_api_agents_id_get: %s\n" % e)
-
-# Configure OAuth2 access token for authorization: OAuth2PasswordBearer
-configuration = hipai_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = hipai_client.AgentsApi(hipai_client.ApiClient(configuration))
-body = hipai_client.AgentConfigObject() # AgentConfigObject | 
-
-try:
-    # Upsert Agent
-    api_response = api_instance.upsert_agent_api_agents_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->upsert_agent_api_agents_post: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
